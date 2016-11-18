@@ -18,8 +18,10 @@ var common = {
 	target : 'web',
 
 	output    : {
-		path     : './dist',
-		filename : 'index.js',
+		path          : './dist',
+		filename      : 'index.js',
+		libraryTarget : "commonjs2",
+		library       : "@stejar/application",
 	},
 	externals : [ nodeExternals() ],
 
@@ -60,18 +62,6 @@ var common = {
 				],
 				exclude : [
 					/node_modules/
-				]
-			},
-			{
-				test    : /numbro\/languages\/(.*)-(.*)\.js$/,
-				loaders : [
-					"exports",
-				]
-			},
-			{
-				test    : /\.json$/,
-				loaders : [
-					"json",
 				]
 			},
 		]

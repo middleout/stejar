@@ -18,8 +18,10 @@ var common = {
 	target : 'web',
 
 	output    : {
-		path     : './dist',
-		filename : 'index.js',
+		path          : './dist',
+		filename      : 'index.js',
+		libraryTarget : "commonjs2",
+		library       : "@stejar/di",
 	},
 	externals : [ nodeExternals() ],
 
@@ -49,13 +51,9 @@ var common = {
 		],
 		loaders    : [
 			{
-				test   : require.resolve('react'),
-				loader : "expose?React",
-			},
-			{
 				test    : /\.tsx?$/,
 				loaders : [
-					'babel?cacheDirectory&presets[]=es2015-loose&plugins[]=transform-react-jsx',
+					'babel?cacheDirectory&presets[]=es2015-loose',
 					'ts',
 				],
 				exclude : [

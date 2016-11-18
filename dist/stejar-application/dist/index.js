@@ -1,3 +1,4 @@
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,7 +53,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -86,7 +87,7 @@ Object.keys(_src).forEach(function (key) {
 exports.__esModule = true;
 exports.BrowserApplication = undefined;
 
-var _reactDom = __webpack_require__(8);
+var _reactDom = __webpack_require__(7);
 
 var _di = __webpack_require__(3);
 
@@ -98,10 +99,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 __webpack_require__(4);
 __webpack_require__(6);
-__webpack_require__(7);
 __webpack_require__(5).polyfill();
 
-var injectTapEventPlugin = __webpack_require__(9);
+var injectTapEventPlugin = __webpack_require__(8);
 injectTapEventPlugin();
 /**
  * @class BrowserApplication
@@ -173,28 +173,22 @@ module.exports = require("es6-promise");
 /* 6 */
 /***/ function(module, exports) {
 
-module.exports = require("isomorphic-fetch");
+module.exports = require("react");
 
 /***/ },
 /* 7 */
 /***/ function(module, exports) {
 
-module.exports = require("react");
+module.exports = require("react-dom");
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-module.exports = require("react-dom");
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
 module.exports = require("react-tap-event-plugin");
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);
