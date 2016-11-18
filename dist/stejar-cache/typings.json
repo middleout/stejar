@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "store": "file:node_modules/@stejar/typings/store.d.ts"
+  }
+}

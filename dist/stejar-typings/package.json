@@ -1,0 +1,9 @@
+{
+  "name": "@stejar/typings",
+  "version": "1.0.0",
+  "private": false,
+  "main": "index.ts",
+  "typings": "index.d.ts",
+  "dependencies": {},
+  "devDependencies": {}
+}
