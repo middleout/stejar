@@ -1,3 +1,13 @@
 DONE:
+   - stejar-application
+   - stejar-authentication
+   - stejar-authorization
+   - stejar-cache
    - stejar-di
+   - stejar-http
    - stejar-react
+   - stejar-react-di
+        - stejar-router
+   - stejar-translate
+        - stejar-typings
+   - stejar-utils

@@ -26,6 +26,7 @@
 	"coverage",
 	"webpack.config.js",
 	"karma.config.js",
-	"public"
+	"public",
+	"tests"
   ]
 }

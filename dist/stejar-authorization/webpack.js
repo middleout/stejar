@@ -18,8 +18,10 @@ var common = {
 	target : 'web',
 
 	output    : {
-		path     : './dist',
-		filename : 'index.js',
+		path          : './dist',
+		filename      : 'index.js',
+		libraryTarget : "commonjs2",
+		library       : "@stejar/authorization",
 	},
 	externals : [ nodeExternals() ],
 

@@ -1,3 +1,4 @@
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,7 +53,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -67,17 +68,17 @@ exports.TranslatorService = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _di = __webpack_require__(8);
+var _di = __webpack_require__(7);
 
-var _moment = __webpack_require__(11);
+var _moment = __webpack_require__(10);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _numbro = __webpack_require__(12);
+var _numbro = __webpack_require__(11);
 
 var _numbro2 = _interopRequireDefault(_numbro);
 
-var _utils = __webpack_require__(9);
+var _utils = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -94,7 +95,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 var __metadata = undefined && undefined.__metadata || function (k, v) {
     if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var TranslatorService = exports.TranslatorService = function () {
+
+var TranslatorService = function () {
     /**
      * @param adapter
      */
@@ -258,7 +260,8 @@ var TranslatorService = exports.TranslatorService = function () {
 
     return TranslatorService;
 }();
-exports.TranslatorService = TranslatorService = __decorate([_di.injectable, __metadata('design:paramtypes', [Object])], TranslatorService);
+exports.TranslatorService = TranslatorService = __decorate([_di.injectable, __metadata("design:paramtypes", [Object])], TranslatorService);
+exports.TranslatorService = TranslatorService;
 
 /***/ },
 /* 1 */
@@ -281,7 +284,7 @@ module.exports = require("@stejar/react-di");
 
 exports.__esModule = true;
 
-var _index = __webpack_require__(7);
+var _index = __webpack_require__(6);
 
 Object.keys(_index).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -305,7 +308,7 @@ exports.LocalizedTitle = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _reactHelmet = __webpack_require__(13);
+var _reactHelmet = __webpack_require__(12);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
@@ -334,7 +337,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 var __metadata = undefined && undefined.__metadata || function (k, v) {
     if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var LocalizedTitle = exports.LocalizedTitle = function (_PureComponent) {
+
+var LocalizedTitle = function (_PureComponent) {
     _inherits(LocalizedTitle, _PureComponent);
 
     function LocalizedTitle() {
@@ -360,7 +364,8 @@ var LocalizedTitle = exports.LocalizedTitle = function (_PureComponent) {
 }(_react.PureComponent);
 exports.LocalizedTitle = LocalizedTitle = __decorate([(0, _reactDi.inject)({
     translatorService: _TranslatorService.TranslatorService
-}), __metadata('design:paramtypes', [])], LocalizedTitle);
+}), __metadata("design:paramtypes", [])], LocalizedTitle);
+exports.LocalizedTitle = LocalizedTitle;
 
 /***/ },
 /* 5 */
@@ -374,7 +379,7 @@ exports.Translate = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _lodash = __webpack_require__(10);
+var _lodash = __webpack_require__(9);
 
 var _react = __webpack_require__(1);
 
@@ -399,7 +404,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 var __metadata = undefined && undefined.__metadata || function (k, v) {
     if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var Translate = exports.Translate = function (_PureComponent) {
+
+var Translate = function (_PureComponent) {
     _inherits(Translate, _PureComponent);
 
     function Translate() {
@@ -494,35 +500,17 @@ var Translate = exports.Translate = function (_PureComponent) {
 }(_react.PureComponent);
 exports.Translate = Translate = __decorate([(0, _reactDi.inject)({
     translatorService: _TranslatorService.TranslatorService
-}), __metadata('design:paramtypes', [])], Translate);
+}), __metadata("design:paramtypes", [])], Translate);
+exports.Translate = Translate;
 
 /***/ },
 /* 6 */
-/***/ function(module, exports) {
-
-"use strict";
-"use strict";
-
-/***/ },
-/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 
 exports.__esModule = true;
-
-var _TranslatorAdapterContract = __webpack_require__(6);
-
-Object.keys(_TranslatorAdapterContract).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _TranslatorAdapterContract[key];
-    }
-  });
-});
 
 var _TranslatorService = __webpack_require__(0);
 
@@ -561,43 +549,43 @@ Object.keys(_LocalizedTitle).forEach(function (key) {
 });
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports) {
 
 module.exports = require("@stejar/di");
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 module.exports = require("@stejar/utils");
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 module.exports = require("lodash");
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 module.exports = require("moment");
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 module.exports = require("numbro");
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports) {
 
 module.exports = require("react-helmet");
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3);

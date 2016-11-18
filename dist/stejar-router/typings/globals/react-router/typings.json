@@ -1,8 +1,0 @@
-{
-  "resolution": "main",
-  "tree": {
-    "src": "/Users/Andrei/work/projects/stejar/dist/stejar-router/node_modules/@stejar/typings/react-router.d.ts",
-    "raw": "file:node_modules/@stejar/typings/react-router.d.ts",
-    "typings": "/Users/Andrei/work/projects/stejar/dist/stejar-router/node_modules/@stejar/typings/react-router.d.ts"
-  }
-}

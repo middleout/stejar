@@ -5,22 +5,25 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-	"build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
-	"deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack"
+    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
+    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack"
   },
   "dependencies": {
-	"@hughfdjackson/promise-extras": "github:hughfdjackson/promise-extras"
+    "@hughfdjackson/promise-extras": "github:hughfdjackson/promise-extras",
+    "@types/node": "^6.0.48"
   },
   "devDependencies": {
-	"babel-core": "6.18.2",
-	"babel-loader": "6.2.7",
-	"babel-preset-es2015": "6.18.0",
-	"babel-preset-es2015-loose": "8.0.0",
-	"clean-webpack-plugin": "0.1.14",
-	"typings": "2.0.0",
-	"webpack": "2.1.0-beta.19",
-	"webpack-build-notifier": "0.1.13",
-	"webpack-merge": "0.17.0",
-	"webpack-node-externals": "1.5.4"
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.7",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-es2015-loose": "8.0.0",
+    "clean-webpack-plugin": "0.1.14",
+    "typings": "2.0.0",
+    "webpack": "2.1.0-beta.19",
+    "webpack-build-notifier": "0.1.13",
+    "webpack-merge": "0.17.0",
+    "webpack-node-externals": "1.5.4",
+    "ts-loader": "^1.2.2",
+    "typescript": "rc"
   }
 }

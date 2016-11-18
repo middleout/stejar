@@ -7,9 +7,13 @@
   "scripts": {
     "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
     "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack",
-	"test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
+    "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/react": "^0.14.49",
+    "react": "^15.4.0",
+    "virgen-acl": "0.0.20"
+  },
   "devDependencies": {
     "babel-core": "6.18.2",
     "babel-loader": "6.2.7",
@@ -20,6 +24,9 @@
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
     "webpack-merge": "0.17.0",
-    "webpack-node-externals": "1.5.4"
+    "webpack-node-externals": "1.5.4",
+    "ts-loader": "^1.2.1",
+    "typescript": "rc",
+    "babel-plugin-transform-react-jsx": "6.8.0"
   }
 }

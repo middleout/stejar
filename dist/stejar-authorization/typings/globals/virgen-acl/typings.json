@@ -1,8 +1,0 @@
-{
-  "resolution": "main",
-  "tree": {
-    "src": "/Users/Andrei/work/projects/stejar/dist/stejar-authorization/node_modules/@stejar/typings/virgen-acl.d.ts",
-    "raw": "file:node_modules/@stejar/typings/virgen-acl.d.ts",
-    "typings": "/Users/Andrei/work/projects/stejar/dist/stejar-authorization/node_modules/@stejar/typings/virgen-acl.d.ts"
-  }
-}
