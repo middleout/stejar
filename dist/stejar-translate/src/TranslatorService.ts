@@ -116,7 +116,7 @@ export class TranslatorService {
 		if ( this.debug ) {
 			console.log(`[Stejar-Translate][TranslatorService] - Changed locale to ${localeCode}`);
 		}
-		this._activeLocale$.emit(localeCode);
+		this._activeLocale$.next(localeCode);
 	}
 
 	/**
@@ -139,7 +139,7 @@ export class TranslatorService {
 			if ( this.debug ) {
 				console.log(`[Stejar-Translate][TranslatorService] - Loaded locale: ${localeCode}`);
 			}
-			this._loadedLocales$.emit(this.loadedLocales);
+			this._loadedLocales$.next(this.loadedLocales);
 		});
 	}
 

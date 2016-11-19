@@ -5,12 +5,12 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
-    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack"
+    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
+    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
   },
   "dependencies": {
     "@types/lodash": "4.14.39",
-    "@types/node": "^6.0.48",
+    "@types/node": "6.0.48",
     "@types/whatwg-fetch": "0.0.32",
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.17.2"

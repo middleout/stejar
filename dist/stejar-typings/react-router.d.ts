@@ -53,10 +53,13 @@ declare module "react-router" {
 	interface IndexRedirect extends React.ComponentClass<any> {}
 	export var IndexRedirect: IndexRedirect;
 
+	interface IndexRoute extends React.ComponentClass<any> {}
+	export var IndexRoute: IndexRoute;
+
 	interface Route extends React.ComponentClass<RouteProps> {}
 	export var Route: Route;
 	interface InjectedRouter {
-		push(...args: any[]): any;
+		push( ...args: any[] ): any;
 	}
 	export interface withRouter {
 		( ...args: any[] ): any;

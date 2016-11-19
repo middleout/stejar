@@ -5,5 +5,8 @@
   "main": "index.ts",
   "typings": "index.d.ts",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+	"deploy": "npm version patch && npm publish --access=public"
+  }
 }

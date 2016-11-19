@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-	"build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/react --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
-	"deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/react --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack"
+	"build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/react --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
+	"deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/react --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
   },
   "dependencies": {
 	"@types/react": "0.14.49",

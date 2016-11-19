@@ -12,7 +12,7 @@ export class Subject<T> extends Observable<T> {
 	/**
 	 * @param value
 	 */
-	emit( value: T ): void {
+	next( value: T ): void {
 		this.value = value;
 		this.listeners.forEach(item => item(this.value));
 	}
@@ -23,7 +23,7 @@ export class Subject<T> extends Observable<T> {
 	 */
 	subscribe( callback: ( value: T )=>void ): Function {
 		const unsub = super.subscribe(callback);
-		this.emit(this.value);
+		this.next(this.value);
 		return unsub;
 	}
 

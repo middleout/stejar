@@ -86,3 +86,7 @@ export interface AbstractMiddlewareRoute {
         onChange?<P, Q>(fromState: RouterStateContract<P, Q>, toState: RouterStateContract<P, Q>, redirector: RedirectorContract): Promise<any>;
 }
 
+export interface ResolvedProps<T> {
+    data?: T;
+}
+

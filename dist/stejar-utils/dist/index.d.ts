@@ -75,7 +75,7 @@ export class Subject<T> extends Observable<T> {
         /**
             * @param value
             */
-        emit(value: T): void;
+        next(value: T): void;
         /**
             * @param callback
             * @returns {Function}

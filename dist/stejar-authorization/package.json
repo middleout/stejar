@@ -1,17 +1,22 @@
 {
   "name": "@stejar/authorization",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
-    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack",
+    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
+    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/authorization --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public",
     "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
   "dependencies": {
-    "@types/react": "^0.14.49",
-    "react": "^15.4.0",
+    "@stejar/authentication": "^1.0.0",
+    "@stejar/di": "^1.0.0",
+    "@stejar/react": "^1.0.0",
+    "@stejar/react-di": "^1.0.1",
+    "@stejar/typings": "^1.0.0",
+    "@types/react": "0.14.49",
+    "react": "15.4.0",
     "virgen-acl": "0.0.20"
   },
   "devDependencies": {
@@ -25,7 +30,7 @@
     "webpack-build-notifier": "0.1.13",
     "webpack-merge": "0.17.0",
     "webpack-node-externals": "1.5.4",
-    "ts-loader": "^1.2.1",
+    "ts-loader": "1.2.1",
     "typescript": "rc",
     "babel-plugin-transform-react-jsx": "6.8.0"
   }

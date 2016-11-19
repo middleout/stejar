@@ -1,16 +1,17 @@
 {
   "name": "@stejar/utils",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm pack",
-    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src  && npm pack"
+    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
+    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
   },
   "dependencies": {
     "@hughfdjackson/promise-extras": "github:hughfdjackson/promise-extras",
-    "@types/node": "^6.0.48"
+    "@stejar/di": "1.0.0",
+    "@types/node": "6.0.48"
   },
   "devDependencies": {
     "babel-core": "6.18.2",
@@ -23,7 +24,7 @@
     "webpack-build-notifier": "0.1.13",
     "webpack-merge": "0.17.0",
     "webpack-node-externals": "1.5.4",
-    "ts-loader": "^1.2.2",
+    "ts-loader": "1.2.2",
     "typescript": "rc"
   }
 }
