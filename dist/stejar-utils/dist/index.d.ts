@@ -87,3 +87,43 @@ export class Subject<T> extends Observable<T> {
         getValue(): T;
 }
 
+/**
+    * @param topic
+    * @param payload
+    * @param origin
+    * @param target
+    */
+export function postMessage(topic: string, payload?: any, origin?: string, target?: Window): void;
+/**
+    * @param topic
+    * @param callback
+    * @returns {(event:{data: {topic: any, payload: any}})=>undefined}
+    */
+export function addCrossDomainEventListener(topic: string, callback: Function): Function;
+/**
+    * @param listener
+    */
+export function removeCrossDomainEventListener(listener: Function): void;
+export class Channel {
+        /**
+            * @param origin
+            * @param target
+            */
+        constructor(origin: string, target?: Window);
+        /**
+            * @param topic
+            * @param callback
+            * @returns {Function}
+            */
+        subscribe(topic: string, callback: Function): Function;
+        /**
+            * @param listener
+            */
+        unsuscribe(listener: Function): void;
+        /**
+            * @param topic
+            * @param payload
+            */
+        send(topic: string, payload?: any): void;
+}
+
