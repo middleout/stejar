@@ -3,10 +3,15 @@
 export function loadScript(url: string, timeout?: number): Promise<any>;
 
 /**
-  * @param url
-  * @returns {Promise<T>}
-  */
+    * @param url
+    * @returns {Promise<T>}
+    */
 export function loadImage(url: string): Promise<string>;
+/**
+    * @param url
+    * @returns {Promise<T>}
+    */
+export function loadImages(urls: string[]): Promise<string[]>;
 
 export enum PromiseStatus {
         RESOLVED,
