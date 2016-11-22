@@ -71,7 +71,7 @@ export function VersionCard( props: {position?: "tr"|"tl"|"br"|"bl", configVersi
 	};
 
 	const versionCard = (
-		<div style={containerStyle}>
+		<div id="StejarVersionCard_VersionCard" style={containerStyle}>
 			<div style={titleStyle}>
 				Stejar Version Card
 			</div>
@@ -97,7 +97,7 @@ export function VersionCard( props: {position?: "tr"|"tl"|"br"|"bl", configVersi
 	);
 
 	const configCard = (
-		<div style={configStyle}>
+		<div id="StejarVersionCard_ConfigCard" style={configStyle}>
 			<div style={titleStyle}>
 				Application Configuration
 			</div>
@@ -110,7 +110,7 @@ export function VersionCard( props: {position?: "tr"|"tl"|"br"|"bl", configVersi
 	);
 
 	return (
-		<div style={wrapperStyle}>
+		<div id="StejarVersionCard" style={wrapperStyle}>
 			{showVersionCard ? versionCard : null}
 			{showConfigCard ? configCard : null}
 		</div>
