@@ -11,3 +11,11 @@ export function loadImage( url: string ): Promise<string> {
 		img.src     = url;
 	})
 }
+
+/**
+ * @param url
+ * @returns {Promise<T>}
+ */
+export function loadImages( urls: string[] ): Promise<string[]> {
+	return Promise.all(urls.map(url => loadImage(url)));
+}
