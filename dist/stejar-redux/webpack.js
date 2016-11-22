@@ -5,7 +5,13 @@ var path                       = require('path'),
 	cleanWebpackPlugin         = require('clean-webpack-plugin'),
 	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 	TARGET                     = process.env.npm_lifecycle_event,
-	nodeExternals              = require('webpack-node-externals');
+	nodeExternals              = require('webpack-node-externals'),
+	babelConfig                = JSON.stringify({
+		presets : [
+			[ 'babel-preset-es2015', { modules : false } ]
+		],
+		plugins : []
+	});
 
 var common = {
 
@@ -51,13 +57,9 @@ var common = {
 		],
 		loaders    : [
 			{
-				test   : require.resolve('react'),
-				loader : "expose?React",
-			},
-			{
 				test    : /\.tsx?$/,
 				loaders : [
-					'babel?cacheDirectory&presets[]=es2015-loose&plugins[]=transform-react-jsx',
+					`babel?${babelConfig}`,
 					'ts',
 				],
 				exclude : [

@@ -1,16 +1,16 @@
 import { AuthenticationAdapterContract } from "./AuthenticationAdapterContract";
+import { Store } from "@stejar/redux";
+import { AuthenticationQueries } from "./AuthenticationQueries";
+import { AuthenticatedAction } from "./AuthenticatedAction";
+import { LoggedOutAction } from "./LoggedOutAction";
 
 export class AuthenticationService<I> {
 
 	/**
-	 * @type {I}
-	 */
-	private identity: I = null;
-
-	/**
+	 * @param store
 	 * @param authenticationAdapter
 	 */
-	constructor( protected authenticationAdapter: AuthenticationAdapterContract<I> ) {}
+	constructor( protected store: Store<any>, protected authenticationAdapter: AuthenticationAdapterContract<I> ) {}
 
 	/**
 	 * @returns {AuthenticationAdapterContract<I>}
@@ -23,29 +23,29 @@ export class AuthenticationService<I> {
 	 * @returns {boolean}
 	 */
 	hasIdentity(): boolean {
-		return !!this.identity;
+		return AuthenticationQueries.hasIdentity(this.store.getState());
 	}
 
 	/**
 	 * @returns {I}
 	 */
 	getIdentity(): I {
-		if ( !this.identity ) {
+		if ( !AuthenticationQueries.getIdentity(this.store.getState()) ) {
 			throw new Error('[Stejar.AuthenticationService] There is no identity registered. Do a check with "hasIdentity()" before calling this method.');
 		}
 
-		return this.identity;
+		return AuthenticationQueries.getIdentity<I>(this.store.getState());
 	}
 
 	/**
 	 * @returns {string}
 	 */
 	getRole(): string {
-		if ( !this.identity ) {
+		if ( !AuthenticationQueries.getIdentity(this.store.getState()) ) {
 			throw new Error('[Stejar.AuthenticationService] There is no identity registered. Do a check with "hasIdentity()" before calling this method.');
 		}
 
-		return this.authenticationAdapter.getRole(this.identity);
+		return this.authenticationAdapter.getRole(AuthenticationQueries.getIdentity<I>(this.store.getState()));
 	}
 
 	/**
@@ -57,7 +57,7 @@ export class AuthenticationService<I> {
 				throw new Error("[Stejar.AuthenticationService] Could not Refresh Identity");
 			}
 
-			this.identity = data;
+			this.store.dispatch(new AuthenticatedAction(data));
 
 			return true;
 		});
@@ -71,7 +71,7 @@ export class AuthenticationService<I> {
 		return this.authenticationAdapter
 			.authenticate(data)
 			.then(identity => {
-				this.identity = identity;
+				this.store.dispatch(new AuthenticatedAction(identity));
 				return true;
 			});
 	}
@@ -85,7 +85,7 @@ export class AuthenticationService<I> {
 				throw new Error("[Stejar.AuthenticationService] Could not Logout");
 			}
 
-			this.identity = null;
+			this.store.dispatch(new LoggedOutAction());
 			return true;
 		});
 	}

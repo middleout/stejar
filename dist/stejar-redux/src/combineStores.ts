@@ -9,12 +9,20 @@ export function combineStores( serviceManager: ServiceManager ) {
 			reducers[ store.name ] = ( state: any, action: any ) => {
 
 				const instance: any = serviceManager.get(store as any);
-				if ( Object.keys(instance.bindings).indexOf(action.type) !== -1 ) {
-					console.log(instance);
-					return instance.bindings[ action.type ](state, action.payload);
+				let actionType: string;
+
+
+				if ( state === undefined ) {
+					actionType = '@STORE_INIT';
+				} else {
+					actionType = action.type;
 				}
 
-				return {};
+				if ( Object.keys(instance.bindings).indexOf(actionType) !== -1 ) {
+					return instance.bindings[ actionType ](state, action.payload ? action.payload : action);
+				}
+
+				return state === undefined ? {} : state;
 			}
 		});
 

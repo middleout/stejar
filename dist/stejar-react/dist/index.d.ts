@@ -87,3 +87,10 @@ export abstract class PureComponent<P, S> extends ReactPureComponent<P, S> {
         componentWillUnmount(): void;
 }
 
+/**
+  * @param props
+  * @returns {any}
+  * @constructor
+  */
+export function DangerousHtml(props: any): any;
+

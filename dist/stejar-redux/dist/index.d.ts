@@ -70,9 +70,13 @@ export interface StoreAware {
     setStore(store: Store<any>): void;
 }
 
-export class Dispatchable implements StoreAware {
-        protected store: Store<any>;
-        getState<T>(): T;
+export abstract class AbstractActions<S> implements StoreAware {
+        protected store: Store<S>;
+        getState(): S;
+        /**
+            * @returns {S}
+            */
+        readonly state: S;
         dispatch<P>(a: any, b?: P): any;
         /**
             * @param props
@@ -86,4 +90,19 @@ export class Dispatchable implements StoreAware {
 }
 
 export function combineStores(serviceManager: ServiceManager): (...stores: Function[]) => {};
+
+export class Selector {
+        /**
+            * @param selector
+            * @param left
+            * @param right
+            * @returns {(state:any, props?:any)=>(any|any|{})}
+            */
+        static if(selector: Function, left: any, right?: any): (state: any, props?: any) => any;
+        /**
+            * @param args
+            * @returns {(state:any, props?:any)=>{}}
+            */
+        static fromState(...args: any[]): (state: any, props?: any) => {};
+}
 

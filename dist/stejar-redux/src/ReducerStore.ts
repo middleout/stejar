@@ -33,6 +33,9 @@ export abstract class ReducerStore implements StoreAware {
 	 * @returns {ReducerStore}
 	 */
 	protected bind( name: string, action: Function ): this {
+		if ( !name ) {
+			name = '@STORE_INIT';
+		}
 		this.bindings[ name ] = action.bind(this);
 		return this;
 	}

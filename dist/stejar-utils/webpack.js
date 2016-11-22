@@ -7,6 +7,13 @@ var path                       = require('path'),
 	TARGET                     = process.env.npm_lifecycle_event,
 	nodeExternals              = require('webpack-node-externals');
 
+var babelConfig = JSON.stringify({
+	presets : [
+		[ 'babel-preset-es2015', { modules : false } ]
+	],
+	plugins : []
+});
+
 var common = {
 
 	cache : true,
@@ -53,7 +60,7 @@ var common = {
 			{
 				test    : /\.tsx?$/,
 				loaders : [
-					'babel?cacheDirectory&presets[]=es2015-loose',
+					`babel?${babelConfig}`,
 					'ts',
 				],
 				exclude : [

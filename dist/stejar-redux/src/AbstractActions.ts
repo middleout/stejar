@@ -1,11 +1,18 @@
 import { Store } from "./Store";
 import { StoreAware } from "./StoreAware";
 
-export class Dispatchable implements StoreAware {
+export abstract class AbstractActions<S> implements StoreAware {
 
-	protected store: Store<any> = null;
+	protected store: Store<S> = null;
 
-	getState<T>(): T {
+	getState(): S {
+		return this.store.getState();
+	}
+
+	/**
+	 * @returns {S}
+	 */
+	get state(): S {
 		return this.store.getState();
 	}
 

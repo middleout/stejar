@@ -2,6 +2,12 @@
 
 export function loadScript(url: string, timeout?: number): Promise<any>;
 
+/**
+  * @param url
+  * @returns {Promise<T>}
+  */
+export function loadImage(url: string): Promise<string>;
+
 export enum PromiseStatus {
         RESOLVED,
         REJECTED,

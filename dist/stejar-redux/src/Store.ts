@@ -41,7 +41,7 @@ export class Store<S> {
 	dispatch<P>( action: Action<P>|string|any, payload?: P ) {
 		checkStore(this.store);
 
-		if ( typeof action !== "string" && action.constructor && action.constructor.name ) {
+		if ( typeof action !== "string" && action.constructor && action.constructor.name && action.constructor.name !== "Object" ) {
 			action = {
 				type   : action.constructor.name,
 				payload: action

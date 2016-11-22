@@ -50,8 +50,23 @@ declare module "react-router" {
 	}
 	export interface PlainRoute {}
 
-	interface IndexRedirect extends React.ComponentClass<any> {}
+	interface IndexRedirectProps extends React.Props<IndexRedirect> {
+		to: RoutePattern
+		query?: Query
+		state?: LocationState
+	}
+	interface IndexRedirect extends React.ComponentClass<IndexRedirectProps> {}
 	export var IndexRedirect: IndexRedirect;
+
+	interface RedirectProps extends React.Props<Redirect> {
+		path?: RoutePattern
+		from?: RoutePattern // alias for path
+		to: RoutePattern
+		query?: Query
+		state?: LocationState
+	}
+	interface Redirect extends React.ComponentClass<RedirectProps> {}
+	export var Redirect: Redirect;
 
 	interface IndexRoute extends React.ComponentClass<any> {}
 	export var IndexRoute: IndexRoute;

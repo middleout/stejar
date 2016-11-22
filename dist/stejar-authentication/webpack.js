@@ -5,7 +5,13 @@ var path                       = require('path'),
 	cleanWebpackPlugin         = require('clean-webpack-plugin'),
 	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 	TARGET                     = process.env.npm_lifecycle_event,
-	nodeExternals              = require('webpack-node-externals');
+	nodeExternals              = require('webpack-node-externals'),
+	babelConfig                = JSON.stringify({
+		presets : [
+			[ 'babel-preset-es2015', { modules : false } ]
+		],
+		plugins : []
+	});
 
 var common = {
 
@@ -53,7 +59,7 @@ var common = {
 			{
 				test    : /\.tsx?$/,
 				loaders : [
-					'babel?cacheDirectory&presets[]=es2015-loose',
+					`babel?${babelConfig}`,
 					'ts',
 				],
 				exclude : [
