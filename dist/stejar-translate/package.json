@@ -1,6 +1,6 @@
 {
   "name": "@stejar/translate",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,17 +15,22 @@
     "@stejar/di": "^1.0.1",
     "@stejar/react": "^1.0.2",
     "@stejar/react-di": "^1.0.2",
+    "@stejar/redux": "^1.0.11",
     "@stejar/utils": "^1.0.6",
     "@types/lodash": "4.14.39",
     "@types/moment": "2.13.0",
     "@types/numbro": "0.0.28",
     "@types/react": "0.14.50",
     "@types/react-helmet": "0.0.25",
+    "@types/react-redux": "^4.4.32",
+    "@types/reselect": "^2.0.27",
     "lodash": "4.17.2",
     "moment": "2.17.0",
     "numbro": "1.9.3",
     "react": "15.4.0",
-    "react-helmet": "3.2.2"
+    "react-helmet": "3.2.2",
+    "react-redux": "^4.4.6",
+    "reselect": "^2.5.4"
   },
   "devDependencies": {
     "babel-core": "6.18.2",

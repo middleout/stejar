@@ -1,24 +1,22 @@
 import { isObject } from "lodash";
 import { HTMLAttributes } from "react";
 import { PureComponent, DangerousHtml } from "@stejar/react";
-import { inject } from "@stejar/react-di";
-import { TranslatorService } from "./TranslatorService";
+import { connect } from "react-redux";
+import { Selector } from "@stejar/redux";
+import { LocaleQueries } from "./LocaleQueries";
 
 export interface TranslateProps extends HTMLAttributes<any> {
 	[key: string]: any;
 	[key: number]: any;
-	translatorService?: TranslatorService;
+	catalogs?: {[key: string]: {[key: string]: string}};
+	_$locale?: string;
 }
 
-@inject({
-	translatorService: TranslatorService
-})
+@(connect as any)(Selector.fromState({
+	catalogs: LocaleQueries.getLocaleCatalogs,
+	_$locale: LocaleQueries.getCurrentLocale,
+}))
 export class Translate extends PureComponent<TranslateProps,{}> {
-
-	/**
-	 * @type {Function}
-	 */
-	protected unsubscribe: Function = (): Function => null;
 
 	/**
 	 * @returns {JSX.Element}
@@ -26,10 +24,14 @@ export class Translate extends PureComponent<TranslateProps,{}> {
 	render(): JSX.Element {
 		let params = Object.assign({}, this.props);
 		delete params.children;
-		delete params.translatorService;
+		delete params.catalogs;
+		delete params._$locale;
 		let translatedValue: string;
 		try {
-			translatedValue = this.props.translatorService.translate(this.props.children as any);
+			translatedValue = this.props.catalogs[ this.props._$locale ][ this.props.children as any ];
+			if ( !translatedValue ) {
+				translatedValue = this.props.children as any;
+			}
 		} catch (error) {
 			translatedValue = this.props.children as any;
 		}
@@ -53,8 +55,8 @@ export class Translate extends PureComponent<TranslateProps,{}> {
 
 		if ( Object.keys(list).length > 0 ) {
 			let result           = translatedValue.split('{REACT}');
-			var newResult: any[] = [];
-			var offset           = 0;
+			let newResult: any[] = [];
+			let offset           = 0;
 			result.forEach(( item: any ) => {
 				offset++;
 				newResult.push(<DangerousHtml key={offset}>{item}</DangerousHtml>);
@@ -76,21 +78,5 @@ export class Translate extends PureComponent<TranslateProps,{}> {
 		}
 
 		return <span>{translatedValue}</span>;
-	}
-
-	/**
-	 * @returns {null}
-	 */
-	componentDidMount(): void {
-		this.unsubscribe = this.props.translatorService.activeLocale$.subscribe(locale => this.setState({locale}));
-		return null;
-	}
-
-	/**
-	 * @returns {null}
-	 */
-	componentWillUnmount(): void {
-		this.unsubscribe();
-		return null;
 	}
 }

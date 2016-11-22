@@ -1,21 +1,14 @@
 import { injectable } from "@stejar/di";
 import moment, { LocaleSpecification } from "moment";
 import numbro from "numbro";
-import { Observable, Subject } from "@stejar/utils";
+import { Store } from "@stejar/redux";
 import { TranslatorAdapterContract } from "./TranslatorAdapterContract";
+import { LocaleQueries } from "./LocaleQueries";
+import { LoadedLocaleAction } from "./LoadedLocaleAction";
+import { ChangedLocaleAction } from "./ChangedLocaleAction";
 
 @injectable
 export class TranslatorService {
-
-	/**
-	 * @type {Array}
-	 */
-	protected loadedLocales: string[] = [];
-
-	/**
-	 * @type {any}
-	 */
-	protected activeLocale: string = null;
 
 	/**
 	 * @type {boolean}
@@ -23,35 +16,10 @@ export class TranslatorService {
 	protected debug: boolean = false;
 
 	/**
-	 * @type {{}}
-	 */
-	protected catalogs: {[code: string]: {[label: string]: string}} = {};
-
-	/**
-	 * @type {Subject}
-	 */
-	protected _activeLocale$: Subject<string> = new Subject(null);
-
-	/**
-	 * @type {Subject}
-	 */
-	protected _loadedLocales$: Subject<string[]> = new Subject([]);
-
-	/**
-	 * @type {Observable}
-	 */
-	activeLocale$: Observable<string> = this._activeLocale$.asObservable();
-
-	/**
-	 * @type {Observable}
-	 */
-	loadedLocales$: Observable<string[]> = this._loadedLocales$.asObservable();
-
-
-	/**
+	 * @param store
 	 * @param adapter
 	 */
-	constructor( protected adapter: TranslatorAdapterContract ) {}
+	constructor( protected store: Store<any>, protected adapter: TranslatorAdapterContract ) {}
 
 	/**
 	 * @returns {void}
@@ -73,7 +41,7 @@ export class TranslatorService {
 	 * @returns {boolean}
 	 */
 	isLocaleLoaded( localeCode: string ): boolean {
-		return this.loadedLocales.indexOf(localeCode) !== -1;
+		return LocaleQueries.hasLocaleBeenLoaded(this.store.getState(), {locale: localeCode});
 	}
 
 	/**
@@ -109,21 +77,14 @@ export class TranslatorService {
 		if ( !this.isLocaleLoaded(localeCode) ) {
 			throw new Error(`Locale "${localeCode}" has not been loaded`);
 		}
-		this.activeLocale = localeCode;
-		let momentLocale  = localeCode.split('-')[ 0 ];
+
+		this.store.dispatch(new ChangedLocaleAction(localeCode));
+		let momentLocale = localeCode.split('-')[ 0 ];
 		(moment as any).locale(momentLocale);
 		(numbro as any).culture(localeCode);
 		if ( this.debug ) {
 			console.log(`[Stejar-Translate][TranslatorService] - Changed locale to ${localeCode}`);
 		}
-		this._activeLocale$.next(localeCode);
-	}
-
-	/**
-	 * @returns {string}
-	 */
-	getCurrentLocale(): string {
-		return this.activeLocale;
 	}
 
 	/**
@@ -132,14 +93,10 @@ export class TranslatorService {
 	 */
 	loadLocale( localeCode: string ): Promise<void> {
 		return this.adapter.load(localeCode).then(catalog => {
-			this.catalogs[ localeCode ] = catalog;
-			if ( !this.isLocaleLoaded(localeCode) ) {
-				this.loadedLocales.push(localeCode);
-			}
+			this.store.dispatch(new LoadedLocaleAction(localeCode, catalog));
 			if ( this.debug ) {
 				console.log(`[Stejar-Translate][TranslatorService] - Loaded locale: ${localeCode}`);
 			}
-			this._loadedLocales$.next(this.loadedLocales);
 		});
 	}
 
@@ -148,13 +105,14 @@ export class TranslatorService {
 	 * @returns {string}
 	 */
 	translate( label: string ): string {
-		if ( !this.activeLocale ) {
+
+		const activeLocale = LocaleQueries.getCurrentLocale(this.store.getState());
+
+		if ( !activeLocale ) {
 			throw new Error(`[Stejar-Translate][TranslatorService] There is no active locale to fallback to.`);
 		}
 
-		const locale = this.activeLocale;
-
-		const catalog = this.catalogs[ locale ];
+		const catalog = LocaleQueries.getLocaleCatalog(this.store.getState(), {locale: activeLocale});
 		if ( !catalog[ label ] ) {
 			if ( this.debug ) {
 				console.warn(`[Stejar-Translate][TranslatorService] Label "${label}" does not exist`);
