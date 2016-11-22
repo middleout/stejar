@@ -116,11 +116,14 @@ export function addCrossDomainEventListener(topic: string, callback: Function): 
     */
 export function removeCrossDomainEventListener(listener: Function): void;
 export class Channel {
+        protected debug: boolean;
+        protected debugListenres: Function[];
         /**
             * @param origin
             * @param target
+            * @param debug
             */
-        constructor(origin: string, target?: Window);
+        constructor(origin: string, target?: Window, debug?: boolean);
         /**
             * @param topic
             * @param callback

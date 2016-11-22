@@ -57,11 +57,14 @@ export function removeCrossDomainEventListener( listener: Function ): void {
 
 export class Channel {
 
+	protected debugListenres: Function[] = [];
+
 	/**
 	 * @param origin
 	 * @param target
+	 * @param debug
 	 */
-	constructor( private origin: string, private target: Window = window ) {}
+	constructor( private origin: string, private target: Window = window, protected debug: boolean = false ) {}
 
 	/**
 	 * @param topic
@@ -69,6 +72,13 @@ export class Channel {
 	 * @returns {Function}
 	 */
 	subscribe( topic: string, callback: Function ) {
+		if ( this.debug ) {
+			console.log(`Subscribing to "${topic}" ...`);
+			this.debugListenres.push(addCrossDomainEventListener(topic, ( payload: any ) => {
+				console.log(`Received message for topic "${topic}" and payload: `, payload);
+			}))
+		}
+
 		return addCrossDomainEventListener(topic, callback);
 	}
 
@@ -84,6 +94,10 @@ export class Channel {
 	 * @param payload
 	 */
 	send( topic: string, payload?: any ): void {
+		if ( this.debug ) {
+			console.log(`Sending message for "${topic}" with payload: `, payload);
+		}
+
 		return postMessage(topic, payload, this.origin, this.target);
 	}
 }
