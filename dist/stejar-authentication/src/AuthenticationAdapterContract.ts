@@ -13,7 +13,7 @@ export interface AuthenticationAdapterContract<I> {
 	/**
 	 * @param data
 	 */
-	logout(): Promise<boolean>;
+	logout(identity: I): Promise<boolean>;
 
 	/**
 	 * @param identity

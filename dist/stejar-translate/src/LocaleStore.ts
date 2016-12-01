@@ -10,7 +10,7 @@ export interface LocaleStoreState {
 }
 
 @injectable
-export class LocaleStore extends ReducerStore {
+export class LocaleStore extends ReducerStore<{LocaleStore: LocaleStoreState}> {
 
 	/**
 	 * @constructor
@@ -55,6 +55,6 @@ export class LocaleStore extends ReducerStore {
 	 * @returns {string}
 	 */
 	getCurrentLocale(): string {
-		return LocaleQueries.getCurrentLocale(this.getState<{LocaleStore: LocaleStoreState}>());
+		return LocaleQueries.getCurrentLocale(this.getState());
 	}
 }

@@ -61,8 +61,9 @@ export class ServiceManager {
 	/**
 	 * @param factory
 	 */
-	factory( factory: {( serviceManager: ServiceManager ): void} ): void {
-		factory(this);
+	factory( ...factories: {( serviceManager: ServiceManager ): void}[] ): this {
+		factories.map(factory => factory(this));
+		return this;
 	}
 
 	/**
@@ -86,9 +87,13 @@ export class ServiceManager {
 	 * @param provider
 	 * @returns {this}
 	 */
-	provider( provider: {new( ...args: any[] ): AbstractProvider<any>} ): this {
-		let realProvider = new provider();
-		this.provide(realProvider.provides(), realProvider.provide.bind(realProvider));
+	provider( ...providers: {new( ...args: any[] ): AbstractProvider<any>}[] ): this {
+
+		providers.map(provider => {
+			let realProvider = new provider();
+			this.provide(realProvider.provides(), realProvider.provide.bind(realProvider));
+		});
+
 		return this;
 	}
 

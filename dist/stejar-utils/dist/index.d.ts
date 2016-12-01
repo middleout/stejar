@@ -141,3 +141,5 @@ export class Channel {
         send(topic: string, payload?: any): void;
 }
 
+export function popupWindow(url: string, title?: string, width?: number, height?: number): void;
+

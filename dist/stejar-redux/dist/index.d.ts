@@ -45,19 +45,19 @@ export interface Action<P> {
     payload?: P;
 }
 
-export abstract class ReducerStore implements StoreAware {
+export abstract class ReducerStore<S> implements StoreAware {
         /**
             * @type {Store}
             */
-        protected _store: Store<any>;
+        protected _store: Store<S>;
         /**
             * @param store
             */
-        setStore(store: Store<any>): void;
+        setStore(store: Store<S>): void;
         /**
             * @returns {S}
             */
-        getState<S>(): S;
+        getState(): S;
         /**
             * @param name
             * @param action

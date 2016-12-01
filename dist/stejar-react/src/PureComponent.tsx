@@ -2,6 +2,8 @@ import { PureComponent as ReactPureComponent } from "react";
 
 export abstract class PureComponent<P,S> extends ReactPureComponent<P,S> {
 
+	props: P & { children?: any };
+
 	/**
 	 * @param props
 	 * @param context

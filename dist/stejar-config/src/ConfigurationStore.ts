@@ -4,7 +4,7 @@ import { LoadedConfigurationAction } from "./LoadedConfigurationAction";
 import { ConfigurationQueries } from "./ConfigurationQueries";
 
 @injectable
-export class ConfigurationStore<C> extends ReducerStore {
+export class ConfigurationStore<C> extends ReducerStore<{ConfigurationStore: C}> {
 
 	/**
 	 * @constructor

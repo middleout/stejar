@@ -48,9 +48,9 @@ export class ServiceManager {
         /**
             * @param factory
             */
-        factory(factory: {
+        factory(...factories: {
                 (serviceManager: ServiceManager): void;
-        }): void;
+        }[]): this;
         /**
             * @param className
             * @param callback
@@ -63,9 +63,9 @@ export class ServiceManager {
             * @param provider
             * @returns {this}
             */
-        provider(provider: {
+        provider(...providers: {
                 new (...args: any[]): AbstractProvider<any>;
-        }): this;
+        }[]): this;
         /**
             * @param resource
             * @returns {any}

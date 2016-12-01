@@ -23,6 +23,7 @@ export class Selector {
 	 * @returns {(state:any, props?:any)=>{}}
 	 */
 	static fromState( ...args: any[] ) {
+
 		return ( state: any, props?: any ) => {
 			let struct = {};
 			args.forEach(arg => {
@@ -30,6 +31,21 @@ export class Selector {
 					Object.keys(arg).forEach(key => {
 						if ( typeof arg[ key ] === "function" ) {
 							struct[ key ] = arg[ key ](state, props);
+						} else if ( Array.isArray(arg[ key ]) ) {
+							let combiner = ( state: any, props?: any ) => {
+								let result = true;
+								arg[ key ].forEach(( innerArg: any ) => {
+									if ( !innerArg(state, props) ) {
+										result = false;
+									}
+								})
+								return result;
+							};
+							console.warn(combiner);
+							Object.assign(struct, {
+								[key]: combiner(state, props)
+							});
+							console.warn(struct);
 						} else {
 							struct[ key ] = arg[ key ];
 						}

@@ -19,7 +19,7 @@ export interface AuthenticationAdapterContract<I> {
         /**
             * @param data
             */
-        logout(): Promise<boolean>;
+        logout(identity: I): Promise<boolean>;
         /**
             * @param identity
             */
@@ -37,7 +37,9 @@ export class AuthenticatedAction<I> {
 export class LoggedOutAction {
 }
 
-export class AuthenticationStore<I> extends ReducerStore {
+export class AuthenticationStore<I> extends ReducerStore<{
+        AuthenticationStore: I;
+}> {
         /**
             * @constructor
             */
@@ -53,7 +55,15 @@ export class AuthenticationStore<I> extends ReducerStore {
             * @param payload
             * @returns {{}&U&AppConfig}
             */
-        protected loggedOut(state: any, payload: LoggedOutAction): {};
+        protected loggedOut(state: any, payload: LoggedOutAction): null;
+        /**
+            * @returns {boolean}
+            */
+        hasIdentity(): boolean;
+        /**
+            * @returns {I}
+            */
+        getIdentity(): I;
 }
 
 export class AuthenticationService<I> {
@@ -68,14 +78,6 @@ export class AuthenticationService<I> {
             * @returns {AuthenticationAdapterContract<I>}
             */
         getAdapter(): AuthenticationAdapterContract<I>;
-        /**
-            * @returns {boolean}
-            */
-        hasIdentity(): boolean;
-        /**
-            * @returns {I}
-            */
-        getIdentity(): I;
         /**
             * @returns {string}
             */

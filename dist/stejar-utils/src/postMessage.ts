@@ -22,10 +22,7 @@ export function postMessage( topic: string, payload?: any, origin = "*", target:
 export function addCrossDomainEventListener( topic: string, callback: Function ): Function {
 
 	const listener = ( event: {data: {topic: any, payload: any}} ) => {
-		if ( !event.data.topic ) {
-			return;
-		}
-		if ( event.data.topic != topic ) {
+		if ( !event || !event.data || !event.data.topic || event.data.topic != topic ) {
 			return;
 		}
 
@@ -34,7 +31,7 @@ export function addCrossDomainEventListener( topic: string, callback: Function )
 			payload = null;
 		}
 
-		callback(payload ? JSON.parse(payload) : {});
+		callback(payload ? typeof payload === "string" ? JSON.parse(payload) : payload : {});
 	};
 
 	const eventMethod  = window.addEventListener ? "addEventListener" : "attachEvent";

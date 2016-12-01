@@ -112,7 +112,9 @@ export interface LocaleStoreState {
         };
         currentLocale: string;
 }
-export class LocaleStore extends ReducerStore {
+export class LocaleStore extends ReducerStore<{
+        LocaleStore: LocaleStoreState;
+}> {
         /**
             * @constructor
             */

@@ -2,9 +2,10 @@ import { injectable } from "@stejar/di";
 import { ReducerStore } from "@stejar/redux";
 import { AuthenticatedAction } from "./AuthenticatedAction";
 import { LoggedOutAction } from "./LoggedOutAction";
+import { AuthenticationQueries } from "./AuthenticationQueries";
 
 @injectable
-export class AuthenticationStore<I> extends ReducerStore {
+export class AuthenticationStore<I> extends ReducerStore<{AuthenticationStore: I}> {
 
 	/**
 	 * @constructor
@@ -30,7 +31,21 @@ export class AuthenticationStore<I> extends ReducerStore {
 	 * @param payload
 	 * @returns {{}&U&AppConfig}
 	 */
-	protected loggedOut( state: any, payload: LoggedOutAction ) {
-		return {};
+	protected loggedOut( state: any, payload: LoggedOutAction ): null {
+		return null;
+	}
+
+	/**
+	 * @returns {boolean}
+	 */
+	hasIdentity(): boolean {
+		return AuthenticationQueries.hasIdentity(this.getState());
+	}
+
+	/**
+	 * @returns {I}
+	 */
+	getIdentity(): I {
+		return AuthenticationQueries.getIdentity<I>(this.getState());
 	}
 }
