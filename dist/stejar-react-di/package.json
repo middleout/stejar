@@ -1,6 +1,6 @@
 {
   "name": "@stejar/react-di",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,15 +9,15 @@
     "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/react-di --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.1",
+    "@stejar/di": "^1.0.4",
     "@types/invariant": "2.2.28",
-    "@types/lodash": "4.14.39",
+    "@types/lodash": "4.14.41",
     "@types/node": "6.0.49",
-    "@types/react": "0.14.50",
+    "@types/react": "0.14.52",
     "hoist-non-react-statics": "1.2.0",
     "invariant": "2.2.2",
     "lodash": "4.17.2",
-    "react": "15.4.0"
+    "react": "15.4.1"
   },
   "devDependencies": {
     "babel-core": "6.18.2",
@@ -29,7 +29,7 @@
     "typescript": "rc",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "0.17.0",
+    "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4",
     "babel-plugin-transform-react-jsx": "6.8.0"
   }

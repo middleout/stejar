@@ -18,7 +18,7 @@ export function combineStores( serviceManager: ServiceManager ) {
 					actionType = action.type;
 				}
 
-				if ( Object.keys(instance.bindings).indexOf(actionType) !== -1 ) {
+				if ( Object.keys(instance.bindings).includes(actionType) ) {
 					return instance.bindings[ actionType ](state, action.payload ? action.payload : action);
 				}
 

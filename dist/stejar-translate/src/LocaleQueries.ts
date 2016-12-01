@@ -17,7 +17,7 @@ export class LocaleQueries {
 	static hasLocaleBeenLoaded: Selector<{LocaleStore: LocaleStoreState}, boolean> = createSelector(
 		state => state[ LocaleStore.name ],
 		( state: any, props: {locale: string} ) => props.locale,
-		( store: LocaleStoreState, locale: string ) => Object.keys(store.catalogs).indexOf(locale) !== -1
+		( store: LocaleStoreState, locale: string ) => Object.keys(store.catalogs).includes(locale)
 	);
 
 	/**

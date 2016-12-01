@@ -51,13 +51,9 @@ var common = {
 		],
 		loaders    : [
 			{
-				test   : require.resolve('react'),
-				loader : "expose?React",
-			},
-			{
 				test    : /\.tsx?$/,
 				loaders : [
-					'babel?cacheDirectory&presets[]=es2015-loose&plugins[]=transform-react-jsx',
+					'babel?cacheDirectory&presets[]=es2015-loose',
 					'ts',
 				],
 				exclude : [

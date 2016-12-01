@@ -85,7 +85,7 @@ export class CacheService {
 
 		var items: any[] = [];
 		each(this.storeInstance.getAll(), ( item: any ) => {
-			if ( -1 !== item.tags.indexOf(tag) ) {
+			if ( -1 !== item.tags.includes(tag) ) {
 				if ( !this.isExpired(item) ) {
 					items.push(JSON.parse(item.value));
 				}
@@ -103,7 +103,7 @@ export class CacheService {
 	public clearByTag( tag: string ): void {
 		this.log('Clear items by tag: ' + tag);
 		each(this.storeInstance.getAll(), ( item: any, offset: string ) => {
-			if ( -1 !== item.tags.indexOf(tag) ) {
+			if ( -1 !== item.tags.includes(tag) ) {
 				this.remove(offset);
 			}
 		});
@@ -125,7 +125,7 @@ export class CacheService {
 		this.log('Clear items by tags: ' + tags.join(', '));
 		each(this.storeInstance.getAll(), ( item: any, offset: string ) => {
 			each(tags, ( tag ) => {
-				if ( -1 !== item.tags.indexOf(tag) ) {
+				if ( -1 !== item.tags.includes(tag) ) {
 					this.remove(offset);
 				}
 			});

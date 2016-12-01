@@ -1,6 +1,6 @@
 {
   "name": "@stejar/redux",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -9,7 +9,7 @@
     "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.3",
+    "@stejar/di": "^1.0.4",
     "@types/node": "6.0.51",
     "babel-polyfill": "6.16.0",
     "invariant": "2.2.2",
@@ -25,7 +25,7 @@
     "typescript": "rc",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "0.18.0",
+    "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4"
   }
 }

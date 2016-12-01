@@ -1,6 +1,6 @@
 {
   "name": "@stejar/application",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -9,14 +9,14 @@
     "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.1",
+    "@stejar/di": "^1.0.4",
     "@types/node": "6.0.49",
-    "@types/react": "0.14.50",
+    "@types/react": "0.14.52",
     "@types/react-dom": "0.14.19",
     "babel-polyfill": "6.16.0",
     "es6-promise": "4.0.5",
-    "react": "15.4.0",
-    "react-dom": "15.4.0",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
     "react-tap-event-plugin": "2.0.1"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "typescript": "rc",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "0.17.0",
+    "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4"
   }
 }

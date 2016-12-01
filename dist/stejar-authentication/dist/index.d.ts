@@ -20,10 +20,6 @@ export interface AuthenticationAdapterContract<I> {
             * @param data
             */
         logout(identity: I): Promise<boolean>;
-        /**
-            * @param identity
-            */
-        getRole(identity: I): string;
 }
 
 export class AuthenticatedAction<I> {
@@ -78,10 +74,6 @@ export class AuthenticationService<I> {
             * @returns {AuthenticationAdapterContract<I>}
             */
         getAdapter(): AuthenticationAdapterContract<I>;
-        /**
-            * @returns {string}
-            */
-        getRole(): string;
         /**
             * @returns {Promise<boolean>}
             */

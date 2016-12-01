@@ -20,17 +20,6 @@ export class AuthenticationService<I> {
 	}
 
 	/**
-	 * @returns {string}
-	 */
-	getRole(): string {
-		if ( !AuthenticationQueries.getIdentity(this.store.getState()) ) {
-			throw new Error('[Stejar.AuthenticationService] There is no identity registered. Do a check with "hasIdentity()" before calling this method.');
-		}
-
-		return this.authenticationAdapter.getRole(AuthenticationQueries.getIdentity<I>(this.store.getState()));
-	}
-
-	/**
 	 * @returns {Promise<boolean>}
 	 */
 	refreshIdentity(): Promise<boolean> {

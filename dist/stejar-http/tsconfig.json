@@ -19,7 +19,8 @@
 	"pretty": true,
 	"listFiles": false,
 	"allowJs": false,
-	"baseUrl": "."
+	"baseUrl": ".",
+	"lib": ["es2015", "dom", "es2016"]
   },
   "exclude": [
 	"node_modules",

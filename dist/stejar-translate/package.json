@@ -1,6 +1,6 @@
 {
   "name": "@stejar/translate",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,17 +12,17 @@
     "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/translate --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.2",
-    "@stejar/react": "^1.0.3",
-    "@stejar/react-di": "^1.0.3",
-    "@stejar/redux": "^1.0.12",
-    "@stejar/utils": "^1.0.13",
-    "@types/lodash": "4.14.40",
+    "@stejar/di": "^1.0.4",
+    "@stejar/react": "^1.0.5",
+    "@stejar/react-di": "^1.0.4",
+    "@stejar/redux": "^1.0.16",
+    "@stejar/utils": "^1.0.14",
+    "@types/lodash": "4.14.41",
     "@types/moment": "2.13.0",
     "@types/numbro": "0.0.28",
-    "@types/react": "0.14.50",
+    "@types/react": "0.14.52",
     "@types/react-helmet": "0.0.25",
-    "@types/react-redux": "^4.4.33",
+    "@types/react-redux": "^4.4.35",
     "@types/reselect": "^2.0.27",
     "lodash": "4.17.2",
     "moment": "2.17.0",
@@ -43,7 +43,7 @@
     "typings": "2.0.0",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "0.18.0",
+    "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4",
     "typescript": "rc"
   }

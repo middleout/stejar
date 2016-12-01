@@ -1,6 +1,6 @@
 {
   "name": "@stejar/di",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "reflect-metadata": "0.1.8"
   },
   "devDependencies": {
-    "@types/expect": "1.13.30",
+    "@types/expect": "1.13.31",
     "@types/jasmine": "2.5.38",
     "babel-core": "6.18.2",
     "babel-loader": "6.2.8",
@@ -33,14 +33,14 @@
     "karma-phantomjs-launcher": "1.0.2",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.8.0",
-    "npm-check-updates": "2.8.6",
+    "npm-check-updates": "2.8.7",
     "phantomjs-polyfill-find": "0.0.1",
     "phantomjs-prebuilt": "2.1.13",
     "ts-loader": "1.2.2",
     "typescript": "rc",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "0.17.0",
+    "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4"
   }
 }

@@ -14,9 +14,4 @@ export interface AuthenticationAdapterContract<I> {
 	 * @param data
 	 */
 	logout(identity: I): Promise<boolean>;
-
-	/**
-	 * @param identity
-	 */
-	getRole(identity: I): string;
 }
