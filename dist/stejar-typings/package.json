@@ -1,6 +1,6 @@
 {
   "name": "@stejar/typings",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "main": "index.ts",
   "typings": "index.d.ts",
