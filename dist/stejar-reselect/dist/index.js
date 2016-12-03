@@ -1,10 +1,14 @@
 'use strict';
 
-var debugEnabled = false;
+var debugLevel = 0;
 
 exports.__esModule = true;
-exports.enableDebug = function() {
-	debugEnabled = true;
+exports.enableDebug = function(version) {
+	version = parseInt(version) || 1;
+	if (version !== 0 && version !== 1 && version !== 2) {
+		throw new Error("Invalid debug level. Must be 0, 1 or 2");
+	}
+	debugLevel = version;
 }
 exports.defaultMemoize = defaultMemoize;
 exports.createSelectorCreator = createSelectorCreator;
@@ -31,14 +35,14 @@ function defaultMemoize(name, func) {
 				return equalityCheck(value, lastArgs[index]);
 			})) {
 			if (name) {
-				if (debugEnabled) console.log('[RESELECT] Running ', name, ' with args ', args);
+				if (debugLevel === 1) console.log('[RESELECT] Running ', name, ' with args ', args);
 			}
 			lastResult = func.apply(undefined, args);
 		}
 		lastArgs = args;
 
 		if (name) {
-			if (debugEnabled) console.log('[RESELECT] ',name, ' returned ', lastResult, ' for call with args ', args);
+			if (debugLevel === 2) console.log('[RESELECT] ',name, ' returned ', lastResult, ' for call with args ', args);
 		}
 
 		return lastResult;
@@ -73,11 +77,10 @@ function createSelectorCreator(memoize) {
 		var name = "";
 		if (typeof funcs[0] === "string") {
 			name = funcs.shift();
-			alert(funcs);
 		}
 
 		if (name) {
-			if (debugEnabled) console.log('[RESELECT] Creating selector ', name);
+			if (debugLevel === 1) console.log('[RESELECT] Creating selector ', name);
 		}
 
 		var recomputations = 0;

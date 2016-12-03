@@ -47,7 +47,7 @@ declare module Reselect {
 	const defaultMemoize: Memoizer;
 	function createSelectorCreator(memoize: Memoizer, ...memoizeOptions: any[]): any;
 
-	export function enableDebug(): void;
+	export function enableDebug(level?: 0|1|2): void;
 }
 
 export = Reselect;
