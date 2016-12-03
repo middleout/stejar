@@ -1,6 +1,6 @@
 {
   "name": "@stejar/translate",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -30,8 +30,7 @@
     "numbro": "1.9.3",
     "react": "15.4.1",
     "react-helmet": "3.2.2",
-    "react-redux": "^4.4.6",
-    "reselect": "^2.5.4"
+    "react-redux": "^4.4.6"
   },
   "devDependencies": {
     "babel-core": "6.18.2",

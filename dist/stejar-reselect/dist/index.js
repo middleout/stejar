@@ -17,7 +17,7 @@ function defaultEqualityCheck(a, b) {
 }
 
 function defaultMemoize(name, func) {
-	var equalityCheck = arguments.length <= 1 || arguments[1] === undefined ? defaultEqualityCheck : arguments[1];
+	var equalityCheck = arguments.length <= 2 || arguments[2] === undefined ? defaultEqualityCheck : arguments[2];
 
 	var lastArgs = null;
 	var lastResult = null;
@@ -73,6 +73,7 @@ function createSelectorCreator(memoize) {
 		var name = "";
 		if (typeof funcs[0] === "string") {
 			name = funcs.shift();
+			alert(funcs);
 		}
 
 		if (name) {
