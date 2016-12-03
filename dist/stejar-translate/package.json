@@ -1,6 +1,6 @@
 {
   "name": "@stejar/translate",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,6 +16,7 @@
     "@stejar/react": "^1.0.5",
     "@stejar/react-di": "^1.0.4",
     "@stejar/redux": "^1.0.16",
+    "@stejar/reselect": "^1.0.1",
     "@stejar/utils": "^1.0.14",
     "@types/lodash": "4.14.41",
     "@types/moment": "2.13.0",

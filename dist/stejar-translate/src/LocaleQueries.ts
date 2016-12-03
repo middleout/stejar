@@ -1,4 +1,4 @@
-import { createSelector, Selector } from "reselect";
+import { createSelector, Selector } from "@stejar/reselect";
 import { LocaleStore, LocaleStoreState } from "./LocaleStore";
 
 export class LocaleQueries {

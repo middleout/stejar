@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@stejar/reselect";
 import { ConfigurationStore } from "./ConfigurationStore";
 
 export class ConfigurationQueries {

@@ -1,4 +1,4 @@
-import { createSelector, Selector } from "reselect";
+import { createSelector, Selector } from "@stejar/reselect";
 import { AuthenticationStore } from "./AuthenticationStore";
 
 export class AuthenticationQueries {

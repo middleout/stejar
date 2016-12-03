@@ -4,14 +4,14 @@
 //   ../@stejar/redux
 //   ../react
 //   ../@stejar/react
-//   ../reselect
+//   ../@stejar/reselect
 
 import { LocaleSpecification } from "moment";
 import { Store } from "@stejar/redux";
 import { HTMLAttributes } from "react";
 import { PureComponent } from "@stejar/react";
 import { ReducerStore } from "@stejar/redux";
-import { Selector } from "reselect";
+import { Selector } from "@stejar/reselect";
 
 export interface TranslatorAdapterContract {
     /**
