@@ -42,12 +42,13 @@ declare module Reselect {
 	function createStructuredSelector(inputSelectors: any, selectorCreator?: any): any;
 
 	type EqualityChecker = <T>(arg1: T, arg2: T) => boolean;
-	type Memoizer = <TFunc extends Function>(func: TFunc, equalityCheck?: EqualityChecker) => TFunc;
+	type Memoizer = <TFunc extends Function>(name: string, counter: Function, func: TFunc, equalityCheck?: EqualityChecker) => TFunc;
 
 	const defaultMemoize: Memoizer;
-	function createSelectorCreator(memoize: Memoizer, ...memoizeOptions: any[]): any;
+	function createSelectorCreator(memoize: Memoizer, ...memoizeOptions: any[]): (...args: any[]) => Selector<any,any>;
 
 	export function enableDebug(level?: 0|1|2): void;
+	export function showDebugTable(): Function;
 }
 
 export = Reselect;

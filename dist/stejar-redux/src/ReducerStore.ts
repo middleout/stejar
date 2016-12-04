@@ -21,7 +21,7 @@ export abstract class ReducerStore<S> implements StoreAware {
 	getState(): S {
 		return this._store.getState();
 	}
-
+	
 	/**
 	 * @type {{}}
 	 */
@@ -32,7 +32,7 @@ export abstract class ReducerStore<S> implements StoreAware {
 	 * @param action
 	 * @returns {ReducerStore}
 	 */
-	protected bind( name: string, action: Function ): this {
+	protected bind( name: string|null, action: Function ): this {
 		if ( !name ) {
 			name = '@STORE_INIT';
 		}

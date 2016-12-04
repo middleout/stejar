@@ -1,6 +1,7 @@
 'use strict';
 
 var debugLevel = 0;
+var debugTable = {};
 
 exports.__esModule = true;
 exports.enableDebug = function(version) {
@@ -9,6 +10,28 @@ exports.enableDebug = function(version) {
 		throw new Error("Invalid debug level. Must be 0, 1 or 2");
 	}
 	debugLevel = version;
+}
+exports.showDebugTable = function() {
+
+	var table = [];
+	Object.keys(debugTable).forEach(function(key){
+
+		var parts = key.split(".");
+		if (parts.length > 0) {
+			var tmp = {};
+			parts.forEach(function (part, idx) {
+				tmp["Selector Name " + idx] = part;
+			})
+			tmp["# runs"] = debugTable[key];
+			table.push(tmp);
+		} else {
+			table.push({
+				"Selector Name": key,
+				"# runs": debugTable[key]
+			})
+		}
+	});
+	console.table(table);
 }
 exports.defaultMemoize = defaultMemoize;
 exports.createSelectorCreator = createSelectorCreator;
@@ -20,8 +43,8 @@ function defaultEqualityCheck(a, b) {
 	return a === b;
 }
 
-function defaultMemoize(name, func) {
-	var equalityCheck = arguments.length <= 2 || arguments[2] === undefined ? defaultEqualityCheck : arguments[2];
+function defaultMemoize(name, counter, func) {
+	var equalityCheck = arguments.length <= 3 || arguments[3] === undefined ? defaultEqualityCheck : arguments[3];
 
 	var lastArgs = null;
 	var lastResult = null;
@@ -34,9 +57,7 @@ function defaultMemoize(name, func) {
 		if (lastArgs === null || lastArgs.length !== args.length || !args.every(function (value, index) {
 				return equalityCheck(value, lastArgs[index]);
 			})) {
-			if (name) {
-				if (debugLevel === 1) console.log('[RESELECT] Running ', name, ' with args ', args);
-			}
+			counter(args);
 			lastResult = func.apply(undefined, args);
 		}
 		lastArgs = args;
@@ -81,13 +102,19 @@ function createSelectorCreator(memoize) {
 
 		if (name) {
 			if (debugLevel === 1) console.log('[RESELECT] Creating selector ', name);
+			debugTable[name] = 0;
 		}
 
 		var recomputations = 0;
 		var resultFunc = funcs.pop();
 		var dependencies = getDependencies(funcs);
 
-		var memoizedResultFunc = memoize.apply(undefined, [name, function () {
+		var memoizedResultFunc = memoize.apply(undefined, [name, function(args) {
+			if (name) {
+				if (debugLevel === 1) console.log('[RESELECT] Running ', name, ' with args ', args);
+				debugTable[name] += 1;
+			}
+		}, function () {
 			recomputations++;
 			return resultFunc.apply(undefined, arguments);
 		}].concat(memoizeOptions));
