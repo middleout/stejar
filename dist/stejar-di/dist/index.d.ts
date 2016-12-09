@@ -58,7 +58,7 @@ export class ServiceManager {
             */
         provide<T>(className: {
                 new (...args: any[]): T;
-        }, callback: (serviceManager: ServiceManager) => T): this;
+        } | string, callback: (serviceManager: ServiceManager) => T): this;
         /**
             * @param provider
             * @returns {this}
@@ -70,7 +70,7 @@ export class ServiceManager {
             * @param resource
             * @returns {any}
             */
-        get<T, I extends string>(resource: {
+        get<T, I extends string>(resource?: {
                 new (...args: any[]): T;
         } | I): T;
         /**
@@ -90,7 +90,7 @@ export abstract class AbstractProvider<T> {
             */
         abstract provides(): {
                 new (...args: any[]): T;
-        };
+        } | string;
         /**
             * @param serviceManager
             * @returns {T}

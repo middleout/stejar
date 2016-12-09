@@ -4,7 +4,7 @@ export abstract class AbstractProvider<T> {
     /**
      * @type {typeof T}
      */
-    abstract provides(): {new( ...args: any[] ): T};
+    abstract provides(): {new( ...args: any[] ): T}|string;
 
     /**
      * @param serviceManager
