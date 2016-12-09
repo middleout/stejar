@@ -71,7 +71,7 @@ export class ServiceManager {
 	 * @param callback
 	 * @returns {this}
 	 */
-	provide<T>( className: { new( ...args: any[] ): T; }, callback: ( serviceManager: ServiceManager ) => T ): this {
+	provide<T>( className: { new( ...args: any[] ): T; }|string, callback: ( serviceManager: ServiceManager ) => T ): this {
 		this.providers[ this.getNameFromResource(className) ] = (): T => {
 			let instance = callback(this);
 			if ( !instance ) {
@@ -101,7 +101,11 @@ export class ServiceManager {
 	 * @param resource
 	 * @returns {any}
 	 */
-	get<T,I extends string>( resource: { new( ...args: any[] ): T; }|I ): T {
+	get<T,I extends string>( resource?: { new( ...args: any[] ): T; }|I ): T {
+
+		if (!resource) {
+			return Object.assign({}, this.container) as any;
+		}
 
 		if ( this.container[ this.getNameFromResource(resource) ] ) {
 			return this.container[ this.getNameFromResource(resource) ];
