@@ -2,6 +2,8 @@
 
 var debugLevel = 0;
 var debugTable = {};
+var debugFns = {};
+window.debugTable = debugTable;
 
 exports.__esModule = true;
 exports.enableDebug = function(version) {
@@ -17,7 +19,7 @@ exports.showDebugTable = function() {
 	Object.keys(debugTable).forEach(function(key){
 
 		var parts = key.split(".");
-		if (parts.length > 0) {
+		if (parts.length > 1) {
 			var tmp = {};
 			parts.forEach(function (part, idx) {
 				tmp["Selector Name " + idx] = part;
@@ -33,6 +35,7 @@ exports.showDebugTable = function() {
 	});
 	console.table(table);
 }
+exports.defaultEqualityCheck = defaultEqualityCheck;
 exports.defaultMemoize = defaultMemoize;
 exports.createSelectorCreator = createSelectorCreator;
 exports.createStructuredSelector = createStructuredSelector;
@@ -40,6 +43,26 @@ exports.createStructuredSelector = createStructuredSelector;
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function defaultEqualityCheck(a, b) {
+
+	if (Array.isArray(a) && Array.isArray(b)) {
+		var isEqual = true;
+		var length = a.length;
+
+		for (var i = 0; i < length; i++) {
+			if (!b[i]) {
+				isEqual = false;
+				break;
+			}
+
+			if (!defaultEqualityCheck(a[i], b[i])) {
+				isEqual = false;
+				break;
+			}
+		}
+
+		return isEqual;
+	}
+
 	return a === b;
 }
 
@@ -57,7 +80,7 @@ function defaultMemoize(name, counter, func) {
 		if (lastArgs === null || lastArgs.length !== args.length || !args.every(function (value, index) {
 				return equalityCheck(value, lastArgs[index]);
 			})) {
-			counter(args);
+			counter(args, func.wrappedFunc);
 			lastResult = func.apply(undefined, args);
 		}
 		lastArgs = args;
@@ -85,7 +108,7 @@ function getDependencies(funcs) {
 	return dependencies;
 }
 
-function createSelectorCreator(memoize) {
+function createSelectorCreator(memoize, equalityCheck) {
 	for (var _len2 = arguments.length, memoizeOptions = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
 		memoizeOptions[_key2 - 1] = arguments[_key2];
 	}
@@ -109,15 +132,27 @@ function createSelectorCreator(memoize) {
 		var resultFunc = funcs.pop();
 		var dependencies = getDependencies(funcs);
 
-		var memoizedResultFunc = memoize.apply(undefined, [name, function(args) {
+		var insider = function () {
+			recomputations++;
+			return resultFunc.apply(undefined, arguments);
+		};
+		insider.wrappedFunc = resultFunc;
+
+		var memoizedResultFunc = memoize.apply(undefined, [name, function(args, func) {
 			if (name) {
+				if (!debugFns[name] && debugLevel > 0) {
+					debugFns[name] = func;
+				}
+				if (debugFns[name] && debugFns[name] !== func) {
+					console.error('[@stejar/reselect ERROR]: There are at least 2 Selectors with the name "' + name + '" (the name is used multiple times by different selectors');
+					console.error(debugFns[name])
+					console.error(func)
+				}
+
 				if (debugLevel === 1) console.log('[RESELECT] Running ', name, ' with args ', args);
 				debugTable[name] += 1;
 			}
-		}, function () {
-			recomputations++;
-			return resultFunc.apply(undefined, arguments);
-		}].concat(memoizeOptions));
+		}, insider, equalityCheck].concat(memoizeOptions));
 
 		var selector = function selector(state, props) {
 			for (var _len4 = arguments.length, args = Array(_len4 > 2 ? _len4 - 2 : 0), _key4 = 2; _key4 < _len4; _key4++) {
@@ -141,7 +176,7 @@ function createSelectorCreator(memoize) {
 	};
 }
 
-var createSelector = exports.createSelector = createSelectorCreator(defaultMemoize);
+var createSelector = exports.createSelector = createSelectorCreator(defaultMemoize, defaultEqualityCheck);
 
 function createStructuredSelector(selectors) {
 	var selectorCreator = arguments.length <= 1 || arguments[1] === undefined ? createSelector : arguments[1];
