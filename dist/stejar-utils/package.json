@@ -1,6 +1,6 @@
 {
   "name": "@stejar/utils",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "private": false,
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@hughfdjackson/promise-extras": "github:hughfdjackson/promise-extras",
-    "@stejar/di": "^1.0.4",
+    "@stejar/di": "^1.0.7",
     "@types/node": "6.0.49"
   },
   "devDependencies": {
-    "babel-core": "6.18.2",
-    "babel-loader": "6.2.8",
+    "babel-core": "6.20.0",
+    "babel-loader": "6.2.9",
     "babel-preset-es2015": "6.18.0",
     "clean-webpack-plugin": "0.1.14",
     "typings": "2.0.0",
@@ -23,7 +23,7 @@
     "webpack-build-notifier": "0.1.13",
     "webpack-merge": "1.0.2",
     "webpack-node-externals": "1.5.4",
-    "ts-loader": "1.2.2",
+    "ts-loader": "1.3.1",
     "typescript": "rc"
   }
 }

@@ -63,7 +63,7 @@ export abstract class ReducerStore<S> implements StoreAware {
             * @param action
             * @returns {ReducerStore}
             */
-        protected bind(name: string, action: Function): this;
+        protected bind(name: string | null, action: Function): this;
 }
 
 export interface StoreAware {
