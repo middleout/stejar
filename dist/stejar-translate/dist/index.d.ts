@@ -84,6 +84,7 @@ export interface TranslateProps extends HTMLAttributes<any> {
         };
     };
     _$locale?: string;
+    value?: any;
 }
 export class Translate extends PureComponent<TranslateProps, {}> {
     /**

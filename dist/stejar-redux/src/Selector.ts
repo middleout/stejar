@@ -31,7 +31,7 @@ export class Selector {
 					Object.keys(arg).forEach(key => {
 						if ( typeof arg[ key ] === "function" ) {
 							struct[ key ] = arg[ key ](state, props);
-						} else if ( Array.isArray(arg[ key ]) ) {
+						} else if ( Array.isArray(arg[ key ]) && arg[ key ].length > 0 ) {
 							let combiner = ( state: any, props?: any ) => {
 								let result = true;
 								arg[ key ].forEach(( innerArg: any ) => {
@@ -41,11 +41,9 @@ export class Selector {
 								})
 								return result;
 							};
-							console.warn(combiner);
 							Object.assign(struct, {
 								[key]: combiner(state, props)
 							});
-							console.warn(struct);
 						} else {
 							struct[ key ] = arg[ key ];
 						}

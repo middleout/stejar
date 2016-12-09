@@ -10,6 +10,7 @@ export interface TranslateProps extends HTMLAttributes<any> {
 	[key: number]: any;
 	catalogs?: {[key: string]: {[key: string]: string}};
 	_$locale?: string;
+	value?: any;
 }
 
 @(connect as any)(Selector.fromState({
