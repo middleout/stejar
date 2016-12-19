@@ -1,8 +1,8 @@
 {
   "name": "@stejar/utils",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "private": false,
-  "main": "./dist/index.js",
+  "main": "./dist/tmp.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/utils --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hughfdjackson/promise-extras": "github:hughfdjackson/promise-extras",
-    "@stejar/di": "^1.0.7",
+    "@stejar/di": "^1.0.9",
     "@types/node": "6.0.49"
   },
   "devDependencies": {
@@ -21,9 +21,9 @@
     "typings": "2.0.0",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "1.0.2",
+    "webpack-merge": "1.1.1",
     "webpack-node-externals": "1.5.4",
-    "ts-loader": "1.3.1",
+    "ts-loader": "1.3.2",
     "typescript": "rc"
   }
 }

@@ -143,3 +143,5 @@ export class Channel {
 
 export function popupWindow(url: string, title?: string, width?: number, height?: number): void;
 
+export function newWindow(url: string): void;
+

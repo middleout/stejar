@@ -1,6 +1,6 @@
 {
   "name": "@stejar/authorization",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,8 +10,8 @@
     "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.7",
-    "@stejar/typings": "^1.0.6",
+    "@stejar/di": "^1.0.9",
+    "@stejar/typings": "^1.0.8",
     "virgen-acl": "0.0.20"
   },
   "devDependencies": {
@@ -23,9 +23,9 @@
     "typings": "2.0.0",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "1.0.2",
+    "webpack-merge": "1.1.1",
     "webpack-node-externals": "1.5.4",
-    "ts-loader": "1.3.1",
+    "ts-loader": "1.3.2",
     "typescript": "rc"
   }
 }

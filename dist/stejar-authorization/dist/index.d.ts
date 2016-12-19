@@ -10,25 +10,25 @@ export class AuthorizationService {
             * @param role
             * @param parent
             */
-        addRole(role: string, parent?: string): AuthorizationService;
+        addRole(role: string | Function, parent?: string | Function): AuthorizationService;
         /**
             * @param role
             * @param resource
             * @param privilege
             */
-        allow(role: string, resource: string, privilege?: string): AuthorizationService;
+        allow(role: string | Function, resource: string, privilege?: string): AuthorizationService;
         /**
             * @param role
             * @param resource
             * @param privilege
             */
-        deny(role: string, resource: string, privilege?: string): AuthorizationService;
+        deny(role: string | Function, resource: string, privilege?: string): AuthorizationService;
         /**
             * @param role
             * @param resource
             * @param privilege
             * @returns {Promise<T>}
             */
-        isAllowed(role: string, resource: string, privilege?: string): Promise<void>;
+        isAllowed(role: string | Function, resource: string, privilege?: string): Promise<void>;
 }
 

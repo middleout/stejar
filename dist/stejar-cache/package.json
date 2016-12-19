@@ -1,6 +1,6 @@
 {
   "name": "@stejar/cache",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,8 +10,8 @@
     "test": "karma start --single-run --no-auto-watch ./scripts/karma.config.js"
   },
   "dependencies": {
-    "@stejar/di": "^1.0.7",
-    "@stejar/typings": "^1.0.6",
+    "@stejar/di": "^1.0.9",
+    "@stejar/typings": "^1.0.8",
     "@types/lodash": "4.14.43",
     "@types/moment": "2.13.0",
     "lodash": "4.17.2",
@@ -23,13 +23,13 @@
     "clean-webpack-plugin": "0.1.14",
     "webpack": "2.1.0-beta.19",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "1.0.2",
+    "webpack-merge": "1.1.1",
     "webpack-node-externals": "1.5.4",
     "babel-core": "6.20.0",
     "babel-loader": "6.2.9",
     "babel-preset-es2015": "6.18.0",
     "babel-preset-es2015-loose": "8.0.0",
-    "ts-loader": "1.3.1",
+    "ts-loader": "1.3.2",
     "typescript": "rc"
   }
 }
