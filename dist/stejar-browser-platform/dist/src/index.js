@@ -1,2 +1,2 @@
-export * from "./src";
+export * from "./DOMRenderer";
 //# sourceMappingURL=index.js.map
