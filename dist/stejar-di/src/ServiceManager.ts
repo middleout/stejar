@@ -1,8 +1,7 @@
-declare var require: Function;
 import "reflect-metadata";
-const invariant = require("invariant");
 import { getNamespacedName, namespace } from "./namespaceUtils";
 import { AbstractProvider } from "./AbstractProvider";
+const invariant = require("invariant");
 
 @namespace('Stejar/Core')
 export class ServiceManager {
@@ -10,17 +9,17 @@ export class ServiceManager {
 	/**
 	 * @type {{}}
 	 */
-	protected container: {[key: string]: any} = {};
+	protected container: { [key: string]: any } = {};
 
 	/**
 	 * @type {{}}
 	 */
-	protected providers: {[key: string]: any} = {};
+	protected providers: { [key: string]: any } = {};
 
 	/**
 	 * @type {{}}
 	 */
-	protected implementsList: {[methodName: string]: any} = {};
+	protected implementsList: { [methodName: string]: any } = {};
 
 	/**
 	 * @constructor
@@ -43,7 +42,7 @@ export class ServiceManager {
 	 * @param aliasName
 	 * @returns {ServiceManager}
 	 */
-	alias<R, A>( resource: string|{new( ...args: any[] ): R}, aliasName: string|{new( ...args: any[] ): A} ): this {
+	alias<R, A>( resource: string|{ new( ...args: any[] ): R }, aliasName: string|{ new( ...args: any[] ): A } ): this {
 		this.providers[ this.getNameFromResource(resource) ] = (): A => this.get(aliasName) as A;
 		return this;
 	}
@@ -61,7 +60,7 @@ export class ServiceManager {
 	/**
 	 * @param factory
 	 */
-	factory( ...factories: {( serviceManager: ServiceManager ): void}[] ): this {
+	factory( ...factories: { ( serviceManager: ServiceManager ): void }[] ): this {
 		factories.map(factory => factory(this));
 		return this;
 	}
@@ -87,7 +86,7 @@ export class ServiceManager {
 	 * @param provider
 	 * @returns {this}
 	 */
-	provider( ...providers: {new( ...args: any[] ): AbstractProvider<any>}[] ): this {
+	provider( ...providers: { new( ...args: any[] ): AbstractProvider<any> }[] ): this {
 
 		providers.map(provider => {
 			let realProvider = new provider();
@@ -103,7 +102,7 @@ export class ServiceManager {
 	 */
 	get<T,I extends string>( resource?: { new( ...args: any[] ): T; }|I ): T {
 
-		if (!resource) {
+		if ( !resource ) {
 			return Object.assign({}, this.container) as any;
 		}
 
@@ -126,13 +125,7 @@ export class ServiceManager {
 	 * @param resource
 	 */
 	instantiate<T>( resource: string|Function|any ): T {
-		const args: any[] = Reflect.getMetadata('design:paramtypes', resource);
-		if ( typeof args === "undefined" ) {
-			throw new Error(`Could not get constructor dependencies for ${resource.name}. Did you forget to decorate it with @injectable ?`);
-		}
-		if ( !args ) {
-			return new resource();
-		}
+		const args: any[] = Reflect.getMetadata('design:paramtypes', resource) || [];
 
 		const dependencies: any[] = [];
 		try {
