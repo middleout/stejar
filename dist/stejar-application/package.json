@@ -24,7 +24,8 @@
     "build-cjs": "rimraf es && tsc --outDir ./lib --module commonjs --target es5",
     "build-es": "rimraf es && tsc --outDir ./es --target es5",
     "build-types": "rimraf types && tsc --declaration --outDir ./types && rimraf types/*.js",
-    "deploy": "karma start ./karma.conf.js && npm run build && bump --prompt --push --all",
+    "_deploy": "karma start ./karma.conf.js && npm run build && bump --prompt --push --all",
+    "deploy": "npm run build && bump --prompt --push --all",
     "test": "karma start",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
