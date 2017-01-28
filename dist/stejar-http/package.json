@@ -1,6 +1,6 @@
 {
   "name": "@stejar/http",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publishConfig": {
     "access": "public"
   },
@@ -35,11 +35,11 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
-	"@types/whatwg-fetch": "^0.0.33"
+    "@types/whatwg-fetch": "^0.0.33"
   },
   "peerDependencies": {
-	"isomorphic-fetch": "^2.2.1"
-  }
+    "isomorphic-fetch": "^2.2.1"
+  },
   "devDependencies": {
     "@types/jasmine": "2.5.41",
     "@types/lodash": "^4.14.51",
