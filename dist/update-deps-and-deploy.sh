@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd stejar-di && ncu -a && npm i && npm run deploy && \
 cd ../stejar-react && ncu -a && npm i && npm run deploy && \
 cd ../stejar-react-di && ncu -a && npm i && npm run deploy && \
