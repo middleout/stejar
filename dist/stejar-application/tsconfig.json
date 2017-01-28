@@ -3,11 +3,12 @@
   "compilerOptions": {
 	"target": "es6",
 	"moduleResolution": "node",
-	"declaration": true,
-	"sourceMap": true,
+	"sourceMap": false,
 	"charset": "utf8",
 	"noEmitOnError": false,
 	"noImplicitAny": true,
+	"noEmitHelpers": true,
+	"importHelpers": true,
 	"suppressImplicitAnyIndexErrors": true,
 	"emitDecoratorMetadata": true,
 	"experimentalDecorators": true,
@@ -19,15 +20,18 @@
 	"pretty": true,
 	"listFiles": false,
 	"allowJs": false,
-	"baseUrl": ".",
-	"lib": ["es2015", "dom", "es2016"]
+	"baseUrl": "./",
+	"lib": [
+	  "es2015",
+	  "dom",
+	  "es2016"
+	]
   },
+  "include": [
+	"src/**/*.ts",
+	"node_modules/@types"
+  ],
   "exclude": [
-	"node_modules",
-	"coverage",
-	"webpack.config.js",
-	"karma.config.js",
-	"public",
-	"tests"
+	"node_modules"
   ]
 }

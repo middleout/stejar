@@ -1,5 +1,4 @@
-require("babel-polyfill");
-require("es6-promise").polyfill();
+import "./polyfills";
 import { ServiceManager, AbstractProvider } from "@stejar/di";
 import {ModuleContract} from "./ModuleContract";
 
