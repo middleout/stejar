@@ -5,6 +5,13 @@ import { HttpResponse } from "../Service/HttpResponse";
 
 export class FetchAdapter implements HttpAdapterContract {
 
+	constructor() {
+		if (!(window as any).fetch) {
+			console.warn('fetch() not found. Try to "npm i isomorphic-fetch" and then " import "isomorphic-fetch" before constructing the FetchAdapter"')
+			throw new Error("Fetch() is not defined. Did you forget to polyfill it?");
+		}
+	}
+
 	/**
 	 * @param request
 	 * @returns {Promise<T>}
