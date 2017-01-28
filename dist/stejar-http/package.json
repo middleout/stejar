@@ -1,31 +1,88 @@
 {
   "name": "@stejar/http",
   "version": "1.0.3",
-  "private": false,
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "scripts": {
-    "build": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src",
-    "deploy": "webpack --config=./webpack.js --progress && dts-bundle --name @stejar/http --main ./dist/index.d.ts --out ./index.d.ts --outputAsModuleFolder && rm -rf ./dist/src && npm version patch && npm publish --access=public"
+  "publishConfig": {
+    "access": "public"
   },
+  "description": "Stejar HTTP",
+  "files": [
+    "*.md",
+    "docs",
+    "es",
+    "lib",
+    "types"
+  ],
+  "main": "lib/index",
+  "module": "es/index",
+  "jsnext:main": "es/index",
+  "types": "types/index.d.ts",
+  "repository": "middleout/stejar",
+  "homepage": "https://github.com/middleout/stejar#readme",
+  "bugs": "https://github.com/middleout/stejar/issues",
+  "scripts": {
+    "build": "npm run build-cjs && npm run build-es && npm run build-types",
+    "build-cjs": "rimraf es && tsc --outDir ./lib --module commonjs --target es5",
+    "build-es": "rimraf es && tsc --outDir ./es --target es5",
+    "build-types": "rimraf types && tsc --declaration --outDir ./types && rimraf types/*.js",
+    "deploy": "karma start ./karma.conf.js && npm run build && bump --prompt --push --all",
+    "test": "karma start",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
+  },
+  "authors": [
+    "Andrei Gabreanu"
+  ],
+  "license": "MIT",
   "dependencies": {
-    "@types/lodash": "4.14.43",
-    "@types/node": "6.0.48",
-    "@types/whatwg-fetch": "0.0.32",
-    "isomorphic-fetch": "2.2.1",
-    "lodash": "4.17.2"
+    "lodash": "^4.17.4"
+  },
+  "peerDependencies": {
+    "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "0.1.14",
-    "webpack": "2.1.0-beta.19",
+    "@types/jasmine": "2.5.41",
+    "@types/lodash": "^4.14.51",
+    "@types/node": "7.0.4",
+    "@types/whatwg-fetch": "0.0.33",
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.22.0",
+    "circular-dependency-plugin": "2.0.0",
+    "clean-webpack-plugin": "0.1.15",
+    "core-js": "^2.4.1",
+    "expect": "1.20.2",
+    "fetch-mock": "^5.9.0",
+    "istanbul-instrumenter-loader": "1.2.0",
+    "jasmine": "2.5.3",
+    "jasmine-core": "2.5.2",
+    "karma": "1.4.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-phantomjs-launcher": "1.0.2",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "2.0.2",
+    "npm-check-updates": "2.8.9",
+    "phantomjs-prebuilt": "2.1.14",
+    "postcss-loader": "1.2.2",
+    "publish-please": "2.2.0",
+    "rimraf": "2.5.4",
+    "source-map-loader": "0.1.6",
+    "ts-loader": "2.0.0",
+    "tslib": "1.5.0",
+    "typescript": "^2.1.5",
+    "version-bump-prompt": "^3.0.1",
+    "webpack": "beta",
     "webpack-build-notifier": "0.1.13",
-    "webpack-merge": "1.1.1",
-    "webpack-node-externals": "1.5.4",
-    "babel-core": "6.20.0",
-    "babel-loader": "6.2.9",
-    "babel-preset-es2015": "6.18.0",
-    "babel-preset-es2015-loose": "8.0.0",
-    "ts-loader": "1.3.2",
-    "typescript": "rc"
-  }
+    "webpack-merge": "2.6.0"
+  },
+  "tags": [
+    "stejar",
+    "http client"
+  ],
+  "keywords": [
+    "stejar",
+    "http",
+    "request",
+    "fetch"
+  ]
 }

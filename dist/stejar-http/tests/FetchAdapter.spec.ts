@@ -1,6 +1,8 @@
-import {HttpRequest} from "../../src/Http/Service/HttpRequest";
-import {FetchAdapter} from "../../src/Http/Adapter/FetchAdapter";
-import {HttpResponse} from "../../src/Http/Service/HttpResponse";
+import "core-js/es6";
+import "core-js/es7";
+import {HttpRequest} from "../src/Service/HttpRequest";
+import {FetchAdapter} from "../src/Adapter/FetchAdapter";
+import {HttpResponse} from "../src/Service/HttpResponse";
 require('isomorphic-fetch');
 const mock = require('fetch-mock');
 

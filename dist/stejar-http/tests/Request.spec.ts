@@ -1,4 +1,4 @@
-import {HttpRequest, Method} from "../../src/Http/Service/HttpRequest";
+import {HttpRequest, Method} from "../src/Service/HttpRequest";
 
 describe('HttpRequest', () => {
     it("Should be able to construct properly", () => {

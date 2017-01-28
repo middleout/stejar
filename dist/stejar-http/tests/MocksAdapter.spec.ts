@@ -1,5 +1,7 @@
-import {HttpRequest, Method} from "../../src/Http/Service/HttpRequest";
-import {MocksAdapter} from "../../src/Http/Adapter/MocksAdapter";
+import "core-js/es6";
+import "core-js/es7";
+import {HttpRequest, Method} from "../src/Service/HttpRequest";
+import {MocksAdapter} from "../src/Adapter/MocksAdapter";
 
 describe('Mocks Adapter', () => {
     it("Should be able to make a dummy request", ( done ) => {

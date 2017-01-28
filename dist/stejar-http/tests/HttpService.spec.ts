@@ -1,7 +1,9 @@
-import { HttpRequest, Method } from "../../src/Http/Service/HttpRequest";
-import { MocksAdapter } from "../../src/Http/Adapter/MocksAdapter";
-import { HttpService } from "../../src/Http/Service/HttpService";
-import { HttpResponse } from "../../src/Http/Service/HttpResponse";
+import "core-js/es6";
+import "core-js/es7";
+import { HttpRequest, Method } from "../src/Service/HttpRequest";
+import { MocksAdapter } from "../src/Adapter/MocksAdapter";
+import { HttpService } from "../src/Service/HttpService";
+import { HttpResponse } from "../src/Service/HttpResponse";
 
 describe("HttpService", () => {
 	it('should be able to run a request', ( done ) => {
