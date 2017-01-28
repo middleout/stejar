@@ -9,5 +9,5 @@
   },
   "confirm": true,
   "publishTag": "latest",
-  "prePublishScript": "karma start ./karma.conf.js && npm run build"
+  "prePublishScript": "karma start ./karma.conf.js && npm run build && npm version"
 }
