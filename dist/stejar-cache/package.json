@@ -10,7 +10,8 @@
     "docs",
     "es",
     "lib",
-    "types"
+    "types",
+	"store.d.ts"
   ],
   "main": "lib/index",
   "module": "es/index",
@@ -36,7 +37,6 @@
   "license": "MIT",
   "dependencies": {
     "@stejar/di": "^1.1.0",
-    "@stejar/typings": "^1.0.8",
     "lodash": "^4.17.4",
     "moment": "^2.17.1",
     "store": "^1.3.20"
@@ -69,7 +69,6 @@
     "ts-loader": "2.0.0",
     "tslib": "1.5.0",
     "typescript": "^2.1.5",
-    "typings": "^2.0.0",
     "version-bump-prompt": "^3.0.1",
     "webpack": "beta",
     "webpack-build-notifier": "0.1.13",

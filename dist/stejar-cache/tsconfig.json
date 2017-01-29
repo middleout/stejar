@@ -29,7 +29,6 @@
   },
   "include": [
 	"src/**/*.ts",
-	"typings",
 	"node_modules/@types"
   ],
   "exclude": [

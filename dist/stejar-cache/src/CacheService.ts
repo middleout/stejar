@@ -1,4 +1,4 @@
-import store from "store";
+import * as store from "store";
 import moment, { Moment } from "moment";
 import { each } from "lodash";
 import { injectable } from "@stejar/di";
@@ -9,7 +9,11 @@ export class CacheService {
 	/**
 	 * @param store
 	 */
-	public constructor( protected storeInstance: StoreJSStatic = store ) {}
+	public constructor( protected storeInstance: StoreJSStatic = store ) {
+		if (!this.storeInstance) {
+			throw new Error("`store` cannot be found");
+		}
+	}
 
 	/**
 	 * @type {boolean}
