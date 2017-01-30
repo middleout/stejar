@@ -1,6 +1,6 @@
 {
   "name": "@stejar/authorization",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -11,7 +11,7 @@
     "es",
     "lib",
     "types",
-	".d.ts"
+    ".d.ts"
   ],
   "main": "lib/index",
   "module": "es/index",
@@ -36,8 +36,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-	"@stejar/di": "^1.0.9",
-	"virgen-acl": "^0.0.20"
+    "@stejar/di": "^1.0.9",
+    "virgen-acl": "^0.0.20"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.41",
