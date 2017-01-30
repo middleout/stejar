@@ -1,5 +1,0 @@
-{
-  "globalDependencies": {
-    "virgen-acl": "file:node_modules/@stejar/typings/virgen-acl.d.ts"
-  }
-}
