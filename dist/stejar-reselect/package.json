@@ -1,6 +1,6 @@
 {
   "name": "@stejar/reselect",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publishConfig": {
     "access": "public"
   },
@@ -8,9 +8,7 @@
   "files": [
     "*.md",
     "docs",
-    "es",
-    "lib",
-    "types"
+    "dist"
   ],
   "main": "dist/index",
   "types": "dist/index.d.ts",
