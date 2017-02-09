@@ -46,9 +46,14 @@ function defaultEqualityCheck(a, b) {
 
 	if (Array.isArray(a) && Array.isArray(b)) {
 		var isEqual = true;
-		var length = a.length;
+		var aLength = a.length;
+		var bLength = b.length;
 
-		for (var i = 0; i < length; i++) {
+		if (aLength !== bLength) {
+			return false;
+		}
+
+		for (var i = 0; i < aLength; i++) {
 			if (!b[i]) {
 				isEqual = false;
 				break;
