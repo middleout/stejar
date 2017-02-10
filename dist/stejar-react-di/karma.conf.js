@@ -59,7 +59,6 @@ module.exports = function (config) {
 										"es2015"
 									],
 									plugins     : [
-										'jsx-control-statements',
 										'transform-react-jsx',
 									]
 								}
