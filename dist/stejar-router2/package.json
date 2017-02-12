@@ -24,7 +24,7 @@
     "build-cjs": "rimraf es && tsc --outDir ./lib --module commonjs --target es5",
     "build-es": "rimraf es && tsc --outDir ./es --target es5",
     "build-types": "rimraf types && tsc --declaration --outDir ./types && rimraf types/*.js",
-    "deploy": "npm run build && bump --prompt --push --all",
+    "deploy": "npm run build && bump --prompt --push --all && npm run publish-please",
     "test": "karma start",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
@@ -36,6 +36,7 @@
   "dependencies": {
     "route-parser": "^0.0.5",
     "wolfy87-eventemitter": "^5.1.0",
+    "@types/wolfy87-eventemitter": "4.2.31",
     "history": "^4.5.1",
     "@types/route-parser": "^0.0.0"
   },
@@ -44,7 +45,6 @@
     "@types/jasmine": "^2.5.42",
     "@types/node": "^7.0.5",
     "@types/react": "15.0.9",
-    "@types/wolfy87-eventemitter": "4.2.31",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-react-jsx": "^6.22.0",
