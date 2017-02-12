@@ -1,6 +1,6 @@
 {
   "name": "@stejar/browser-platform",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,7 @@
     "@stejar/di": "^1.0.9",
     "@types/node": "^6.0.49",
     "@types/react": "^15.0.4",
-    "@types/react-dom": "^15.0.4",
+    "@types/react-dom": "^0.14.23",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-tap-event-plugin": "^2.0.1"
