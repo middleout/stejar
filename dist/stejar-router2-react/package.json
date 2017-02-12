@@ -1,6 +1,6 @@
 {
   "name": "@stejar/router-beta-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "@stejar/router-beta": "^0.0.5",
-	"@types/react": "^15.0.8"
+    "@types/react": "^15.0.8"
   },
   "devDependencies": {
     "@types/history": "4.5.0",
