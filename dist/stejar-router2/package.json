@@ -1,6 +1,6 @@
 {
   "name": "@stejar/router-beta",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publishConfig": {
     "access": "public"
   },
@@ -39,7 +39,7 @@
     "@types/wolfy87-eventemitter": "4.2.31",
     "history": "^4.5.1",
     "@types/route-parser": "^0.0.0",
-	"@types/history": "^4.5.0"
+    "@types/history": "^4.5.0"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.42",
