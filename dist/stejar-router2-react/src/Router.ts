@@ -1,5 +1,5 @@
 import { Component, createElement, PropTypes } from "react";
-import { EVENTS, RouteMatcher, StdRouter, RouteWithParent } from "@stejar/router-beta";
+import { EVENTS, RouteMatcher, Router as StdRouter, RouteWithParent } from "@stejar/router-beta";
 
 export interface RouterProps {
 	router: StdRouter;
