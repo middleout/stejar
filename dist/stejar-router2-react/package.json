@@ -33,9 +33,9 @@
     "Andrei Gabreanu"
   ],
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
 	"react": "^15.4.2",
-	"@stejar/router-beta": "^0.0.1"
+	"@stejar/router-beta": "^0.0.3"
   },
   "devDependencies": {
     "@types/history": "4.5.0",

@@ -1,5 +1,5 @@
 import { Children } from "react";
-import { Route } from "../Route";
+import { Route } from "@stejar/router-beta";
 import { RouteProps } from "./Route";
 /**
  * @param reactRoute
