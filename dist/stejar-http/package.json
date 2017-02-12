@@ -35,6 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
+	"@types/lodash": "^4.14.51",
     "@types/whatwg-fetch": "^0.0.33"
   },
   "peerDependencies": {
@@ -42,7 +43,6 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.41",
-    "@types/lodash": "^4.14.51",
     "@types/node": "^7.0.4",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
