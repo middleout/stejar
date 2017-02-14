@@ -1,7 +1,7 @@
 import { assign } from "lodash";
 import { Component, createElement } from "react";
 import { ServiceManager } from "@stejar/di";
-import invariant from "invariant";
+const invariant = require("invariant");
 const hoistStatics = require("hoist-non-react-statics");
 import { shape } from "./shape";
 

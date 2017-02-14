@@ -6,7 +6,6 @@ import { RouteProps } from "./Route";
  * @return {Route}
  */
 export function convertReactComponentRoutesToStandardRoutes( reactRoute: { props: RouteProps & { children: { props: RouteProps } } } ): Route {
-
 	let routeOpts = {
 		name      : reactRoute.props.name,
 		path      : reactRoute.props.path,

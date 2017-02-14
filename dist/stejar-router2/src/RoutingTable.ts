@@ -46,7 +46,12 @@ export class RoutingTable {
 			if ( parentPath ) {
 				if ( parentPath[ parentPath.length - 1 ] === "/" ) {
 					parentPath = parentPath.substr(0, parentPath.length - 2);
-					path       = parentPath + path;
+
+					if ( path[ 0 ] !== "/" ) {
+						path = parentPath + "/" + path;
+					} else {
+						path = parentPath + path;
+					}
 				} else {
 					if ( path[ 0 ] !== "/" ) {
 						path = parentPath + "/" + path;

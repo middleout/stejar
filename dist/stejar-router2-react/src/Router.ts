@@ -1,5 +1,5 @@
-import { Component, createElement, PropTypes, Children } from "react";
 import { EVENTS, RouteMatcher, Router as StdRouter, RouteWithParent } from "@stejar/router-beta";
+import { Children, Component, createElement, PropTypes } from "react";
 import { convertReactComponentRoutesToStandardRoutes } from "./convertReactComponentRoutesToStandardRoutes";
 
 export interface RouterProps {
@@ -10,6 +10,7 @@ export interface RouterState {
 	components: any[];
 	params: Object;
 	query: Object;
+	middlewareResult: any;
 }
 
 export class Router extends Component<RouterProps,RouterState> {
@@ -31,9 +32,10 @@ export class Router extends Component<RouterProps,RouterState> {
 	 * @type {{component: any}}
 	 */
 	state: RouterState = {
-		components: [],
-		params    : {},
-		query     : {},
+		components      : [],
+		params          : {},
+		query           : {},
+		middlewareResult: null,
 	};
 
 	/**
@@ -46,19 +48,21 @@ export class Router extends Component<RouterProps,RouterState> {
 			throw new Error("You must provide the Router via props");
 		}
 
-		props.router.subscribe(EVENTS.ROUTE_MATCHED, ( matchedRoute: RouteMatcher, params: Object, query: Object ) => {
+		props.router.subscribe(EVENTS.ROUTE_MATCHED, ( matchedRoute: RouteMatcher, data: { params: Object, query: Object, middlewareResult: any } ) => {
 			let components             = [];
 			let route: RouteWithParent = matchedRoute;
 
 			while ( route ) {
-				components.push(route.callback());
+				const component = route.callback();
+				if ( component ) {
+					components.push(route.callback());
+				}
 				route = route.parent;
 			}
 
 			this.setState({
 				components,
-				params: params,
-				query : query
+				...data
 			});
 		});
 	}
@@ -72,8 +76,9 @@ export class Router extends Component<RouterProps,RouterState> {
 		let component;
 		while ( components.length > 0 ) {
 			component = createElement(components.shift(), {
-				params: this.state.params,
-				query : this.state.query
+				params : this.state.params,
+				query  : this.state.query,
+				resolve: this.state.middlewareResult,
 			}, component);
 		}
 
@@ -81,7 +86,7 @@ export class Router extends Component<RouterProps,RouterState> {
 	}
 
 	componentDidMount() {
-		if (this.props.children) {
+		if ( this.props.children ) {
 			this.props.router.add(convertReactComponentRoutesToStandardRoutes(Children.only(this.props.children)));
 		}
 

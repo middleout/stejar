@@ -1,4 +1,5 @@
 import { EVENTS } from "./Events";
+import { MiddlewareResolver } from "./MiddlewareResolver";
 import { ObjectEquals } from "./ObjectEquals";
 import { Route } from "./Route";
 import { RouteMatcher } from "./RouteMatcher";
@@ -34,7 +35,12 @@ export class Router {
 	/**
 	 * @type {EventEmitter}
 	 */
-	protected eventEmitter                                    = new EventEmitter();
+	protected eventEmitter = new EventEmitter();
+
+	/**
+	 *
+	 */
+	protected middlewareResolver: MiddlewareResolver          = ( middleware: Function ) => ( fromState: any ) => middleware(fromState);
 
 	/**
 	 * @param adapter
@@ -77,7 +83,7 @@ export class Router {
 	 * @return {Promise<T>}
 	 */
 	start(): Promise<any> {
-		return new Promise(( resolve, reject ) => {
+		return new Promise(( resolve ) => {
 			this.adapter.start(( path, query ) => {
 				let result = this.routingTable.match(path);
 				if ( result ) {
@@ -109,7 +115,7 @@ export class Router {
 							.reverse()
 							.reduce(( prev, cur ) => prev.then(() => {
 								if ( currentTransition === that.transitionId ) {
-									return cur({
+									return that.middlewareResolver(cur)({
 										name: route.name,
 										params,
 										query
@@ -119,12 +125,16 @@ export class Router {
 								return new Promise(resolve => null);
 
 							}), Promise.resolve())
-							.then(() => that.eventEmitter.emit(EVENTS.ROUTE_MATCHED as any, route, params, query))
+							.then(middlewareResult => that.eventEmitter.emit(EVENTS.ROUTE_MATCHED as any, route, {
+								params,
+								query,
+								middlewareResult
+							}))
 							.then(() => resolve())
 					})(currentTransition);
 				}
 
-				return reject();
+				this.eventEmitter.emit(EVENTS.ROUTE_NOT_MATCHED);
 			});
 		});
 	}
@@ -136,6 +146,10 @@ export class Router {
 	 * @return {boolean}
 	 */
 	protected isSameDestination( name: string, params: Object = {}, query: Object = {} ): boolean {
+		if ( !this.currentRoute ) {
+			return false;
+		}
+
 		if ( this.currentRoute.name !== name ) {
 			return false;
 		}
@@ -222,5 +236,14 @@ export class Router {
 	 */
 	changeQuery( query: Object ): void {
 		return this.navigate(null, {}, query);
+	}
+
+	/**
+	 * @param resolver
+	 * @return {Router}
+	 */
+	setMiddlewareResolver( resolver: MiddlewareResolver ): this {
+		this.middlewareResolver = resolver;
+		return this;
 	}
 }
