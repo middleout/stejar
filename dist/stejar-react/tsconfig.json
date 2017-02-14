@@ -16,7 +16,7 @@
 	"allowSyntheticDefaultImports": true,
 	"noUnusedParameters": false,
 	"noUnusedLocals": false,
-	"jsx": "preserve",
+	"jsx": "react",
 	"pretty": true,
 	"listFiles": false,
 	"allowJs": false,

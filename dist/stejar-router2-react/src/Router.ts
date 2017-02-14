@@ -1,5 +1,6 @@
-import { Component, createElement, PropTypes } from "react";
+import { Component, createElement, PropTypes, Children } from "react";
 import { EVENTS, RouteMatcher, Router as StdRouter, RouteWithParent } from "@stejar/router-beta";
+import { convertReactComponentRoutesToStandardRoutes } from "./convertReactComponentRoutesToStandardRoutes";
 
 export interface RouterProps {
 	router: StdRouter;
@@ -80,6 +81,10 @@ export class Router extends Component<RouterProps,RouterState> {
 	}
 
 	componentDidMount() {
+		if (this.props.children) {
+			this.props.router.add(convertReactComponentRoutesToStandardRoutes(Children.only(this.props.children)));
+		}
+
 		this.props.router.start();
 	}
 

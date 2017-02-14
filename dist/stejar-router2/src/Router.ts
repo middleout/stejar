@@ -1,10 +1,10 @@
-import EventEmitter from "wolfy87-eventemitter";
 import { EVENTS } from "./Events";
 import { ObjectEquals } from "./ObjectEquals";
 import { Route } from "./Route";
 import { RouteMatcher } from "./RouteMatcher";
 import { RoutingAdapterContract } from "./RoutingAdapterContract";
 import { RoutingTable } from "./RoutingTable";
+const EventEmitter = require("wolfy87-eventemitter");
 
 export class Router {
 
@@ -34,7 +34,7 @@ export class Router {
 	/**
 	 * @type {EventEmitter}
 	 */
-	protected eventEmitter = new EventEmitter();
+	protected eventEmitter                                    = new EventEmitter();
 
 	/**
 	 * @param adapter

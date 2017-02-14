@@ -1,14 +1,14 @@
-import { RouteWithParent } from "./RouteWithParent";
-import RouteMatcherLib from "route-parser";
-import { RouteOptions } from "./RouteContract";
 import { QueryParser } from "./QueryParser";
+import { RouteOptions } from "./RouteContract";
+import { RouteWithParent } from "./RouteWithParent";
+const RouteMatcherLib = require('route-parser');
 
 export class RouteMatcher extends RouteWithParent {
 
 	/**
 	 * @type {RouteMatcherLib}
 	 */
-	protected matcher: RouteMatcherLib;
+	protected matcher: any;
 
 	/**
 	 * @param _options
