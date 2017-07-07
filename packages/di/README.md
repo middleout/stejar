@@ -188,16 +188,16 @@ sm.bindToMethod("setBar", "bar");
 
 @injectable
 class Foo {
-	private bar: string;
+    private bar: string;
 
     setBar(bar: string): this {
     	this.bar = bar;
         return this;
-	}
+    }
 
     getBar() {
     	return this.bar;
-	}
+    }
 }
 
 sm.get(Foo).getBar(); // baz
