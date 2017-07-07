@@ -1,7 +1,7 @@
 {
   "name": "@stejar/di",
   "version": "2.0.0",
-  "description": "",
+  "description": "Dependency Injection for React/Typescript applications.",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
