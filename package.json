@@ -1,5 +1,6 @@
 {
   "name": "stejar",
+  "description": "Web development utilities for React and Typescript",
   "private": true,
   "license": "MIT",
   "scripts": {
