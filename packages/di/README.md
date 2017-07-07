@@ -1,6 +1,16 @@
-# Stejar DI
+<p align="center">
+  <a href="https://github.com/middleout/stejar">
+    <img alt="react-router" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
+  </a>
+</p>
 
-Dependency Injection for React/Typescript applications.
+<h3 align="center">
+	Stejar DI
+</h3>
+
+<p align="center">
+  Dependency Injection for React/Typescript applications.
+</p>
 
 ## Motivation
 
