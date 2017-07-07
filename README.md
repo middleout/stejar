@@ -24,4 +24,5 @@ This repository is a monorepo that we manage using [Lerna](https://github.com/le
 | Package | Version | Docs | Description |
 |---------|---------|------|-------------|
 | [`@stejar/di`](/packages/di) | [![npm](https://img.shields.io/npm/v/@stejar/di.svg?style=flat-square)](https://www.npmjs.com/package/@stejar/di) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/di) | Depdendency Injection Framework |
-| [`@stejar/react-di`](/packages/react-di) | [![npm](https://img.shields.io/npm/v/@stejar/react-di.svg?style=flat-square)](https://www.npmjs.com/package/@stejar/react-di) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react-di) | Depdendency Injection Framework |
+| [`@stejar/react-di`](/packages/react-di) | [![npm](https://img.shields.io/npm/v/@stejar/react-di.svg?style=flat-square)](https://www.npmjs.com/package/@stejar/react-di) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react-di) | [TODO] |
+| [`@stejar/react`](/packages/react) | [![npm](https://img.shields.io/npm/v/@stejar/react.svg?style=flat-square)](https://www.npmjs.com/package/@stejar/react) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react) | [TODO] |
