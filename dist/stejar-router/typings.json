@@ -1,5 +1,0 @@
-{
-  "globalDependencies": {
-    "react-router": "file:node_modules/@stejar/typings/react-router.d.ts"
-  }
-}
