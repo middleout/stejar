@@ -10,9 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@stejar3/react": "./../packages/react",
-    "@stejar3/di": "./../packages/di",
-    "@stejar3/react-di": "./../packages/react-di",
+    "@stejar/react": "./../packages/react",
+    "@stejar/di": "./../packages/di",
     "@types/react-dom": "^15.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"

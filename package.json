@@ -9,8 +9,6 @@
     "build": "lerna run test && lerna run build && cd __integration__ && npm i @stejar3/di && npm i @stejar3/react-di && npm i @stejar3/react && cd ../"
   },
   "devDependencies": {
-    "case-sensitive-paths-webpack-plugin": "^2.1.1",
-    "circular-dependency-plugin": "^3.0.0",
     "lerna": "^2.0.0-rc.5"
   }
 }
