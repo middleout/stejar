@@ -9,6 +9,11 @@
 </h3>
 
 <p align="center">
+  <a href="https://www.npmjs.com/package/@stejar/di"><img src="https://img.shields.io/npm/v/@stejar/di.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@stejar/di"><img src="https://img.shields.io/npm/dm/@stejar/di.svg?style=flat-square"></a>
+</p>
+
+<p align="center">
   Dependency Injection for React/Typescript applications.
 </p>
 
