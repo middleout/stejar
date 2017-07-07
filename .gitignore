@@ -1,7 +1,12 @@
 .idea
 old
 lerna-debug.log
+
 node_modules
 __integration/node_modules
 packages/**/node_modules
-packages/**/tests/coverage
+
+__integration/dist
+packages/**/__tests__/coverage
+packages/**/lib
+packages/**/typings
