@@ -97,7 +97,7 @@ const parent = serviceManager.get(ParentClass);
 Binds an instance of an object to a certain identifier. Returns the ServiceManager so that it can be chained with other methods.
 
 ```js
-import { ServiceManager } from "@stejar3/di";
+import { ServiceManager } from "@stejar/di";
 import {Bar} from "./Bar";
 
 const sm = new ServiceManager();
@@ -120,7 +120,7 @@ sm.bind(Bar, new Bar()); // it will assume the Function.name as the key, in this
 Aliases a certain identifier to another identifier in order to substitute values under different names. Returns the ServiceManager so that it can be chained with other methods.
 
 ```js
-import { ServiceManager } from "@stejar3/di";
+import { ServiceManager } from "@stejar/di";
 
 // Example #1
 
@@ -179,7 +179,7 @@ Allows "setter" injection for a certain alias name, instance of class name.
 Normally used when constructor injection is not possible or needed. Returns the ServiceManager so that it can be chained with other methods.
 
 ```js
-import { ServiceManager } from "@stejar3/di";
+import { ServiceManager } from "@stejar/di";
 
 const sm = new ServiceManager();
 
@@ -298,3 +298,46 @@ const foo1 = sm.instantiate(Foo); // Foo
 const foo2 = sm.instantiate(Foo); // Foo
 foo1 === foo2; // False
 ```
+
+
+### AbstractProvider
+
+This class is simple abstraction to extend from in order to tell the Service Manager how to construct a certain object. 
+
+#### `abstract provides()`
+
+Returns the class or class name (or a string) of the type of object it will provide.
+
+#### `abstract provide(serviceManager)`
+
+Should return the actual object indicated by the "provides" API. Receives the service manager instance. The system will automatically "bind" in the service manager (the key is indicated by the provides method).
+
+```js
+import { AbstractProvider, ServiceManager } from "@stejar/di";
+
+const sm = new ServiceManager();
+
+class Foo {}
+
+class FooProvider extends AbstractProvider<Foo> {
+    provides() {
+        return Foo.name;
+    }
+
+    provide(serviceManager: ServiceManager): Foo {
+        return new Foo();
+    }
+}
+
+sm.provider(FooProvider); 
+
+// Foo has NOT been instantiated yet
+
+sm.get(Foo); // Foo has been instantiated and the instance is shared
+sm.get(Foo); // Same instance as before
+```
+
+### @injectable
+
+This function (decorator) is used strictly to force Typescript to append its decorator metadata. In case you are using other decorators already in your classes, you do not need to use this decorator at all
+
