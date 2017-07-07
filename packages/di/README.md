@@ -39,19 +39,19 @@ class Foo
 ```js
 // Just create the container and you are good to go thanks to autowiring.
 const sm  = new ServiceManager();
-const foo = sm->get(Foo);
+const foo = sm.get(Foo);
 
 // You can also define services à la Pimple:
-sm->set('foo', new Foo(options));
+sm.set('foo', new Foo(options));
 
-sm->set(Logger, () => {
+sm.set(Logger, () => {
     logger = new Logger();
-    logger->configure(options);
+    logger.configure(options);
     return logger;
 });
 
-const foo = sm->get(Foo);
-const logger = sm->get(Logger);
+const foo = sm.get(Foo);
+const logger = sm.get(Logger);
 ```
 
 ## Powerful container API
@@ -60,14 +60,14 @@ Stejar DI provides the classic API of a container as well as advanced features u
 
 ### GET & HAS
 ```js
-sm->get($name);
-sm->has($name);
+sm.get($name);
+sm.has($name);
 ```
 
 ### INSTANTIATE
 ```js
 // Missing constructor parameters will be resolved from the container.
-sm->instantiate(Foo);
+sm.instantiate(Foo);
 ```
 
 ## Motivation
