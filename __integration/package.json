@@ -1,0 +1,33 @@
+{
+  "name": "integration",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@stejar3/react": "./../packages/react",
+    "@stejar3/di": "./../packages/di",
+    "@stejar3/react-di": "./../packages/react-di",
+    "@types/react-dom": "^15.5.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.2.2",
+    "tslib": "^1.7.1",
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "typescript": "^2.4.1",
+    "webpack": "^3.0.0"
+  }
+}

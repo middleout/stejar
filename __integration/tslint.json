@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "member-access": [true, "no-public"],
+    "no-console": false,
+    "max-classes-per-file": false
+  },
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ]
+}

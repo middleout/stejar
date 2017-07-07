@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should be able to use it 1`] = `
+<span
+  className="dangerousHtml"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Hello World",
+    }
+  }
+/>
+`;

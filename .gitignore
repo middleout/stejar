@@ -1,2 +1,7 @@
 .idea
 old
+lerna-debug.log
+node_modules
+__integration/node_modules
+packages/**/node_modules
+packages/**/tests/coverage

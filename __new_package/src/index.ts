@@ -1,0 +1,1 @@
+export function __NEW_PACKAGE__() {}
