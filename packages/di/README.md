@@ -61,7 +61,7 @@ import { ServiceManager, injectable } from "@stejar/di";
 ```js
 @injectable
 class ChildClass {
-	constructor() { console.log('Child class constructed'); }
+    constructor() { console.log('Child class constructed'); }
 }
 
 @injectable
