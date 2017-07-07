@@ -74,7 +74,9 @@
     ],
     "collectCoverage": true,
     "coverageDirectory": "__tests__/__coverage__",
-    "coverageReporters": ["lcov"],
+    "coverageReporters": [
+      "lcov"
+    ],
     "mapCoverage": true
   }
 }
