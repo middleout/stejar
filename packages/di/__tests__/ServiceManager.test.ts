@@ -16,8 +16,7 @@ test("Should be able to instantiate a new object", () => {
     const sm = new ServiceManager();
 
     @injectable
-    class Tester {
-    }
+    class Tester {}
 
     expect(sm.get(Tester)).toBeInstanceOf(Tester);
 });
@@ -30,7 +29,21 @@ test("Should be able to instantiate a new object with a fixed determined depende
         constructor(public a: string) {}
     }
 
-    sm.bind(Tester, new Tester("Hello World"));
+    sm.set(Tester, new Tester("Hello World"));
+
+    expect(sm.get(Tester)).toBeInstanceOf(Tester);
+    expect(sm.get(Tester).a).toEqual("Hello World");
+});
+
+test("Should be able to instantiate a new object with Pimple like solution", () => {
+    const sm = new ServiceManager();
+
+    @injectable
+    class Tester {
+        constructor(public a: string) {}
+    }
+
+    sm.set(Tester, () => new Tester("Hello World"));
 
     expect(sm.get(Tester)).toBeInstanceOf(Tester);
     expect(sm.get(Tester).a).toEqual("Hello World");
@@ -53,7 +66,7 @@ test("Should be able to instantiate a new object with a variable dependency", ()
 
 test("Service manager: Bind : String to String", () => {
     const sm = new ServiceManager();
-    sm.bind("foo", "ABC");
+    sm.set("foo", "ABC");
     expect(sm.get("foo")).toEqual("ABC");
 });
 
@@ -64,7 +77,7 @@ test("Service manager: Bind : String to Instance", () => {
 
     const bar1 = new Bar();
 
-    sm.bind("bar", bar1);
+    sm.set("bar", bar1);
 
     expect(sm.get("bar")).toBeInstanceOf(Bar);
     expect(sm.get("bar")).toBe(bar1);
@@ -78,8 +91,8 @@ test("Service manager: Bind : Class to Instance", () => {
     const bar1 = new Bar();
     const bar2 = new Bar();
 
-    sm.bind("bar", bar1);
-    sm.bind(Bar, bar2);
+    sm.set("bar", bar1);
+    sm.set(Bar, bar2);
 
     expect(sm.get("bar")).toBeInstanceOf(Bar);
     expect(sm.get("bar")).toBe(bar1);
@@ -90,7 +103,7 @@ test("Service manager: Bind : Class to Instance", () => {
 test("Service manager: Alias #1", () => {
     const sm = new ServiceManager();
 
-    sm.bind("foo", "baz");
+    sm.set("foo", "baz");
     sm.alias("bar", "foo");
 
     expect(sm.get("bar")).toBe("baz");
@@ -101,7 +114,7 @@ test("Service manager: Alias #2", () => {
 
     class Foo {}
 
-    sm.bind(Foo, "baz");
+    sm.set(Foo, "baz");
     sm.alias("bar", Foo);
 
     expect(sm.get("bar")).toBe("baz");
@@ -113,7 +126,7 @@ test("Service manager: Alias #3", () => {
     class Foo {}
     const foo = new Foo();
 
-    sm.bind(Foo, foo);
+    sm.set(Foo, foo);
     sm.alias("bar", Foo);
 
     expect(sm.get("bar")).toBe(foo);
@@ -127,7 +140,7 @@ test("Service manager: Alias #4", () => {
 
     const foo = new Foo();
 
-    sm.bind(Foo, foo);
+    sm.set(Foo, foo);
     sm.alias(Bar, Foo);
 
     expect(sm.get(Bar)).toBe(foo);
@@ -138,7 +151,7 @@ test("Service manager: Alias #4", () => {
 
     class Bar {}
 
-    sm.bind("foo", "bar");
+    sm.set("foo", "bar");
     sm.alias(Bar, "foo");
 
     expect(sm.get(Bar)).toBe("bar");
@@ -147,7 +160,7 @@ test("Service manager: Alias #4", () => {
 test("Service manager: BindToMethod #1", () => {
     const sm = new ServiceManager();
 
-    sm.bind("bar", "baz");
+    sm.set("bar", "baz");
     sm.bindToMethod("setBar", "bar");
 
     @injectable
@@ -172,7 +185,7 @@ test("Service manager: Factory #1", () => {
     const sm = new ServiceManager();
 
     const factory = (serviceManager: ServiceManager) => {
-        serviceManager.bind("foo", "bar");
+        serviceManager.set("foo", "bar");
     };
 
     sm.factory(factory);
@@ -184,10 +197,10 @@ test("Service manager: Factory #2", () => {
     const sm = new ServiceManager();
 
     const factory1 = (serviceManager: ServiceManager) => {
-        serviceManager.bind("foo", "bar");
+        serviceManager.set("foo", "bar");
     };
     const factory2 = (serviceManager: ServiceManager) => {
-        serviceManager.bind("abc", "xyz");
+        serviceManager.set("abc", "xyz");
     };
 
     sm.factory(factory1, factory2);

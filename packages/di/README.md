@@ -17,6 +17,59 @@
   Dependency Injection for React/Typescript applications.
 </p>
 
+## Autowiring
+
+Type-hint your constructor parameters and the container can guess which dependencies to inject.
+
+```js
+class Foo
+{
+    private bar;
+
+    constructor(bar: Bar)
+    {
+        this.bar = bar;
+    }
+}
+
+```
+
+## Simple usage
+
+```js
+// Just create the container and you are good to go thanks to autowiring.
+const sm  = new ServiceManager();
+const foo = sm->get(Foo);
+
+// You can also define services à la Pimple:
+sm->set('foo', new Foo(options));
+
+sm->set(Logger, () => {
+    logger = new Logger();
+    logger->configure(options);
+    return logger;
+});
+
+const foo = sm->get(Foo);
+const logger = sm->get(Logger);
+```
+
+## Powerful container API
+
+Stejar DI provides the classic API of a container as well as advanced features useful to build or extend a framework.
+
+### GET & HAS
+```js
+sm->get($name);
+sm->has($name);
+```
+
+### INSTANTIATE
+```js
+// Missing constructor parameters will be resolved from the container.
+sm->instantiate(Foo);
+```
+
 ## Motivation
 
 Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
@@ -92,9 +145,9 @@ const parent = serviceManager.get(ParentClass);
 
 ### ServiceManager
 
-#### `bind(resource, instance)`
+#### `set(resource, instance)`
 
-Binds an instance of an object to a certain identifier. Returns the ServiceManager so that it can be chained with other methods.
+Sets an instance of an object to a certain identifier. Returns the ServiceManager so that it can be chained with other methods.
 
 ```js
 import { ServiceManager } from "@stejar/di";
@@ -102,9 +155,9 @@ import {Bar} from "./Bar";
 
 const sm = new ServiceManager();
 
-sm.bind("foo", "ABC");
-sm.bind("bar", new Bar());
-sm.bind(Bar, new Bar()); // it will assume the Function.name as the key, in this case "Bar.name" => "Bar"
+sm.set("foo", "ABC");
+sm.set("bar", new Bar());
+sm.set(Bar, new Bar()); // it will assume the Function.name as the key, in this case "Bar.name" => "Bar"
 
 // Finally, it will generate the following container
 // {
@@ -126,7 +179,7 @@ import { ServiceManager } from "@stejar/di";
 
 const sm = new ServiceManager();
 
-sm.bind("foo", "baz");
+sm.set("foo", "baz");
 sm.alias("bar", "foo");
 
 sm.get("bar"); // baz
@@ -138,7 +191,7 @@ const sm = new ServiceManager();
 
 class Foo {}
 
-sm.bind(Foo, "baz");
+sm.set(Foo, "baz");
 sm.alias("bar", Foo);
 
 sm.get("bar"); // baz
@@ -151,7 +204,7 @@ const sm = new ServiceManager();
 class Foo {}
 const foo = new Foo();
 
-sm.bind(Foo, foo);
+sm.set(Foo, foo);
 sm.alias("bar", Foo);
 
 sm.get("bar"); // "foo" constant as an certain instance of "Foo"
@@ -166,7 +219,7 @@ class Bar {}
 
 const foo = new Foo();
 
-sm.bind(Foo, foo);
+sm.set(Foo, foo);
 sm.alias(Bar, Foo);
 
 sm.get(Bar); // "foo" constant as an certain instance of "Foo"
@@ -183,7 +236,7 @@ import { ServiceManager } from "@stejar/di";
 
 const sm = new ServiceManager();
 
-sm.bind("bar", "baz");
+sm.set("bar", "baz");
 sm.bindToMethod("setBar", "bar");
 
 @injectable
@@ -211,10 +264,10 @@ Allows you to define a function (or functions) that are run imediatly, receiving
 const sm = new ServiceManager();
 
 const factory1 = (serviceManager: ServiceManager) => {
-    serviceManager.bind("foo", "bar");
+    serviceManager.set("foo", "bar");
 };
 const factory2 = (serviceManager: ServiceManager) => {
-    serviceManager.bind("abc", "xyz");
+    serviceManager.set("abc", "xyz");
 };
 
 sm.factory(factory1, factory2);
@@ -280,7 +333,7 @@ Allows the Service Manager to return values from the container. Accepts strings 
 ```js
 const sm = new ServiceManager();
 
-sm.bind("foo", "bar");
+sm.set("foo", "bar");
 
 sm.get("foo")); // bar
 ```

@@ -6,7 +6,7 @@ export class ServiceManager {
     /**
      * @type {{}}
      */
-    protected container: { [key: string]: any } = {};
+    protected container: { [key: string]: (() => any) } = {};
 
     /**
      * @type {{}}
@@ -22,7 +22,7 @@ export class ServiceManager {
      * @constructor
      */
     constructor() {
-        this.bind(ServiceManager, this);
+        this.set(ServiceManager, this);
     }
 
     /**
@@ -34,9 +34,31 @@ export class ServiceManager {
      *
      * @returns {ServiceManager}
      */
-    bind(resource: string | (() => any) | any, instance: any): this {
-        this.container[this.getNameFromResource(resource)] = instance;
+    set<T>(resource: string | (() => any) | any, instance: T | (() => T)): this {
+        let finalInstance = instance;
+
+        // if ((typeof instance as any) !== "function" || (instance.constructor && instance.constructor.name !== "Function")) {
+        if ((typeof instance as any) !== "function") {
+            finalInstance = () => instance as T;
+        }
+
+        this.container[this.getNameFromResource(resource)] = finalInstance as () => T;
         return this;
+    }
+
+    /**
+     * @deprecated Use set()
+     *
+     * Binds an instance of an object to a certain identifier.
+     * Returns the ServiceManager so that it can be chained with other methods.
+     *
+     * @param resource
+     * @param instance
+     *
+     * @returns {ServiceManager}
+     */
+    bind<T>(resource: string | (() => any) | any, instance: T | (() => T)): this {
+        return this.set(resource, instance);
     }
 
     /**
@@ -104,7 +126,7 @@ export class ServiceManager {
                         .name}" must provide *something*. Got "${typeof instance}" instead.`
                 );
             }
-            this.bind(this.getNameFromResource(className), instance);
+            this.set(this.getNameFromResource(className), () => instance);
             return instance;
         };
         return this;
@@ -142,12 +164,14 @@ export class ServiceManager {
             return { ...this.container } as any;
         }
 
-        if (this.container[this.getNameFromResource(resource)]) {
-            return this.container[this.getNameFromResource(resource)];
+        const resourceName = this.getNameFromResource(resource);
+
+        if (Object.keys(this.container).includes(resourceName)) {
+            return this.container[resourceName]();
         }
 
-        if (this.providers[this.getNameFromResource(resource)]) {
-            return this.providers[this.getNameFromResource(resource)](this);
+        if (this.providers[resourceName]) {
+            return this.providers[resourceName](this);
         }
 
         if (typeof resource === "string") {
@@ -155,9 +179,9 @@ export class ServiceManager {
         }
 
         const result = this.instantiate(resource) as T;
-        invariant(result, `Could not "get" ${this.getNameFromResource(resource)}`);
+        invariant(result, `Could not "get" ${resourceName}`);
 
-        this.bind(resource, result);
+        this.set(resourceName, () => result);
         return result;
     }
 
