@@ -1,4 +1,4 @@
-import { ServiceManager, injectable } from "@stejar3/di";
+import { ServiceManager, injectable } from "@stejar/di";
 
 export default function() {
     const sm = new ServiceManager();

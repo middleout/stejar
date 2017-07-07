@@ -6,7 +6,7 @@ node_modules
 __integration/node_modules
 packages/**/node_modules
 
-__integration/dist
-packages/**/__tests__/coverage
+__integration/dist/bundle.js
+packages/**/__tests__/__coverage__
 packages/**/lib
 packages/**/typings

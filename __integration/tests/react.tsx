@@ -1,6 +1,6 @@
 import React, {Component, PureComponent} from "react";
-// import { PureComponent, Component, DangerousHtml } from "@stejar3/react";
-import { DangerousHtml } from "@stejar3/react";
+// import { PureComponent, Component, DangerousHtml } from "@stejar/react";
+import { DangerousHtml } from "@stejar/react";
 import { render } from "react-dom";
 
 export default function() {
