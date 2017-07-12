@@ -10,3 +10,25 @@ exports[`Should be able to use it 1`] = `
   }
 />
 `;
+
+exports[`Should be able to use it by giving it a class 1`] = `
+<span
+  className="foo dangerousHtml"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Hello World",
+    }
+  }
+/>
+`;
+
+exports[`Should be able to use it by giving it a differnet element 1`] = `
+<div
+  className="dangerousHtml"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Hello World",
+    }
+  }
+/>
+`;

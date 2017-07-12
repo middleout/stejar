@@ -16,8 +16,8 @@ export function binder<T>(object: T): T {
             return;
         }
 
-        if (typeof this[key] === "function") {
-            this[key] = this[key].bind(this);
+        if (typeof object[key] === "function") {
+            object[key] = object[key].bind(object);
         }
     });
 

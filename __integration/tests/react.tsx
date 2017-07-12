@@ -1,16 +1,15 @@
-import React, {Component, PureComponent} from "react";
-// import { PureComponent, Component, DangerousHtml } from "@stejar/react";
-import { DangerousHtml } from "@stejar/react";
+import React from "react";
+import { DangerousHtml, BindedComponent,PureBindedComponent } from "@stejar/react";
 import { render } from "react-dom";
 
 export default function() {
-    class PureApp extends PureComponent {
+    class PureApp extends PureBindedComponent {
         render() {
             return <div><DangerousHtml>Pure Component {"<span>HELLO WORLD</span>"}</DangerousHtml></div>
         }
     }
 
-    class App extends Component {
+    class App extends BindedComponent {
         render() {
             return <div>{this.runCeva()} <br/><PureApp/> </div>;
         }
