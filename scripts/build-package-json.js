@@ -15,7 +15,8 @@ dirs.forEach(dir => {
     }
 
     const finalPackageJson = Object.assign({}, basePackageJson, localPackageJson);
-    fs.writeFileSync(path.join("./", "packages", dir, "package.json"), JSON.stringify(finalPackageJson));
+
+    fs.writeFileSync(path.join("./", "packages", dir, "package.json"), JSON.stringify(finalPackageJson).replace('[name]', dir));
 
     console.log("Built package json for package: " + dir);
 });

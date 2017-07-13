@@ -51,8 +51,7 @@ This repository is a monorepo that we manage using [Lerna](https://github.com/le
 
 1. Clone the repository
 2. run "npm install" in the root dir
-3. run "npm build" to build all the packages and install them in the "_integration" dir
 4. go to __integration and run "npm run server" to start the static server
 5. go to __integration and run "npm start" to start webpack in watch mode
 6. rerun "npm build" in the *root dir* whenever you change something in a package.
-7. Each package can also has a "run" as well as "test" command if you want to develop it individually
+7. Each package can also has an "integrate" as well as "test" command if you want to develop it individually. The run command is used just for building the pkg, while the integrate one is to also install it in the __integration
