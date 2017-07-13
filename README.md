@@ -46,3 +46,13 @@ This repository is a monorepo that we manage using [Lerna](https://github.com/le
 | [`@stejar/version-card-adapter-observable`](/packages/version-card-adapter-observable) | [![npm](version-card-adapter-observables://img.shields.io/npm/v/@stejar/version-card-adapter-observable.svg?style=flat-square)](version-card-adapter-observables://www.npmjs.com/package/@stejar/version-card-adapter-observable) | [![](version-card-adapter-observables://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/version-card-adapter-observable) | [TODO] |
 | [`@stejar/version-card-adapter-redux`](/packages/version-card-adapter-redux) | [![npm](version-card-adapter-reduxs://img.shields.io/npm/v/@stejar/version-card-adapter-redux.svg?style=flat-square)](version-card-adapter-reduxs://www.npmjs.com/package/@stejar/version-card-adapter-redux) | [![](version-card-adapter-reduxs://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/version-card-adapter-redux) | [TODO] |
 | [`@stejar/version-card-adapter-rxjs`](/packages/version-card-adapter-rxjs) | [![npm](version-card-adapter-rxjss://img.shields.io/npm/v/@stejar/version-card-adapter-rxjs.svg?style=flat-square)](version-card-adapter-rxjss://www.npmjs.com/package/@stejar/version-card-adapter-rxjs) | [![](version-card-adapter-rxjss://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/version-card-adapter-rxjs) | [TODO] |
+
+## Installing
+
+1. Clone the repository
+2. run "npm install" in the root dir
+3. run "npm build" to build all the packages and install them in the "_integration" dir
+4. go to __integration and run "npm run server" to start the static server
+5. go to __integration and run "npm start" to start webpack in watch mode
+6. rerun "npm build" in the *root dir* whenever you change something in a package.
+7. Each package can also has a "run" as well as "test" command if you want to develop it individually

@@ -1,12 +1,19 @@
 .idea
 old
 lerna-debug.log
-
 node_modules
-__integration/node_modules
-packages/**/node_modules
+pending
 
+__integration/node_modules
 __integration/dist/bundle.js
+
+packages/**/node_modules
 packages/**/__tests__/__coverage__
+packages/**/__tests__/tsconfig.json
 packages/**/lib
 packages/**/typings
+packages/**/.babelrc
+packages/**/package.json
+packages/**/tsconfig.json
+packages/**/tslint.json
+packages/**/webpack.config.js

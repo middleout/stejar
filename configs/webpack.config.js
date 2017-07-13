@@ -1,17 +1,15 @@
-const { optimize: { UglifyJsPlugin }, DefinePlugin } = require("webpack");
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
-const CircularDependencyPlugin = require("circular-dependency-plugin");
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
-const libraryName = "stejar-react";
+const { optimize: { UglifyJsPlugin }, DefinePlugin } = require.main.require("webpack");
+const CaseSensitivePathsPlugin = require.main.require("case-sensitive-paths-webpack-plugin");
+const CircularDependencyPlugin = require.main.require("circular-dependency-plugin");
+const nodeExternals = require.main.require("webpack-node-externals");
 
 module.exports = {
     entry: "./src/index.ts",
     output: {
-        path: path.resolve(__dirname, "lib"),
+        path: path.resolve("lib"),
         filename: "index.js",
         sourceMapFilename: "index.map.js",
-        library: libraryName,
         libraryTarget: "commonjs2",
     },
     devtool: "source-map",
@@ -65,7 +63,6 @@ module.exports = {
                 comments: false,
                 screw_ie8: true,
             },
-            sourceMap: true
         }),
     ],
 };
