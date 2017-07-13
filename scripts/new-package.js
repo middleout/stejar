@@ -5,21 +5,22 @@ if (!process.argv[2]) {
     throw new Error("You must provide the package name");
 }
 
-const packageName = path.join("packages", process.argv[2]);
+const packageName = process.argv[2];
+const packagePath = path.join("packages", packageName);
 
-if (fs.existsSync(packageName)) {
+if (fs.existsSync(packagePath)) {
     throw new Error("Package already exists");
 }
 
-fs.mkdirSync(packageName);
+fs.mkdirSync(packagePath);
 const packageJson = {
     version: "2.0.0",
     description: "",
     dependencies: {},
 };
 
-fs.writeFileSync(path.join(packageName, "local.package.json"), JSON.stringify(packageJson));
-fs.writeFileSync(path.join(packageName, "README.md"), `<p align="center">
+fs.writeFileSync(path.join(packagePath, "local.package.json"), JSON.stringify(packageJson));
+fs.writeFileSync(path.join(packagePath, "README.md"), `<p align="center">
   <a href="https://github.com/middleout/stejar/tree/master/packages/${packageName}">
     <img alt="${packageName}" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
   </a>
@@ -37,8 +38,8 @@ fs.writeFileSync(path.join(packageName, "README.md"), `<p align="center">
 <p align="center">
   Description ...
 </p>`);
-fs.mkdirSync(path.join(packageName, "src"));
-fs.mkdirSync(path.join(packageName, "__tests__"));
+fs.mkdirSync(path.join(packagePath, "src"));
+fs.mkdirSync(path.join(packagePath, "__tests__"));
 
-fs.writeFileSync(path.join(packageName, "src", "index.ts"), "");
-fs.writeFileSync(path.join(packageName, "__tests__", "index.test.ts"), "");
+fs.writeFileSync(path.join(packagePath, "src", "index.ts"), "");
+fs.writeFileSync(path.join(packagePath, "__tests__", "index.test.ts"), "");
