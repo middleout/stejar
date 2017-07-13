@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/middleout/stejar/tree/master/packages/packages/react-di">
-    <img alt="packages/react-di" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
+  <a href="https://github.com/middleout/stejar/tree/master/packages/react-di">
+    <img alt="react-di" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
   </a>
 </p>
 
@@ -9,8 +9,8 @@
 </h3>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/v/@stejar/packages/react-di.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/dm/@stejar/packages/react-di.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@stejar/react-di"><img src="https://img.shields.io/npm/v/@stejar/react-di.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@stejar/react-di"><img src="https://img.shields.io/npm/dm/@stejar/react-di.svg?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -41,7 +41,7 @@ var withServiceManager = require("@stejar/react-di").withServiceManager;
 
 ## API
 
-### <ServiceProvider />
+### ServiceProvider
 
 ### @inject
 
