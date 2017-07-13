@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "postinstall": "node scripts/build-package-json.js && node scripts/setup-symlinks.js && lerna bootstrap --concurrency=1",
+    "postinstall": "npm install --prefix __integration && node scripts/build-package-json.js && node scripts/setup-symlinks.js && lerna bootstrap --concurrency=1",
     "build": "lerna run test && lerna run build && node scripts/install-packages-into-integration.js",
     "update": "node scripts/update-dependencies.js",
     "clean": "lerna clean && node scripts/clean.js && rimraf ./node_modules"
