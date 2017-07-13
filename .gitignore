@@ -13,7 +13,6 @@ packages/**/__tests__/tsconfig.json
 packages/**/lib
 packages/**/typings
 packages/**/.babelrc
-packages/**/package.json
 packages/**/tsconfig.json
 packages/**/tslint.json
 packages/**/webpack.config.js
