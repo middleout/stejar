@@ -9,7 +9,7 @@
         "compile": "rimraf ./compiled && tsc --outDir ./compiled && babel ./compiled --source-maps inline --out-dir ./es",
         "typings": "rimraf ./typings && tsc --declaration --declarationDir ./typings --outDir ./compiled && rimraf ./compiled",
         "build": "rimraf ./lib && webpack && npm run typings",
-        "integrate": "npm run build && npm install ./packages/[name] --prefix ./../../__integration",
+        "integrate": "npm run build && cd ./../../__integration && npm install ./../packages/[name]",
         "test": "jest",
         "test-start": "jest --watch",
         "start": "webpack --watch"

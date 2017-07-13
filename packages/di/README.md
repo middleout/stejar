@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/middleout/stejar">
-    <img alt="react-router" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
+  <a href="https://github.com/middleout/stejar/tree/master/packages/di">
+    <img alt="stejar-di" src="https://s3-eu-west-1.amazonaws.com/stejar/stejar-logo.png" width="144">
   </a>
 </p>
 

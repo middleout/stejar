@@ -5,14 +5,33 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "postinstall": "node scripts/build-package-json.js && node scripts/setup-symlinks.js && lerna bootstrap --concurrency=1 && npm run build && cd __integration && npm install && cd ../",
-    "build": "lerna run test && lerna run build && node scripts/install-packages-into-integration.js",
-    "update": "node scripts/update-dependencies.js",
-    "clean": "lerna clean && node scripts/clean.js && rimraf ./node_modules"
+    "postinstall": "npm run configure && lerna bootstrap --concurrency=1",
+    "configure": "npm run scripts:scripts:build-package-json && npm run scripts:symlinks",
+    "build": "lerna run test && lerna run build && npm run scripts:install-integration",
+    "clean": "lerna clean && npm run scripts:clean && rimraf ./node_modules",
+    "new": "npm run scripts:new-package && npm run scripts:setup-symlinks",
+    "scripts:symlinks": "node scripts/setup-symlinks",
+    "scripts:build-package-json": "node scripts/build-package-json",
+    "scripts:clean": "node scripts/clean",
+    "scripts:install-integration": "node scripts/install-packages-into-integration",
+    "scripts:update-dependencies": "node scripts/update-dependencies",
+    "scripts:new-package": "node scripts/new-package"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.5",
     "npm-check-updates": "^2.12.1",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "@stejar/di": "^2.0.3",
+    "@types/invariant": "^2.2.28",
+    "@types/lodash": "^4.14.68",
+    "@types/prop-types": "^15.5.1",
+    "@types/react": "^15.0.38",
+    "hoist-non-react-statics": "^2.1.1",
+    "invariant": "^2.2.2",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1"
   }
 }
