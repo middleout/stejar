@@ -41,7 +41,7 @@ var withServiceManager = require("@stejar/react-di").withServiceManager;
 
 ## API
 
-### <ServiceProvider />
+### ServiceProvider
 
 ### @inject
 
