@@ -5,7 +5,7 @@
 </p>
 
 <h3 align="center">
-	Stejar packages/react-di
+	Stejar React-DI
 </h3>
 
 <p align="center">
@@ -14,5 +14,35 @@
 </p>
 
 <p align="center">
-  Description ...
+  Official React bindings for Stejar DI
 </p>
+
+## Installation
+
+Using [npm](https://www.npmjs.com/):
+
+    $ npm install --save @stejar/react-di
+
+Using [yarn](https://yarnpkg.com/en/):
+
+    $ yarn add @stejar/react-di
+
+Then with a module bundler like [webpack](https://webpack.github.io/), use as you would anything else:
+
+```js
+// using an ES6 transpiler, like babel
+import { ServiceProvider, inject, withServiceManager } from "@stejar/react-di";
+
+// not using an ES6 transpiler
+var ServiceProvider = require("@stejar/react-di").ServiceProvider;
+var injectinjectable = require("@stejar/react-di").inject;
+var withServiceManager = require("@stejar/react-di").withServiceManager;
+```
+
+## API
+
+### <ServiceProvider />
+
+### @inject
+
+### @withServiceManager
