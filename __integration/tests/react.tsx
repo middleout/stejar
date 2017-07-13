@@ -21,5 +21,5 @@ export default function() {
         }
     }
 
-    render(<App />, document.getElementById("root2"));
+    render(<App />, document.getElementById("root1"));
 }
