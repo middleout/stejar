@@ -54,16 +54,6 @@ const foo = sm.get(Foo);
 const logger = sm.get(Logger);
 ```
 
-## Powerful container API
-
-Stejar DI provides the classic API of a container as well as advanced features useful to build or extend a framework.
-
-### GET & HAS
-```js
-sm.get($name);
-sm.has($name);
-```
-
 ### INSTANTIATE
 ```js
 // Missing constructor parameters will be resolved from the container.

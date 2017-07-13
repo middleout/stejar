@@ -3,5 +3,5 @@
  * @returns {string|string}
  */
 export function getDisplayName(WrappedComponent: any): string {
-    return WrappedComponent.displayName || WrappedComponent.name || "Component";
+    return WrappedComponent.displayName || WrappedComponent.name || "AnonymousComponent";
 }
