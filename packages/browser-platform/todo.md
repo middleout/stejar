@@ -1,5 +1,0 @@
-- should have the DOM renderer (which should wrap the ServiceProvider from react-di)
-- should have popup window
-- should have new window
-- should have image loader
-- should have script loader
