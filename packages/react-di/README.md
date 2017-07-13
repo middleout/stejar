@@ -9,8 +9,8 @@
 </h3>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/v/@stejar/packages/react-di.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/dm/@stejar/packages/react-di.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/v/@stejar/react-di.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@stejar/packages/react-di"><img src="https://img.shields.io/npm/dm/@stejar/react-di.svg?style=flat-square"></a>
 </p>
 
 <p align="center">
