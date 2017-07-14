@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const dirs = require("./common/getDirectories")("./packages");
+const dirs = require("./getDirectories")("./packages");
 const ncu = require("npm-check-updates");
 
 function upgradeFile(pathToFile) {

@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const dirs = require("./common/getDirectories")("./packages");
+const dirs = require("./getDirectories")("./packages");
 const appPackageJson = JSON.parse(fs.readFileSync("./package.json"));
 const basePackageJson = JSON.parse(fs.readFileSync("./configs/_package.json"));
 

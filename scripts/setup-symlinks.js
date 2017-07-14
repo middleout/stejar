@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const dirs = require("./common/getDirectories")("./packages");
-const symlinks = require("./common/symlinks");
+const getDirs = require("./getDirectories");
+const symlinks = require("./symlinks");
 
 function callback(err) {
     if (err) {
@@ -14,8 +14,14 @@ function callback(err) {
     }
 }
 
-function setupSymlinks(symlinks) {
+module.exports = function setupSymlinks(moduleName) {
+    const dirs = getDirs("./packages");
+
     dirs.forEach(dir => {
+        if (moduleName && dir !== moduleName) {
+            return true;
+        }
+
         Object.keys(symlinks).forEach(from => {
             fs.symlink(
                 path.join(__dirname, "..", "configs", from),
@@ -25,8 +31,6 @@ function setupSymlinks(symlinks) {
             );
         });
 
-        console.log('Built configs for package: ' + dir);
+        console.log("Built configs for package: " + dir);
     });
-}
-
-setupSymlinks(symlinks);
+};
