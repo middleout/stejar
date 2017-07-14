@@ -9,15 +9,16 @@
     "configure": "npm run scripts:scripts:build-package-json && npm run scripts:symlinks",
     "build": "lerna run test && lerna run build && npm run scripts:install-integration",
     "clean": "lerna clean && npm run scripts:clean && rimraf ./node_modules",
-    "new": "npm run scripts:new-package && npm run scripts:setup-symlinks",
+    "new": "node scripts/new-package && npm run scripts:symlinks",
     "scripts:symlinks": "node scripts/setup-symlinks",
     "scripts:build-package-json": "node scripts/build-package-json",
     "scripts:clean": "node scripts/clean",
     "scripts:install-integration": "node scripts/install-packages-into-integration",
-    "scripts:update-dependencies": "node scripts/update-dependencies",
-    "scripts:new-package": "node scripts/new-package"
+    "scripts:update-dependencies": "node scripts/update-dependencies"
   },
   "devDependencies": {
+    "@types/fetch-mock": "^5.8.3",
+    "fetch-mock": "^5.12.1",
     "lerna": "^2.0.0-rc.5",
     "npm-check-updates": "^2.12.1",
     "rimraf": "^2.6.1"
