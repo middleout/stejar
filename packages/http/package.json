@@ -3,8 +3,15 @@
     "module": "./es/index.js",
     "jsnext:main": "./es/index.js",
     "typings": "./typings/index.d.ts",
-    "directories": { "test": "tests" },
-    "files": ["extra-typings", "es", "lib", "typings"],
+    "directories": {
+        "test": "tests"
+    },
+    "files": [
+        "extra-typings",
+        "es",
+        "lib",
+        "typings"
+    ],
     "scripts": {
         "compile": "rimraf ./compiled && tsc --outDir ./compiled && babel ./compiled --source-maps inline --out-dir ./es",
         "typings": "rimraf ./typings && tsc --declaration --declarationDir ./typings --outDir ./compiled && rimraf ./compiled",
@@ -16,7 +23,10 @@
     },
     "author": "Middleout",
     "license": "MIT",
-    "dependencies": { "@types/whatwg-fetch": "0.0.33", "isomorphic-fetch": "^2.2.1" },
+    "dependencies": {
+        "@types/whatwg-fetch": "0.0.33",
+        "isomorphic-fetch": "^2.2.1"
+    },
     "devDependencies": {
         "@types/enzyme": "^2.8.2",
         "@types/jest": "^20.0.2",
@@ -48,16 +58,28 @@
         "webpack-node-externals": "^1.6.0"
     },
     "jest": {
-        "moduleFileExtensions": ["ts", "tsx", "js"],
-        "transform": { ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js" },
-        "testMatch": ["**/__tests__/*.(ts|tsx|js)"],
-        "collectCoverageFrom": ["**/src/**"],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "transform": {
+            ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testMatch": [
+            "**/__tests__/*.(ts|tsx|js)"
+        ],
+        "collectCoverageFrom": [
+            "**/src/**"
+        ],
         "collectCoverage": true,
         "coverageDirectory": "__tests__/__coverage__",
-        "coverageReporters": ["lcov"],
+        "coverageReporters": [
+            "lcov"
+        ],
         "mapCoverage": true
     },
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "",
     "name": "@stejar/http"
 }
