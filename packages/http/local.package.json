@@ -1,0 +1,8 @@
+{
+    "version": "2.0.0",
+    "description": "",
+    "dependencies": {
+        "@types/whatwg-fetch": "0.0.33",
+        "isomorphic-fetch": "^2.2.1"
+    }
+}
