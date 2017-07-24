@@ -16,6 +16,7 @@
     "@stejar/di": "./../packages/di",
     "@stejar/http": "./../packages/http",
     "@stejar/react-di": "./../packages/react-di",
+    "@stejar/redux": "./../packages/redux",
     "@types/react-dom": "^15.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"

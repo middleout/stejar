@@ -7,9 +7,10 @@
   "scripts": {
     "stejar": "node stejar",
     "postinstall": "npm run configure && lerna bootstrap --concurrency=1",
-    "configure": "npm run scripts:scripts:build-package-json && npm run scripts:symlinks",
+    "configure": "npm run scripts:build-package-json && npm run scripts:symlinks",
     "build": "lerna run test && lerna run build && npm run scripts:install-integration",
     "clean": "lerna clean && npm run scripts:clean && rimraf ./node_modules",
+    "scripts:symlinks": "node scripts/run-setup-symlinks.js",
     "scripts:build-package-json": "node scripts/build-package-json",
     "scripts:clean": "node scripts/clean",
     "scripts:install-integration": "node scripts/install-packages-into-integration",

@@ -1,4 +1,4 @@
-import { ServiceManager, injectable } from "@stejar/di";
+import { injectable, ServiceManager } from "@stejar/di";
 import { inject, ServiceProvider } from "@stejar/react-di";
 import React from "react";
 import { Component } from "react";

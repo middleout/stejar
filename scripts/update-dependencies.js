@@ -4,24 +4,30 @@ const dirs = require("./getDirectories")("./packages");
 const ncu = require("npm-check-updates");
 
 function upgradeFile(pathToFile) {
-    ncu
+    return ncu
         .run({
             packageFile: pathToFile,
             upgradeAll: true,
             jsonAll: true,
         })
         .then(newFile => {
-            fs.writeFileSync(pathToFile, JSON.stringify(newFile));
+            fs.writeFileSync(pathToFile, JSON.stringify(newFile, undefined, 4));
             console.log("Upgrades dependencies for " + pathToFile);
         });
 }
 
-upgradeFile("configs/_package.json");
+module.exports = function() {
+    upgradeFile("configs/_package.json");
 
-dirs.forEach(dir => {
-    const jsonPath = path.join("./", "packages", dir, "local.package.json");
+    var promises = [];
 
-    if (fs.existsSync(jsonPath)) {
-        upgradeFile(jsonPath);
-    }
-});
+    dirs.forEach(dir => {
+        const jsonPath = path.join("./", "packages", dir, "local.package.json");
+
+        if (fs.existsSync(jsonPath)) {
+            promises.push(upgradeFile(jsonPath));
+        }
+    });
+
+    return Promise.all(promises);
+};

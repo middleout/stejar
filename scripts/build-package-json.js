@@ -10,13 +10,18 @@ dirs.forEach(dir => {
         localPackageJson = JSON.parse(fs.readFileSync(path.join("./", "packages", dir, "local.package.json")));
     }
 
+    let distPackageJson = {};
+    if (fs.existsSync(path.join("./", "packages", dir, "package.json"))) {
+        distPackageJson = JSON.parse(fs.readFileSync(path.join("./", "packages", dir, "package.json")));
+    }
+
     if (!localPackageJson.name) {
         localPackageJson.name = "@" + appPackageJson.name + "/" + dir;
     }
 
-    const finalPackageJson = Object.assign({}, basePackageJson, localPackageJson);
+    const finalPackageJson = Object.assign({}, basePackageJson, distPackageJson, localPackageJson);
 
-    fs.writeFileSync(path.join("./", "packages", dir, "package.json"), JSON.stringify(finalPackageJson).replace('[name]', dir));
+    fs.writeFileSync(path.join("./", "packages", dir, "package.json"), JSON.stringify(finalPackageJson, undefined, 4).replace('[name]', dir));
 
     console.log("Built package json for package: " + dir);
 });
