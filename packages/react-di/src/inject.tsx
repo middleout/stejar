@@ -10,7 +10,7 @@ import { withServiceManager } from "./withServiceManager";
  * @param mapItemsToProps
  * @returns {(WrappedComponent:any)=>any}
  */
-export function inject<P>(mapItemsToProps: P) {
+export function inject<P>(mapItemsToProps: P): any {
     return function wrapWithConnect(WrappedComponent: any) {
         const displayName = `Inject(${getDisplayName(WrappedComponent)})`;
 
