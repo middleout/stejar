@@ -4,14 +4,14 @@ import { StoreAware } from "./StoreAware";
 
 export abstract class ReducerStore<S> implements StoreAware {
     /**
+     * @type {{}}
+     */
+    bindings = {};
+
+    /**
      * @type {Store}
      */
     protected store: Store<S>;
-
-    /**
-     * @type {{}}
-     */
-    private bindings = {};
 
     /**
      * @param store
@@ -32,7 +32,7 @@ export abstract class ReducerStore<S> implements StoreAware {
      * @param action
      * @returns {ReducerStore}
      */
-    protected bind(name: string | null, action: { new (...args: any[]): Action<any> }): this {
+    protected bind(name: string | null, action: (...args: any[]) => S): this {
         if (!name) {
             name = "@STORE_INIT";
         }

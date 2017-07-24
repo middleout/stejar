@@ -1,7 +1,7 @@
 import { Store } from "./Store";
 import { StoreAware } from "./StoreAware";
 
-export abstract class AbstractActions<S> implements StoreAware {
+export abstract class AbstractActionsCreator<S> implements StoreAware {
     /**
      * @type {Store<S>}
      */

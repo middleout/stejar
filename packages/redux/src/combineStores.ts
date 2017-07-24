@@ -1,13 +1,28 @@
 import { ServiceManager } from "@stejar/di";
-import { Store } from "./Store";
+// import { ReducerStore } from "./ReducerStore";
+
+// type ReducerStoreConstructor = { new (...args: any[]): ReducerStore<any> };
+// type StoreCombinerDef = ReducerStoreConstructor | { [key: string]: ReducerStoreConstructor };
 
 export function combineStores(serviceManager: ServiceManager) {
-    return function storesCombiner(...stores: Array<{ new (...args: any[]): Store<any> }>) {
+    return function storesCombiner(storesDict: any, ...stores: any[]) {
+        let dict = {};
+        if (typeof storesDict !== "function") {
+            dict = storesDict;
+        } else {
+            const list = [storesDict].concat(stores);
+
+            list.forEach(store => {
+                dict[store.name] = store;
+            });
+        }
+
+
         const reducers = {};
 
-        stores.forEach(store => {
-            reducers[store.name] = (state: any, action: any) => {
-                const instance: any = serviceManager.get(store as any);
+        Object.keys(dict).forEach(storeName => {
+            reducers[storeName] = (state: any, action: any) => {
+                const instance: any = serviceManager.get(dict[storeName]);
                 let actionType: string;
 
                 if (state === undefined) {
