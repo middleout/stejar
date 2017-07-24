@@ -1,5 +1,5 @@
 const fs = require("fs");
-const dirs = require("./common/getDirectories")("./packages");
+const dirs = require("./getDirectories")("./packages");
 var exec = require("child_process").exec;
 
 var run = function(cmd) {

@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
-const dirs = require("./common/getDirectories")("./packages");
-const symlinks = require("./common/symlinks");
+const dirs = require("./getDirectories")("./packages");
+const symlinks = require("./symlinks");
 
 dirs.forEach(dir => {
     const jsonPath = path.join("./", "packages", dir, "package.json");

@@ -2,7 +2,6 @@ var inquirer = require("inquirer");
 const newPackage = require("./scripts/new-package");
 const symlinks = require("./scripts/setup-symlinks.js");
 const getDirs = require("./scripts/getDirectories");
-const updateDependencies = require("./scripts/update-dependencies");
 
 console.log("");
 console.log("Welcome to Stejar Command Line Interface");
@@ -14,10 +13,10 @@ var questions = [
         name: "type",
         message: "What would you like to do ?",
         choices: [
-            {
-                name: "Create a new stejar package",
-                value: "new",
-            },
+                {
+                    name: "Create a new stejar package",
+                    value: "new",
+                },
             {
                 name: "Publish current packages to npm",
                 value: "publish",
@@ -110,11 +109,6 @@ inquirer.prompt(questions).then(function(answers) {
 
                 console.log("Goodbye!");
             });
-            break;
-
-        case "ncu":
-            console.log("Updating package(s).json ...");
-            updateDependencies().then(() => console.log("Done !"));
             break;
     }
 });
