@@ -11,7 +11,7 @@ function upgradeFile(pathToFile) {
             jsonAll: true,
         })
         .then(newFile => {
-            fs.writeFileSync(pathToFile, JSON.stringify(newFile));
+            fs.writeFileSync(pathToFile, JSON.stringify(newFile, undefined, 4));
             console.log("Upgrades dependencies for " + pathToFile);
         });
 }
