@@ -12,7 +12,7 @@ import { shape } from "./shape";
  * @param WrappedComponent
  * @returns {any}
  */
-export function withServiceManager(WrappedComponent: any) {
+export function withServiceManager(WrappedComponent: any): any {
     const displayName = `WithServiceManager(${getDisplayName(WrappedComponent)})`;
 
     class WithServiceManager extends Component<any, any> {
