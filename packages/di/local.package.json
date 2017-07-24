@@ -1,5 +1,4 @@
 {
-    "version": "2.0.3",
     "description": "Dependency Injection for React/Typescript applications.",
     "dependencies": {
         "@types/invariant": "^2.2.28",
