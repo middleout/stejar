@@ -14,7 +14,6 @@ module.exports = function newPackage(packageName) {
 
     fs.mkdirSync(packagePath);
     const packageJson = {
-        version: "2.0.0",
         description: "",
         dependencies: {},
     };
