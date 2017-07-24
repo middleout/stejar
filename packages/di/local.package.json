@@ -1,5 +1,9 @@
 {
     "version": "2.0.3",
     "description": "Dependency Injection for React/Typescript applications.",
-    "dependencies": { "@types/invariant": "^2.2.28", "invariant": "^2.2.2", "reflect-metadata": "^0.1.10" }
+    "dependencies": {
+        "@types/invariant": "^2.2.28",
+        "invariant": "^2.2.2",
+        "reflect-metadata": "^0.1.10"
+    }
 }
