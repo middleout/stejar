@@ -12,7 +12,7 @@
   },
   "author": "Middleout",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@types/enzyme": "^2.8.4",
     "@types/jest": "^20.0.6",
     "@types/react-hot-loader": "3.0.2",
