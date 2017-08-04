@@ -7,7 +7,7 @@ fs.symlinkSync(path.join(__dirname, "..", "configs", ".babelrc"), "./../../../.b
 fs.symlinkSync(path.join(__dirname, "..", "configs", ".editorconfig"), "./../../../.editorconfig");
 fs.symlinkSync(path.join(__dirname, "..", "configs", "tsconfig.json"), "./../../../tsconfig.json");
 fs.symlinkSync(path.join(__dirname, "..", "configs", "tslint.json"), "./../../../tslint.json");
-fs.symlinkSync(path.join(__dirname, "..", "configs", "jest.config.js"), "./../../../jest.config.js");
+fs.symlinkSync(path.join(__dirname, "..", "configs", "jest.config.json"), "./../../../jest.config.json");
 
 if (fs.existsSync("./../../../__tests__")) {
     fs.symlinkSync(path.join(__dirname, "..", "configs", "tsconfig.tests.json"), "./../../../__tests__/tsconfig.json");
