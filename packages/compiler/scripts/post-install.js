@@ -5,6 +5,8 @@ console.log("Setting up symlinks...");
 
 console.log(path.resolve("./"));
 console.log(path.join(__dirname, "./"));
+console.log(path.dirname(require.main.filename));
+console.log(process.cwd());
 
 fs.symlinkSync(path.join(__dirname, "..", "configs", ".babelrc"), "./.babelrc");
 fs.symlinkSync(path.join(__dirname, "..", "configs", ".editorconfig"), "./.editorconfig");
