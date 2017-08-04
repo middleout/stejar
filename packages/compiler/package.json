@@ -5,7 +5,7 @@
     "scripts"
   ],
   "scripts": {
-    "postinstall": "node node_modules/@stejar/compiler/scripts/post-install.js"
+    "postinstall": "node scripts/post-install.js"
   },
   "publishConfig": {
     "access": "public"
