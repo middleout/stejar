@@ -7,6 +7,9 @@
   "scripts": {
     "postinstall": "node scripts/post-install.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Middleout",
   "license": "MIT",
   "devDependencies": {
