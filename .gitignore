@@ -16,3 +16,7 @@ packages/**/.babelrc
 packages/**/tsconfig.json
 packages/**/tslint.json
 packages/**/webpack.config.js
+
+!packages/compiler/configs/**/.babelrc
+!packages/compiler/configs/**/tsconfig.json
+!packages/compiler/configs/**/tslint.json
