@@ -30,11 +30,12 @@
   },
   "include": [
     "../src/**/*.ts",
-    "extra-typings/**/*.d.ts",
     "../src/**/*.tsx",
+    "./types/**/*.d.ts",
     "./**/*.ts",
     "./**/*.tsx",
-    "../node_modules/@types"
+    "../node_modules/@types",
+    "../node_modules/@stejar/compiler/types/*.d.ts"
   ],
   "exclude": [
     "node_modules"
