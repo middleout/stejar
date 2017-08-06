@@ -5,8 +5,8 @@ const {
     DefinePlugin,
     BannerPlugin,
     HotModuleReplacementPlugin,
+    NamedModulesPlugin,
 } = require("webpack");
-const webpack = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
@@ -16,7 +16,6 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const ManifestPlugin = require("webpack-manifest-plugin");
-const WebpackDevServer = require("webpack-dev-server");
 const config = Object.assign(
     {},
     JSON.parse(fs.readFileSync("./config/default.json")),
@@ -106,12 +105,17 @@ const commonWebpackConfig = {
 
 const devWebpackConfig = merge({}, commonWebpackConfig, {
     devtool: "source-map",
-    entry: ["react-dev-utils/webpackHotDevClient", "react-hot-loader/patch", "./src/index.tsx"],
+    entry: [
+        "react-hot-loader/patch",
+        "webpack-dev-server/client?http://localhost:8080",
+        "webpack/hot/only-dev-server",
+        "./src/index.tsx",
+    ],
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
-                use: ["react-hot-loader/webpack", "babel-loader", "ts-loader"],
+                use: ["babel-loader", "ts-loader"],
                 exclude: [/node_modules/],
             },
             {
@@ -128,6 +132,7 @@ const devWebpackConfig = merge({}, commonWebpackConfig, {
         ],
     },
     plugins: [
+        new NamedModulesPlugin(),
         new HotModuleReplacementPlugin(),
         new DefinePlugin({
             "process.env.NODE_ENV": '"development"',
@@ -214,5 +219,5 @@ const prodWebpackConfig = merge({}, commonWebpackConfig, {
 
 module.exports = {
     dev: devWebpackConfig,
-    prod: prodWebpackConfig
-}
+    prod: prodWebpackConfig,
+};
