@@ -24,8 +24,7 @@
   "dependencies": {
     "@types/react-redux": "^4.4.47"
   },
-  "devDependencies": {},
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "@stejar/react-redux-extras"
 }

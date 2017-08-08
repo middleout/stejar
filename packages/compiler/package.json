@@ -120,7 +120,7 @@
         ],
         "mapCoverage": true
     },
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "Alpha System for building standardized apps for @Stejar",
     "name": "@stejar/compiler"
 }
