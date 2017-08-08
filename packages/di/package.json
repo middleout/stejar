@@ -10,7 +10,7 @@
         "test": "tests"
     },
     "files": [
-        "extra-typings",
+        "types",
         "es",
         "lib",
         "typings"

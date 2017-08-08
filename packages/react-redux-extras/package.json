@@ -1,0 +1,31 @@
+{
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "jsnext:main": "./es/index.js",
+  "typings": "./typings/index.d.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "types",
+    "es",
+    "lib",
+    "typings"
+  ],
+  "scripts": {
+    "build": "rimraf ./lib",
+    "integrate": "cd ./../../__integration && npm install ./../packages/react-redux-extras"
+  },
+  "author": "Middleout",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react-redux": "^4.4.47"
+  },
+  "devDependencies": {},
+  "description": "",
+  "version": "0.0.1",
+  "name": "@stejar/react-redux-extras"
+}
