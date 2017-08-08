@@ -35,7 +35,7 @@
     "./**/*.ts",
     "./**/*.tsx",
     "../node_modules/@types",
-    "../node_modules/@stejar/compiler/types/*.d.ts"
+    "../node_modules/@stejar/**/types/*.d.ts"
   ],
   "exclude": [
     "node_modules"
