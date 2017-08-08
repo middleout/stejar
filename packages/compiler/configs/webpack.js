@@ -1,10 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const {
-    optimize: { UglifyJsPlugin, CommonsChunkPlugin },
-    DefinePlugin,
-    BannerPlugin
-} = require("webpack");
+const { optimize: { UglifyJsPlugin, CommonsChunkPlugin }, DefinePlugin, BannerPlugin } = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
@@ -25,6 +21,19 @@ const Css = new extractTextPlugin({
     filename: "css/app.[chunkhash].css",
     allChunks: true,
 });
+
+function generateCssLoader(isDev) {
+    return {
+        test: /\.scss$/,
+        loader: Css.extract([
+            { loader: "css-loader", options: { importLoaders: 1, sourceMap: isDev, minimize: !isDev } },
+            { loader: "postcss-loader", options: { sourceMap: isDev, plugins: [require("autoprefixer")] } },
+            "resolve-url-loader",
+            { loader: "sass-loader", options: { outputStyle: "expanded", sourceMap: isDev } },
+        ]),
+        exclude: [/node_modules/],
+    };
+}
 
 const commonWebpackConfig = {
     output: {
@@ -103,9 +112,7 @@ const commonWebpackConfig = {
 
 const devWebpackConfig = merge({}, commonWebpackConfig, {
     devtool: "source-map",
-    entry: [
-        "./src/index.tsx",
-    ],
+    entry: ["./src/index.tsx"],
     module: {
         rules: [
             {
@@ -113,17 +120,7 @@ const devWebpackConfig = merge({}, commonWebpackConfig, {
                 use: ["babel-loader", "ts-loader"],
                 exclude: [/node_modules/],
             },
-            {
-                test: /\.scss$/,
-                loaders: [
-                    "style-loader",
-                    { loader: "css-loader", options: { importLoaders: 1, sourceMap: true } },
-                    { loader: "postcss-loader", options: { sourceMap: true, plugins: [require("autoprefixer")] } },
-                    "resolve-url-loader",
-                    { loader: "sass-loader", options: { outputStyle: "expanded", sourceMap: true } },
-                ],
-                exclude: [/node_modules/],
-            },
+            generateCssLoader(true)
         ],
     },
     plugins: [
@@ -150,16 +147,7 @@ const prodWebpackConfig = merge({}, commonWebpackConfig, {
                 use: ["babel-loader", "ts-loader"],
                 exclude: [/node_modules/],
             },
-            {
-                test: /\.scss$/,
-                loader: Css.extract([
-                    { loader: "css-loader", options: { importLoaders: 1, sourceMap: false, minimize: true } },
-                    { loader: "postcss-loader", options: { sourceMap: false, plugins: [require("autoprefixer")] } },
-                    "resolve-url-loader",
-                    { loader: "sass-loader", options: { outputStyle: "expanded", sourceMap: false } },
-                ]),
-                exclude: [/node_modules/],
-            },
+            generateCssLoader()
         ],
     },
     plugins: [
