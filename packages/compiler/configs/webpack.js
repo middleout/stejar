@@ -3,9 +3,7 @@ const fs = require("fs");
 const {
     optimize: { UglifyJsPlugin, CommonsChunkPlugin },
     DefinePlugin,
-    BannerPlugin,
-    HotModuleReplacementPlugin,
-    NamedModulesPlugin,
+    BannerPlugin
 } = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
@@ -106,9 +104,6 @@ const commonWebpackConfig = {
 const devWebpackConfig = merge({}, commonWebpackConfig, {
     devtool: "source-map",
     entry: [
-        "react-hot-loader/patch",
-        "webpack-dev-server/client?http://localhost:8080",
-        "webpack/hot/only-dev-server",
         "./src/index.tsx",
     ],
     module: {
@@ -132,8 +127,6 @@ const devWebpackConfig = merge({}, commonWebpackConfig, {
         ],
     },
     plugins: [
-        new NamedModulesPlugin(),
-        new HotModuleReplacementPlugin(),
         new DefinePlugin({
             "process.env.NODE_ENV": '"development"',
         }),
