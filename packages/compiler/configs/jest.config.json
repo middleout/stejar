@@ -1,34 +1,37 @@
 {
-  "moduleNameMapper": {
-    "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-  },
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js"
-  ],
-  "globals": {
-    "ts-jest": {
-      "tsConfigFile": "__tests__/tsconfig.json",
-      "useBabelrc": true
-    }
-  },
-  "setupFiles": [
-    "<rootDir>/__tests__/jest-beforeTest.js"
-  ],
-  "transform": {
-    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-  },
-  "testMatch": [
-    "**/__tests__/**/*.(ts|tsx)"
-  ],
-  "collectCoverageFrom": [
-    "**/src/**"
-  ],
-  "collectCoverage": true,
-  "coverageDirectory": "__tests__/__coverage__",
-  "coverageReporters": [
-    "lcov"
-  ],
-  "mapCoverage": true
+    "moduleNameMapper": {
+        "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx"
+    ],
+    "globals": {
+        "ts-jest": {
+            "tsConfigFile": "__tests__/tsconfig.json",
+            "useBabelrc": true
+        }
+    },
+    "setupFiles": [
+        "<rootDir>/__tests__/jest-beforeTest.js"
+    ],
+    "transform": {
+        "^.+\\.jsx?$": "babel-jest",
+        ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+        "<rootDir>/__tests__/src/**/*.test.(js|jsx)",
+        "<rootDir>/__tests__/src/**/*.test.(ts|tsx)"
+    ],
+    "collectCoverageFrom": [
+        "<rootDir>/src/**"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "__tests__/__coverage__",
+    "coverageReporters": [
+        "lcov"
+    ],
+    "mapCoverage": true
 }
