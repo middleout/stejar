@@ -10,11 +10,7 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const ManifestPlugin = require("webpack-manifest-plugin");
-const config = Object.assign(
-    {},
-    JSON.parse(fs.readFileSync("./config/default.json")),
-    fs.existsSync("./config/local.json") ? JSON.parse(fs.readFileSync("./config/local.json")) : {}
-);
+const config = require("./appConfig");
 const merge = require("webpack-merge");
 
 const Css = new extractTextPlugin({
@@ -31,18 +27,19 @@ function generateCssLoader(isDev) {
             "resolve-url-loader",
             { loader: "sass-loader", options: { outputStyle: "expanded", sourceMap: isDev } },
         ]),
-        exclude: [/node_modules/],
+        // exclude: [/node_modules/],
     };
 }
 
 const commonWebpackConfig = {
+    entry: [config.entry || "index.tsx"],
     output: {
         path: path.resolve("./dist/public"),
         filename: "js/app.[chunkhash].js",
         publicPath: config.publicPath,
     },
     resolve: {
-        extensions: [".js", ".ts", ".tsx"],
+        extensions: [".js", ".ts", ".tsx", '.jsx'],
     },
     target: "web",
     module: {
@@ -67,6 +64,16 @@ const commonWebpackConfig = {
                 loader: "expose-loader?React",
             },
             {
+                test: /\.(ts|tsx)$/,
+                use: ["babel-loader", "ts-loader"],
+                exclude: [/node_modules/],
+            },
+            {
+                test: /\.(js|jsx)$/,
+                use: ["babel-loader"],
+                exclude: [/node_modules/],
+            },
+            {
                 test: /resources\/locales\/(.*)\.json$/,
                 loaders: ["file-loader?name=js/intl/[name].[hash].json"],
                 exclude: ["node_modules"],
@@ -79,15 +86,15 @@ const commonWebpackConfig = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            hash: false,
-            inject: false,
-            filename: "index.html",
-            template: "./resources/index.ejs",
-            pageTitle: "<title>Application Title</title>",
-            prerenderApp: "<div></div>",
-            appState: "{}",
-        }),
+        // new HtmlWebpackPlugin({
+        //     hash: false,
+        //     inject: false,
+        //     filename: "index.html",
+        //     template: "./resources/index.ejs",
+        //     pageTitle: "<title>Application Title</title>",
+        //     prerenderApp: "<div></div>",
+        //     appState: "{}",
+        // }),
         new CircularDependencyPlugin(),
         new CaseSensitivePathsPlugin(),
         new WebpackChunkHash(),
@@ -112,14 +119,8 @@ const commonWebpackConfig = {
 
 const devWebpackConfig = merge({}, commonWebpackConfig, {
     devtool: "source-map",
-    entry: ["./src/index.tsx"],
     module: {
         rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                use: ["babel-loader", "ts-loader"],
-                exclude: [/node_modules/],
-            },
             generateCssLoader(true)
         ],
     },
@@ -138,15 +139,9 @@ const devWebpackConfig = merge({}, commonWebpackConfig, {
 });
 
 const prodWebpackConfig = merge({}, commonWebpackConfig, {
-    entry: ["./src/index.tsx"],
     devtool: false,
     module: {
         rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                use: ["babel-loader", "ts-loader"],
-                exclude: [/node_modules/],
-            },
             generateCssLoader()
         ],
     },
