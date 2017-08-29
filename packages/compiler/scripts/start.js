@@ -34,7 +34,11 @@ function defaultStartScript(response, assetsMap) {
 const compiler = createWebpackCompiler("dev", assetsMap => {
 
     if (config.startScriptPath) {
-        const script = require(config.startScriptPath);
+        let script = require(path.resolve("./" + config.startScriptPath));
+        if (script.default) {
+            script = script.default;
+        }
+
         script(assetsMap);
         return;
     }
