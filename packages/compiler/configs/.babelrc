@@ -3,8 +3,7 @@
     [
       "es2015",
       { "modules": false }
-    ],
-    "stage-0"
+    ]
   ],
   "plugins": ["transform-runtime","jsx-control-statements", "transform-react-jsx", "transform-decorators-legacy"]
 }

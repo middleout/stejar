@@ -1,6 +1,7 @@
 {
     "moduleNameMapper": {
-        "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+        "\\.(css|scss|less)$": "identity-obj-proxy",
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/jest/fileMock.js"
     },
     "moduleFileExtensions": [
         "ts",
@@ -8,30 +9,27 @@
         "js",
         "jsx"
     ],
-    "globals": {
-        "ts-jest": {
-            "tsConfigFile": "__tests__/tsconfig.json",
-            "useBabelrc": true
-        }
-    },
     "setupFiles": [
-        "<rootDir>/__tests__/jest-beforeTest.js"
+        "<rootDir>/scripts/jest/beforeTest.js"
     ],
     "transform": {
-        "^.+\\.jsx?$": "babel-jest",
-        ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        ".(js|jsx)": "<rootDir>/scripts/jest/babelTransform.js"
     },
     "testMatch": [
-        "<rootDir>/__tests__/src/**/*.test.(js|jsx)",
-        "<rootDir>/__tests__/src/**/*.test.(ts|tsx)"
+        "<rootDir>/../../../src/**/*.test.(js|jsx)"
     ],
     "collectCoverageFrom": [
-        "<rootDir>/src/**"
+        "**/src/**/*.{js,jsx}",
+        "!**/src/**/*.story.{js,jsx}"
     ],
-    "collectCoverage": true,
-    "coverageDirectory": "__tests__/__coverage__",
+    "coverageDirectory": "<rootDir>/../../../__coverage__",
     "coverageReporters": [
+        "text",
         "lcov"
     ],
-    "mapCoverage": true
+    "mapCoverage": true,
+    "rootDir": "./../",
+    "roots": [
+        "<rootDir>/../../../"
+    ]
 }
