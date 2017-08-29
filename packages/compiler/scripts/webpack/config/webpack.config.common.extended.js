@@ -16,6 +16,7 @@ import {
     stats,
     generateCssLoader,
 } from "./webpack.config.common";
+import config from "../../app.config";
 
 const _packageJson = fs.readFileSync("./package.json");
 const _appVersion = _packageJson.version;
@@ -45,7 +46,7 @@ const plugins = _plugins.slice(0).concat([
     new CaseSensitivePathsPlugin(),
     new WebpackChunkHash(),
     new ManifestPlugin({
-        fileName: "../mappings.json",
+        fileName: "../" + (config.assetsMapFileName || "mappings.json"),
     }),
     new BannerPlugin({
         banner: `

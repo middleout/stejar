@@ -3,9 +3,9 @@ import autoprefixer from "autoprefixer";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import { ProvidePlugin } from "webpack";
 import WebpackBuildNotifierPlugin from "webpack-build-notifier";
-import config from "./../app.config";
+import config from "./../../app.config";
 
-const _extensions = [".js", ".jsx", ".ts", ".tsx"];
+const _extensions = [".js", ".jsx"];
 
 const output = {
     publicPath: config.publicPath,

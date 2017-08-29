@@ -12,6 +12,6 @@ link(path.join(__dirname, "..", "configs", ".stylelintrc"), "./../../../.styleli
 link(path.join(__dirname, "..", "configs", ".lintstagedrc"), "./../../../.lintstagedrc");
 link(path.join(__dirname, "..", "configs", "jest.config.json"), "./../../../jest.config.json");
 link(path.join(__dirname, "..", "configs", ".storybook"), "./../../../.storybook");
-link(path.join(__dirname, "..", "configs", ".gitignore"), "./../../../.gitignore");
+link(path.join(__dirname, "..", "configs", "_gitignore"), "./../../../.gitignore");
 
 console.log("Done !");

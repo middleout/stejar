@@ -1,12 +1,26 @@
 import path from "path";
 import express from "express";
-import vhost from "vhost";
-import requireUncached from "require-uncached";
 import openBrowser from 'react-dev-utils/openBrowser';
 import createWebpackCompiler from "./webpack/compiler";
+import config from "./app.config";
 
-let servers = [];
+let server;
 let browserWasOpened = false;
+
+function defaultStartScript(response, assetsMap) {
+    response.send(`
+        <html>
+          <head>
+            <link type="text/css" href="${assetsMap["main.css"]}" rel="stylesheet" media="all" />
+          </head>
+          <body>
+            <div id="root"></div>
+            <script src="${assetsMap["vendor.js"]}"></script>
+            <script src="${assetsMap["main.js"]}"></script>
+          </body>
+        </html>
+    `);
+}
 
 /**
  * This is the main file that handles the DEVELOPMENT server.
@@ -18,71 +32,31 @@ let browserWasOpened = false;
  * and will render the HTML from the dist/server/index.js
  */
 const compiler = createWebpackCompiler("dev", assetsMap => {
-    // Convert the ENV "HOST" to an array of host:port
-    // in order to use it for VHOST.
-    const HOST = process.env.HOST || "localhost:3000";
-    const hosts = HOST.split(",");
-    let ports = [];
-    const finalHosts = hosts.map(host => {
-        ports.push(host.split(":")[1] || 80);
-        return host.split(":")[0] || "";
-    });
 
-    if (servers.length > 0) {
-        servers.forEach(server => server.close());
+    if (config.startScriptPath) {
+        const script = require(config.startScriptPath);
+        script(assetsMap);
+        return;
     }
 
+    // Default static server without server side rendering
     const app = express();
 
-    finalHosts.forEach(host => {
-        const inlineApp = express();
+    if (server) {
+        server.close();
+    }
 
-        // Serve static assets (js/css/img/fonts)
-        inlineApp.use(express.static("./dist/client"));
+    // Serve static assets (js/css/img/fonts)
+    const clientDistDir = path.join(config.distDirName || "dist", config.clientDistDirName || "client");
+    app.use(express.static(clientDistDir));
+    app.get("*", (req, res) => defaultStartScript(res, assetsMap));
+    server = app.listen(3000, () => {
+        console.log("Listening on port %d", server.address().port);
 
-        // Do the actual Server side render (OR just server a plain HTML if you prefer)
-        // But you need to map to the assets map
-        inlineApp.get("*", (req, res) => {
-            /**
-             * Server Side Rendering
-             */
-            res.send(
-                requireUncached( path.join(path.resolve("./"), "dist", "server", "index") ).default({
-                    url: req.path,
-                    assets: assetsMap,
-                })
-            );
-
-            /**
-             * Standard Client only Rendering
-             */
-            // res.send(`
-            // <html>
-            //   <head>
-            //     <link type="text/css" href="${assetsMap["main.css"]}" rel="stylesheet" media="all" />
-            //   </head>
-            //   <body>
-            //     <div id="root"></div>
-            //     <script src="${assetsMap["vendor.js"]}"></script>
-            //     <script src="${assetsMap["main.js"]}"></script>
-            //   </body>
-            // </html>
-            // `);
-        });
-
-        app.use(vhost(host, inlineApp));
-    });
-
-    ports.forEach(port => {
-        const server = app.listen(port, function() {
-            console.log("Listening on port %d", server.address().port);
-
-            if (!browserWasOpened) {
-                openBrowser('localhost:' + server.address().port);
-                browserWasOpened = true;
-            }
-        });
-        servers.push(server);
+        if (!browserWasOpened) {
+            openBrowser('localhost:' + server.address().port);
+            browserWasOpened = true;
+        }
     });
 });
 
