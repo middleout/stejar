@@ -14,11 +14,11 @@ const defineOpts = {
     },
 };
 
-const clientDist = path.join("./", config.distDirName || "dist", config.clientDistDirName || "client");
-const serverDist = path.join("./", config.distDirName || "dist", config.serverDistDirName || "server");
+const clientDist = "./" + path.join(config.distDirName || "dist", config.clientDistDirName || "client");
+const serverDist = "./" + path.join( config.distDirName || "dist", config.serverDistDirName || "server");
 
 const extraPlugins = [
-    new CleanWebpackPlugin([clientDist], cleanOptions),
+    new CleanWebpackPlugin(clientDist, cleanOptions),
     new DefinePlugin(defineOpts),
     new optimize.CommonsChunkPlugin({
         name: "vendor",
@@ -107,7 +107,7 @@ export default [
             .slice()
             .concat([
                 new CleanWebpackPlugin(serverDist, cleanOptions),
-                new CleanWebpackPlugin(path.join("./", config.distDirName || "dist", config.assetsMapFileName || "mappings.json")),
+                new CleanWebpackPlugin( path.resolve("./" + path.join(config.distDirName || "dist", config.assetsMapFileName || "mappings.json")), cleanOptions ),
                 new DefinePlugin(defineOpts),
             ]),
         stats,
