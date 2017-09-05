@@ -16,7 +16,6 @@
         "umd"
     ],
     "scripts": {
-        "precommit": "lint-staged",
         "build": "node ./scripts/build.js",
         "watch": "babel ./src -d . --ignore __tests__ --watch",
         "prepublishOnly": "node ./tools/build.js",
