@@ -1,0 +1,29 @@
+{
+    "publishConfig": {
+        "access": "public"
+    },
+    "jsnext:main": "./es/index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "test": "jest --watch --config node_modules/@stejar/compiler/configs/jest.config.json",
+        "test:run": "jest --config node_modules/@stejar/compiler/configs/jest.config.json",
+        "test:coverage": "jest --coverage --config node_modules/@stejar/compiler/configs/jest.config.json",
+        "start": "node -r @std/esm node_modules/@stejar/compiler/scripts/start.js",
+        "build": "node -r @std/esm node_modules/@stejar/compiler/scripts/build.js",
+        "deploy": "npm run test:run && npm run build && bump --prompt --commit --tag --all"
+    },
+    "author": "Middleout",
+    "license": "MIT",
+    "devDependencies": {
+        "@stejar/compiler": "^0.3.8",
+        "named-routes": "^2.0.6"
+    },
+    "version": "0.0.3",
+    "description": "",
+    "name": "@stejar/router"
+}
