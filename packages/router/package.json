@@ -38,7 +38,7 @@
         "rollup-plugin-replace": "^2.0.0",
         "rollup-plugin-uglify": "^2.0.1"
     },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "",
     "name": "@stejar/router"
 }
