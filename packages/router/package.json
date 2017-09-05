@@ -2,26 +2,42 @@
     "publishConfig": {
         "access": "public"
     },
-    "jsnext:main": "./es/index.js",
+    "jsnext:main": "es/index.js",
+    "module": "es/index.js",
+    "main": "index.js",
     "directories": {
         "test": "tests"
     },
     "files": [
-        "src"
+        "Router.js",
+        "serverHistory.js",
+        "index.js",
+        "es",
+        "umd"
     ],
     "scripts": {
-        "test": "jest --watch --config node_modules/@stejar/compiler/configs/jest.config.json",
-        "test:run": "jest --config node_modules/@stejar/compiler/configs/jest.config.json",
-        "test:coverage": "jest --coverage --config node_modules/@stejar/compiler/configs/jest.config.json",
-        "start": "node -r @std/esm node_modules/@stejar/compiler/scripts/start.js",
-        "build": "node -r @std/esm node_modules/@stejar/compiler/scripts/build.js",
-        "deploy": "npm run test:run && npm run build && bump --prompt --commit --tag --all"
+        "precommit": "lint-staged",
+        "build": "node ./scripts/build.js",
+        "watch": "babel ./src -d . --ignore __tests__ --watch",
+        "prepublishOnly": "node ./tools/build.js",
+        "clean": "git clean -fdX .",
+        "lint": "eslint modules",
+        "test": "jest"
     },
     "author": "Middleout",
     "license": "MIT",
+    "dependencies": {
+        "named-routes": "^2.0.6"
+    },
     "devDependencies": {
         "@stejar/compiler": "^0.3.8",
-        "named-routes": "^2.0.6"
+        "babel-cli": "^6.26.0",
+        "rollup": "^0.49.2",
+        "rollup-plugin-babel": "^3.0.2",
+        "rollup-plugin-commonjs": "^8.2.0",
+        "rollup-plugin-node-resolve": "^3.0.0",
+        "rollup-plugin-replace": "^2.0.0",
+        "rollup-plugin-uglify": "^2.0.1"
     },
     "version": "0.0.3",
     "description": "",
