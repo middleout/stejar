@@ -1,4 +1,8 @@
 import trim from "lodash.trim";
+import path from "path";
+import {config} from "dotenv";
+
+config({path: path.resolve("./.env")});
 
 export default {
     publicPath: trim(process.env.JS_CSS_PUBLIC_PATH || "/", "/") + "/" || "/",

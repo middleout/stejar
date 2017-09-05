@@ -5,5 +5,5 @@
       { "modules": false }
     ]
   ],
-  "plugins": ["transform-runtime","jsx-control-statements", "transform-react-jsx", "transform-decorators-legacy"]
+  "plugins": ["transform-runtime","jsx-control-statements", "transform-react-jsx", "transform-decorators-legacy", "transform-object-rest-spread"]
 }

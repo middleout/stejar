@@ -1,10 +1,7 @@
 import webpack from "webpack";
 import formatWebpackMessages from "react-dev-utils/formatWebpackMessages";
 import clearConsole from "react-dev-utils/clearConsole";
-import { config as loadEnvConfig } from "dotenv";
-
-// load DOTENV
-loadEnvConfig();
+import appConfig from "./../app.config";
 
 export default function(env, callback) {
     //The browser/server configuration
@@ -46,13 +43,13 @@ export default function(env, callback) {
             assetsData.forEach(item => {
                 if (item.indexOf(".js") !== -1) {
                     if (item.indexOf(".map") == -1) {
-                        assets[name + ".js"] = item;
+                        assets[name + ".js"] = appConfig.publicPath + item;
                     }
                 }
 
                 if (item.indexOf(".css") !== -1) {
                     if (item.indexOf(".map") == -1) {
-                        assets[name + ".css"] = item;
+                        assets[name + ".css"] = appConfig.publicPath + item;
                     }
                 }
             });
