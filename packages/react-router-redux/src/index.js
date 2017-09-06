@@ -1,0 +1,1 @@
+export { reduxRouter } from "./reduxRouter";

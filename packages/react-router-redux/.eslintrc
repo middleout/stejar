@@ -1,0 +1,22 @@
+{
+    "extends": ["eslint:recommended", "prettier", "prettier/react", "plugin:react/recommended"],
+    "plugins": ["react"],
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "no-console": "off"
+    }
+}
