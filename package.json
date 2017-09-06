@@ -1,39 +1,16 @@
 {
   "name": "stejar",
   "version": "1.0.0",
-  "description": "Web development utilities for React and Typescript",
+  "description": "Web development framework for React",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "stejar": "node stejar",
-    "postinstall": "npm run configure && lerna bootstrap --concurrency=1",
-    "configure": "npm run scripts:build-package-json && npm run scripts:symlinks",
-    "build": "lerna run test && lerna run build && npm run scripts:install-integration",
-    "clean": "lerna clean && npm run scripts:clean && rimraf ./node_modules",
-    "scripts:symlinks": "node scripts/run-setup-symlinks.js",
-    "scripts:build-package-json": "node scripts/build-package-json",
-    "scripts:clean": "node scripts/clean",
-    "scripts:install-integration": "node scripts/install-packages-into-integration",
-    "scripts:update-dependencies": "node scripts/update-dependencies"
+    "postinstall": "lerna bootstrap --stream",
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean",
+    "test": "lerna run test --stream"
   },
   "devDependencies": {
-    "@types/fetch-mock": "^5.8.3",
-    "fetch-mock": "^5.12.1",
-    "inquirer": "^3.2.0",
-    "lerna": "^2.0.0-rc.5",
-    "npm-check-updates": "^2.12.1",
-    "rimraf": "^2.6.1"
-  },
-  "dependencies": {
-    "@stejar/di": "^2.0.3",
-    "@types/invariant": "^2.2.28",
-    "@types/lodash": "^4.14.68",
-    "@types/prop-types": "^15.5.1",
-    "@types/react": "^15.0.38",
-    "hoist-non-react-statics": "^2.1.1",
-    "invariant": "^2.2.2",
-    "lodash": "^4.17.4",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1"
+    "lerna": "^2.0.0"
   }
 }

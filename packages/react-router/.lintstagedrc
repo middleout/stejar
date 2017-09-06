@@ -1,0 +1,9 @@
+{
+    "gitDir": "../../",
+    "linters": {
+        "**/src/**/*.{js,jsx}": [
+            "prettier --write --config ./.prettierrc",
+            "git add"
+        ]
+    }
+}
