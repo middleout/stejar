@@ -35,8 +35,8 @@
     "author": "Middleout",
     "license": "MIT",
     "dependencies": {
-        "named-routes": "^2.0.6",
-        "@stejar/router": "^0.0.5"
+        "@stejar/router": "^0.0.6",
+        "named-routes": "^2.0.6"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -61,7 +61,7 @@
         "rollup-plugin-replace": "^2.0.0",
         "rollup-plugin-uglify": "^2.0.1"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
     "name": "@stejar/react-router"
 }
