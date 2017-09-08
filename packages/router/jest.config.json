@@ -1,1 +1,9 @@
-node_modules/@stejar/compiler/configs/jest.config.json
+{
+    "moduleFileExtensions": [
+        "js",
+        "jsx"
+    ],
+    "testMatch": [
+        "<rootDir>/src/*.test.(js|jsx)"
+    ]
+}

@@ -1,1 +1,10 @@
-node_modules/@stejar/compiler/configs/.lintstagedrc
+{
+    "gitDir": "../../",
+    "linters": {
+        "**/src/**/*.{js,jsx}": [
+        	"eslint",
+            "prettier --write --config ./.prettierrc",
+            "git add"
+        ]
+    }
+}

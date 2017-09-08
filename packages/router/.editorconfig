@@ -1,1 +1,12 @@
-node_modules/@stejar/compiler/configs/.editorconfig
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{js,ts,tsx,jsx,json,scss}]
+charset = utf-8
+indent_style = space
+indent_size = 4

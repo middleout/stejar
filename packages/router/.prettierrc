@@ -1,1 +1,6 @@
-node_modules/@stejar/compiler/configs/.prettierrc
+{
+  "printWidth": 120,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "jsxBracketSameLine": true
+}
