@@ -1,14 +1,5 @@
 import { Router } from "./Router";
-import { convertJSXroutesToJSroutes } from "./convertJSXroutesToJSroutes";
-import { RouterContainer } from "./RouterContainer";
-import { IndexRoute } from "./IndexRoute";
-import { IndexRedirectRoute } from "./IndexRedirectRoute";
-import { Route } from "./Route";
-import { RedirectRoute } from "./RedirectRoute";
-import { Link } from "./Link";
 import { createServerHistory } from "./serverHistory";
-import createMemoryHistory from "history/createMemoryHistory";
-import { withRouter } from "./withRouter";
 
 test("Should be able to render a route", done => {
     const serverHistory = createServerHistory("/", "", () => null);

@@ -18,13 +18,12 @@
     ],
     "scripts": {
         "precommit": "lint-staged",
+        "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
         "check-deps": "node ./scripts/depcheck.js",
         "build": "node ./scripts/build.js",
-        "watch": "babel ./src -d . --ignore __tests__ --watch",
-        "prepublishOnly": "node ./tools/build.js",
         "clean": "git clean -fdX .",
-        "lint": "eslint modules",
-        "test": "jest"
+        "lint": "eslint ./src",
+        "test": "jest -c jest.config.json"
     },
     "author": "Middleout",
     "license": "MIT",
@@ -46,6 +45,7 @@
         "eslint-plugin-react": "^7.3.0",
         "history": "^4.7.2",
         "husky": "^0.14.3",
+        "jest": "^21.0.2",
         "lint-staged": "^4.1.2",
         "prettier": "^1.6.1"
     },
