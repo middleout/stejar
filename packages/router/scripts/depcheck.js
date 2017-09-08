@@ -8,7 +8,8 @@ const ignore = [
 	"babel-preset-react", // Used in scripts/babel-preset.js
 	"babel-preset-stage-1", // Used in scripts/babel-preset.js
 	"husky", // Used in combination with lint-staged 
-	"prettier" // // Used by lint-staged
+	"prettier" // Used by lint-staged,
+	"eslint-config-plugin:react" // Already there, but with "-" instead of ":"
 ];
 
 exec("depcheck --ignores " + ignore.join(","), (err,std) => {

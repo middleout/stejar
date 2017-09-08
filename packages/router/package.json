@@ -18,6 +18,7 @@
     ],
     "scripts": {
         "precommit": "lint-staged",
+        "check-deps": "node ./scripts/depcheck.js",
         "build": "node ./scripts/build.js",
         "watch": "babel ./src -d . --ignore __tests__ --watch",
         "prepublishOnly": "node ./tools/build.js",
