@@ -1,4 +1,3 @@
-import { shallow } from "enzyme";
 import { Router } from "./Router";
 import { convertJSXroutesToJSroutes } from "./convertJSXroutesToJSroutes";
 import { RouterContainer } from "./RouterContainer";
