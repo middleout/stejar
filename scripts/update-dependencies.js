@@ -5,7 +5,7 @@ const dirs = require("./getDirectories")("./packages");
 const ncu = require("npm-check-updates");
 const jsdiff = require("diff");
 const exec = require("child_process").exec;
-const chalk = require('chalk');
+const chalk = require("chalk");
 
 function upgradeFile(pathToFile) {
     console.log("Upgrading dependencies for " + pathToFile);
@@ -47,11 +47,14 @@ console.log("Updating dependencies ...");
 
 exec('git diff-index --quiet HEAD -- || echo "untracked"; ', (err, std) => {
     if (std.indexOf("untracked") !== -1) {
-        console.log('');
+        console.log("");
 
-        console.log(chalk.bgRed(chalk.white(chalk.bold("You must commit your GIT changes first before updating packages dependencies"))));
+        console.log(
+            chalk.bgRed(
+                chalk.white(chalk.bold("You must commit your GIT changes first before updating packages dependencies"))
+            )
+        );
         process.exit(1);
-
     }
 });
 

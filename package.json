@@ -9,13 +9,16 @@
     "bootstrap": "lerna bootstrap --stream",
     "build": "lerna run build --stream",
     "clean": "lerna run clean",
-    "test": "lerna run test --stream"
+    "test": "lerna run test --stream",
+    "update": "node scripts/update-dependencies",
+    "diff": "node scripts/diff"
   },
   "devDependencies": {
     "chalk": "^2.1.0",
     "colors": "^1.1.2",
     "diff": "^3.3.1",
     "lerna": "^2.0.0",
-    "npm-check-updates": "^2.12.1"
+    "npm-check-updates": "^2.12.1",
+    "prompt": "^1.0.0"
   }
 }

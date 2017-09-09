@@ -12,7 +12,7 @@ const ignore = [
 	"husky", // Used in combination with lint-staged
 	"prettier", // Used by lint-staged,
 	"eslint-config-plugin:react", // Already there, but with "-" instead of ":",
-    "npm-check", // used by this script,
+    "npm-check-updates", // used by this script,
 ];
 
 const packages = fs.readdirSync("./../");
