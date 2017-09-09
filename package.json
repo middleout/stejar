@@ -12,6 +12,10 @@
     "test": "lerna run test --stream"
   },
   "devDependencies": {
-    "lerna": "^2.0.0"
+    "chalk": "^2.1.0",
+    "colors": "^1.1.2",
+    "diff": "^3.3.1",
+    "lerna": "^2.0.0",
+    "npm-check-updates": "^2.12.1"
   }
 }

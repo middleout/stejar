@@ -1,56 +1,56 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "index.js",
-  "module": "es/index.js",
-  "jsnext:main": "es/index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "files": [
-    "reduxRouter.js",
-    "index.js",
-    "es",
-    "umd"
-  ],
-  "scripts": {
-    "precommit": "lint-staged",
-    "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
-    "check-deps": "node ./scripts/depcheck.js && npm-check -u --skip-unused",
-    "build": "node ./scripts/build.js",
-    "clean": "git clean -fdX .",
-    "lint": "eslint ./src",
-    "test": "jest -c jest.config.json",
-    "all": "npm run check-deps && npm run test && npm run lint && npm run build"
-  },
-  "author": "Middleout",
-  "license": "MIT",
-  "peerDependencies": {
-    "@stejar/router": "^0.0.7",
-    "redux": "^3.7.2"
-  },
-  "devDependencies": {
-    "@stejar/router": "^0.0.7",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-dev-expression": "^0.2.1",
-    "babel-plugin-transform-imports": "^1.4.1",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "depcheck": "^0.6.7",
-    "eslint": "^4.5.0",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-react": "^7.3.0",
-    "husky": "^0.14.3",
-    "jest": "^21.0.2",
-    "lint-staged": "^4.1.3",
-    "npm-check": "^5.4.5",
-    "prettier": "^1.6.1",
-    "redux": "^3.7.2"
-  },
-  "version": "0.0.3",
-  "description": "",
-  "name": "@stejar/react-router-redux"
+    "publishConfig": {
+        "access": "public"
+    },
+    "main": "index.js",
+    "module": "es/index.js",
+    "jsnext:main": "es/index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "files": [
+        "reduxRouter.js",
+        "index.js",
+        "es",
+        "umd"
+    ],
+    "scripts": {
+        "precommit": "lint-staged",
+        "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
+        "check-deps": "node ./scripts/depcheck.js && npm-check -u --skip-unused",
+        "build": "node ./scripts/build.js",
+        "clean": "git clean -fdX .",
+        "lint": "eslint ./src",
+        "test": "jest -c jest.config.json",
+        "all": "npm run check-deps && npm run test && npm run lint && npm run build"
+    },
+    "author": "Middleout",
+    "license": "MIT",
+    "peerDependencies": {
+        "@stejar/router": "^0.0.7",
+        "redux": "^3.7.2"
+    },
+    "devDependencies": {
+        "@stejar/router": "^0.0.7",
+        "babel-cli": "^6.26.0",
+        "babel-plugin-dev-expression": "^0.2.1",
+        "babel-plugin-transform-imports": "^1.4.1",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "depcheck": "^0.6.7",
+        "eslint": "^4.6.1",
+        "eslint-config-prettier": "^2.4.0",
+        "eslint-plugin-react": "^7.3.0",
+        "husky": "^0.14.3",
+        "jest": "^21.0.2",
+        "lint-staged": "^4.1.3",
+        "npm-check": "^5.4.5",
+        "prettier": "^1.6.1",
+        "redux": "^3.7.2"
+    },
+    "version": "0.0.3",
+    "description": "",
+    "name": "@stejar/react-router-redux"
 }
