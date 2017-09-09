@@ -23,7 +23,8 @@
     "build": "node ./scripts/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",
-    "test": "jest -c jest.config.json"
+    "test": "jest -c jest.config.json",
+    "all": "npm run check-deps && npm run test && npm run lint && npm run build"
   },
   "author": "Middleout",
   "license": "MIT",
@@ -43,7 +44,6 @@
     "eslint": "^4.5.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.3.0",
-    "history": "^4.7.2",
     "husky": "^0.14.3",
     "jest": "^21.0.2",
     "lint-staged": "^4.1.3",

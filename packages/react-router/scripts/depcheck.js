@@ -12,6 +12,7 @@ const ignore = [
 	"prettier", // Used by lint-staged,
 	"eslint-config-plugin:react", // Already there, but with "-" instead of ":",
     "npm-check", // used by this script,
+    "@stejar/router", // used as a peerDependency
 ];
 
 exec("depcheck --ignores " + ignore.join(","), (err,std) => {
