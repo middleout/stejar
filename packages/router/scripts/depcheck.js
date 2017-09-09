@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const fs = require("fs");
 
 const ignore = [
 	"depcheck", // Used in this script,
@@ -14,7 +15,9 @@ const ignore = [
     "npm-check", // used by this script,
 ];
 
-exec("depcheck --ignores " + ignore.join(","), (err,std) => {
+const packages = fs.readdirSync("./../");
+
+exec("depcheck --ignores " + ignore.concat(packages).join(","), (err,std) => {
     if (std.indexOf("No depcheck issue") === -1) {
         console.log(std);
         throw new Error("Errors!");

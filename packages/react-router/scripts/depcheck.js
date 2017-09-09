@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const fs = require("fs");
 
 const ignore = [
 	"depcheck", // Used in this script,
@@ -12,10 +13,11 @@ const ignore = [
 	"prettier", // Used by lint-staged,
 	"eslint-config-plugin:react", // Already there, but with "-" instead of ":",
     "npm-check", // used by this script,
-    "@stejar/router", // used as a peerDependency
 ];
 
-exec("depcheck --ignores " + ignore.join(","), (err,std) => {
+const packages = fs.readdirSync("./../");
+
+exec("depcheck --ignores " + ignore.concat(packages).join(","), (err,std) => {
     if (std.indexOf("No depcheck issue") === -1) {
         console.log(std);
         throw new Error("Errors!");

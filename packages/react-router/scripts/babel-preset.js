@@ -1,14 +1,15 @@
 const BABEL_ENV = process.env.BABEL_ENV;
 const building = BABEL_ENV != undefined && BABEL_ENV !== "cjs";
 const transformImports = require("babel-plugin-transform-imports");
-const name = "@stejar/react-router";
+const fs = require("fs");
+const name = JSON.parse(fs.readFileSync("./package.json", 'utf-8')).name;
 
 const plugins = [
     [
         transformImports,
         {
             [name]: {
-                transform: building ? "@stejar/router/es/${member}" : "@stejar/router/${member}",
+                transform: building ? name + "/es/${member}" : name + "/${member}",
                 preventFullImport: true,
             },
         },
