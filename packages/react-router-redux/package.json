@@ -27,11 +27,11 @@
     "author": "Middleout",
     "license": "MIT",
     "peerDependencies": {
-        "@stejar/router": "^0.0.8",
+        "@stejar/router": "^0.0.9",
         "redux": "^3.7.2"
     },
     "devDependencies": {
-        "@stejar/router": "^0.0.8",
+        "@stejar/router": "^0.0.9",
         "babel-cli": "^6.26.0",
         "babel-plugin-dev-expression": "^0.2.1",
         "babel-plugin-transform-imports": "^1.4.1",
@@ -50,7 +50,7 @@
         "prettier": "^1.6.1",
         "redux": "^3.7.2"
     },
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "name": "@stejar/react-router-redux"
 }
