@@ -1,5 +1,6 @@
 const exec = require("child_process").exec;
 const fs = require("fs");
+const chalk = require("chalk");
 
 const ignore = [
 	"depcheck", // Used in this script,
@@ -17,11 +18,19 @@ const ignore = [
 
 const packages = fs.readdirSync("./../");
 
-exec("depcheck --ignores " + ignore.concat(packages).join(","), (err,std) => {
-    if (std.indexOf("No depcheck issue") === -1) {
-        console.log(std);
-        throw new Error("Errors!");
+exec("git diff-index --quiet HEAD -- || echo \"untracked\";", (err, std) => {
+    if (std.indexOf("untracked") !== -1) {
+        console.log(chalk.bgRed.bold('You must commit your files to GIT before upgrading your dependencies versions.'));
+        process.exit(1);
+        return;
     }
 
-    console.log(std + "\r\n");
+    exec("depcheck --ignores " + ignore.concat(packages).join(","), (err,std) => {
+        if (std.indexOf("No depcheck issue") === -1) {
+            console.log(std);
+            console.log(chalk.bgRed.bold('Issues with dependencies'));
+            process.exit(1);
+            return;
+        }
+    });
 });
