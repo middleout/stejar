@@ -17,7 +17,7 @@ const ignore = [
     "redux",
 ];
 
-const packages = fs.readdirSync("./../");
+const packages = fs.readdirSync("./../").map(item => "@stejar/" + item);
 
 exec("git diff-index --quiet HEAD -- || echo \"untracked\";", (err, std) => {
     if (std.indexOf("untracked") !== -1) {
