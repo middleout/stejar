@@ -20,12 +20,14 @@
     "precommit": "lint-staged",
     "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
     "update": "node ./scripts/depcheck.js && ncu",
-    "upgrade": "npm update && npm test && npm version patch && git add . && git commit -m \"Update dependencies\"",
+    "upgrade": "npm update && npm run test:run && npm version patch && git add . && git commit -m \"Update dependencies\"",
     "upgradeAll": "ncu -a && npm i && npm test && npm version patch && git add . && git commit -m \"Update dependencies\"",
     "build": "node ./scripts/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",
-    "test": "jest -c jest.config.json",
+    "test": "jest --watch --config ./jest.config.json",
+    "test:run": "jest --config ./jest.config.json",
+    "test:coverage": "jest --coverage --config ./jest.config.json",
     "all": "npm run check-deps && npm run test && npm run lint && npm run build"
   },
   "author": "Middleout",
@@ -52,7 +54,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "name": "@stejar/router"
 }
