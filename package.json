@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npm run bootstrap",
-    "prepublish": "node run build",
+    "prepublishOnly": "npm run build",
     "bootstrap": "lerna bootstrap --stream",
     "build": "lerna run build --stream",
     "clean": "lerna run clean",

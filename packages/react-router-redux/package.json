@@ -17,12 +17,16 @@
     "scripts": {
         "precommit": "lint-staged",
         "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
-        "check-deps": "node ./scripts/depcheck.js && ncu -a",
+        "update": "node ./scripts/depcheck.js && ncu",
+        "upgrade": "npm update && npm run test:run && npm version patch && git add . && git commit -m \"Update dependencies\"",
+        "upgradeAll": "ncu -a && npm i && npm test && npm version patch && git add . && git commit -m \"Update dependencies\"",
         "build": "node ./scripts/build.js",
         "clean": "git clean -fdX .",
         "lint": "eslint ./src",
-        "test": "jest -c jest.config.json",
-        "all": "npm run check-deps && npm run test && npm run lint && npm run build"
+        "test": "jest --watch --config ./jest.config.json",
+        "test:run": "jest --config ./jest.config.json",
+        "test:coverage": "jest --coverage --config ./jest.config.json",
+        "all": "npm run check-deps && npm run test:run && npm run lint && npm run build"
     },
     "author": "Middleout",
     "license": "MIT",
