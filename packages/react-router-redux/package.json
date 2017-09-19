@@ -1,60 +1,61 @@
 {
-    "publishConfig": {
-        "access": "public"
-    },
-    "main": "index.js",
-    "module": "es/index.js",
-    "jsnext:main": "es/index.js",
-    "directories": {
-        "test": "tests"
-    },
-    "files": [
-        "reduxRouter.js",
-        "index.js",
-        "es",
-        "umd"
-    ],
-    "scripts": {
-        "precommit": "lint-staged",
-        "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
-        "update": "node ./scripts/depcheck.js && ncu",
-        "upgrade": "npm update && npm run test:run && npm version patch && git add . && git commit -m \"Update dependencies\"",
-        "upgradeAll": "ncu -a && npm i && npm test && npm version patch && git add . && git commit -m \"Update dependencies\"",
-        "build": "node ./scripts/build.js",
-        "clean": "git clean -fdX .",
-        "lint": "eslint ./src",
-        "test": "jest --watch --config ./jest.config.json",
-        "test:run": "jest --config ./jest.config.json",
-        "test:coverage": "jest --coverage --config ./jest.config.json",
-        "all": "npm run check-deps && npm run test:run && npm run lint && npm run build"
-    },
-    "author": "Middleout",
-    "license": "MIT",
-    "peerDependencies": {
-        "@stejar/router": "^0.0.10",
-        "redux": "^3.7.2"
-    },
-    "devDependencies": {
-        "@stejar/router": "^0.0.10",
-        "babel-cli": "^6.26.0",
-        "babel-plugin-dev-expression": "^0.2.1",
-        "babel-plugin-transform-imports": "^1.4.1",
-        "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-1": "^6.24.1",
-        "depcheck": "^0.6.7",
-        "eslint": "^4.6.1",
-        "eslint-config-prettier": "^2.4.0",
-        "eslint-plugin-react": "^7.3.0",
-        "husky": "^0.14.3",
-        "jest": "^21.0.2",
-        "lint-staged": "^4.1.3",
-        "npm-check-updates": "^2.12.1",
-        "prettier": "^1.6.1",
-        "redux": "^3.7.2"
-    },
-    "version": "0.0.6",
-    "description": "",
-    "name": "@stejar/react-router-redux"
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "reduxRouter.js",
+    "index.js",
+    "es",
+    "umd"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "prepublishOnly": "npm run test && npm run lint && node ./tools/build.js",
+    "update": "node ./scripts/depcheck.js && ncu",
+    "upgrade": "npm update && npm run test:run && npm version patch && git add . && git commit -m \"Update dependencies\"",
+    "upgradeAll": "ncu -a && npm i && npm test && npm version patch && git add . && git commit -m \"Update dependencies\"",
+    "build": "node ./scripts/build.js",
+    "clean": "git clean -fdX .",
+    "lint": "eslint ./src",
+    "test": "jest --watch --config ./jest.config.json",
+    "test:run": "jest --config ./jest.config.json",
+    "test:coverage": "jest --coverage --config ./jest.config.json",
+    "all": "npm run check-deps && npm run test:run && npm run lint && npm run build"
+  },
+  "author": "Middleout",
+  "license": "MIT",
+  "peerDependencies": {
+    "@stejar/router": "^0.0.10",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "@stejar/router": "^0.0.10",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-imports": "^1.4.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "chalk": "^2.1.0",
+    "depcheck": "^0.6.7",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.3.0",
+    "husky": "^0.14.3",
+    "jest": "^21.0.2",
+    "lint-staged": "^4.1.3",
+    "npm-check-updates": "^2.12.1",
+    "prettier": "^1.6.1",
+    "redux": "^3.7.2"
+  },
+  "version": "0.0.6",
+  "description": "",
+  "name": "@stejar/react-router-redux"
 }
