@@ -12,7 +12,8 @@
     "clean": "lerna run clean",
     "test": "lerna run test",
     "update": "lerna run update",
-    "diff": "node scripts/diff"
+    "diff": "node scripts/diff",
+    "docs": "gitbook build ./docs && gitbook serve ./docs"
   },
   "devDependencies": {
     "babel-plugin-dev-expression": "^0.2.1",
@@ -24,6 +25,7 @@
     "chalk": "^2.1.0",
     "colors": "^1.1.2",
     "diff": "^3.3.1",
+    "gitbook-cli": "^2.3.2",
     "lerna": "^2.0.0",
     "npm-check-updates": "^2.12.1",
     "prompt": "^1.0.0"

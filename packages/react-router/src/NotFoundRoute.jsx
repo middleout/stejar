@@ -4,7 +4,6 @@ import { Component } from "react";
 export class NotFoundRoute extends Component {
     render() {
         const { children } = this.props;
-
         return <div>{children}</div>;
     }
 }
