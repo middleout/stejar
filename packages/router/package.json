@@ -48,7 +48,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "name": "@stejar/router"
 }
