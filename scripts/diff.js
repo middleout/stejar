@@ -1,7 +1,7 @@
 require("colors");
 const fs = require("fs");
 const jsdiff = require("diff");
-const dirs = require("./getDirectories")("./packages");
+const dirs = require("./functions/getDirectories")("./packages");
 const path = require("path");
 const prompt = require('prompt');
 
