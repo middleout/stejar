@@ -24,8 +24,9 @@
         "umd"
     ],
     "scripts": {
-        "precommit": "lint-staged",
         "prepublishOnly": "npm run test && npm run lint && node ./../../scripts/build.js",
+        "prepublish": "npm run test && npm run lint && node ./../../scripts/build.js",
+        "precommit": "lint-staged",
         "commit": "node ./../../scripts/commit-changed-files",
         "upgrade": "node ./../../scripts/depcheck && ncu",
         "update": "node ./../../scripts/depcheck && npm update && npm run test:run",
