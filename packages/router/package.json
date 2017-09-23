@@ -19,6 +19,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepublishOnly": "npm run test && npm run lint && node ./../../scripts/build.js",
+    "prepublish": "node ./../../scriots/build.js",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
     "update": "node ./../../scripts/depcheck && npm update && npm run test:run",
@@ -48,7 +49,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "name": "@stejar/router"
 }
