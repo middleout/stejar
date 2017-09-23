@@ -60,7 +60,7 @@
         "npm-check-updates": "^2.12.1",
         "prettier": "^1.7.0"
     },
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "",
     "name": "@stejar/react-router"
 }
