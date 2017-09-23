@@ -29,7 +29,7 @@
         "commitChangedFiles": "node ./../../scripts/commit-changed-files",
         "update": "node ./../../scripts/depcheck && ncu",
         "upgrade": "node ./../../scripts/depcheck && npm update && npm run test:run && npm run commitChangedFiles",
-        "upgradeAll": "ncu -a -x \"@stejar\/(.*)\" && npm i && npm test && npm run commitChangedFiles",
+        "upgradeAll": "ncu -a -x \"@stejar/(.*)\" && npm i && npm test && npm run commitChangedFiles",
         "build": "node ./../../scripts/build.js",
         "clean": "git clean -fdX .",
         "lint": "eslint ./src",
