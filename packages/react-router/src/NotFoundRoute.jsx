@@ -3,14 +3,9 @@ import { Component } from "react";
 
 export class NotFoundRoute extends Component {
     render() {
-        const x = "TEMPORARY2";
         const { children } = this.props;
 
-        return (
-            <div>
-                {children} {x}
-            </div>
-        );
+        return <div>{children}</div>;
     }
 }
 
