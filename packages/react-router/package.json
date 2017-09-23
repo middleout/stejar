@@ -26,7 +26,7 @@
     "scripts": {
         "precommit": "lint-staged",
         "prepublishOnly": "npm run test && npm run lint && node ./../../scripts/build.js",
-        "commit": "node ./../../scripts/commitChangedFiles",
+        "commitChangedFiles": "node ./../../scripts/commitChangedFiles",
         "update": "node ./../../scripts/depcheck && ncu",
         "upgrade": "node ./../../scripts/depcheck && npm update && npm run test:run && npm run commitChangedFiles",
         "upgradeAll": "ncu -a -x \"@stejar\/(.*)\" && npm i && npm test && npm run commitChangedFiles",
