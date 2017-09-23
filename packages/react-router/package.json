@@ -24,8 +24,8 @@
         "umd"
     ],
     "scripts": {
-        "prepublishOnly": "npm run test && npm run lint && node ./../../scripts/build.js",
-        "prepublish": "npm run test && npm run lint && node ./../../scripts/build.js",
+        "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
+        "prepublish": "npm run test:coverage && npm run lint && npm run build",
         "precommit": "lint-staged",
         "commit": "node ./../../scripts/commit-changed-files",
         "upgrade": "node ./../../scripts/depcheck && ncu",
@@ -46,10 +46,10 @@
         "react": "^15.6.1"
     },
     "peerDependencies": {
-        "@stejar/router": "^0.0.24"
+        "@stejar/router": "^0.0.25"
     },
     "devDependencies": {
-        "@stejar/router": "^0.0.24",
+        "@stejar/router": "^0.0.25",
         "babel-cli": "^6.26.0",
         "depcheck": "^0.6.7",
         "eslint": "^4.7.1",
@@ -61,7 +61,7 @@
         "npm-check-updates": "^2.12.1",
         "prettier": "^1.7.0"
     },
-    "version": "0.0.21",
+    "version": "0.0.22",
     "description": "",
     "name": "@stejar/react-router"
 }

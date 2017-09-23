@@ -17,8 +17,8 @@
     "umd"
   ],
   "scripts": {
-    "prepublishOnly": "npm run test && npm run lint && node ./../../scripts/build.js",
-    "prepublish": "npm run test && npm run lint && node ./../../scripts/build.js",
+    "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
+    "prepublish": "npm run test:coverage && npm run lint && npm run build",
     "precommit": "lint-staged",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
@@ -49,7 +49,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "name": "@stejar/router"
 }
