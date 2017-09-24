@@ -9,9 +9,9 @@
     "test": "tests"
   },
   "files": [
-    "Router.js",
-    "ParamsParser.js",
-    "serverHistory.js",
+    "ServiceManager.js",
+    "AbstractProvider.js",
+    "injectable.js",
     "index.js",
     "es",
     "umd"
