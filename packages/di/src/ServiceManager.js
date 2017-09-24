@@ -6,8 +6,10 @@ export class ServiceManager {
      * @constructor
      */
     constructor() {
-        this._container = {};
-        this._providers = {};
+        this._containerKeys = [];
+        this._containerValues = {};
+        this._providersKeys = [];
+        this._providersValues = {};
         this._implementsList = {};
         this.set(ServiceManager, this);
     }
@@ -28,7 +30,9 @@ export class ServiceManager {
             finalInstance = () => instance;
         }
 
-        this._container[this._getNameFromResource(resource)] = finalInstance;
+        this._containerKeys.push(resource);
+        this._containerValues[this._containerKeys.indexOf(resource)] = finalInstance;
+
         return this;
     }
 
@@ -42,7 +46,8 @@ export class ServiceManager {
      * @returns {ServiceManager}
      */
     alias(resource, aliasName) {
-        this._providers[this._getNameFromResource(resource)] = () => this.get(aliasName);
+        this._containerKeys.push(resource);
+        this._containerValues[this._containerKeys.indexOf(resource)] = () => this.get(aliasName);
         return this;
     }
 
@@ -85,14 +90,15 @@ export class ServiceManager {
      * @returns {ServiceManager}
      */
     provide(className, callback) {
-        this._providers[this._getNameFromResource(className)] = () => {
+        this._providersKeys.push(className);
+        this._providersValues[this._providersKeys.indexOf(className)] = () => {
             const instance = callback(this);
             if (!instance) {
                 throw new Error(
                     `The provider for the class "${className.name}" must provide *something*. Got "${typeof instance}" instead.`
                 );
             }
-            this.set(this._getNameFromResource(className), () => instance);
+            this.set(className, instance);
             return instance;
         };
         return this;
@@ -124,18 +130,12 @@ export class ServiceManager {
      * @returns {*}
      */
     get(resource) {
-        if (!resource) {
-            return { ...this._container };
+        if (this._containerKeys.includes(resource)) {
+            return this._containerValues[this._containerKeys.indexOf(resource)]();
         }
 
-        const resourceName = this._getNameFromResource(resource);
-
-        if (Object.keys(this._container).includes(resourceName)) {
-            return this._container[resourceName]();
-        }
-
-        if (this._providers[resourceName]) {
-            return this._providers[resourceName](this);
+        if (this._providersKeys.includes(resource)) {
+            return this._providersValues[this._providersKeys.indexOf(resource)]();
         }
 
         if (typeof resource === "string") {
@@ -143,9 +143,9 @@ export class ServiceManager {
         }
 
         const result = this.instantiate(resource);
-        invariant(result, `Could not "get" ${resourceName}`);
+        invariant(result, `Could not "get"`, resource);
 
-        this.set(resourceName, () => result);
+        this.set(resource, result);
         return result;
     }
 
@@ -183,18 +183,5 @@ export class ServiceManager {
         });
 
         return instance;
-    }
-
-    /**
-     * @param resource
-     *
-     * @returns {string}
-     */
-    _getNameFromResource(resource) {
-        if (typeof resource === "string") {
-            return resource;
-        }
-
-        return resource.name;
     }
 }

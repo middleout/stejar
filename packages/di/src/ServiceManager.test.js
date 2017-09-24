@@ -7,11 +7,6 @@ test("Should be able to instantiate", () => {
     expect(sm).toBeInstanceOf(ServiceManager);
 });
 
-test("Should be able to get all the container", () => {
-    const sm = new ServiceManager();
-    expect(Object.keys(sm.get())).toHaveLength(1);
-});
-
 test("Should be able to instantiate a new object", () => {
     const sm = new ServiceManager();
 
