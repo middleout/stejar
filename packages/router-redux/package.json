@@ -16,7 +16,6 @@
   ],
   "scripts": {
     "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
-    "prepublish": "npm run test:coverage && npm run lint && npm run build",
     "precommit": "lint-staged",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
@@ -49,7 +48,7 @@
     "prettier": "^1.6.1",
     "redux": "^3.7.2"
   },
-  "version": "0.0.21",
+  "version": "0.0.1",
   "description": "",
-  "name": "@stejar/react-router-redux"
+  "name": "@stejar/router-redux"
 }
