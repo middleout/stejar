@@ -37,7 +37,6 @@
   "devDependencies": {
     "@stejar/router": "^0.0.10",
     "babel-cli": "^6.26.0",
-    "depcheck": "^0.6.7",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.3.0",
