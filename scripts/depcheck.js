@@ -39,13 +39,21 @@ exec("git status -s", (err, std) => {
             Object.keys(result.missing).map(item => console.log(item + " used in " + result.missing[item]));
         }
 
+        if (Object.keys(result.dependencies).length > 0) {
+            error = true;
+            console.log("");
+            console.log(chalk.bgRed.bold("Unused dependencies:"));
+            result.dependencies.map(item => console.log(item));
+        }
+
         if (Object.keys(result.devDependencies).length > 0) {
             console.log('');
-            console.log(chalk.bgYellow.bold("Missing DEV dependencies (but not considered an issue):"));
+            console.log(chalk.bgYellow.bold("Unused DEV dependencies (but not considered an issue):"));
             result.devDependencies.map(item => console.log(item));
         }
 
         if (error) {
+            console.log('');
             console.log(chalk.bgRed.bold("Issues with dependencies !"));
             process.exit(1);
             return
