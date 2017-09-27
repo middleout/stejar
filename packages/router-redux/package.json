@@ -47,7 +47,7 @@
     "prettier": "^1.6.1",
     "redux": "^3.7.2"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "name": "@stejar/router-redux"
 }

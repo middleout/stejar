@@ -41,9 +41,9 @@
     "lodash.isempty": "^4.4.0",
     "lodash.trimend": "^4.5.1"
   },
-    "peerDependencies": {
-        "isomorphic-fetch": "^2.2.1"
-    },
+  "peerDependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "eslint": "^4.6.1",
@@ -53,7 +53,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "",
   "name": "@stejar/http"
 }
