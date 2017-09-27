@@ -1,10 +1,13 @@
 import { Component, createElement } from "react";
 import { object } from "prop-types";
+import invariant from "invariant";
 import { convertJSXroutesToJSroutes } from "./convertJSXroutesToJSroutes";
 
 export class RouterContainer extends Component {
     constructor(props) {
         super(props);
+        invariant(props.router, "RouterContainer requires a `router`. ");
+
         this.router = props.router;
         this.unsubscribe = () => null;
         this.stop = () => null;
