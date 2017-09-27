@@ -1,2 +1,2 @@
-export { Router } from "./Router";
-export { serverHistory } from "./serverHistory";
+export * from "./Router";
+export * from "./serverHistory";
