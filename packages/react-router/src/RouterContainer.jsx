@@ -24,15 +24,6 @@ export class RouterContainer extends Component {
                 this.router.add(convertJSXroutesToJSroutes(children));
             }
         }
-
-        // if (this.props.routes) {
-        //     let routes = this.props.routes;
-        //     if (!Array.isArray(routes)) {
-        //         routes = [routes];
-        //     }
-        //
-        //     routes.forEach(route => this.router.add(route));
-        // }
     }
 
     getChildContext() {
@@ -69,7 +60,7 @@ export class RouterContainer extends Component {
     }
 
     componentWillMount() {
-        this.router.start(() => null, this.props.initialized);
+        this.router.start(() => null);
     }
 
     componentDidMount() {

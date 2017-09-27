@@ -6,8 +6,9 @@ export class Router {
     /**
      * @param history
      */
-    constructor(history) {
+    constructor(history, alreadyInitialized = false) {
         // this.stopDispatch = false;
+        this.alreadyInitialized = alreadyInitialized;
         this.started = false;
         this.unlisten = () => null;
         this.history = history;
@@ -69,7 +70,7 @@ export class Router {
     }
 
     // start(done, runOnEnterFirstTime = true) {
-    start(onDone = () => null, wasInitialized = false) {
+    start(onDone = () => null) {
         // 0. Do not restart if alredy started.
         if (this.started) {
             return;
@@ -81,7 +82,7 @@ export class Router {
             this._dispatch(location.pathname, location.search, () => null, false)
         );
 
-        this._dispatch(this.history.location.pathname, this.history.location.search, onDone, wasInitialized);
+        this._dispatch(this.history.location.pathname, this.history.location.search, onDone, this.alreadyInitialized);
     }
 
     /**
