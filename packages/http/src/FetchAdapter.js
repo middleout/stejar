@@ -1,5 +1,4 @@
 import each from "lodash.foreach";
-import isArray from "lodash.isarray";
 import isEmpty from "lodash.isempty";
 import trimEnd from "lodash.trimend";
 import { HttpResponse } from "./HttpResponse";
@@ -47,7 +46,7 @@ export class FetchAdapter {
         if (!isEmpty(request.getQueryParams())) {
             url += "?";
             each(request.getQueryParams(), (param, name) => {
-                if (isArray(param)) {
+                if (Array.isArray(param)) {
                     param.forEach(value => {
                         url += `${name}[]=${value}&`;
                     });
