@@ -8,7 +8,14 @@ export class FetchAdapter {
      * @constructor
      */
     constructor() {
-        if (!window.fetch) {
+        if (typeof window !== "undefined") {
+            if (!window.fetch) {
+                console.warn(
+                    'fetch() not found. Try to "npm i isomorphic-fetch" and then " import "isomorphic-fetch" before constructing the FetchAdapter"'
+                );
+                throw new Error("Fetch() is not defined. Did you forget to polyfill it?");
+            }
+        } else if (!global.fetch) {
             console.warn(
                 'fetch() not found. Try to "npm i isomorphic-fetch" and then " import "isomorphic-fetch" before constructing the FetchAdapter"'
             );
