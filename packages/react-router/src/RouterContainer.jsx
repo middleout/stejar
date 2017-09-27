@@ -52,7 +52,12 @@ export class RouterContainer extends Component {
     }
 
     listToNested(list) {
+        let firstTime = true;
         const X = list.reduce((Accumulator, Current) => {
+            if (firstTime) {
+                firstTime = false;
+                Accumulator = createElement(Accumulator);
+            }
             return createElement(Current, {}, Accumulator);
         }, createElement(({ children }) => children));
 
