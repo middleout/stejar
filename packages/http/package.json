@@ -1,0 +1,61 @@
+{
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "FetchAdapter.js",
+    "MocksAdapter.js",
+    "HttpRequest.js",
+    "HttpResponse.js",
+    "HttpService.js",
+    "index.js",
+    "es",
+    "umd"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
+    "precommit": "lint-staged",
+    "commit": "node ./../../scripts/commit-changed-files",
+    "upgrade": "node ./../../scripts/depcheck && ncu",
+    "update": "node ./../../scripts/depcheck && npm update && npm run test:run",
+    "build": "node ./../../scripts/build.js",
+    "clean": "git clean -fdX .",
+    "lint": "eslint ./src",
+    "test": "jest --watch --config ./jest.config.json",
+    "test:run": "jest --config ./jest.config.json",
+    "test:coverage": "jest --coverage --config ./jest.config.json",
+    "all": "npm run check-deps && npm run test:run && npm run lint && npm run build"
+  },
+  "author": "Middleout",
+  "license": "MIT",
+  "dependencies": {
+    "fetch-mock": "^5.12.2",
+    "lodash.foreach": "^4.5.0",
+    "lodash.isarray": "^4.0.0",
+    "lodash.isempty": "^4.4.0",
+    "lodash.trim": "^4.5.1",
+    "lodash.trimend": "^4.5.1",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "depcheck": "^0.6.7",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "husky": "^0.14.3",
+    "jest": "^21.1.0",
+    "lint-staged": "^4.2.1",
+    "npm-check-updates": "^2.12.1",
+    "prettier": "^1.7.0"
+  },
+  "version": "3.0.0",
+  "description": "",
+  "name": "@stejar/http"
+}
