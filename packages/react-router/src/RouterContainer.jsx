@@ -54,7 +54,7 @@ export class RouterContainer extends Component {
     listToNested(list) {
         const X = list.reduce((Accumulator, Current) => {
             return createElement(Current, {}, Accumulator);
-        }, ({ children }) => children);
+        }, createElement(({ children }) => children));
 
         return X;
     }
