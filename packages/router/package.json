@@ -18,7 +18,6 @@
   ],
   "scripts": {
     "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
-    "prepublish": "npm run test:coverage && npm run lint && npm run build",
     "precommit": "lint-staged",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
