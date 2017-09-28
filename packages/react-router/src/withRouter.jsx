@@ -13,6 +13,7 @@ export function withRouter(WrappedComponent) {
         };
 
         static displayName = `withRouter(${getDisplayName(WrappedComponent)})`;
+        static WrappedComponent = WrappedComponent;
 
         constructor(props, context) {
             super(props, context);

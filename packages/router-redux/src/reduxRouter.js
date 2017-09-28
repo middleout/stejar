@@ -1,4 +1,4 @@
-export const ROUTE_CHANGED_ACTION = "@router/ROUTE_CHANGED";
+export const ROUTE_CHANGED_ACTION = "@stejar/router/ROUTE_CHANGED";
 
 let OPTIONS = {
     optionsPayload: "payload",
@@ -8,7 +8,7 @@ let OPTIONS = {
     payloadQuery: "query",
 };
 
-export function attachReduxToRouter(router, store, options = OPTIONS) {
+export function attachRouterToRedux(router, store, options = OPTIONS) {
     OPTIONS = options;
 
     router.setOptions({

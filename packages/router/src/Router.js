@@ -19,6 +19,11 @@ export class Router {
         this.previousMiddlewares = [];
         this.options = {};
 
+        this.previousRoute = null;
+        this.previousRouteName = null;
+        this.previousParams = null;
+        this.previousQuery = null;
+
         this.currentRoute = null;
         this.currentRouteName = null;
         this.currentParams = null;
@@ -93,6 +98,19 @@ export class Router {
      * @private
      */
     _dispatch(url, search, onDone, wasInitialized) {
+        if (this.currentRoute) {
+            this.previousRoute = this.currentRoute;
+        }
+        if (this.currentRouteName) {
+            this.previousRouteName = this.currentRouteName;
+        }
+        if (this.currentParams) {
+            this.previousParams = this.currentParams;
+        }
+        if (this.currentQuery) {
+            this.previousQuery = this.currentQuery;
+        }
+
         const ID = Date.now();
         this.dispachQueue.push(ID);
 
@@ -228,7 +246,7 @@ export class Router {
             this.previousMiddlewares = funcs;
 
             handleRedirect();
-            //
+
             if (this.dispachQueue.indexOf(ID) === -1) {
                 return;
             }
@@ -418,7 +436,18 @@ export class Router {
                 if (this.previousMiddlewares.indexOf(parent) === -1) {
                     funcs.push(parent);
                     middlewares.push(
-                        parent.onEnter.bind(null, this, this.currentParams, this.currentQuery, this.getOptions())
+                        parent.onEnter.bind(
+                            null,
+                            this,
+                            null,
+                            {
+                                name: this.currentRouteName,
+                                route: this.currentRoute,
+                                params: this.currentParams,
+                                query: this.currentQuery,
+                            },
+                            this.getOptions()
+                        )
                     );
                 }
             }
@@ -426,7 +455,18 @@ export class Router {
                 if (this.previousMiddlewares.indexOf(parent) !== -1) {
                     funcs.push(parent);
                     middlewares.push(
-                        parent.onChange.bind(null, this, this.currentParams, this.currentQuery, this.getOptions())
+                        parent.onChange.bind(
+                            null,
+                            this,
+                            {
+                                name: this.previousRouteName,
+                                route: this.previousRoute,
+                                params: this.previousParams,
+                                query: this.previousQuery,
+                            },
+                            { route: this.currentRoute, params: this.currentParams, query: this.currentQuery },
+                            this.getOptions()
+                        )
                     );
                 }
             }
