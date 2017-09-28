@@ -13,5 +13,6 @@ module.exports = (path) => {
     console.log(exec("cd " + path + " && npm run build"));
     // TODO:
     // check the "files" property inside the package.json to make sure it has all the files from the "build" - basically all the .js files
+    // check if the types property is set and if the types directory exists and has the file from types property
 }
 
