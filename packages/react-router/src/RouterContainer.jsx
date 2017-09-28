@@ -4,6 +4,10 @@ import invariant from "invariant";
 import { convertJSXroutesToJSroutes } from "./convertJSXroutesToJSroutes";
 
 export class RouterContainer extends Component {
+    static childContextTypes = {
+        router: object,
+    };
+
     constructor(props) {
         super(props);
         invariant(props.router, "RouterContainer requires a `router`. ");
@@ -79,7 +83,3 @@ export class RouterContainer extends Component {
         this.unsubscribe();
     }
 }
-
-RouterContainer.childContextTypes = {
-    router: object,
-};

@@ -1,3 +1,4 @@
+import Component from "react";
 import { withRouter } from "./withRouter";
 
 function onClick(router, to, params, query, event) {
@@ -5,15 +6,26 @@ function onClick(router, to, params, query, event) {
     router.redirect(to, params, query);
 }
 
-function _Link({ routing, to, params, query, children, className = "" }) {
-    return (
-        <a
-            onClick={onClick.bind(null, routing.router, to, params, query)}
-            href={routing.router.generatePathFromName(to, params, query)}
-            className={className}>
-            {children}
-        </a>
-    );
+@withRouter
+export class Link extends Component {
+    render() {
+        return (
+            <a
+                onClick={onClick.bind(
+                    null,
+                    this.props.routing.router,
+                    this.props.to,
+                    this.props.params,
+                    this.props.query
+                )}
+                href={this.props.routing.router.generatePathFromName(
+                    this.props.to,
+                    this.props.params,
+                    this.props.query
+                )}
+                className={this.props.className || ""}>
+                {this.props.children}
+            </a>
+        );
+    }
 }
-
-export const Link = withRouter(_Link);

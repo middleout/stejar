@@ -8,6 +8,12 @@ function getDisplayName(WrappedComponent) {
 
 export function withRouter(WrappedComponent) {
     class WithRouter extends PureComponent {
+        static contextTypes = {
+            router: object,
+        };
+
+        static displayName = `withRouter(${getDisplayName(WrappedComponent)})`;
+
         constructor(props, context) {
             super(props, context);
             this.unlisten = () => null;
@@ -46,12 +52,6 @@ export function withRouter(WrappedComponent) {
             this.unlisten();
         }
     }
-
-    WithRouter.contextTypes = {
-        router: object,
-    };
-
-    WithRouter.displayName = `withRouter(${getDisplayName(WrappedComponent)})`;
 
     return hoistStatics(WithRouter, WrappedComponent);
 }
