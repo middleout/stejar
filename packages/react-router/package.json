@@ -34,8 +34,7 @@
     "lint": "eslint ./src",
     "test": "jest --watch --config ./jest.config.json",
     "test:run": "jest --config ./jest.config.json",
-    "test:coverage": "jest --coverage --config ./jest.config.json",
-    "all": "npm run check-deps && npm run test:run && npm run lint && npm run build"
+    "test:coverage": "jest --coverage --config ./jest.config.json"
   },
   "author": "Middleout",
   "license": "MIT",

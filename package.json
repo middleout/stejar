@@ -5,15 +5,15 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm run bootstrap",
+    "postinstall": "lerna bootstrap --stream",
     "prepublishOnly": "npm run build",
-    "bootstrap": "lerna bootstrap --stream && npm run build",
     "build": "lerna run build",
     "clean": "lerna run clean",
-    "test": "lerna run test",
+    "test": "lerna run test:run",
+    "upgrade": "lerna run upgrade",
     "update": "lerna run update",
-    "diff": "node scripts/diff",
-    "docs": "gitbook build ./docs && gitbook serve ./docs"
+    "docs": "gitbook build ./docs && gitbook serve ./docs",
+    "publish": "npm run test && npm run build && lerna publish"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
