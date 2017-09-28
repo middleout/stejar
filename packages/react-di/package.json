@@ -26,9 +26,9 @@
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",
-    "test": "jest --watch --config ./jest.config.json",
-    "test:run": "jest --config ./jest.config.json",
-    "test:coverage": "jest --coverage --config ./jest.config.json"
+    "test": "jest --watch --config ./jest.config.js",
+    "test:run": "jest --config ./jest.config.js",
+    "test:coverage": "jest --coverage --config ./jest.config.js"
   },
   "author": "Middleout",
   "license": "MIT",

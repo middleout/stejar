@@ -1,4 +1,4 @@
-{
+module.exports = {
     "setupFiles": [
         "<rootDir>/../../scripts/jest/beforeTest.js"
     ],
