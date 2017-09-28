@@ -1,4 +1,4 @@
-import Component from "react";
+import { Component } from "react";
 import { withRouter } from "./withRouter";
 
 function onClick(router, to, params, query, event) {
