@@ -8,6 +8,7 @@ export class Router {
      */
     constructor(history, alreadyInitialized = false) {
         // this.stopDispatch = false;
+        this.serviceManager = undefined;
         this.alreadyInitialized = alreadyInitialized;
         this.started = false;
         this.unlisten = () => null;
@@ -50,6 +51,16 @@ export class Router {
      */
     setOptions(options) {
         this.options = { ...options };
+
+        return this;
+    }
+
+    /**
+     * @param serviceManager
+     * @returns {Router}
+     */
+    setServiceManager(serviceManager) {
+        this.serviceManager = serviceManager;
 
         return this;
     }
@@ -432,6 +443,59 @@ export class Router {
         let parent = route;
 
         while (parent) {
+            if (parent.eventsHandler) {
+                if (!this.serviceManager) {
+                    throw new Error("A ServiceManager is required if using a route eventsHandler");
+                }
+
+                const handler = this.serviceManager.get(parent.eventsHandler);
+
+                if (handler.onEnter) {
+                    if (this.previousMiddlewares.indexOf(parent) === -1) {
+                        funcs.push(parent);
+                        middlewares.push(
+                            handler.onEnter.bind(
+                                null,
+                                this,
+                                null,
+                                {
+                                    name: this.currentRouteName,
+                                    route: this.currentRoute,
+                                    params: this.currentParams,
+                                    query: this.currentQuery,
+                                },
+                                this.getOptions()
+                            )
+                        );
+                    }
+                }
+
+                if (handler.onChange) {
+                    if (this.previousMiddlewares.indexOf(parent) !== -1) {
+                        funcs.push(parent);
+                        middlewares.push(
+                            handler.onChange.bind(
+                                null,
+                                this,
+                                {
+                                    name: this.previousRouteName,
+                                    route: this.previousRoute,
+                                    params: this.previousParams,
+                                    query: this.previousQuery,
+                                },
+                                {
+                                    name: this.currentRouteName,
+                                    route: this.currentRoute,
+                                    params: this.currentParams,
+                                    query: this.currentQuery,
+                                },
+                                this.getOptions()
+                            )
+                        );
+                    }
+                }
+            }
+
             if (parent.onEnter) {
                 if (this.previousMiddlewares.indexOf(parent) === -1) {
                     funcs.push(parent);

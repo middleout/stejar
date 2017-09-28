@@ -19,6 +19,7 @@ export function convertJSXroutesToJSroutes(route) {
         "toQuery",
         "keepOldParams",
         "keepOldQuery",
+        "eventsHandler",
     ];
     let jsRoute = {};
 
