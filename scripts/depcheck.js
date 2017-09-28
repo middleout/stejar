@@ -8,6 +8,7 @@ const ignore = [
     "husky", // Used in combination with lint-staged
     "prettier", // Used by lint-staged,
     "eslint-config-prettier", // not sure why its not picked up by depcheck
+    "eslint-plugin-react", // not sure why its not picked up by depcheck
     "eslint-config-plugin:react", // Already there, but with "-" instead of ":"
 ];
 
