@@ -32,6 +32,7 @@
     "gitbook-cli": "^2.3.2",
     "lerna": "^2.2.0",
     "npm-check-updates": "^2.12.1",
-    "prompt": "^1.0.0"
+    "prompt": "^1.0.0",
+    "react": "^16.0.0"
   }
 }
