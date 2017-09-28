@@ -464,7 +464,12 @@ export class Router {
                                 params: this.previousParams,
                                 query: this.previousQuery,
                             },
-                            { route: this.currentRoute, params: this.currentParams, query: this.currentQuery },
+                            {
+                                name: this.currentRouteName,
+                                route: this.currentRoute,
+                                params: this.currentParams,
+                                query: this.currentQuery,
+                            },
                             this.getOptions()
                         )
                     );
