@@ -1,5 +1,4 @@
 const execSync = require("child_process").execSync;
-const path = require("path");
 
 const exec = (command) =>
     execSync(command, {
@@ -7,14 +6,11 @@ const exec = (command) =>
         env: Object.assign({}, process.env),
     });
 
-module.exports = () => {
+module.exports = (path) => {
 
-    console.log(process.cwd);
-    console.log(path.resolve("./"));
-
-    console.log('Prepublishing ...');
-    exec("npm run test:run");
-    exec("npm run build");
+    console.log('Prepublishing ' + path + ' ...');
+    console.log(exec("cd " + path + " && npm run test:run"));
+    console.log(exec("cd " + path + " && npm run build"));
     // TODO:
     // check the "files" property inside the package.json to make sure it has all the files from the "build" - basically all the .js files
 }

@@ -1,1 +1,1 @@
-require("./../../../scripts/onPrepublish")();
+require("./../../../scripts/onPrepublish")(__dirname.replace("/scripts", ""));
