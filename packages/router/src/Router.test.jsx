@@ -41,8 +41,17 @@ test("Should be able to render a route with children", done => {
                 name: "foo",
                 children: [
                     {
-                        path: "bar",
-                        name: "bar",
+                        children: [
+                            {
+                                index: true,
+                                children: [
+                                    {
+                                        path: "bar",
+                                        name: "bar",
+                                    },
+                                ],
+                            },
+                        ],
                     },
                 ],
             },
@@ -51,6 +60,7 @@ test("Should be able to render a route with children", done => {
 
     const onDone = () => {
         expect(router.getMatchedRouteName()).toEqual("base.foo.bar");
+        expect(router.currentRouteName).toEqual("base.foo.bar");
         done();
     };
 

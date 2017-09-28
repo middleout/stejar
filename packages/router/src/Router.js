@@ -128,7 +128,7 @@ export class Router {
         let isNotFound = false;
 
         // 1. Dispatch the request to the router
-        console.log(ID, "1. Dispatch the request to the router", url);
+        // console.log(ID, "1. Dispatch the request to the router", url);
         this.namedRoutes.dispatch(
             {
                 method: "get",
@@ -139,15 +139,15 @@ export class Router {
             () => (isNotFound = true)
         );
 
-        console.log(ID, "2. Check if NOT FOUND");
+        // console.log(ID, "2. Check if NOT FOUND");
         // 2. Handle NOT FOUND
         if (isNotFound) {
-            console.log(ID, " == STOP == NOT FOUND ==");
+            // console.log(ID, " == STOP == NOT FOUND ==");
 
             this.routes.forEach(child => {
                 // x. Index Route here check
                 if (child.notFound === true) {
-                    this.currentRouteName = child.name;
+                    this.currentRouteName = this._generateRouteName(child);
                     this.currentRoute = child;
                 }
             });
@@ -161,11 +161,11 @@ export class Router {
         }
 
         // 3. Index(es) process
-        console.log(ID, "3. Index process");
+        // console.log(ID, "3. Index process");
         this._ensureArray(this.currentRoute.children).forEach(child => {
             // x. Index Route here check
             if (child.index === true) {
-                this.currentRouteName = child.name || this.currentRoute.name;
+                this.currentRouteName = this._generateRouteName(child);
                 this.currentRoute = child;
             }
         });
@@ -176,7 +176,7 @@ export class Router {
                 return;
             }
 
-            console.log(ID, "5. Handle a Redirect Route");
+            // console.log(ID, "5. Handle a Redirect Route");
 
             if (this.currentRoute.toPath) {
                 return this.redirect(this.currentRoute.toPath);
@@ -199,7 +199,7 @@ export class Router {
 
         // 6. Setup the route matched
         const matchRoute = () => {
-            console.log(ID, "6. Setup the route matched");
+            // console.log(ID, "6. Setup the route matched");
             this.matchedRouteName = this.currentRouteName;
             this.matchedRoute = this.currentRoute;
             this.matchedParams = this.currentParams;
@@ -208,13 +208,13 @@ export class Router {
 
         // 7. Run the event listenrs to render
         const runListeners = () => {
-            console.log(ID, "7. Run the event listenrs to render");
+            // console.log(ID, "7. Run the event listenrs to render");
             this.listeners.forEach(listener => listener());
         };
 
         // 8. Finish
         const finish = () => {
-            console.log(ID, "-- Finish");
+            // console.log(ID, "-- Finish");
             this.dispachQueue = this.dispachQueue.splice(this.dispachQueue.indexOf(ID), 1);
 
             if (isNotFound) {
@@ -232,12 +232,12 @@ export class Router {
         if (!wasInitialized) {
             const checkDispatch = () => {
                 if (this.dispachQueue.indexOf(ID) === -1) {
-                    console.log(ID, "Stopping dispatch ...");
+                    // console.log(ID, "Stopping dispatch ...");
                     return Promise.reject("Stop dispatch");
                 }
             };
 
-            console.log(ID, "4. Handle middleware");
+            // console.log(ID, "4. Handle middleware");
             Promise.resolve()
                 .then(() => this._processMiddlewares(this.currentRoute))
                 .then(handleRedirect)
@@ -351,7 +351,7 @@ export class Router {
         // }
 
         let path = this.generatePathFromName(name, params, query, options);
-        console.log("Redirecting to ", path);
+        // console.log("Redirecting to ", path);
         this.dispachQueue.pop();
         this.history.push(path);
     }
@@ -427,7 +427,7 @@ export class Router {
             "/" + trim(path, "/"),
             data => {
                 this.currentRoute = spec;
-                this.currentRouteName = name;
+                this.currentRouteName = this._generateRouteName(spec);
                 this.currentParams = this.paramsParser.parseMatchedParams(data.params);
                 this.currentQuery = this.paramsParser.parseQuery(data.search);
             },
@@ -454,18 +454,12 @@ export class Router {
                     if (this.previousMiddlewares.indexOf(parent) === -1) {
                         funcs.push(parent);
                         middlewares.push(
-                            handler.onEnter.bind(
-                                null,
-                                this,
-                                null,
-                                {
-                                    name: this.currentRouteName,
-                                    route: this.currentRoute,
-                                    params: this.currentParams,
-                                    query: this.currentQuery,
-                                },
-                                this.getOptions()
-                            )
+                            handler.onEnter.bind(handler, {
+                                name: this.currentRouteName,
+                                route: this.currentRoute,
+                                params: this.currentParams,
+                                query: this.currentQuery,
+                            })
                         );
                     }
                 }
@@ -475,8 +469,7 @@ export class Router {
                         funcs.push(parent);
                         middlewares.push(
                             handler.onChange.bind(
-                                null,
-                                this,
+                                handler,
                                 {
                                     name: this.previousRouteName,
                                     route: this.previousRoute,
@@ -488,8 +481,7 @@ export class Router {
                                     route: this.currentRoute,
                                     params: this.currentParams,
                                     query: this.currentQuery,
-                                },
-                                this.getOptions()
+                                }
                             )
                         );
                     }
@@ -501,7 +493,7 @@ export class Router {
                     funcs.push(parent);
                     middlewares.push(
                         parent.onEnter.bind(
-                            null,
+                            parent,
                             this,
                             null,
                             {
@@ -520,7 +512,7 @@ export class Router {
                     funcs.push(parent);
                     middlewares.push(
                         parent.onChange.bind(
-                            null,
+                            parent,
                             this,
                             {
                                 name: this.previousRouteName,
@@ -572,5 +564,29 @@ export class Router {
         return promises.reduce(function(prev, cur) {
             return prev.then(cur);
         }, Promise.resolve());
+    }
+
+    /**
+     * @param route
+     * @param previousName
+     * @returns {*}
+     * @private
+     */
+    _generateRouteName(route, previousName = "") {
+        let name = previousName;
+
+        if (route.name) {
+            if (name) {
+                name = route.name + "." + name;
+            } else {
+                name = route.name;
+            }
+        }
+
+        if (route.parent) {
+            return this._generateRouteName(route.parent, name);
+        }
+
+        return name;
     }
 }
