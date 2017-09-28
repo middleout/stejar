@@ -1,31 +1,19 @@
 const exec = require("child_process").exec;
 const fs = require("fs");
 const chalk = require("chalk");
-const endOfLine = require("os").EOL;
 const depcheck = require("depcheck");
 
 const ignore = [
-    "depcheck", // Used in this script,
     "babel-cli", // used to compile in scripts/build.js
     "husky", // Used in combination with lint-staged
     "prettier", // Used by lint-staged,
+    "eslint-config-prettier", // not sure why its not picked up by depcheck
     "eslint-config-plugin:react", // Already there, but with "-" instead of ":"
 ];
 
 const packages = fs.readdirSync("./../").map(item => "@stejar/" + item);
 
-exec("git status -s", (err, std) => {
-    const modified = std
-        .split(endOfLine)
-        .filter(item => !!item)
-        .filter(item => item.indexOf("../") === -1);
-
-    if (modified.length > 0) {
-        console.log(chalk.bgRed.bold("You must commit your files to GIT before upgrading your dependencies versions."));
-        process.exit(1);
-        return;
-    }
-
+exec("git status -s", () => {
     const options = {
         ignoreMatches: ignore.concat(packages),
     };

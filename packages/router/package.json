@@ -21,7 +21,7 @@
     "precommit": "lint-staged",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
-    "update": "node ./../../scripts/depcheck && npm update && npm run test:run",
+    "update": "node ./../../scripts/check-for-modified && node ./../../scripts/depcheck && npm update && npm run test:run",
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",
