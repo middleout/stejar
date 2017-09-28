@@ -1,6 +1,5 @@
-import { HttpResponse } from "../Service/HttpResponse";
-import { HttpRequest } from "../Service/HttpRequest";
-
+import { HttpResponse } from "./HttpResponse";
+import { HttpRequest } from "./HttpRequest";
 export interface HttpAdapterContract {
     /**
      * @param request

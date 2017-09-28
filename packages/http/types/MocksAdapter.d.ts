@@ -1,6 +1,6 @@
-import { HttpAdapterContract } from "../Contract/HttpAdapterContract";
-import { HttpRequest } from "../Service/HttpRequest";
-import { HttpResponse } from "../Service/HttpResponse";
+import { HttpAdapterContract } from "./HttpAdapterContract";
+import { HttpRequest } from "./HttpRequest";
+import { HttpResponse } from "./HttpResponse";
 export declare class MocksAdapter implements HttpAdapterContract {
     protected debugFlag: boolean;
     /**

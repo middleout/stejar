@@ -1,5 +1,5 @@
-import { HttpAdapterContract } from "../Contract/HttpAdapterContract";
-import { RequestInterceptorContract, ResponseInterceptorContract } from "../Contract/InterceptorContract";
+import { HttpAdapterContract } from "./HttpAdapterContract";
+import { RequestInterceptorContract, ResponseInterceptorContract } from "./InterceptorContract";
 import { HttpRequest } from "./HttpRequest";
 import { HttpResponse } from "./HttpResponse";
 export declare class HttpService {
