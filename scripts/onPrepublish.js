@@ -1,4 +1,5 @@
 const execSync = require("child_process").execSync;
+const path = require("path");
 
 const exec = (command) =>
     execSync(command, {
@@ -7,6 +8,10 @@ const exec = (command) =>
     });
 
 module.exports = () => {
+
+    console.log(process.cwd);
+    console.log(path.resolve("./"));
+
     console.log('Prepublishing ...');
     exec("npm run test:run");
     exec("npm run build");
