@@ -9,12 +9,12 @@
     "test": "tests"
   },
   "files": [
-    "types",
     "getDisplayName.js",
     "inject.js",
     "ServiceProvider.js",
     "shape.js",
     "withServiceManager.js",
+    "types",
     "es",
     "umd"
   ],
@@ -41,10 +41,10 @@
     "react": "^16.0.0"
   },
   "peerDependencies": {
-    "@stejar/di": "^3.0.12"
+    "@stejar/di": "^3.0.13"
   },
   "devDependencies": {
-    "@stejar/di": "^3.0.12",
+    "@stejar/di": "^3.0.13",
     "babel-cli": "^6.26.0",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
@@ -58,7 +58,7 @@
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0"
   },
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "",
   "name": "@stejar/react-di"
 }

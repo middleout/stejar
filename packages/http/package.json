@@ -15,6 +15,7 @@
     "HttpResponse.js",
     "HttpService.js",
     "index.js",
+    "types",
     "es",
     "umd"
   ],
@@ -51,7 +52,7 @@
     "npm-check-updates": "^2.12.1",
     "prettier": "^1.7.0"
   },
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "",
   "name": "@stejar/http"
 }
