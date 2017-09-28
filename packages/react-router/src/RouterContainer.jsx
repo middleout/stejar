@@ -63,7 +63,7 @@ export class RouterContainer extends Component {
                 Accumulator = createElement(Accumulator);
             }
             return createElement(Current, {}, Accumulator);
-        }, createElement(({ children }) => children));
+        });
 
         return X;
     }
