@@ -1,0 +1,10 @@
+{
+    "moduleFileExtensions": [
+        "js",
+        "jsx"
+    ],
+    "testMatch": [
+        "<rootDir>/src/*.test.(js|jsx)"
+    ],
+    "coverageDirectory": "<rootDir>/__coverage__"
+}
