@@ -1,16 +1,30 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "./withRouter";
 
-function onClick(router, to, params, query, onClick, event) {
+function onClick(router, to, params, query, onClick, props, event) {
     event.preventDefault();
     router.redirect(to, params, query);
     if (onClick) {
-        onClick(event);
+        onClick(event, props);
     }
 }
 
 @withRouter
 export class Link extends Component {
+    /**
+     * @type {{activeClass: *, router: *, children: *, className: shim, onClick: shim, query: shim, params: shim, to: shim}}
+     */
+    static propTypes = {
+        router: PropTypes.object.isRequired,
+        children: PropTypes.any.isRequired,
+        className: PropTypes.string,
+        onClick: PropTypes.func,
+        query: PropTypes.object,
+        params: PropTypes.object,
+        to: PropTypes.string,
+    };
+
     render() {
         return (
             <a
@@ -20,7 +34,8 @@ export class Link extends Component {
                     this.props.to,
                     this.props.params,
                     this.props.query,
-                    this.props.onClick
+                    this.props.onClick,
+                    this.props
                 )}
                 href={this.props.routing.router.generatePathFromName(
                     this.props.to,

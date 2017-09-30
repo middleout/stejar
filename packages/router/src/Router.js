@@ -443,6 +443,8 @@ export class Router {
         let parent = route;
 
         while (parent) {
+            funcs.push(parent);
+
             if (parent.eventsHandler) {
                 if (!this.serviceManager) {
                     throw new Error("A ServiceManager is required if using a route eventsHandler");
@@ -452,7 +454,6 @@ export class Router {
 
                 if (handler.onEnter) {
                     if (this.previousMiddlewares.indexOf(parent) === -1) {
-                        funcs.push(parent);
                         middlewares.push(
                             handler.onEnter.bind(handler, {
                                 name: this.currentRouteName,
@@ -466,7 +467,6 @@ export class Router {
 
                 if (handler.onChange) {
                     if (this.previousMiddlewares.indexOf(parent) !== -1) {
-                        funcs.push(parent);
                         middlewares.push(
                             handler.onChange.bind(
                                 handler,
@@ -490,7 +490,6 @@ export class Router {
 
             if (parent.onEnter) {
                 if (this.previousMiddlewares.indexOf(parent) === -1) {
-                    funcs.push(parent);
                     middlewares.push(
                         parent.onEnter.bind(
                             parent,
@@ -509,7 +508,6 @@ export class Router {
             }
             if (parent.onChange) {
                 if (this.previousMiddlewares.indexOf(parent) !== -1) {
-                    funcs.push(parent);
                     middlewares.push(
                         parent.onChange.bind(
                             parent,

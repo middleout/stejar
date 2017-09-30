@@ -6,7 +6,7 @@ function getDisplayName(WrappedComponent) {
     return WrappedComponent.displayName || WrappedComponent.name || "Component";
 }
 
-export function withRouter(WrappedComponent) {
+function buildWrapper(WrappedComponent) {
     class WithRouter extends PureComponent {
         static contextTypes = {
             router: object,
@@ -27,10 +27,8 @@ export function withRouter(WrappedComponent) {
                 return <WrappedComponent {...this.props} />;
             }
 
-            const params = router.getMatchedParams() || {};
             const routing = {
                 router,
-                params,
             };
 
             const props = { ...this.props, routing };
@@ -55,4 +53,12 @@ export function withRouter(WrappedComponent) {
     }
 
     return hoistStatics(WithRouter, WrappedComponent);
+}
+
+export function withRouter(WrappedComponent) {
+    if (!WrappedComponent) {
+        return WrappedComponent => buildWrapper(WrappedComponent);
+    }
+
+    return buildWrapper(WrappedComponent);
 }
