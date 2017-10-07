@@ -29,7 +29,7 @@
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",
     "test": "jest --watch --config ./jest.config.js",
-    "test:run": "jest --config ./jest.config.js",
+    "test:run": "jest --config ./jest.config.js --no-watchman",
     "test:coverage": "jest --coverage --config ./jest.config.js"
   },
   "author": "Middleout",
