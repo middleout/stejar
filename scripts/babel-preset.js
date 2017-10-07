@@ -24,14 +24,17 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
     presets: [
         [
-            "es2015",
+            "env",
             {
                 loose: true,
                 modules: building ? false : "commonjs",
+                targets: {
+                    browsers: ["last 2 versions", "safari >= 7"],
+                },
             },
         ],
         "stage-1",
         "react",
     ],
-    plugins: plugins,
+    plugins,
 };
