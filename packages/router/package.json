@@ -33,8 +33,13 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
+    "eslint": "^4.8.0",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
     "lodash.trim": "^4.5.1",
-    "named-routes": "^2.0.6"
+    "named-routes": "^2.0.6",
+    "npm-check-updates": "^2.13.0",
+    "prettier": "^1.7.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -47,5 +47,10 @@
   },
   "version": "0.0.13",
   "description": "",
-  "name": "@stejar/router-redux"
+  "name": "@stejar/router-redux",
+  "dependencies": {
+    "eslint": "^4.8.0",
+    "npm-check-updates": "^2.13.0",
+    "prettier": "^1.7.4"
+  }
 }
