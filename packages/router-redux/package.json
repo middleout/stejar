@@ -30,7 +30,6 @@
   },
   "author": "Middleout",
   "license": "MIT",
-  "dependencies": {},
   "peerDependencies": {
     "@stejar/router": "^0.0.10",
     "redux": "^3.7.2"
@@ -39,7 +38,7 @@
     "@stejar/router": "^0.0.10",
     "redux": "^3.7.2"
   },
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "name": "@stejar/router-redux"
 }

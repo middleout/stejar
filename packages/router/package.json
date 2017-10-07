@@ -36,9 +36,7 @@
     "lodash.trim": "^4.5.1",
     "named-routes": "^2.0.6"
   },
-  "peerDependencies": {},
-  "devDependencies": {},
-  "version": "0.0.57",
+  "version": "0.0.58",
   "description": "",
   "name": "@stejar/router"
 }

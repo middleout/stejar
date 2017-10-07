@@ -36,9 +36,7 @@
     "invariant": "^2.2.2",
     "reflect-metadata": "^0.1.10"
   },
-  "peerDependencies": {},
-  "devDependencies": {},
-  "version": "3.0.13",
+  "version": "3.0.14",
   "description": "",
   "name": "@stejar/di"
 }
