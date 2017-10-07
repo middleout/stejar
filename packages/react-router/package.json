@@ -40,13 +40,8 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "eslint": "^4.8.0",
     "hoist-non-react-statics": "^2.3.1",
     "invariant": "^2.2.2",
-    "jest": "^21.2.1",
-    "lint-staged": "^4.2.3",
-    "npm-check-updates": "^2.13.0",
-    "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
     "react": "^15.6.2"
   },
@@ -54,14 +49,7 @@
     "@stejar/router": "^0.0.57"
   },
   "devDependencies": {
-    "@stejar/router": "^0.0.57",
-    "babel-cli": "^6.26.0",
-    "eslint": "^4.7.1",
-    "husky": "^0.14.3",
-    "jest": "^21.1.0",
-    "lint-staged": "^4.2.2",
-    "npm-check-updates": "^2.12.1",
-    "prettier": "^1.7.0"
+    "@stejar/router": "^0.0.57"
   },
   "version": "0.0.59",
   "description": "",

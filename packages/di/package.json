@@ -19,7 +19,6 @@
   ],
   "scripts": {
     "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
-    "precommit": "lint-staged",
     "commit": "node ./../../scripts/commit-changed-files",
     "upgrade": "node ./../../scripts/depcheck && ncu",
     "update": "node ./../../scripts/check-for-modified && node ./../../scripts/depcheck && npm update && npm run test:run",
@@ -37,15 +36,8 @@
     "invariant": "^2.2.2",
     "reflect-metadata": "^0.1.10"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "eslint": "^4.6.1",
-    "husky": "^0.14.3",
-    "jest": "^21.1.0",
-    "lint-staged": "^4.2.1",
-    "npm-check-updates": "^2.12.1",
-    "prettier": "^1.7.0"
-  },
+  "peerDependencies": {},
+  "devDependencies": {},
   "version": "3.0.13",
   "description": "",
   "name": "@stejar/di"
