@@ -7,11 +7,11 @@
   "scripts": {
     "postinstall": "lerna bootstrap --stream",
     "prepublishOnly": "npm run build",
-    "build": "lerna run build --stream",
+    "build": "lerna run build --stream --concurrency 1",
     "clean": "lerna run clean --stream",
-    "test": "lerna run test:run --stream",
-    "upgrade": "lerna run upgrade --stream",
-    "update": "lerna run update --stream",
+    "test": "lerna run test:run --stream --concurrency 1",
+    "upgrade": "lerna run upgrade --stream --concurrency 1",
+    "update": "lerna run update --stream --concurrency 1",
     "docs": "gitbook build ./docs && gitbook serve ./docs",
     "publish": "npm run test && npm run build && lerna publish"
   },
