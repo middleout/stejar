@@ -9,6 +9,7 @@
     "test": "tests"
   },
   "files": [
+    "settings.js",
     "reduxRouter.js",
     "index.js",
     "types",
