@@ -13,10 +13,10 @@ function onClick(router, to, params, query, onClick, props, event) {
 @withRouter
 export class Link extends Component {
     /**
-     * @type {{activeClass: *, router: *, children: *, className: shim, onClick: shim, query: shim, params: shim, to: shim}}
+     * @type {{routing: *, children: *, className: shim, onClick: shim, query: shim, params: shim, to: shim}}
      */
     static propTypes = {
-        router: PropTypes.object.isRequired,
+        routing: PropTypes.object.isRequired,
         children: PropTypes.any.isRequired,
         className: PropTypes.string,
         onClick: PropTypes.func,
