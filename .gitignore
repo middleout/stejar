@@ -1,4 +1,5 @@
 .idea
+yalc.lock
 old
 lerna-debug.log
 node_modules

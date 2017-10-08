@@ -10,6 +10,7 @@
     "prepublishOnly": "npm run build",
     "bootstrap": "npm install && lerna bootstrap --stream --concurrency 1",
     "build": "lerna run build --stream --concurrency 1",
+    "push": "lerna run build --stream && yalc push",
     "clean": "lerna run clean --stream && rimraf ./node_modules",
     "test": "lerna run test:run --stream --concurrency 1",
     "upgrade": "lerna run upgrade --stream --concurrency 1 && ncu",
@@ -17,6 +18,9 @@
     "docs": "gitbook build ./docs && gitbook serve ./docs",
     "publish": "npm run test && npm run build && lerna publish"
   },
+    "peerDependencies": {
+        "yalc": "^1.0.0-pre.11"
+    },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
