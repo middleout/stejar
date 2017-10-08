@@ -10,7 +10,7 @@
     "prepublishOnly": "npm run build",
     "bootstrap": "npm install && lerna bootstrap --stream --concurrency 1",
     "build": "lerna run build --stream --concurrency 1",
-    "push": "lerna run build --stream && yalc push",
+    "push": "lerna run build --stream && node ./scripts/yalc-push.js",
     "clean": "lerna run clean --stream && rimraf ./node_modules",
     "test": "lerna run test:run --stream --concurrency 1",
     "upgrade": "lerna run upgrade --stream --concurrency 1 && ncu",
