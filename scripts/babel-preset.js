@@ -2,7 +2,7 @@ const BABEL_ENV = process.env.BABEL_ENV;
 const building = BABEL_ENV != undefined && BABEL_ENV !== "cjs";
 const transformImports = require("babel-plugin-transform-imports");
 const fs = require("fs");
-const name = JSON.parse(fs.readFileSync("./package.json", 'utf-8')).name;
+const name = JSON.parse(fs.readFileSync("./package.json", "utf-8")).name;
 
 const plugins = [
     [
@@ -14,7 +14,8 @@ const plugins = [
             },
         },
     ],
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",
+    "transform-runtime",
 ];
 
 if (process.env.NODE_ENV === "production") {
