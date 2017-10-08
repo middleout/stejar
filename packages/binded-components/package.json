@@ -1,0 +1,41 @@
+{
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "BindedComponent.js",
+    "PureBindedComponent.js",
+    "binder.js",
+    "index.js",
+    "types",
+    "es",
+    "umd"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run test:coverage && npm run lint && npm run build",
+    "commit": "node ./../../scripts/commit-changed-files",
+    "upgrade": "node ./../../scripts/depcheck && ncu",
+    "update": "node ./../../scripts/check-for-modified && node ./../../scripts/depcheck && npm update && npm run test:run",
+    "build": "node ./../../scripts/build.js",
+    "clean": "git clean -fdX .",
+    "lint": "eslint ./src",
+    "test": "jest --watch --config ./jest.config.js",
+    "test:run": "jest --config ./jest.config.js --no-watchman",
+    "test:coverage": "jest --coverage --config ./jest.config.js"
+  },
+  "author": "Middleout",
+  "license": "MIT",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "react": "^16.0.0"
+  },
+  "version": "0.0.1",
+  "description": "",
+  "name": "@stejar/binded-components"
+}
