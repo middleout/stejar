@@ -1,7 +1,7 @@
-export function createServerHistory(url, search, push) {
+export function createServerHistory(url, search = "", push = () => null, listen = () => {}) {
     return {
         push,
-        listen: () => {},
+        listen,
         location: {
             pathname: url,
             search: search,
