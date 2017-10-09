@@ -39,7 +39,7 @@
     "@stejar/router": "^0.0.10",
     "redux": "^3.7.2"
   },
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "name": "@stejar/router-redux"
 }

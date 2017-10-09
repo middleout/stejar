@@ -1,6 +1,7 @@
 import NamedRoutes from "named-routes";
 import trim from "lodash.trim";
 import { ParamsParser } from "./ParamsParser";
+import { Stack } from "@stejar/promise-middleware";
 
 export class Router {
     /**
@@ -98,7 +99,16 @@ export class Router {
             this._dispatch(location.pathname, location.search, () => null, false)
         );
 
-        this._dispatch(this.history.location.pathname, this.history.location.search, onDone, this.alreadyInitialized);
+        try {
+            this._dispatch(
+                this.history.location.pathname,
+                this.history.location.search,
+                onDone,
+                this.alreadyInitialized
+            );
+        } catch (error) {
+            onDone({ error });
+        }
     }
 
     /**
@@ -233,29 +243,34 @@ export class Router {
             const checkDispatch = () => {
                 if (this.dispachQueue.indexOf(ID) === -1) {
                     // console.log(ID, "Stopping dispatch ...");
-                    return Promise.reject("Stop dispatch");
+                    throw "Stop dispatch";
                 }
             };
 
+            const next = (from, to, next) => {
+                return Promise.resolve()
+                    .then(handleRedirect)
+                    .then(checkDispatch)
+                    .then(matchRoute)
+                    .then(runListeners)
+                    .then(next)
+                    .catch(error => {
+                        if (error === "Stop dispatch") {
+                            return;
+                        }
+
+                        // console.log(error);
+
+                        onDone({
+                            error,
+                        });
+                    });
+            };
+
             // console.log(ID, "4. Handle middleware");
-            Promise.resolve()
-                .then(() => this._processMiddlewares(this.currentRoute))
-                .then(handleRedirect)
-                .then(checkDispatch)
-                .then(matchRoute)
-                .then(runListeners)
-                .then(finish)
-                .catch(err => {
-                    if (err === "Stop dispatch") {
-                        return;
-                    }
-
-                    throw err;
-                });
+            this._buildMiddlewareFuncs(this.currentRoute, next).then(finish);
         } else {
-            const [funcs] = this._buildMiddlewareFuncs(this.currentRoute);
-            this.previousMiddlewares = funcs;
-
+            this._buildMiddlewareFuncs(this.currentRoute, null, false);
             handleRedirect();
 
             if (this.dispachQueue.indexOf(ID) === -1) {
@@ -437,9 +452,11 @@ export class Router {
         );
     }
 
-    _buildMiddlewareFuncs(route) {
+    _buildMiddlewareFuncs(route, lastMiddleware = (from, to, next) => next(), shouldRun = true) {
+        const stack = new Stack();
+        let queue = [];
+
         let funcs = [];
-        let middlewares = [];
         let parent = route;
 
         while (parent) {
@@ -454,78 +471,32 @@ export class Router {
 
                 if (handler.onEnter) {
                     if (this.previousMiddlewares.indexOf(parent) === -1) {
-                        middlewares.push(
-                            handler.onEnter.bind(handler, {
-                                name: this.currentRouteName,
-                                route: this.currentRoute,
-                                params: this.currentParams,
-                                query: this.currentQuery,
-                            })
-                        );
+                        queue.push((from, to, next) => handler.onEnter(to, next));
                     }
                 }
 
                 if (handler.onChange) {
                     if (this.previousMiddlewares.indexOf(parent) !== -1) {
-                        middlewares.push(
-                            handler.onChange.bind(
-                                handler,
-                                {
-                                    name: this.previousRouteName,
-                                    route: this.previousRoute,
-                                    params: this.previousParams,
-                                    query: this.previousQuery,
-                                },
-                                {
-                                    name: this.currentRouteName,
-                                    route: this.currentRoute,
-                                    params: this.currentParams,
-                                    query: this.currentQuery,
-                                }
-                            )
-                        );
+                        queue.push((from, to, next) => handler.onChange(from, to, next));
                     }
                 }
             }
 
             if (parent.onEnter) {
                 if (this.previousMiddlewares.indexOf(parent) === -1) {
-                    middlewares.push(
-                        parent.onEnter.bind(
-                            parent,
-                            this,
-                            null,
-                            {
-                                name: this.currentRouteName,
-                                route: this.currentRoute,
-                                params: this.currentParams,
-                                query: this.currentQuery,
-                            },
-                            this.getOptions()
-                        )
+                    queue.push(
+                        (function(onEnter, router) {
+                            return (from, to, next) => onEnter(to, next, router, router.getOptions());
+                        })(parent.onEnter, this)
                     );
                 }
             }
             if (parent.onChange) {
                 if (this.previousMiddlewares.indexOf(parent) !== -1) {
-                    middlewares.push(
-                        parent.onChange.bind(
-                            parent,
-                            this,
-                            {
-                                name: this.previousRouteName,
-                                route: this.previousRoute,
-                                params: this.previousParams,
-                                query: this.previousQuery,
-                            },
-                            {
-                                name: this.currentRouteName,
-                                route: this.currentRoute,
-                                params: this.currentParams,
-                                query: this.currentQuery,
-                            },
-                            this.getOptions()
-                        )
+                    queue.push(
+                        (function(onChange, router) {
+                            return (from, to, next) => onChange(from, to, next, router, router.getOptions());
+                        })(parent.onChange, this)
                     );
                 }
             }
@@ -537,31 +508,28 @@ export class Router {
             }
         }
 
-        middlewares = middlewares.reverse();
+        this.previousMiddlewares = funcs;
 
-        return [funcs, middlewares];
-    }
+        if (!shouldRun) {
+            return;
+        }
 
-    /**
-     * @param route
-     * @param next
-     * @returns {Promise.<TResult>}
-     * @private
-     */
-    _processMiddlewares(route) {
-        const [funcs, middlewares] = this._buildMiddlewareFuncs(route);
-        return this._convertArrayOfPromisesToChaing(middlewares).then(() => (this.previousMiddlewares = funcs));
-    }
+        queue.reverse().forEach(item => stack.add(item));
 
-    /**
-     * @param promises
-     * @returns {*}
-     * @private
-     */
-    _convertArrayOfPromisesToChaing(promises) {
-        return promises.reduce(function(prev, cur) {
-            return prev.then(cur);
-        }, Promise.resolve());
+        return stack.add(lastMiddleware).run(
+            {
+                name: this.previousRouteName,
+                route: this.previousRoute,
+                params: this.previousParams,
+                query: this.previousQuery,
+            },
+            {
+                name: this.currentRouteName,
+                route: this.currentRoute,
+                params: this.currentParams,
+                query: this.currentQuery,
+            }
+        );
     }
 
     /**
