@@ -46,12 +46,12 @@
     "react": "^15.6.2"
   },
   "peerDependencies": {
-    "@stejar/router": "^0.0.61"
+    "@stejar/router": "^0.0.62"
   },
   "devDependencies": {
-    "@stejar/router": "^0.0.61"
+    "@stejar/router": "^0.0.62"
   },
-  "version": "0.0.63",
+  "version": "0.0.64",
   "description": "",
   "name": "@stejar/react-router"
 }
