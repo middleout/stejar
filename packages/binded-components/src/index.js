@@ -1,3 +1,3 @@
-export * from "./BindedComponent";
-export * from "./PureBindedComponent";
-export * from "./binder";
+export { BindedComponent } from "./BindedComponent";
+export { PureBindedComponent } from "./PureBindedComponent";
+export { binder } from "./binder";

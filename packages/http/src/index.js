@@ -1,5 +1,5 @@
-export * from "./FetchAdapter";
-export * from "./MocksAdapter";
-export * from "./HttpRequest";
-export * from "./HttpResponse";
-export * from "./HttpService";
+export { FetchAdapter } from "./FetchAdapter";
+export { MocksAdapter } from "./MocksAdapter";
+export { HttpRequest } from "./HttpRequest";
+export { HttpResponse } from "./HttpResponse";
+export { HttpService } from "./HttpService";

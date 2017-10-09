@@ -1,4 +1,4 @@
-export * from "./shape";
-export * from "./inject";
-export * from "./withServiceManager";
-export * from "./ServiceProvider";
+export { shape } from "./shape";
+export { inject } from "./inject";
+export { withServiceManager } from "./withServiceManager";
+export { ServiceProvider } from "./ServiceProvider";

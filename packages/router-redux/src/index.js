@@ -1,2 +1,2 @@
-export * from "./reduxRouter";
-export * from "./settings";
+export { attachRouterToRedux, ROUTE_CHANGED_ACTION, routerReducer } from "./reduxRouter";
+export { getMountPoint, setMountPoint } from "./settings";

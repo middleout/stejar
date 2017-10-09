@@ -1,3 +1,3 @@
-export * from "./ServiceManager";
-export * from "./AbstractProvider";
-export * from "./injectable";
+export { ServiceManager } from "./ServiceManager";
+export { AbstractProvider } from "./AbstractProvider";
+export { injectable } from "./injectable";
