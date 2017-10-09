@@ -6,6 +6,9 @@ module.exports = {
         "js",
         "jsx"
     ],
+    "transform": {
+        ".(js|jsx)": "<rootDir>/../../scripts/jest/babelTransform.js"
+    },
     "testMatch": [
         "<rootDir>/src/*.test.(js|jsx)"
     ],
