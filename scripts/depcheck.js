@@ -5,6 +5,7 @@ const depcheck = require("depcheck");
 
 const ignore = [
     "babel-cli", // used to compile in scripts/build.js
+    "babel-runtime", // dependnecy is set in parent
     "husky", // Used in combination with lint-staged
     "prettier", // Used by lint-staged,
     "eslint-config-prettier", // not sure why its not picked up by depcheck
