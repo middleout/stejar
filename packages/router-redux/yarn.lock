@@ -2,10 +2,15 @@
 # yarn lockfile v1
 
 
-"@stejar/router@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@stejar/router/-/router-0.0.10.tgz#72d54fed373e1de19da63b89775d65f30aa41723"
+"@stejar/promise-middleware@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@stejar/promise-middleware/-/promise-middleware-0.0.5.tgz#1218cabfff62595fa7a439f9ee20ea6f74a99fb9"
+
+"@stejar/router@^0.0.62":
+  version "0.0.62"
+  resolved "https://registry.yarnpkg.com/@stejar/router/-/router-0.0.62.tgz#9fc846de331f869d47b12a8c9616d87909a2e8b7"
   dependencies:
+    "@stejar/promise-middleware" "^0.0.5"
     lodash.trim "^4.5.1"
     named-routes "^2.0.6"
 
@@ -53,7 +58,7 @@ path-to-regexp@^1.2.1:
   dependencies:
     isarray "0.0.1"
 
-redux@^3.7.2:
+redux@3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
