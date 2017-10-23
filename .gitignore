@@ -1,4 +1,5 @@
 .idea
+renovate.js
 yalc.lock
 old
 lerna-debug.log
