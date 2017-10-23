@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@stejar/router": "^0.0.62",
-    "redux": "^3.7.2"
+    "redux": "3.7.2"
   },
   "version": "0.0.16",
   "description": "",
