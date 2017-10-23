@@ -1,6 +1,0 @@
-{
-    "extends": ["config:js-lib"],
-    "ignorePaths": ["integration", "node_modules", "old", "pending", "tmp-packages"],
-    "semanticCommits": true,
-    "pinVersions": false
-}
