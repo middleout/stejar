@@ -1,5 +1,8 @@
 {
     "extends": ["config:js-lib"],
     "ignorePaths": ["integration", "node_modules", "old", "pending", "tmp-packages"],
-    "semanticCommits": true
+    "semanticCommits": true,
+    "pinVersions": false,
+    "timezone": "Europe/Bucharest",
+    "schedule": "before 5am every weekday"
 }
