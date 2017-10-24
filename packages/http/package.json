@@ -45,7 +45,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "jest": "^21.2.1",
-    "fetch-mock": "^5.13.1"
+    "fetch-mock": "^5.13.0"
   },
   "version": "3.0.15",
   "description": "",
