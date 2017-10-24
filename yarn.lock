@@ -1934,7 +1934,7 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
-dot-prop@^4.1.0:
+dot-prop@^4.0.0, dot-prop@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   dependencies:
@@ -6186,6 +6186,14 @@ update-notifier@~2.2.0:
     latest-version "^3.0.0"
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
+
+update-pkg@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/update-pkg/-/update-pkg-1.2.0.tgz#d828d959d8951688dfbbcc2100612e12dba31d60"
+  dependencies:
+    dot-prop "^4.0.0"
+    mkdirp "^0.5.1"
+    pify "^2.3.0"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"
