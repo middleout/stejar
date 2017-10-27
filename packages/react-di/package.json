@@ -9,12 +9,11 @@
     "test": "tests"
   },
   "files": [
-    "FetchAdapter.js",
-    "MocksAdapter.js",
-    "HttpRequest.js",
-    "HttpResponse.js",
-    "HttpService.js",
-    "index.js",
+    "getDisplayName.js",
+    "inject.js",
+    "ServiceProvider.js",
+    "shape.js",
+    "withServiceManager.js",
     "types",
     "es",
     "umd"
@@ -34,18 +33,24 @@
   },
   "author": "Middleout",
   "license": "MIT",
+  "types": "types/index.d.ts",
   "dependencies": {
-    "lodash.foreach": "^4.5.0",
-    "lodash.isempty": "^4.4.0",
-    "lodash.trimend": "^4.5.1"
+    "hoist-non-react-statics": "^2.3.1",
+    "invariant": "^2.2.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0"
   },
   "peerDependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "@stejar/di": "^3.0.16"
   },
   "devDependencies": {
-    "fetch-mock": "^5.13.1"
+    "@stejar/di": "^3.0.16",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0"
   },
-  "version": "3.0.15",
+  "version": "3.0.7",
   "description": "",
-  "name": "@stejar/http"
+  "name": "@stejar/react-di"
 }

@@ -9,11 +9,8 @@
     "test": "tests"
   },
   "files": [
-    "FetchAdapter.js",
-    "MocksAdapter.js",
-    "HttpRequest.js",
-    "HttpResponse.js",
-    "HttpService.js",
+    "settings.js",
+    "reduxRouter.js",
     "index.js",
     "types",
     "es",
@@ -34,18 +31,15 @@
   },
   "author": "Middleout",
   "license": "MIT",
-  "dependencies": {
-    "lodash.foreach": "^4.5.0",
-    "lodash.isempty": "^4.4.0",
-    "lodash.trimend": "^4.5.1"
-  },
   "peerDependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "@stejar/router": "^0.0.62",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
-    "fetch-mock": "^5.13.1"
+    "@stejar/router": "^0.0.62",
+    "redux": "^3.7.2"
   },
-  "version": "3.0.15",
+  "version": "0.0.16",
   "description": "",
-  "name": "@stejar/http"
+  "name": "@stejar/router-redux"
 }

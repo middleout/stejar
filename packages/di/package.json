@@ -9,11 +9,9 @@
     "test": "tests"
   },
   "files": [
-    "FetchAdapter.js",
-    "MocksAdapter.js",
-    "HttpRequest.js",
-    "HttpResponse.js",
-    "HttpService.js",
+    "ServiceManager.js",
+    "AbstractProvider.js",
+    "injectable.js",
     "index.js",
     "types",
     "es",
@@ -34,18 +32,12 @@
   },
   "author": "Middleout",
   "license": "MIT",
+  "types": "types/index.d.ts",
   "dependencies": {
-    "lodash.foreach": "^4.5.0",
-    "lodash.isempty": "^4.4.0",
-    "lodash.trimend": "^4.5.1"
+    "invariant": "^2.2.2",
+    "reflect-metadata": "^0.1.10"
   },
-  "peerDependencies": {
-    "isomorphic-fetch": "^2.2.1"
-  },
-  "devDependencies": {
-    "fetch-mock": "^5.13.1"
-  },
-  "version": "3.0.15",
+  "version": "3.0.16",
   "description": "",
-  "name": "@stejar/http"
+  "name": "@stejar/di"
 }
