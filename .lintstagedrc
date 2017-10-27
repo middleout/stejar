@@ -1,4 +1,5 @@
 {
+    "gitDir": "../",
     "linters": {
         "**/src/**/*.{js,jsx}": [
         	"eslint",
