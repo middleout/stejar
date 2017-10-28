@@ -5,4 +5,6 @@
  * the common scripts sectionw hile still allowing for
  * customization
  */
-module.exports = require("./../../../scripts/jest.beforeTest")({});
+module.exports = require("./../../../scripts/jest.beforeTest")({
+    React: require("react")
+});
