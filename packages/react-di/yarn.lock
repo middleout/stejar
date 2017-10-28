@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@stejar/di@^3.0.16":
-  version "3.0.14"
-  resolved "https://registry.yarnpkg.com/@stejar/di/-/di-3.0.14.tgz#9aa20001e51a9cd8e7254879a384eb0d51d5baec"
-  dependencies:
-    invariant "^2.2.2"
-    reflect-metadata "^0.1.10"
-
 "@types/node@^6.0.46":
   version "6.0.89"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.89.tgz#154be0e6a823760cd6083aa8c48f952e2e63e0b0"
@@ -3570,10 +3563,6 @@ readdirp@^2.0.0:
     minimatch "^3.0.2"
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
-
-reflect-metadata@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.10.tgz#b4f83704416acad89988c9b15635d47e03b9344a"
 
 regenerate@^1.2.1:
   version "1.3.3"
