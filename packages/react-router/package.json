@@ -43,10 +43,10 @@
     "react": "^15.6.2"
   },
   "peerDependencies": {
-    "@stejar/router": "^0.0.62"
+    "@stejar/router": "^0.0.63"
   },
   "devDependencies": {
-    "@stejar/router": "^0.0.62",
+    "@stejar/router": "^0.0.63",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
@@ -63,7 +63,7 @@
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4"
   },
-  "version": "0.0.64",
+  "version": "0.0.65",
   "description": "",
   "name": "@stejar/react-router"
 }

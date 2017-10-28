@@ -30,11 +30,11 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "@stejar/promise-middleware": "^0.0.5",
+    "@stejar/promise-middleware": "^0.0.6",
     "lodash.trim": "^4.5.1",
     "named-routes": "^2.0.6"
   },
-  "version": "0.0.62",
+  "version": "0.0.63",
   "description": "",
   "name": "@stejar/router",
   "devDependencies": {

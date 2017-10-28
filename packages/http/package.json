@@ -57,7 +57,7 @@
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4"
   },
-  "version": "3.0.15",
+  "version": "3.0.16",
   "description": "",
   "name": "@stejar/http"
 }
