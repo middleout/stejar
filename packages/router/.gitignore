@@ -1,6 +1,7 @@
 /*.js
-!/jest.config.js
 /es
+!/jest.config.js
+!/babel.config.js
 
 ### Tests ###
 
