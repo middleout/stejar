@@ -62,7 +62,7 @@
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0"
   },
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "",
   "name": "@stejar/react-di"
 }
