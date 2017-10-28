@@ -2,6 +2,7 @@
 /es
 !/jest.config.js
 !/babel.config.js
+!/.eslintrc.js
 
 ### Tests ###
 
