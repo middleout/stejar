@@ -1,10 +1,9 @@
-const BABEL_ENV = process.env.BABEL_ENV;
-const enableModules = !(BABEL_ENV != undefined && BABEL_ENV !== "cjs");
+const transformEs6ToCommonJs = process.env.BABEL_ENV === "cjs";
 
 const plugins = ["transform-decorators-legacy", "transform-runtime"];
 
 if (process.env.NODE_ENV === "production") {
-    plugins.push("dev-expression", "transform-react-remove-prop-types");
+    plugins.push("dev-expression");
 }
 
 module.exports = {
@@ -13,7 +12,7 @@ module.exports = {
             "env",
             {
                 loose: true,
-                modules: enableModules ? "commonjs" : false,
+                modules: transformEs6ToCommonJs ? "commonjs" : false,
                 targets: {
                     browsers: ["last 2 versions", "safari >= 7"],
                 },

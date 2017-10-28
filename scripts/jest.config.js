@@ -1,13 +1,13 @@
 module.exports = {
     "setupFiles": [
-        "<rootDir>/../../scripts/jest/beforeTest.js"
+        "<rootDir>/scripts/jest.beforeTest.js"
     ],
     "moduleFileExtensions": [
         "js",
         "jsx"
     ],
     "transform": {
-        ".(js|jsx)": "<rootDir>/../../scripts/jest/babelTransform.js"
+        ".(js|jsx)": "<rootDir>/scripts/jest.babelTransform.js"
     },
     "testMatch": [
         "<rootDir>/src/*.test.(js|jsx)"
@@ -20,5 +20,9 @@ module.exports = {
         "text",
         "lcov"
     ],
-    "mapCoverage": true
+    "mapCoverage": true,
+    "transformIgnorePatterns": [
+        "/node_modules/",
+        "jest.beforeTest.js"
+    ]
 }
