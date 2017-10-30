@@ -29,11 +29,11 @@
   "author": "Middleout",
   "license": "MIT",
   "peerDependencies": {
-    "@stejar/router": "^0.0.63",
+    "@stejar/router": "^0.0.64",
     "redux": "^3.7.2"
   },
   "devDependencies": {
-    "@stejar/router": "^0.0.63",
+    "@stejar/router": "^0.0.64",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
@@ -50,7 +50,7 @@
     "prettier": "^1.7.4",
     "redux": "^3.7.2"
   },
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "",
   "name": "@stejar/router-redux"
 }
