@@ -62,6 +62,7 @@ export class Router {
      */
     setServiceManager(serviceManager) {
         this.serviceManager = serviceManager;
+        this.serviceManager.set(Router, this);
 
         return this;
     }
