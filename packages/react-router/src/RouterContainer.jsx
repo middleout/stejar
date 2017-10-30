@@ -15,7 +15,7 @@ export class RouterContainer extends Component {
         this.router = props.router;
         this.unsubscribe = () => null;
         this.stop = () => null;
-        this.components = [];
+        this.component = null;
 
         const { children } = this.props;
 
@@ -41,31 +41,25 @@ export class RouterContainer extends Component {
             return null;
         }
 
-        this.buildComponentTree(this.router.getMatchedRoute());
-        return this.listToNested(this.components);
+        const component = this.buildComponentTree(this.router.getMatchedRoute());
+        return component;
     }
 
-    buildComponentTree(spec) {
+    buildComponentTree(spec, child) {
+        let component = child;
+
         if (spec.component) {
-            this.components.push(spec.component);
-        }
-
-        if (spec.parent) {
-            this.buildComponentTree(spec.parent);
-        }
-    }
-
-    listToNested(list) {
-        let firstTime = true;
-        const X = list.reduce((Accumulator, Current) => {
-            if (firstTime) {
-                firstTime = false;
-                Accumulator = createElement(Accumulator);
+            if (!child) {
+                component = createElement(spec.component, {});
+            } else {
+                component = createElement(spec.component, {}, child);
             }
-            return createElement(Current, {}, Accumulator);
-        });
+        }
+        if (spec.parent) {
+            component = this.buildComponentTree(spec.parent, component);
+        }
 
-        return X;
+        return component;
     }
 
     componentWillMount() {
