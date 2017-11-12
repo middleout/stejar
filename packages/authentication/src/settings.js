@@ -1,4 +1,4 @@
-import { createModule } from "../ModuleConfig/createModule";
+import { createModule } from "@stejar/redux-module/createModule";
 
 const module = createModule("@stejar/authentication");
 
