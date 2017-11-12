@@ -26,22 +26,6 @@ export class Stack {
          * @private
          */
         this._index = 0;
-
-        /**
-         * The error string which the promise chain will reject with if next() is not called
-         * when the parent promise resumes run.
-         *
-         * @type {string}
-         * @private
-         */
-        this._errorName = "@stejar/promise-middleware/StackError: Next not called";
-    }
-
-    /**
-     * @returns {string}
-     */
-    getNextNotCalledError() {
-        return this._errorName;
     }
 
     /**
@@ -73,7 +57,7 @@ export class Stack {
                 return this.process(...args);
             }).then(data => {
                 if (!this._tracking[index]) {
-                    return Promise.reject(this._errorName);
+                    return;
                 }
 
                 return data;

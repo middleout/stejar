@@ -32,7 +32,10 @@ export function inject(mapItemsToProps) {
                     data[key] = this.props.serviceManager.get(mapItemsToProps[key]);
                 });
 
-                return createElement(WrappedComponent, { ...this.props, ...data });
+                let props = { ...this.props };
+                delete props.serviceManager;
+
+                return createElement(WrappedComponent, { ...props, ...data });
             }
         }
 

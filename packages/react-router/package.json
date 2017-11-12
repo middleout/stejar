@@ -40,7 +40,7 @@
     "hoist-non-react-statics": "^2.3.1",
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",
-    "react": "16.0.0"
+    "react": "^16.1.0"
   },
   "peerDependencies": {
     "@stejar/router": "^0.0.64"
