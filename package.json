@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "lerna bootstrap --stream --concurrency 1",
+    "precommit": "lerna run _precommit --stream --concurrency 1",
     "bootstrap": "yarn install && lerna bootstrap --stream --concurrency 1",
     "build": "lerna run build --stream --concurrency 1",
     "push": "lerna run build --stream && node ./scripts/yalc-push.js",
