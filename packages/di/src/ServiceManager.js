@@ -95,7 +95,9 @@ export class ServiceManager {
             const instance = callback(this);
             if (!instance) {
                 throw new Error(
-                    `The provider for the class "${className.name}" must provide *something*. Got "${typeof instance}" instead.`
+                    `The provider for the class "${
+                        className.name
+                    }" must provide *something*. Got "${typeof instance}" instead.`
                 );
             }
             this.set(className, instance);

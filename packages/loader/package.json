@@ -21,10 +21,9 @@
   ],
   "scripts": {
     "prepublishOnly": "yarn test:coverage && yarn lint && yarn build",
-    "_precommit": "lint-staged",
+    "lint": "eslint ./src && prettier --write --config ./../../.prettierrc ./src/**/*{js,jsx}",
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
-    "lint": "eslint ./src",
     "test": "jest --watch --config ./jest.config.js  --no-cache",
     "test:run": "jest --config ./jest.config.js --no-watchman --no-cache",
     "test:coverage": "jest --coverage --config ./jest.config.js --no-cache"
@@ -50,9 +49,7 @@
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-prettier": "^2.3.1",
     "fetch-mock": "^5.13.1",
-    "husky": "^0.14.3",
     "jest": "^21.2.1",
-    "lint-staged": "^4.3.0",
     "prettier": "^1.7.4"
   },
   "version": "3.0.0",
