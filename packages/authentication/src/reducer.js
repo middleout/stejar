@@ -1,6 +1,6 @@
 import { AUTHENTICATED_ACTION, LOGOUT_ACTION } from "./actionTypes";
 
-export function authReducer(state = {}, action) {
+export function authenticationReducer(state = {}, action) {
     switch (action.type) {
         case AUTHENTICATED_ACTION:
             return action.payload;
