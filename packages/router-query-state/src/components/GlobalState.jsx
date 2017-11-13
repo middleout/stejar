@@ -2,7 +2,7 @@ import { PureBindedComponent } from "@stejar/binded-components/PureBindedCompone
 import { withRouter } from "@stejar/react-router/withRouter";
 import { connect } from "react-redux";
 import { Children, cloneElement } from "react";
-import { getQueryParam } from "./selectors";
+import { getQueryParam } from "./../selectors";
 
 @withRouter
 @connect(state => ({
