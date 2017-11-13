@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "prepublishOnly": "yarn test:coverage && yarn lint && yarn build",
-    "precommit": "lint-staged",
+    "_precommit": "lint-staged",
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint ./src",

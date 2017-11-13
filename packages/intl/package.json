@@ -26,9 +26,9 @@
   },
   "scripts": {
     "prepublishOnly": "yarn test:coverage && yarn lint && yarn build",
-    "precommit": "lint-staged",
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
+    "_precommit":"lint-staged",
     "lint": "eslint ./src",
     "test": "jest --watch --config ./jest.config.js  --no-cache",
     "test:run": "jest --config ./jest.config.js --no-watchman --no-cache",
