@@ -30,13 +30,12 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "@stejar/binded-components": "^0.0.4",
-    "@stejar/react-router": "^0.0.67",
-    "@stejar/redux-module": "^0.0.1",
+    "@stejar/binded-components": "^0.0.5",
+    "@stejar/react-router": "^0.0.68",
+    "@stejar/redux-module": "^0.0.2",
     "react": "^16.1.1",
     "react-redux": "^5.0.6"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -55,7 +54,7 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "",
   "name": "@stejar/router-query-state"
 }

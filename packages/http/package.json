@@ -54,7 +54,7 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "version": "3.0.16",
+  "version": "3.0.17",
   "description": "",
   "name": "@stejar/http"
 }

@@ -27,7 +27,6 @@
   },
   "author": "Middleout",
   "license": "MIT",
-  "dependencies": {},
   "peerDependencies": {
     "redux": "^3.7.2"
   },
@@ -47,7 +46,7 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "name": "@stejar/redux-module"
 }

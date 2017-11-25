@@ -36,7 +36,7 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "@stejar/redux-module": "^0.0.1",
+    "@stejar/redux-module": "^0.0.2",
     "i18n-extract": "^0.5.1",
     "lodash.isobject": "^3.0.2",
     "react-redux": "^5.0.6"
@@ -62,7 +62,7 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "version": "3.0.16",
+  "version": "3.0.17",
   "description": "",
   "name": "@stejar/intl"
 }

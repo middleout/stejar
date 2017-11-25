@@ -27,8 +27,8 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "@stejar/authorization": "^3.0.0",
-    "@stejar/binded-components": "^0.0.4",
+    "@stejar/authorization": "^3.0.1",
+    "@stejar/binded-components": "^0.0.5",
     "react-redux": "^5.0.6"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "",
   "name": "@stejar/react-authorization"
 }

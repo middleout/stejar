@@ -37,10 +37,10 @@
     "react": "^16.1.1"
   },
   "peerDependencies": {
-    "@stejar/di": "^3.0.17"
+    "@stejar/di": "^3.0.18"
   },
   "devDependencies": {
-    "@stejar/di": "^3.0.17",
+    "@stejar/di": "^3.0.18",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
@@ -59,7 +59,7 @@
     "react-dom": "^16.1.1",
     "react-test-renderer": "^16.1.1"
   },
-  "version": "3.0.10",
+  "version": "3.0.11",
   "description": "",
   "name": "@stejar/react-di"
 }
