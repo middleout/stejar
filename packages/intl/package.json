@@ -36,10 +36,10 @@
   "author": "Middleout",
   "license": "MIT",
   "dependencies": {
-    "lodash.isobject": "^3.0.2",
-    "react-redux": "^5.0.6",
     "@stejar/redux-module": "^0.0.1",
-    "i18n-extract": "^0.5.0"
+    "i18n-extract": "^0.5.1",
+    "lodash.isobject": "^3.0.2",
+    "react-redux": "^5.0.6"
   },
   "peerDependencies": {
     "react": "^16.1.0"
@@ -55,9 +55,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "eslint": "^4.10.0",
-    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-prettier": "^2.8.0",
     "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "fetch-mock": "^5.13.1",
     "jest": "^21.2.1",
     "prettier": "^1.7.4"

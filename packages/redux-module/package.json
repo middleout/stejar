@@ -27,10 +27,9 @@
   },
   "author": "Middleout",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
-      "redux": "^3.7.2"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -42,7 +41,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-1": "^6.24.1",
     "eslint": "^4.10.0",
-    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-prettier": "^2.8.0",
     "eslint-plugin-prettier": "^2.3.1",
     "fetch-mock": "^5.13.1",
     "jest": "^21.2.1",

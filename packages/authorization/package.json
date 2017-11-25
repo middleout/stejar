@@ -24,7 +24,6 @@
     "lint": "eslint ./src && prettier --write --config ./../../.prettierrc ./src/**/*{js,jsx}",
     "build": "node ./../../scripts/build.js",
     "clean": "git clean -fdX .",
-
     "test": "jest --watch --config ./jest.config.js  --no-cache",
     "test:run": "jest --config ./jest.config.js --no-watchman --no-cache",
     "test:coverage": "jest --coverage --config ./jest.config.js --no-cache"
@@ -47,7 +46,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-1": "^6.24.1",
     "eslint": "^4.10.0",
-    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-prettier": "^2.8.0",
     "eslint-plugin-prettier": "^2.3.1",
     "fetch-mock": "^5.13.1",
     "jest": "^21.2.1",
