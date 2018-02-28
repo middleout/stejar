@@ -1,8 +1,7 @@
 {
   "name": "@stejar/router-std-state-adapter",
-  "version": "3.0.9",
+  "version": "4.0.0",
   "main": "es/index.js",
   "license": "MIT",
-  "sideEffects": false,
-  "dependencies": {}
+  "sideEffects": false
 }
