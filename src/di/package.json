@@ -1,6 +1,6 @@
 {
   "name": "@stejar/di",
-  "version": "3.0.36",
+  "version": "3.0.37",
   "main": "es/index.js",
   "license": "MIT",
   "sideEffects": false,
