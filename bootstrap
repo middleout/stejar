@@ -1,6 +1,6 @@
 0. yarn config set strict-ssl true
 1. yarn init
-2.1 yarn add jest static-server babel-jest @babel/core babel-eslint babel-plugin-jsx-control-statements @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/polyfill @babel/preset-env @babel/preset-react babel-core@7.0.0-bridge.0 prettier babel-loader html-loader file-loader sass-loader css-loader style-loader html-webpack-plugin@webpack-contrib/html-webpack-plugin extract-text-webpack-plugin@next clean-webpack-plugin webpack webpack-cli node-sass eslint eslint-plugin-react eslint-plugin-jsx-control-statements eslint-config-prettier --development
+2.1 yarn add jest static-server babel-jest @babel/core babel-eslint babel-plugin-jsx-control-statements @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/polyfill @babel/preset-env @babel/preset-react babel-core@7.0.0-bridge.0 prettier babel-loader html-loader file-loader sass-loader css-loader style-loader html-webpack-plugin@webpack-contrib/html-webpack-plugin extract-text-webpack-plugin@next clean-webpack-plugin webpack webpack-cli node-sass eslint eslint-plugin-react eslint-plugin-jsx-control-statements eslint-config-prettier husky --dev
 2.2 yarn add jest react react-dom
 
 3. edit package.json and add:
@@ -14,10 +14,12 @@
 and
 
 "scripts": {
-    "dev": "webpack --mode development --watch",
+    "start": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "test": "jest --watchAll --no-watchman",
-    "test:coverage": "jest --watchAll --no-watchman --coverage"
+    "test:coverage": "jest --watchAll --no-watchman --coverage",
+    "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*",
+    "precommit": "yarn lint"
 },
 
 4. create and edit .babelrc.js
@@ -340,6 +342,7 @@ Also go to keymap and assign a combo keymap for "Prettier"
 19. open a new console and go to the dist folder and run "static-server"
 20. open the browser at localhost:9080
 21. stop the yarn dev window. run "yarn test" and "yarn test:coverage"
+22.
 
 
 TIP: if you use another url than localhost:9080 - make sure to edit webpack.config.js also

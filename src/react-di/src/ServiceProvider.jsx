@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
-import { Children, Component } from "react";
-// import React, { Children, Component, createContext } from "react";
+import React, { Children, Component } from "react";
+import createReactContext from "create-react-context";
+
+const { Provider, Consumer } = createReactContext(null);
+
+export const ServiceConsumer = Consumer;
 
 export class ServiceProvider extends Component {
     /**
@@ -11,21 +15,7 @@ export class ServiceProvider extends Component {
         serviceManager: PropTypes.object.isRequired,
     };
 
-    /**
-     * @type {ServiceManager}
-     */
-    _serviceManager = null;
-
-    /**
-     * @param props
-     * @param context
-     */
-    constructor(props) {
-        super(props);
-        this._serviceManager = props.serviceManager;
-    }
-
     render() {
-        return Children.only(this.props.children);
+        return <Provider value={this.props.serviceManager}>{Children.only(this.props.children)}</Provider>;
     }
 }

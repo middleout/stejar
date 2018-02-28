@@ -9,14 +9,13 @@
     "scripts": {
         "watch": "node scripts/watch.js",
         "build": "node scripts/build.js",
-        "publish": "yarn build && node scripts/publish.js",
+        "publish": "yarn build && yarn test:once && lerna publish --skip-git --registry http://localhost:4873",
         "test": "jest --watchAll --no-watchman",
+        "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
         "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*",
         "precommit": "yarn lint"
     },
-    "peerDependencies": {},
-    "optionalDependencies": {},
     "devDependencies": {
         "@babel/cli": "^7.0.0-beta.39",
         "@babel/core": "^7.0.0-beta.39",

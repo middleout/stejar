@@ -1,9 +1,12 @@
 {
   "name": "@stejar/http",
-  "version": "4.0.0",
+  "version": "4.0.3",
   "main": "es/index.js",
   "license": "MIT",
   "sideEffects": false,
+  "files": [
+    "es"
+  ],
   "dependencies": {
     "lodash.foreach": "^4.5.0",
     "lodash.isempty": "^4.4.0",
