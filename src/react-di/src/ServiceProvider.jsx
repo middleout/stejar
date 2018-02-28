@@ -8,7 +8,7 @@ export class ServiceProvider extends Component {
      */
     static propTypes = {
         children: PropTypes.element.isRequired,
-                      serviceManager: PropTypes.object.isRequired,
+        serviceManager: PropTypes.object.isRequired,
     };
 
     /**
