@@ -1,6 +1,6 @@
 {
   "name": "@stejar/http",
-  "version": "3.0.30",
+  "version": "3.0.31",
   "main": "es/index.js",
   "license": "MIT",
   "sideEffects": false,
