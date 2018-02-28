@@ -1,6 +1,6 @@
 {
   "name": "@stejar/promise-middleware",
-  "version": "3.0.14",
+  "version": "3.0.15",
   "main": "es/index.js",
   "license": "MIT",
   "sideEffects": false,
