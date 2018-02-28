@@ -6,9 +6,9 @@ export class ServiceProvider extends Component {
     /**
      * @type {{serviceManager: Validator<T>, children: Validator<any>}}
      */
-                static propTypes = {
+    static propTypes = {
         children: PropTypes.element.isRequired,
-        serviceManager: PropTypes.object.isRequired,
+                    serviceManager: PropTypes.object.isRequired,
     };
 
     /**

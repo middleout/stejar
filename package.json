@@ -12,12 +12,8 @@
         "publish": "yarn build && node scripts/publish.js",
         "test": "jest --watchAll --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
-        "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint"
-        }
+        "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*",
+        "precommit": "yarn lint"
     },
     "peerDependencies": {},
     "optionalDependencies": {},
@@ -35,7 +31,7 @@
         "eslint-config-prettier": "^2.9.0",
         "eslint-plugin-react": "^7.7.0",
         "fetch-mock": "^6.0.0",
-        "husky": "^0.15.0-rc.8",
+        "husky": "^0.14.3",
         "isomorphic-fetch": "^2.2.1",
         "jest": "^22.1.4",
         "nodemon": "^1.14.12",
