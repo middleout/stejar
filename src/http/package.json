@@ -3,6 +3,7 @@
   "version": "3.0.30",
   "main": "es/index.js",
   "license": "MIT",
+  "sideEffects": false,
   "dependencies": {
     "lodash.foreach": "^4.5.0",
     "lodash.isempty": "^4.4.0",

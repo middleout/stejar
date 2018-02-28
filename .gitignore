@@ -5,6 +5,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Webstorm
+.idea
+
+# Built files
+src/*/es
+
 # Runtime data
 pids
 *.pid

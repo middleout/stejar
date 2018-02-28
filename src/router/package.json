@@ -3,6 +3,7 @@
     "version": "3.0.21",
     "main": "es/index.js",
     "license": "MIT",
+    "sideEffects": false,
     "dependencies": {
         "@stejar/event-emitter": "^3.0.0",
         "@stejar/promise-middleware": "^3.0.2",

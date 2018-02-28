@@ -11,7 +11,13 @@
         "build": "node scripts/build.js",
         "publish": "yarn build && node scripts/publish.js",
         "test": "jest --watchAll --no-watchman",
-        "test:coverage": "jest --watchAll --no-watchman --coverage"
+        "test:coverage": "jest --watchAll --no-watchman --coverage",
+        "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint"
+        }
     },
     "peerDependencies": {},
     "optionalDependencies": {},
@@ -23,11 +29,17 @@
         "@babel/preset-env": "^7.0.0-beta.39",
         "@babel/preset-react": "^7.0.0-beta.39",
         "babel-core": "7.0.0-bridge.0",
+        "babel-eslint": "^8.2.2",
         "babel-jest": "^22.1.0",
+        "eslint": "^4.18.1",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-react": "^7.7.0",
         "fetch-mock": "^6.0.0",
+        "husky": "^0.15.0-rc.8",
         "isomorphic-fetch": "^2.2.1",
         "jest": "^22.1.4",
         "nodemon": "^1.14.12",
+        "prettier": "^1.11.0",
         "semver": "^5.5.0"
     },
     "jest": {
@@ -47,5 +59,51 @@
     },
     "dependencies": {
         "lerna": "^3.0.0-alpha.1"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "tabWidth": 4,
+        "trailingComma": "es5",
+        "jsxBracketSameLine": true
+    },
+    "eslintConfig": {
+        "extends": [
+            "eslint:recommended",
+            "prettier",
+            "prettier/react",
+            "plugin:react/recommended"
+        ],
+        "plugins": [
+            "react"
+        ],
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaVersion": 7,
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true,
+                "experimentalObjectRestSpread": true
+            }
+        },
+        "globals": {
+            "If": true
+        },
+        "env": {
+            "browser": true,
+            "es6": true,
+            "node": true,
+            "jest": true
+        },
+        "rules": {
+            "react/react-in-jsx-scope": "off",
+            "react/prop-types": "off",
+            "react/jsx-no-undef": [
+                2,
+                {
+                    "allowGlobals": true
+                }
+            ],
+            "no-console": "off"
+        }
     }
 }
