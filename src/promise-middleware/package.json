@@ -1,0 +1,7 @@
+{
+  "name": "@stejar/promise-middleware",
+  "version": "3.0.13",
+  "main": "es/index.js",
+  "license": "MIT",
+  "dependencies": {}
+}

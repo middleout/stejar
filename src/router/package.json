@@ -1,0 +1,17 @@
+{
+    "name": "@stejar/router",
+    "version": "3.0.21",
+    "main": "es/index.js",
+    "license": "MIT",
+    "dependencies": {
+        "@stejar/event-emitter": "^3.0.0",
+        "@stejar/promise-middleware": "^3.0.2",
+        "invariant": "^2.2.2",
+        "query-string": "^5.1.0",
+        "url-pattern": "^1.0.3"
+    },
+    "devDependencies": {
+        "@stejar/router-server-history": "^3.0.0",
+        "@stejar/router-std-state-adapter": "^3.0.0"
+    }
+}

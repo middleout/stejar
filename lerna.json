@@ -1,0 +1,7 @@
+{
+    "lerna": "2.2.0",
+    "packages": ["src/*"],
+    "npmClient": "yarn",
+    "useWorkspaces": true,
+    "version": "3.0.0"
+}

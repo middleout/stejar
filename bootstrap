@@ -1,0 +1,345 @@
+0. yarn config set strict-ssl true
+1. yarn init
+2.1 yarn add jest static-server babel-jest @babel/core babel-eslint babel-plugin-jsx-control-statements @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/polyfill @babel/preset-env @babel/preset-react babel-core@7.0.0-bridge.0 prettier babel-loader html-loader file-loader sass-loader css-loader style-loader html-webpack-plugin@webpack-contrib/html-webpack-plugin extract-text-webpack-plugin@next clean-webpack-plugin webpack webpack-cli node-sass eslint eslint-plugin-react eslint-plugin-jsx-control-statements eslint-config-prettier --development
+2.2 yarn add jest react react-dom
+
+3. edit package.json and add:
+"prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true
+}
+
+and
+
+"scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "test": "jest --watchAll --no-watchman",
+    "test:coverage": "jest --watchAll --no-watchman --coverage"
+},
+
+4. create and edit .babelrc.js
+
+module.exports = {
+    plugins: ["@babel/plugin-proposal-decorators", "@babel/plugin-proposal-class-properties"],
+    presets: [["@babel/preset-env"], "@babel/preset-react"],
+};
+
+5. create src/index.js
+
+import "@babel/polyfill";
+import { createElement } from "react";
+import { render } from "react-dom";
+import { App } from "./App/App";
+
+render(createElement(App), document.getElementById("app"));
+
+const a = async () => {
+    await Promise.resolve();
+};
+
+a().then(() => {
+    console.warn("b");
+});
+
+6. create src/index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>webpack 4 quickstart</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+</body>
+</html>
+
+7. create src/App/App.jsx
+
+import { Component } from "react";
+import "./App.scss";
+import logo from "./logo.jpg";
+
+export class App extends Component {
+    someVar = "someValue";
+    static hello = "world";
+
+    render() {
+        return (
+            <div>
+                <p>React here!</p>
+                <img src={logo} />
+            </div>
+        );
+    }
+}
+
+8. create src/App.scss
+
+#app {
+    background-color: red;
+}
+
+
+9. create src/logo.jpg (some image)
+
+10. create .editorconfig
+
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{js,jsx,json}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+11. create a webpack.config.js
+
+const { ProvidePlugin } = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development",
+});
+
+module.exports = {
+    output: {
+        publicPath: "//localhost:9080/",
+    },
+    resolve: {
+        extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /node_modules/,
+                    name: "vendors",
+                    chunks: "all",
+                },
+            },
+        },
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx|mjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                },
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: { minimize: true },
+                    },
+                ],
+            },
+            {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: [
+                        {
+                            loader: "css-loader",
+                        },
+                        {
+                            loader: "sass-loader",
+                        },
+                    ],
+                    // use style-loader in development
+                    fallback: "style-loader",
+                }),
+            },
+            {
+                test: /\.(png|jpg|jpeg|svg|woff|woff2|ttf|eot)$/i,
+                exclude: /node_modules/,
+                loaders: ["file-loader"],
+            },
+        ],
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: "./src/index.html",
+            filename: "./index.html",
+        }),
+        new ProvidePlugin({
+            React: "react",
+        }),
+        extractSass,
+        new CleanWebpackPlugin(["./dist"]),
+    ],
+};
+
+12. create a .gitignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# webpack
+dist/
+
+13. Webpack prettier integration:
+
+Tools > External Tools > create these 2
+
+Prettier
+(empty)
+prettier
+--write $FilePathRelativeToProjectRoot$
+$ProjectFileDir$
+
+Main Menu Editor Menu Project Views Search Result
+Sync files after execution
+CHECK - Open console for tool output
+[UNCHECK] - Make consoe active
+[CHECK] - Make console active on message in stderr
+
+si
+
+Prettier Directories
+(empty)
+prettier
+--write $FileDirRelativeToProjectRoot$/**/(*.js|*.jsx)
+$ProjectFileDir$
+
+Main Menu Editor Menu Project Views Search Result
+Sync files after execution
+UNCHECK - Open console for tool output
+
+Also go to keymap and assign a combo keymap for "Prettier"
+
+14. edit package.json and add
+
+"eslintConfig": {
+    "extends": ["eslint:recommended", "prettier", "prettier/react", "plugin:react/recommended"],
+    "plugins": ["react", "jsx-control-statements"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "globals": {
+        "If": true
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/jsx-no-undef": [
+            2, {"allowGlobals": true}
+        ],
+        "no-console": "off"
+    }
+}
+
+15. edit package.json and add
+
+"jest": {
+    "testMatch": [
+        "<rootDir>/**/tests/**/*.test.js?(x)",
+        "<rootDir>/src/**/tests/**/*.test.js?(x)"
+    ],
+    "transform": {
+        ".js$": "babel-jest",
+        ".jsx$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+        "**/src/**/*.{js,jsx}",
+        "!**/src/**/*.test.{js,jsx}",
+        "!**/node_modules/**"
+    ]
+}
+
+16. set webstorm  Languages & Framework > Javascript > Code Quality Tools > eslint
+    enable => CHECK
+    node interpreter: path to generic node (/usr/local/bin/node for example)
+    eslint package: /absolute/path/to/project/node_modules/eslint
+    config file: automatic search
+17. make sure you have the EditorConfig plugin installed in webstorm
+18. run "yarn dev"
+19. open a new console and go to the dist folder and run "static-server"
+20. open the browser at localhost:9080
+21. stop the yarn dev window. run "yarn test" and "yarn test:coverage"
+
+
+TIP: if you use another url than localhost:9080 - make sure to edit webpack.config.js also

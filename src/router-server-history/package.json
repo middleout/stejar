@@ -1,0 +1,7 @@
+{
+    "name": "@stejar/router-server-history",
+    "version": "3.0.15",
+    "main": "es/index.js",
+    "license": "MIT",
+    "dependencies": {}
+}

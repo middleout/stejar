@@ -1,0 +1,51 @@
+{
+    "private": true,
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "workspaces": [
+        "src/*"
+    ],
+    "scripts": {
+        "watch": "node scripts/watch.js",
+        "build": "node scripts/build.js",
+        "publish": "yarn build && node scripts/publish.js",
+        "test": "jest --watchAll --no-watchman",
+        "test:coverage": "jest --watchAll --no-watchman --coverage"
+    },
+    "peerDependencies": {},
+    "optionalDependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.39",
+        "@babel/core": "^7.0.0-beta.39",
+        "@babel/plugin-proposal-class-properties": "^7.0.0-beta.39",
+        "@babel/plugin-proposal-decorators": "^7.0.0-beta.39",
+        "@babel/preset-env": "^7.0.0-beta.39",
+        "@babel/preset-react": "^7.0.0-beta.39",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-jest": "^22.1.0",
+        "fetch-mock": "^6.0.0",
+        "isomorphic-fetch": "^2.2.1",
+        "jest": "^22.1.4",
+        "nodemon": "^1.14.12",
+        "semver": "^5.5.0"
+    },
+    "jest": {
+        "testMatch": [
+            "<rootDir>/src/**/tests/**/*.test.js?(x)"
+        ],
+        "transform": {
+            ".js$": "babel-jest",
+            ".jsx$": "babel-jest"
+        },
+        "collectCoverageFrom": [
+            "**/src/**/*.{js,jsx}",
+            "!**/src/**/*.test.{js,jsx}",
+            "!**/es/**",
+            "!**/node_modules/**"
+        ]
+    },
+    "dependencies": {
+        "lerna": "^3.0.0-alpha.1"
+    }
+}

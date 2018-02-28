@@ -1,0 +1,7 @@
+{
+  "name": "@stejar/router-std-state-adapter",
+  "version": "3.0.9",
+  "main": "es/index.js",
+  "license": "MIT",
+  "dependencies": {}
+}
