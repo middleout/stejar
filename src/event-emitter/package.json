@@ -1,6 +1,6 @@
 {
     "name": "@stejar/event-emitter",
-    "version": "3.0.21",
+    "version": "3.0.22",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
