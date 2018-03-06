@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router",
-    "version": "4.0.4",
+    "version": "4.0.5",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -16,6 +16,6 @@
     },
     "devDependencies": {
         "@stejar/router-server-history": "^4.0.3",
-        "@stejar/router-std-state-adapter": "^4.0.3"
+        "@stejar/router-std-state-adapter": "^4.0.4"
     }
 }
