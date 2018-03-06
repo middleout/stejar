@@ -1,12 +1,12 @@
 import React, { createElement } from "react";
-import { ServiceConsumer } from "./ServiceProvider";
+import { ServiceContextConsumer } from "./ServiceProvider";
 
 export function withServiceManager(WrappedComponent) {
     return function wrapWithServiceManager(props) {
         return (
-            <ServiceConsumer>
+            <ServiceContextConsumer>
                 {serviceManager => createElement(WrappedComponent, { ...props, serviceManager: serviceManager })}
-            </ServiceConsumer>
+            </ServiceContextConsumer>
         );
     };
 }

@@ -46,40 +46,38 @@ function generateMiddleware(msg) {
     };
 }
 
-function generateHandler(msg) {
-    return match => {
-        //console.log(msg, match.getName());
-    };
+function generateComponent(msg) {
+    return () => msg;
 }
 
 const generateRoutes = map => [
     {
         name: "base",
         path: "/",
-        handler: generateHandler("base handler"),
+        component: generateComponent("base handler"),
         middleware: generateMiddleware("base middleware"),
-        children: [
+        routes: [
             {
                 name: "locale",
                 path: ":locale",
-                handler: generateHandler("locale handler"),
+                component: generateComponent("locale handler"),
                 middleware: generateMiddleware("locale middleware"),
-                children: [
+                routes: [
                     {
                         name: "tasks",
                         path: ({ locale }) => getMapByLocale(map, locale, "tasks"),
-                        handler: generateHandler("tasks handler"),
+                        component: generateComponent("tasks handler"),
                         middleware: generateMiddleware("tasks middleware"),
-                        children: [
+                        routes: [
                             {
                                 match: "exact",
-                                handler: generateHandler("tasks exact handler"),
+                                component: generateComponent("tasks exact handler"),
                                 middleware: generateMiddleware("tasks exact middleware"),
-                                children: [
+                                routes: [
                                     {
                                         name: "delete",
                                         path: ({ locale }) => getMapByLocale(map, locale, "tasksDelete"),
-                                        handler: generateHandler("delete task handler"),
+                                        component: generateComponent("delete task handler"),
                                         middleware: generateMiddleware("delete task middleware"),
                                     },
                                 ],
@@ -87,7 +85,7 @@ const generateRoutes = map => [
                             {
                                 name: "edit",
                                 path: ({ locale }) => getMapByLocale(map, locale, "tasksEdit"),
-                                handler: generateHandler("edit task handler"),
+                                component: generateComponent("edit task handler"),
                                 middleware: generateMiddleware("edit task middleware"),
                             },
                         ],

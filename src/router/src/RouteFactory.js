@@ -22,15 +22,15 @@ export class RouteFactory {
         const route = new Route({
             name: definition.name || null,
             path: definition.path || null,
-            handler: definition.handler || null,
+            component: definition.component || null,
             middleware: definition.middleware || null,
             match: definition.match || Route.MATCH_STANDARD,
             parent: parent || null,
         });
 
-        if (definition.children) {
+        if (definition.routes) {
             route.attachChildren(
-                definition.children.map(childDefinition => RouteFactory.build(router, childDefinition, route))
+                definition.routes.map(childDefinition => RouteFactory.build(router, childDefinition, route))
             );
         }
 

@@ -3,8 +3,10 @@ import React, { Children, Component } from "react";
 import createReactContext from "create-react-context";
 
 const { Provider, Consumer } = createReactContext(null);
+Provider.displayName = "ServiceContextProvider";
+Consumer.displayName = "ServiceContextConsumer";
 
-export const ServiceConsumer = Consumer;
+export const ServiceContextConsumer = Consumer;
 
 export class ServiceProvider extends Component {
     /**

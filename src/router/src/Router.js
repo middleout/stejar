@@ -174,7 +174,7 @@ export class Router {
 
         this._stateAdapter.update(routeMatch.getName(), routeMatch.getParams(), query);
 
-        // Here we run the midlewares then the handlers
+        // Here we run the midlewares then the components
         stack.run({}, {}).then(() => this._eventEmitter.dispatch(Router.MATCHED_EVENT, routeMatch));
     }
 }

@@ -12,13 +12,13 @@ export class Route {
      * @param options
      */
     constructor(options) {
-        this._name = options.name || null;
-        this._matchType = options.match || Route.MATCH_STANDARD;
-        this._path = options.path || null;
-        this._handler = options.handler || (() => null);
+        this._name       = options.name || null;
+        this._matchType  = options.match || Route.MATCH_STANDARD;
+        this._path       = options.path || null;
+        this._component  = options.component || (() => null);
         this._middleware = options.middleware || (() => Promise.resolve());
-        this._children = [];
-        this._parent = options.parent || null;
+        this._children   = [];
+        this._parent     = options.parent || null;
     }
 
     /**
@@ -65,8 +65,8 @@ export class Route {
     /**
      * @returns {*}
      */
-    getHandler() {
-        return this._handler;
+    getComponent() {
+        return this._component;
     }
 
     /**
