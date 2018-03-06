@@ -1,6 +1,6 @@
 {
     "name": "@stejar/react-di",
-    "version": "4.0.8",
+    "version": "4.0.9",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
