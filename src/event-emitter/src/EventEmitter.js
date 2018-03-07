@@ -22,10 +22,6 @@ export class EventEmitter {
      * @returns {function()}
      */
     subscribe(event, listener) {
-        if (typeof event !== "string") {
-            event = event.name; // support events as classes
-        }
-
         if (!this._listeners[event]) {
             this._listeners[event] = [];
         }
@@ -35,5 +31,29 @@ export class EventEmitter {
         return () => {
             delete this._listeners[event][this._listeners[event].indexOf(listener)];
         };
+    }
+
+    /**
+     * @param listener
+     * @returns {function()}
+     */
+    once(event, listener) {
+        let called = false;
+
+        if (!this._listeners[event]) {
+            this._listeners[event] = [];
+        }
+
+        const wrapper = (...args) => {
+            if (called) {
+                delete this._listeners[event][this._listeners[event].indexOf(wrapper)];
+                return;
+            }
+
+            called = true;
+            return listener(...args);
+        };
+
+        this._listeners[event].push(wrapper);
     }
 }

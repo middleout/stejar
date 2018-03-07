@@ -2,7 +2,6 @@ import { ServiceManager, inject } from "@stejar/di";
 import { createServerHistory } from "@stejar/router-server-history/es/createServerHistory";
 import { StdStateAdapter } from "@stejar/router-std-state-adapter/es/StdStateAdapter";
 import { Router } from "../src";
-import { AbstractRouteMiddleware } from "../src/AbstractRouteMiddleware";
 
 function generateServerHistory(path, query) {
     let listeners = [];
@@ -484,9 +483,8 @@ test("Router can have routes with SM based middlewares", done => {
     class Foo {}
 
     @inject(Foo)
-    class TasksMiddleware extends AbstractRouteMiddleware {
+    class TasksMiddleware {
         constructor(foo) {
-            super();
             this.foo = foo;
         }
 

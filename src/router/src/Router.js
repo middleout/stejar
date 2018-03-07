@@ -41,6 +41,10 @@ export class Router {
         return this._eventEmitter.subscribe(event, callback);
     }
 
+    once(event, callback) {
+        return this._eventEmitter.once(event, callback);
+    }
+
     start() {
         const unlisten = this._history.listen(location => {
             this._dispatch(location.pathname, location.search);
