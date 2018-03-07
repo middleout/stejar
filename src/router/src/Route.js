@@ -14,7 +14,7 @@ export class Route {
         this._matchType = options.match || Route.MATCH_STANDARD;
         this._path = options.path || null;
         this._component = options.component || (() => null);
-        this._middleware = options.middleware || (() => Promise.resolve());
+        this._middleware = options.middleware || null;
         this._serviceManager = options.serviceManager || null;
         this._children = [];
     }
@@ -28,20 +28,30 @@ export class Route {
             return this._path;
         }
 
-        if (this._serviceManager) {
-            let path;
-            try {
-                path = this._serviceManager.get(this._path);
-            } catch (err) {
-                // do not do anything. It simply means that we cannot fetch an instance from the SM for this Path Class
+        if (!this._serviceManager) {
+            if (this._path) {
+                return this._path(params, query);
             }
 
-            if (path && path.generate) {
-                return path.generate(params, query);
-            }
+            return;
         }
 
-        return this._path(params, query);
+        let path;
+        try {
+            if (this._path) {
+                path = this._serviceManager.get(this._path);
+            }
+        } catch (err) {
+            // do not do anything. It simply means that we cannot fetch an instance
+            // from the SM for this Path Class
+        }
+
+        if (path) {
+            if (path.generate) {
+                return path.generate(params, query);
+            }
+            return path(params, query);
+        }
     }
 
     getName() {
@@ -53,20 +63,28 @@ export class Route {
     }
 
     runMiddleware(...data) {
-        if (this._serviceManager) {
-            let middleware;
-            try {
-                middleware = this._serviceManager.get(this._middleware);
-            } catch (err) {
-                // do not do anything. It simply means that we cannot fetch an instance from the SM for this Path Class
-            }
+        if (!this._serviceManager) {
+            const middleware = this._middleware || (() => Promise.resolve());
+            return middleware(...data);
+        }
 
+        let middleware;
+        try {
+            if (this._middleware) {
+                middleware = this._serviceManager.get(this._middleware);
+            }
+        } catch (err) {
+            // do not do anything. It simply means that we cannot fetch an instance
+            // from the SM for this Middleware Class
+        }
+
+        if (middleware) {
             if (middleware && middleware.invoke) {
                 return middleware.invoke(...data);
             }
-        }
 
-        return this._middleware(...data);
+            return middleware(...data);
+        }
     }
 
     getComponent() {

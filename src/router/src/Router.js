@@ -9,16 +9,8 @@ export class Router {
     static NOT_FOUND_EVENT = "NOT_FOUND";
 
     constructor(options) {
+        this._temporaryCurrent = null;
         this._routes = [];
-
-        if (options.routes) {
-            if (Array.isArray(options.routes)) {
-                options.routes.forEach(route => this.add(route));
-            } else {
-                this.add(options.routes);
-            }
-        }
-
         invariant(options.history, "A history object *is* required");
         invariant(options.stateAdapter, "A state adapter *is* required");
         this._serviceManager = options.serviceManager;
@@ -28,6 +20,14 @@ export class Router {
 
         if (this._serviceManager) {
             this._serviceManager.set(Router, this);
+        }
+
+        if (options.routes) {
+            if (Array.isArray(options.routes)) {
+                options.routes.forEach(route => this.add(route));
+            } else {
+                this.add(options.routes);
+            }
         }
     }
 
@@ -113,6 +113,15 @@ export class Router {
     }
 
     navigate(to = null, params = {}, query = {}, options = {}) {
+        if (this._temporaryCurrent) {
+            this._stateAdapter.update(
+                this._temporaryCurrent.name,
+                this._temporaryCurrent.params,
+                this._temporaryCurrent.query
+            );
+            this._temporaryCurrent = null;
+        }
+
         const parts = this.buildPath(to, params, query, options).split("?");
         this._history.push(parts[0], parts.length > 1 ? parts[1] : "");
     }
@@ -174,10 +183,12 @@ export class Router {
             params: routeMatch.getParams(),
             query: query,
         };
+        this._temporaryCurrent = to;
 
         // Here we run the midlewares then update the state and notify everybody we finished
         stack.run(from, to).then(() => {
             this._stateAdapter.update(routeMatch.getName(), routeMatch.getParams(), query);
+            this._temporaryCurrent = null;
             this._eventEmitter.dispatch(Router.MATCHED_EVENT, routeMatch);
         });
     }

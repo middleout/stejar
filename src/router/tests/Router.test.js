@@ -2,6 +2,7 @@ import { ServiceManager, inject } from "@stejar/di";
 import { createServerHistory } from "@stejar/router-server-history/es/createServerHistory";
 import { StdStateAdapter } from "@stejar/router-std-state-adapter/es/StdStateAdapter";
 import { Router } from "../src";
+import { AbstractRouteMiddleware } from "../src/AbstractRouteMiddleware";
 
 function generateServerHistory(path, query) {
     let listeners = [];
@@ -417,14 +418,75 @@ test("Router can have routes with SM based paths", done => {
     router.start();
 });
 
+test("Router can have routes with SM based paths as fn", done => {
+    class State {
+        value = 0;
+        inc() {
+            this.value++;
+        }
+    }
+
+    function path(state) {
+        return function path(from, to) {
+            state.inc();
+            return "tasks";
+        };
+    }
+
+    function pathProvider(sm) {
+        return path(sm.get(State));
+    }
+
+    const sm = new ServiceManager();
+    const state = new State();
+    sm.set(State, state);
+    sm.provide(path, pathProvider);
+
+    const history = generateServerHistory("/en-GB/tasks", "");
+    const stateAdapter = new StdStateAdapter();
+    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    router.add({
+        name: "base",
+        path: "/",
+        routes: [
+            {
+                name: "locale",
+                path: ":locale",
+                routes: [
+                    {
+                        name: "tasks",
+                        path: path,
+                    },
+                ],
+            },
+        ],
+    });
+
+    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+        expect(state.value).toEqual(1);
+        expect(routeMatch.getName()).toEqual("base.locale.tasks");
+        expect(routeMatch.getParams()).toEqual({
+            locale: "en-GB",
+        });
+        done();
+    });
+
+    router.subscribe(Router.NOT_FOUND_EVENT, () => {
+        done.fail("404");
+    });
+
+    router.start();
+});
+
 test("Router can have routes with SM based middlewares", done => {
     let state = 0;
 
     class Foo {}
 
     @inject(Foo)
-    class TasksMiddleware {
+    class TasksMiddleware extends AbstractRouteMiddleware {
         constructor(foo) {
+            super();
             this.foo = foo;
         }
 
@@ -458,6 +520,67 @@ test("Router can have routes with SM based middlewares", done => {
 
     router.subscribe(Router.MATCHED_EVENT, routeMatch => {
         expect(state).toEqual(1);
+        expect(routeMatch.getName()).toEqual("base.locale.tasks");
+        expect(routeMatch.getParams()).toEqual({
+            locale: "en-GB",
+        });
+        done();
+    });
+
+    router.subscribe(Router.NOT_FOUND_EVENT, () => {
+        done.fail("404");
+    });
+
+    router.start();
+});
+
+test("Router can have routes with SM based middlewares as fn", done => {
+    class State {
+        value = 0;
+        inc() {
+            this.value++;
+        }
+    }
+
+    function middleware(state) {
+        return function middleware(from, to) {
+            state.inc();
+            return Promise.resolve();
+        };
+    }
+
+    function middlewareGeneratorProvider(sm) {
+        return middleware(sm.get(State));
+    }
+
+    const sm = new ServiceManager();
+    const state = new State();
+    sm.set(State, state);
+    sm.provide(middleware, middlewareGeneratorProvider);
+
+    const history = generateServerHistory("/en-GB/tasks", "");
+    const stateAdapter = new StdStateAdapter();
+    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    router.add({
+        name: "base",
+        path: "/",
+        routes: [
+            {
+                name: "locale",
+                path: ":locale",
+                routes: [
+                    {
+                        name: "tasks",
+                        path: "tasks",
+                        middleware: middleware,
+                    },
+                ],
+            },
+        ],
+    });
+
+    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+        expect(state.value).toEqual(1);
         expect(routeMatch.getName()).toEqual("base.locale.tasks");
         expect(routeMatch.getParams()).toEqual({
             locale: "en-GB",

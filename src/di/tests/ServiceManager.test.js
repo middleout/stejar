@@ -33,21 +33,22 @@ test("Should be able to instantiate a new object with a fixed determined depende
     expect(sm.get(Tester).a).toEqual("Hello World");
 });
 
-test("Should be able to instantiate a new object with Pimple like solution", () => {
-    const sm = new ServiceManager();
-
-    @injectable
-    class Tester {
-        constructor(a) {
-            this.a = a;
-        }
-    }
-
-    sm.set(Tester, () => new Tester("Hello World"));
-
-    expect(sm.get(Tester)).toBeInstanceOf(Tester);
-    expect(sm.get(Tester).a).toEqual("Hello World");
-});
+// @deprecated
+// test("Should be able to instantiate a new object with Pimple like solution", () => {
+//     const sm = new ServiceManager();
+//
+//     @injectable
+//     class Tester {
+//         constructor(a) {
+//             this.a = a;
+//         }
+//     }
+//
+//     sm.set(Tester, new Tester("Hello World"));
+//
+//     expect(sm.get(Tester)).toBeInstanceOf(Tester);
+//     expect(sm.get(Tester).a).toEqual("Hello World");
+// });
 
 test("Should be able to instantiate a new object with a variable dependency", () => {
     const sm = new ServiceManager();

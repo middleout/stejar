@@ -23,15 +23,15 @@ export class ServiceManager {
      * @returns {ServiceManager}
      */
     set(resource, instance) {
-        let finalInstance = instance;
+        // let finalInstance = () => instance;
 
         // if ((typeof instance as any) !== "function" || (instance.constructor && instance.constructor.name !== "Function")) {
-        if (typeof instance !== "function") {
-            finalInstance = () => instance;
-        }
+        // if (typeof instance !== "function") {
+        // finalInstance = () => instance;
+        // }
 
         this._containerKeys.push(resource);
-        this._containerValues[this._containerKeys.indexOf(resource)] = finalInstance;
+        this._containerValues[this._containerKeys.length - 1] = () => instance;
 
         return this;
     }
@@ -47,7 +47,7 @@ export class ServiceManager {
      */
     alias(resource, aliasName) {
         this._containerKeys.push(resource);
-        this._containerValues[this._containerKeys.indexOf(resource)] = () => this.get(aliasName);
+        this._containerValues[this._containerKeys.length - 1] = () => this.get(aliasName);
         return this;
     }
 
@@ -78,7 +78,7 @@ export class ServiceManager {
      */
     provide(className, callback) {
         this._providersKeys.push(className);
-        this._providersValues[this._providersKeys.indexOf(className)] = () => {
+        this._providersValues[this._providersKeys.length - 1] = () => {
             const instance = callback(this);
             if (!instance) {
                 throw new Error(
