@@ -111,6 +111,18 @@ export class ServiceManager {
     }
 
     /**
+     * Allows the Service Manager to check if the container has a certain value.
+     * Accepts strings or classes.
+     * Returns a boolean indicating if the container has that resource or not.
+     *
+     * @param resource
+     * @returns {boolean}
+     */
+    has(resource) {
+        return this._containerKeys.includes(resource) || this._providersKeys.includes(resource);
+    }
+
+    /**
      * Allows the Service Manager to return values from the container.
      * Accepts strings or classes.
      * Returns the instance associated to the resource.

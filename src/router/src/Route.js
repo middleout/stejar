@@ -1,3 +1,4 @@
+import invariant from "invariant";
 import RouteParser from "url-pattern";
 import { RouteMatch } from "./RouteMatch";
 
@@ -8,73 +9,70 @@ export class Route {
     static TYPE_NORMAL = "normal";
     static TYPE_REDIRECT = "redirect";
 
-    /**
-     * @param options
-     */
     constructor(options) {
-        this._name       = options.name || null;
-        this._matchType  = options.match || Route.MATCH_STANDARD;
-        this._path       = options.path || null;
-        this._component  = options.component || (() => null);
+        this._name = options.name || null;
+        this._matchType = options.match || Route.MATCH_STANDARD;
+        this._path = options.path || null;
+        this._component = options.component || (() => null);
         this._middleware = options.middleware || (() => Promise.resolve());
-        this._children   = [];
-        this._parent     = options.parent || null;
+        this._serviceManager = options.serviceManager || null;
+        this._children = [];
     }
 
-    /**
-     * @param children
-     */
     attachChildren(children) {
         this._children = children;
     }
 
-    /**
-     * @param params
-     * @param query
-     * @returns {*}
-     */
     getPath(params, query) {
         if (typeof this._path !== "function") {
             return this._path;
         }
 
+        if (this._serviceManager) {
+            let path;
+            try {
+                path = this._serviceManager.get(this._path);
+            } catch (err) {
+                // do not do anything. It simply means that we cannot fetch an instance from the SM for this Path Class
+            }
+
+            if (path && path.generate) {
+                return path.generate(params, query);
+            }
+        }
+
         return this._path(params, query);
     }
 
-    /**
-     * @returns {null|*}
-     */
     getName() {
         return this._name;
     }
 
-    /**
-     * @returns {string}
-     */
     getMatchType() {
         return this._matchType;
     }
 
-    /**
-     * @returns {*|null}
-     */
-    getMiddleware() {
-        return this._middleware;
+    runMiddleware(...data) {
+        if (this._serviceManager) {
+            let middleware;
+            try {
+                middleware = this._serviceManager.get(this._middleware);
+            } catch (err) {
+                // do not do anything. It simply means that we cannot fetch an instance from the SM for this Path Class
+            }
+
+            if (middleware && middleware.invoke) {
+                return middleware.invoke(...data);
+            }
+        }
+
+        return this._middleware(...data);
     }
 
-    /**
-     * @returns {*}
-     */
     getComponent() {
         return this._component;
     }
 
-    /**
-     * @param pathParts
-     * @param routeParams
-     * @param routeQuery
-     * @returns {*}
-     */
     match(pathParts, routeParams, routeQuery) {
         let matchedRoutes = [];
 
@@ -84,25 +82,18 @@ export class Route {
             path += path ? "/" + pathParts[offset] : pathParts[offset];
 
             let routePath;
-            // try {
             routePath = this.getPath(routeParams, routeQuery);
             if (!routePath) {
                 continue;
             }
-            // } catch (error) {
-            //     // TODO: is this smart?
-            //     continue;
-            // }
 
             let parser = this._generateParser(routePath);
-            // console.log("Matching " + this.getPath(routeParams, routeQuery) + " to " + path);
             const result = parser.match(path);
 
             if (!result) {
                 continue;
             }
 
-            // console.log("Matched with params ", result);
             matchedRoutes.push(this);
 
             // Filter out real children for "EXACT" matches
@@ -141,9 +132,6 @@ export class Route {
                 }
 
                 if (exactMatchChild && exactMatchChild._children.includes(child)) {
-                    // console.log("MATCHED FULLY");
-                    // console.info("MATCHED WHILE INSIDE EXACT");
-
                     return new RouteMatch(
                         { ...result, ...routeMatch.getParams() },
                         routeQuery,
@@ -154,7 +142,6 @@ export class Route {
                     );
                 }
 
-                // console.log("MATCHED FULLY");
                 return new RouteMatch(
                     { ...result, ...routeMatch.getParams() },
                     routeQuery,
@@ -166,12 +153,6 @@ export class Route {
         return false;
     }
 
-    /**
-     * @param parts
-     * @param params
-     * @param query
-     * @returns {string|boolean}
-     */
     reverse(parts, params, query) {
         let currentPart = parts.slice(0).shift();
         if (this.getName() !== currentPart) {
@@ -184,7 +165,7 @@ export class Route {
             path = parser.stringify(params);
         }
 
-        if (parts.length == 1) {
+        if (parts.length === 1) {
             return path;
         }
 
@@ -202,26 +183,18 @@ export class Route {
         return false;
     }
 
-    /**
-     * @param params
-     * @param segment
-     * @returns {*}
-     * @private
-     */
     _generateParser(path, segment = "a-zA-Z0-9_-") {
         return new RouteParser(path, { segmentNameCharset: segment });
     }
 
-    /**
-     * @param children
-     * @returns {*}
-     * @private
-     */
     _extractExactMatch(children) {
         const results = children.filter(item => item.getMatchType() === Route.MATCH_EXACT);
-        if (results.length > 1) {
-            throw new Error("A route cannot have more than 1 exact match");
-        }
+        invariant(
+            results.length <= 1,
+            process.env.NODE_ENV === "production"
+                ? undefined
+                : `A route cannot have more than 1 children with the match set to "Route.MATCH_EXACT".`
+        );
 
         if (results.length === 0) {
             return null;

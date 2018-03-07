@@ -8,9 +8,6 @@ export class Router {
     static MATCHED_EVENT = "MATCHED";
     static NOT_FOUND_EVENT = "NOT_FOUND";
 
-    /**
-     * @param options
-     */
     constructor(options) {
         this._routes = [];
 
@@ -24,33 +21,26 @@ export class Router {
 
         invariant(options.history, "A history object *is* required");
         invariant(options.stateAdapter, "A state adapter *is* required");
+        this._serviceManager = options.serviceManager;
         this._stateAdapter = options.stateAdapter;
         this._history = options.history;
         this._eventEmitter = new EventEmitter();
+
+        if (this._serviceManager) {
+            this._serviceManager.set(Router, this);
+        }
     }
 
-    /**
-     * @param routeDefinition
-     * @returns {Router}
-     */
     add(routeDefinition) {
-        const route = RouteFactory.build(this, routeDefinition);
+        const route = RouteFactory.build(this, routeDefinition, { serviceManager: this._serviceManager });
         this._routes.push(route);
         return this;
     }
 
-    /**
-     * @param event
-     * @param callback
-     * @returns {function()}
-     */
     subscribe(event, callback) {
         return this._eventEmitter.subscribe(event, callback);
     }
 
-    /**
-     * @returns {*}
-     */
     start() {
         const unlisten = this._history.listen(location => {
             this._dispatch(location.pathname, location.search);
@@ -60,18 +50,14 @@ export class Router {
         return unlisten;
     }
 
-    /**
-     * @param to
-     * @param params
-     * @param query
-     * @param options
-     * @returns {string|boolean|Uint8Array|Uint16Array|Int16Array|Float32Array|*}
-     */
     buildPath(to = null, params = {}, query = {}, options = {}) {
         if (!to) {
-            if (!this._stateAdapter.hasCurrentRoute()) {
-                throw new Error("Cannot create path to unknown route when the current route was not yet set.");
-            }
+            invariant(
+                this._stateAdapter.hasCurrentRoute(),
+                process.env.NODE_ENV === "production"
+                    ? undefined
+                    : `You cannot build a path to the "current" route if the current route was not set up. This usually means you are trying to build a path before the first router match`
+            );
             to = this._stateAdapter.getCurrentRouteName();
         }
 
@@ -82,61 +68,64 @@ export class Router {
 
         options = { ...defaults, ...options };
 
-        if (options.reuseParams) {
-            let currentParams = {};
-            if (this._stateAdapter.hasCurrentRoute()) {
-                currentParams = this._stateAdapter.getCurrentParams();
-            }
-
-            params = { ...currentParams, ...params };
-        }
-        if (options.reuseQuery) {
-            let currentQuery = {};
-            if (this._stateAdapter.hasCurrentRoute()) {
-                currentQuery = this._stateAdapter.getCurrentParams();
-            }
-
-            query = { ...currentQuery, ...query };
-        }
+        params = this._reuseDataIfConditionIsMet(
+            options.reuseParams && this._stateAdapter.hasCurrentRoute(),
+            this._stateAdapter.getCurrentParams.bind(this._stateAdapter),
+            params
+        );
+        query = this._reuseDataIfConditionIsMet(
+            options.reuseQuery && this._stateAdapter.hasCurrentRoute(),
+            this._stateAdapter.getCurrentQuery.bind(this._stateAdapter),
+            query
+        );
 
         let parts = to.split(".");
         for (let offset in this._routes) {
             const route = this._routes[offset];
             const result = route.reverse(parts, params, query);
 
-            if (result) {
-                let queryAsString = "";
-                if (Object.keys(query).length > 0) {
-                    queryAsString =
-                        "?" +
-                        queryString.stringify(query, {
-                            arrayFormat: "bracket",
-                        });
-                }
-
-                return result + queryAsString;
+            if (!result) {
+                continue;
             }
+
+            let queryAsString = "";
+            if (Object.keys(query).length > 0) {
+                queryAsString =
+                    "?" +
+                    queryString.stringify(query, {
+                        arrayFormat: "bracket",
+                    });
+            }
+
+            return result + queryAsString;
         }
 
-        throw new Error(`Cannot build path to ${to}. Nobody knows why.`);
+        // TODO: when going to root/FOO and FOO is not a valid locale
+        // TODO: and we redirect to root/FOO/tasks => and tasks uses FOO as locale
+        // TODO: then it the locale route will try to build the URL to tasks with FOO
+        // TODO: which will return NULL thus this will throw
+
+        throw new Error(
+            process.env.NODE_ENV === "production"
+                ? `Could not build path to "${to}".`
+                : `Cannot build a path to the "${to}" route. This most likely happened because the "${to}" route has a dynamic path which returned empty due to various reasons.`
+        );
     }
 
-    /**
-     * @param to
-     * @param params
-     * @param query
-     */
     navigate(to = null, params = {}, query = {}, options = {}) {
         const parts = this.buildPath(to, params, query, options).split("?");
-
         this._history.push(parts[0], parts.length > 1 ? parts[1] : "");
     }
 
-    /**
-     * @param pathname
-     * @param search
-     * @private
-     */
+    _reuseDataIfConditionIsMet(condition, method, current) {
+        if (!condition) {
+            return current;
+        }
+
+        const previousData = method();
+        return { ...previousData, ...current };
+    }
+
     _dispatch(pathname, search) {
         if (pathname !== "/" && pathname[pathname.length - 1] === "/") {
             this._history.push(pathname.substr(0, pathname.length - 1) + search);
@@ -162,7 +151,7 @@ export class Router {
             if (routeMatch) {
                 // Here we prepare the midlewares
                 stack = new Stack();
-                routeMatch.getRoutes().forEach(item => stack.add(item.getMiddleware()));
+                routeMatch.getRoutes().forEach(item => stack.add((...args) => item.runMiddleware(...args)));
             }
         });
 
@@ -172,9 +161,24 @@ export class Router {
             return;
         }
 
-        this._stateAdapter.update(routeMatch.getName(), routeMatch.getParams(), query);
+        const from = this._stateAdapter.hasPreviousRoute()
+            ? {
+                  name: this._stateAdapter.getPreviousRouteName(),
+                  params: this._stateAdapter.getPreviousParams(),
+                  query: this._stateAdapter.getPreviousQuery(),
+              }
+            : null;
 
-        // Here we run the midlewares then the components
-        stack.run({}, {}).then(() => this._eventEmitter.dispatch(Router.MATCHED_EVENT, routeMatch));
+        const to = {
+            name: routeMatch.getName(),
+            params: routeMatch.getParams(),
+            query: query,
+        };
+
+        // Here we run the midlewares then update the state and notify everybody we finished
+        stack.run(from, to).then(() => {
+            this._stateAdapter.update(routeMatch.getName(), routeMatch.getParams(), query);
+            this._eventEmitter.dispatch(Router.MATCHED_EVENT, routeMatch);
+        });
     }
 }

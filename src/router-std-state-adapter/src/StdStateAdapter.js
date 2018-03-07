@@ -72,4 +72,11 @@ export class StdStateAdapter {
     hasCurrentRoute() {
         return !!this._current;
     }
+
+    /**
+     * @returns {boolean}
+     */
+    hasPreviousRoute() {
+        return !!this._previous;
+    }
 }

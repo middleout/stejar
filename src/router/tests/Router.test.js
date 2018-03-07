@@ -1,4 +1,4 @@
-import util from "util";
+import { ServiceManager, inject } from "@stejar/di";
 import { createServerHistory } from "@stejar/router-server-history/es/createServerHistory";
 import { StdStateAdapter } from "@stejar/router-std-state-adapter/es/StdStateAdapter";
 import { Router } from "../src";
@@ -362,6 +362,111 @@ test("Router can navigate from route to another", done => {
         }
 
         done.fail("Should not get here");
+    });
+
+    router.start();
+});
+
+test("Router can have routes with SM based paths", done => {
+    class Foo {}
+
+    @inject(Foo)
+    class TasksRoutePathGenerator {
+        constructor(foo) {
+            this.foo = foo;
+        }
+
+        generate(params, query) {
+            return "tasks";
+        }
+    }
+
+    const sm = new ServiceManager();
+    const history = generateServerHistory("/en-GB/tasks", "");
+    const stateAdapter = new StdStateAdapter();
+    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    router.add({
+        name: "base",
+        path: "/",
+        routes: [
+            {
+                name: "locale",
+                path: ":locale",
+                routes: [
+                    {
+                        name: "tasks",
+                        path: TasksRoutePathGenerator,
+                    },
+                ],
+            },
+        ],
+    });
+
+    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+        expect(routeMatch.getName()).toEqual("base.locale.tasks");
+        expect(routeMatch.getParams()).toEqual({
+            locale: "en-GB",
+        });
+        done();
+    });
+
+    router.subscribe(Router.NOT_FOUND_EVENT, () => {
+        done.fail("404");
+    });
+
+    router.start();
+});
+
+test("Router can have routes with SM based middlewares", done => {
+    let state = 0;
+
+    class Foo {}
+
+    @inject(Foo)
+    class TasksMiddleware {
+        constructor(foo) {
+            this.foo = foo;
+        }
+
+        invoke(from, to) {
+            state += 1;
+            return Promise.resolve();
+        }
+    }
+
+    const sm = new ServiceManager();
+    const history = generateServerHistory("/en-GB/tasks", "");
+    const stateAdapter = new StdStateAdapter();
+    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    router.add({
+        name: "base",
+        path: "/",
+        routes: [
+            {
+                name: "locale",
+                path: ":locale",
+                routes: [
+                    {
+                        name: "tasks",
+                        path: "tasks",
+                        middleware: TasksMiddleware,
+                    },
+                ],
+            },
+        ],
+    });
+
+    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+        expect(state).toEqual(1);
+        expect(routeMatch.getName()).toEqual("base.locale.tasks");
+        expect(routeMatch.getParams()).toEqual({
+            locale: "en-GB",
+        });
+        done();
+    });
+
+    router.subscribe(Router.NOT_FOUND_EVENT, () => {
+        done.fail("404");
     });
 
     router.start();

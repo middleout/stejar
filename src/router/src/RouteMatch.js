@@ -1,9 +1,4 @@
 export class RouteMatch {
-    /**
-     * @param params
-     * @param query
-     * @param routes
-     */
     constructor(params, query, routes) {
         this._params = params;
         this._routes = routes;
@@ -14,30 +9,18 @@ export class RouteMatch {
             .join(".");
     }
 
-    /**
-     * @returns {*}
-     */
     getParams() {
         return this._params;
     }
 
-    /**
-     * @returns {*}
-     */
     getRoutes() {
         return this._routes;
     }
 
-    /**
-     * @returns {*}
-     */
     getQuery() {
         return this._query;
     }
 
-    /**
-     * @returns {*}
-     */
     getName() {
         return this._name;
     }
