@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router",
-    "version": "4.0.5",
+    "version": "4.0.1",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,18 +8,18 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/event-emitter": "^4.0.3",
-        "@stejar/promise-middleware": "^4.0.3",
+        "@stejar/event-emitter": "^4.0.1",
+        "@stejar/promise-middleware": "^4.0.1",
         "invariant": "^2.2.2",
         "query-string": "^5.1.0",
         "url-pattern": "^1.0.3"
     },
     "devDependencies": {
-        "@stejar/router-server-history": "^4.0.3",
-        "@stejar/router-std-state-adapter": "^4.0.4",
-        "@stejar/di": "^4.0.3"
+        "@stejar/di": "^4.0.1",
+        "@stejar/router-server-history": "^4.0.1",
+        "@stejar/router-std-state-adapter": "^4.0.1"
     },
     "peerDependencies": {
-        "@stejar/di": "^4.0.3"
+        "@stejar/di": "^4.0.1"
     }
 }

@@ -14,7 +14,8 @@
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
         "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*",
-        "precommit": "yarn lint"
+        "precommit": "yarn lint",
+        "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0-beta.39",
