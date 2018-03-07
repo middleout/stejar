@@ -61,26 +61,30 @@ Projects requiring an implementation should require `TODO` `x.0.0`.
 ### 3.1. `ContainerInterface`
 
 ```javascript
-/**
- * Finds an entry of the container by its identifier and returns it.
- *
- * @param mixed id Identifier of the entry to look for.
- *
- * @throws Error Error while retrieving the entry.
- *
- * @return mixed Entry.
- */
-function get(id) {}
+export default {
+    /**
+     * Finds an entry of the container by its identifier and returns it.
+     *
+     * @param mixed id Identifier of the entry to look for.
+     *
+     * @throws Error Error while retrieving the entry.
+     *
+     * @return mixed Entry.
+     */
+    get: function get(id) {},
 
-/**
- * Returns true if the container can return an entry for the given identifier.
- * Returns false otherwise.
- *
- * `has(id)` returning false does not mean that `get(id)` will throw an exception.
- *
- * @param mixed id Identifier of the entry to look for.
- *
- * @return bool
- */
-function has(id) {}
+    /**
+     * Returns true if the container has an entry for the given identifier.
+     * Returns false otherwise.
+     *
+     * `has(id)` returning false does not mean that `get(id)` will throw an exception.
+     * `has(id)` returning false does not mean that `get(id)` will not be able to
+     * create an instance of the resource .
+     *
+     * @param mixed id Identifier of the entry to look for.
+     *
+     * @return bool
+     */
+    has: function has(id) {}
+}
 ```
