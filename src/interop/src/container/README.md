@@ -85,6 +85,6 @@ export default {
      *
      * @return bool
      */
-    has: function has(id) {}
-}
+    has: function has(id) {},
+};
 ```
