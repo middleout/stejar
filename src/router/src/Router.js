@@ -1,4 +1,5 @@
 import queryString from "query-string";
+import { ensureInterop } from "@stejar/interop";
 import invariant from "invariant";
 import { EventEmitter } from "@stejar/event-emitter/es/EventEmitter";
 import { Stack } from "@stejar/promise-middleware/es/Stack";
@@ -19,6 +20,7 @@ export class Router {
         this._eventEmitter = new EventEmitter();
 
         if (this._serviceManager) {
+            ensureInterop(this._serviceManager);
             this._serviceManager.set(Router, this);
         }
 

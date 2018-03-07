@@ -1,5 +1,5 @@
 {
-    "name": "@stejar/event-emitter",
+    "name": "@stejar/interop",
     "version": "4.0.7",
     "main": "es/index.js",
     "license": "MIT",

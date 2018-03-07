@@ -13,7 +13,7 @@
         "test": "jest --watchAll --no-watchman",
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
-        "lint": "prettier --write src/**/src/**/* && eslint src/**/src/**/*",
+        "lint": "prettier --write \"src/**/src/**/*\" --ignore-path \"src/**/*.md\" && eslint --ignore-pattern \"src/**/*.md\" --quiet \"src/**/src/**/*\"",
         "precommit": "yarn lint",
         "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
     },
