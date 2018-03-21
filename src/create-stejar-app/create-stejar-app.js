@@ -1,7 +1,7 @@
 const fs = require("fs");
 const {execSync} = require("child_process");
 
-const APP_PATH = "./app"; // TODO: Change where to create the app
+const APP_PATH = "./"; // TODO: Change where to create the app
 const USE_YARN = true;
 const ENABLE_JEST = true;
 const ENABLE_REACT = true;
