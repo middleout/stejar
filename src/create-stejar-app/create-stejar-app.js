@@ -407,7 +407,9 @@ if (ENABLE_HUSKY) {
 
 packageJson.scripts = scripts;
 
-fs.mkdirSync(APP_PATH);
+if (!fs.existsSync(APP_PATH)) {
+    fs.mkdirSync(APP_PATH);
+}
 fs.writeFileSync(`${APP_PATH}/package.json`, JSON.stringify(packageJson, null, 2));
 fs.writeFileSync(`${APP_PATH}/.babelrc`, JSON.stringify(babelRc, null, 2));
 fs.mkdirSync(`${APP_PATH}/src`);
