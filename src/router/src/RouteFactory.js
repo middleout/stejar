@@ -11,7 +11,7 @@ export class RouteFactory {
             type: definition.type,
             serviceManager: options.serviceManager,
             options: {
-                $redirectionDetails : definition.to,
+                $redirectionDetails: definition.to,
             },
         });
 
