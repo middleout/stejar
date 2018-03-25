@@ -6,12 +6,26 @@ export class ServiceManager {
      * @constructor
      */
     constructor() {
+        this._allowOverride = false;
         this._containerKeys = [];
         this._containerValues = {};
         this._providersKeys = [];
         this._providersValues = {};
         this._implementsList = {};
         this.set(ServiceManager, this);
+    }
+
+    /**
+     * Marks if the clients of the ServiceMaanger can overwrite
+     * data inside the container
+     * Returns the ServiceManager so that it can be chained with other methods.
+     *
+     * @param flag
+     * @returns {ServiceManager}
+     */
+    setAllowOverride(flag) {
+        this._allowOverride = flag;
+        return this;
     }
 
     /**
@@ -23,6 +37,12 @@ export class ServiceManager {
      * @returns {ServiceManager}
      */
     set(resource, instance) {
+        if (!this._allowOverride) {
+            if (this._containerKeys.includes(resource)) {
+                throw new Error("Resource " + JSON.stringify(resource) + " already exists in the ServiceManager.");
+            }
+        }
+
         // let finalInstance = () => instance;
 
         // if ((typeof instance as any) !== "function" || (instance.constructor && instance.constructor.name !== "Function")) {
@@ -37,17 +57,28 @@ export class ServiceManager {
     }
 
     /**
-     * Aliases a certain identifier to another identifier in order to substitute
+     * Aliases a certain identifier {targetResource}
+     * to another identifier {aliasResource} in order to substitute
      * values under different names.
      * Returns the ServiceManager so that it can be chained with other methods.
      *
-     * @param resource
-     * @param aliasName
+     * @param aliasResource
+     * @param targetResource
      * @returns {ServiceManager}
      */
-    alias(resource, aliasName) {
-        this._containerKeys.push(resource);
-        this._containerValues[this._containerKeys.length - 1] = () => this.get(aliasName);
+    alias(aliasResource, targetResource) {
+        if (!this._allowOverride) {
+            if (this._containerKeys.includes(aliasResource)) {
+                throw new Error("Resource " + JSON.stringify(aliasResource) + " already exists in the ServiceManager.");
+            }
+        }
+
+        if (!this.has(targetResource)) {
+            throw new Error("Resource " + JSON.stringify(targetResource) + " does not exists in the ServiceManager.");
+        }
+
+        this._containerKeys.push(aliasResource);
+        this._containerValues[this._containerKeys.length - 1] = () => this.get(targetResource);
         return this;
     }
 
@@ -72,22 +103,24 @@ export class ServiceManager {
      * the service manager - and must return anything (a truthy value).
      * Returns the ServiceManager so that it can be chained with other methods.
      *
-     * @param className
+     * @param resourceToProvide
      * @param callback
      * @returns {ServiceManager}
      */
-    provide(className, callback) {
-        this._providersKeys.push(className);
+    provide(resourceToProvide, callback) {
+        this._providersKeys.push(resourceToProvide);
         this._providersValues[this._providersKeys.length - 1] = () => {
-            const instance = callback(this);
+            const instance = this.has(callback) ? this.get(callback) : callback(this);
             if (!instance) {
+                let r = JSON.stringify(resourceToProvide);
+                if (!r) {
+                    r = resourceToProvide.toString();
+                }
                 throw new Error(
-                    `The provider for the class "${
-                        className.name
-                    }" must provide *something*. Got "${typeof instance}" instead.`
+                    `The provider for the class "${r}" must provide *something*. Got "${typeof instance}" instead.`
                 );
             }
-            this.set(className, instance);
+            this.set(resourceToProvide, instance);
             return instance;
         };
         return this;

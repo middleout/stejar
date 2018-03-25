@@ -1,0 +1,13 @@
+{
+    "name": "@stejar/react-reduce-components",
+    "version": "4.0.26",
+    "main": "es/index.js",
+    "license": "MIT",
+    "sideEffects": false,
+    "files": [
+        "es"
+    ],
+    "dependencies": {
+        "react": "^16.2.0"
+    }
+}

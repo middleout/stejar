@@ -12,11 +12,21 @@ export class Route {
     constructor(options) {
         this._name = options.name || null;
         this._matchType = options.match || Route.MATCH_STANDARD;
+        this._type = options.type || Route.TYPE_NORMAL;
         this._path = options.path || null;
-        this._component = options.component || (() => null);
+        this._component = options.component || null;
         this._middleware = options.middleware || null;
         this._serviceManager = options.serviceManager || null;
+        this._options = options.options || {};
         this._children = [];
+    }
+
+    getType() {
+        return this._type;
+    }
+
+    getOptions() {
+        return this._options;
     }
 
     attachChildren(children) {
@@ -62,33 +72,12 @@ export class Route {
         return this._matchType;
     }
 
-    runMiddleware(...data) {
-        if (!this._serviceManager) {
-            const middleware = this._middleware || (() => Promise.resolve());
-            return middleware(...data);
-        }
-
-        let middleware;
-        try {
-            if (this._middleware) {
-                middleware = this._serviceManager.get(this._middleware);
-            }
-        } catch (err) {
-            // do not do anything. It simply means that we cannot fetch an instance
-            // from the SM for this Middleware Class
-        }
-
-        if (middleware) {
-            if (middleware && middleware.invoke) {
-                return middleware.invoke(...data);
-            }
-
-            return middleware(...data);
-        }
-    }
-
     getComponent() {
         return this._component;
+    }
+
+    getMiddleware() {
+        return this._middleware;
     }
 
     match(pathParts, routeParams, routeQuery) {
@@ -131,7 +120,7 @@ export class Route {
             // But if there is no more parts to the path
             if (childParts.length === 0) {
                 // It means the current route must be displayed.
-                // However, if we have an EXACT match which we need to display
+                // However, if we have an EXACT match, we need to display that also
                 if (exactMatchChild) {
                     return new RouteMatch(result, routeQuery, matchedRoutes.slice(0).concat(exactMatchChild));
                 }

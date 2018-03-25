@@ -195,6 +195,7 @@ test("Service manager: Provide #1", () => {
         return "bar";
     });
 
+    expect(sm.has(Foo)).toEqual(true);
     expect(sm.get(Foo)).toBe("bar");
 });
 
@@ -208,7 +209,7 @@ test("Service manager: Provide #2", () => {
     });
 
     expect(() => sm.get(Foo)).toThrowError(
-        `The provider for the class "Foo" must provide *something*. Got "undefined" instead.`
+        `The provider for the class "${Foo.toString()}" must provide *something*. Got "undefined" instead.`
     );
 });
 

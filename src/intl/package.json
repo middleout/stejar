@@ -1,0 +1,14 @@
+{
+    "name": "@stejar/intl",
+    "version": "4.0.26",
+    "main": "es/index.js",
+    "license": "MIT",
+    "sideEffects": false,
+    "files": [
+        "es"
+    ],
+    "dependencies": {
+        "@stejar/interop": "^4.0.26",
+        "sprintf-js": "^1.1.1"
+    }
+}

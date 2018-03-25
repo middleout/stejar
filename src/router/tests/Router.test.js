@@ -1,6 +1,5 @@
 import { ServiceManager, inject } from "@stejar/di";
-import { createServerHistory } from "@stejar/router-server-history/es/createServerHistory";
-import { StdStateAdapter } from "@stejar/router-std-state-adapter/es/StdStateAdapter";
+import { createServerHistory } from "@stejar/router-server-history";
 import { Router } from "../src";
 
 function generateServerHistory(path, query) {
@@ -40,12 +39,6 @@ function getMapByLocale(map, locale, part) {
     return map[locale][part];
 }
 
-function generateMiddleware(msg) {
-    return (from, to) => {
-        //console.log(msg, { from, to });
-    };
-}
-
 function generateComponent(msg) {
     return () => msg;
 }
@@ -55,30 +48,25 @@ const generateRoutes = map => [
         name: "base",
         path: "/",
         component: generateComponent("base handler"),
-        middleware: generateMiddleware("base middleware"),
         routes: [
             {
                 name: "locale",
                 path: ":locale",
                 component: generateComponent("locale handler"),
-                middleware: generateMiddleware("locale middleware"),
                 routes: [
                     {
                         name: "tasks",
                         path: ({ locale }) => getMapByLocale(map, locale, "tasks"),
                         component: generateComponent("tasks handler"),
-                        middleware: generateMiddleware("tasks middleware"),
                         routes: [
                             {
                                 match: "exact",
                                 component: generateComponent("tasks exact handler"),
-                                middleware: generateMiddleware("tasks exact middleware"),
                                 routes: [
                                     {
                                         name: "delete",
                                         path: ({ locale }) => getMapByLocale(map, locale, "tasksDelete"),
                                         component: generateComponent("delete task handler"),
-                                        middleware: generateMiddleware("delete task middleware"),
                                     },
                                 ],
                             },
@@ -86,7 +74,6 @@ const generateRoutes = map => [
                                 name: "edit",
                                 path: ({ locale }) => getMapByLocale(map, locale, "tasksEdit"),
                                 component: generateComponent("edit task handler"),
-                                middleware: generateMiddleware("edit task middleware"),
                             },
                         ],
                     },
@@ -98,8 +85,7 @@ const generateRoutes = map => [
 
 test("Router to allow root match", done => {
     const history = generateServerHistory("/", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({});
@@ -118,8 +104,7 @@ test("Router to allow root match", done => {
 
 test("Router to allow locale match", done => {
     const history = generateServerHistory("/en-GB", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "en-GB" });
@@ -139,8 +124,7 @@ test("Router to allow locale match", done => {
 
 test("Router to allow direct access of tasks in locale 'en-GB'", done => {
     const history = generateServerHistory("/en-GB/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "en-GB" });
@@ -163,8 +147,7 @@ test("Router to allow direct access of tasks in locale 'en-GB'", done => {
 
 test("Router to allow direct access of tasks in locale 'ro-RO'", done => {
     const history = generateServerHistory("/ro-RO/tascuri", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "ro-RO" });
@@ -187,8 +170,7 @@ test("Router to allow direct access of tasks in locale 'ro-RO'", done => {
 
 test("Router to allow direct access of tasks in an unknown locale", done => {
     const history = generateServerHistory("/unknown/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, () => {
         done.fail("Should not match");
@@ -204,8 +186,7 @@ test("Router to allow direct access of tasks in an unknown locale", done => {
 
 test("Router to allow access of delete task - inside the exact match - in an locale 'en-GB'", done => {
     const history = generateServerHistory("/en-GB/tasks/delete/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "en-GB", id: "1" });
@@ -229,8 +210,7 @@ test("Router to allow access of delete task - inside the exact match - in an loc
 
 test("Router to allow access of delete task - inside the exact match - in an locale 'ro-RO'", done => {
     const history = generateServerHistory("/ro-RO/tascuri/sterge/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "ro-RO", id: "1" });
@@ -254,8 +234,7 @@ test("Router to allow access of delete task - inside the exact match - in an loc
 
 test("Router to allow access of delete task - inside the exact match - in an unknown locale", done => {
     const history = generateServerHistory("/unknown/tascuri/sterge/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, () => {
         done.fail("Should not match");
@@ -271,8 +250,7 @@ test("Router to allow access of delete task - inside the exact match - in an unk
 
 test("Router to allow access of edit task in locale 'en-GB'", done => {
     const history = generateServerHistory("/en-GB/tasks/edit/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "en-GB", id: "1" });
@@ -294,8 +272,7 @@ test("Router to allow access of edit task in locale 'en-GB'", done => {
 
 test("Router to allow access of edit task in locale 'ro-RO'", done => {
     const history = generateServerHistory("/ro-RO/tascuri/editeaza/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, match => {
         expect(match.getParams()).toEqual({ locale: "ro-RO", id: "1" });
@@ -317,8 +294,7 @@ test("Router to allow access of edit task in locale 'ro-RO'", done => {
 
 test("Router to allow access of edit task in an unknown locale", done => {
     const history = generateServerHistory("/unknown/tascuri/editeaza/1", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     router.subscribe(Router.MATCHED_EVENT, () => {
         done.fail();
@@ -334,8 +310,7 @@ test("Router to allow access of edit task in an unknown locale", done => {
 
 test("Router can navigate from route to another", done => {
     const history = generateServerHistory("/ro-RO/tascuri", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ routes: generateRoutes(generateMap()), history, stateAdapter });
+    const router = new Router({ routes: generateRoutes(generateMap()), history });
 
     let stateMachine = 0;
 
@@ -383,8 +358,7 @@ test("Router can have routes with SM based paths", done => {
 
     const sm = new ServiceManager();
     const history = generateServerHistory("/en-GB/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    const router = new Router({ history, serviceManager: sm });
     router.add({
         name: "base",
         path: "/",
@@ -439,11 +413,11 @@ test("Router can have routes with SM based paths as fn", done => {
     const sm = new ServiceManager();
     const state = new State();
     sm.set(State, state);
+    sm.provide(pathProvider, sm => pathProvider(sm));
     sm.provide(path, pathProvider);
 
     const history = generateServerHistory("/en-GB/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ history, stateAdapter, serviceManager: sm });
+    const router = new Router({ history, serviceManager: sm });
     router.add({
         name: "base",
         path: "/",
@@ -470,125 +444,124 @@ test("Router can have routes with SM based paths as fn", done => {
         done();
     });
 
-    router.subscribe(Router.NOT_FOUND_EVENT, () => {
+    router.subscribe(Router.NOT_FOUND_EVENT, details => {
+        console.warn(details);
         done.fail("404");
     });
 
     router.start();
 });
 
-test("Router can have routes with SM based middlewares", done => {
-    let state = 0;
+// test("Router can have routes with SM based middlewares", done => {
+//     let state = 0;
+//
+//     class Foo {}
+//
+//     @inject(Foo)
+//     class TasksMiddleware {
+//         constructor(foo) {
+//             this.foo = foo;
+//         }
+//
+//         invoke(from, to) {
+//             state += 1;
+//             return Promise.resolve();
+//         }
+//     }
+//
+//     const sm = new ServiceManager();
+//     const history = generateServerHistory("/en-GB/tasks", "");
+//     const router = new Router({ history, serviceManager: sm });
+//     router.add({
+//         name: "base",
+//         path: "/",
+//         routes: [
+//             {
+//                 name: "locale",
+//                 path: ":locale",
+//                 routes: [
+//                     {
+//                         name: "tasks",
+//                         path: "tasks",
+//                         middleware: TasksMiddleware,
+//                     },
+//                 ],
+//             },
+//         ],
+//     });
+//
+//     router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+//         expect(state).toEqual(1);
+//         expect(routeMatch.getName()).toEqual("base.locale.tasks");
+//         expect(routeMatch.getParams()).toEqual({
+//             locale: "en-GB",
+//         });
+//         done();
+//     });
+//
+//     router.subscribe(Router.NOT_FOUND_EVENT, () => {
+//         done.fail("404");
+//     });
+//
+//     router.start();
+// });
 
-    class Foo {}
-
-    @inject(Foo)
-    class TasksMiddleware {
-        constructor(foo) {
-            this.foo = foo;
-        }
-
-        invoke(from, to) {
-            state += 1;
-            return Promise.resolve();
-        }
-    }
-
-    const sm = new ServiceManager();
-    const history = generateServerHistory("/en-GB/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ history, stateAdapter, serviceManager: sm });
-    router.add({
-        name: "base",
-        path: "/",
-        routes: [
-            {
-                name: "locale",
-                path: ":locale",
-                routes: [
-                    {
-                        name: "tasks",
-                        path: "tasks",
-                        middleware: TasksMiddleware,
-                    },
-                ],
-            },
-        ],
-    });
-
-    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
-        expect(state).toEqual(1);
-        expect(routeMatch.getName()).toEqual("base.locale.tasks");
-        expect(routeMatch.getParams()).toEqual({
-            locale: "en-GB",
-        });
-        done();
-    });
-
-    router.subscribe(Router.NOT_FOUND_EVENT, () => {
-        done.fail("404");
-    });
-
-    router.start();
-});
-
-test("Router can have routes with SM based middlewares as fn", done => {
-    class State {
-        value = 0;
-        inc() {
-            this.value++;
-        }
-    }
-
-    function middleware(state) {
-        return function middleware(from, to) {
-            state.inc();
-            return Promise.resolve();
-        };
-    }
-
-    function middlewareGeneratorProvider(sm) {
-        return middleware(sm.get(State));
-    }
-
-    const sm = new ServiceManager();
-    const state = new State();
-    sm.set(State, state);
-    sm.provide(middleware, middlewareGeneratorProvider);
-
-    const history = generateServerHistory("/en-GB/tasks", "");
-    const stateAdapter = new StdStateAdapter();
-    const router = new Router({ history, stateAdapter, serviceManager: sm });
-    router.add({
-        name: "base",
-        path: "/",
-        routes: [
-            {
-                name: "locale",
-                path: ":locale",
-                routes: [
-                    {
-                        name: "tasks",
-                        path: "tasks",
-                        middleware: middleware,
-                    },
-                ],
-            },
-        ],
-    });
-
-    router.subscribe(Router.MATCHED_EVENT, routeMatch => {
-        expect(state.value).toEqual(1);
-        expect(routeMatch.getName()).toEqual("base.locale.tasks");
-        expect(routeMatch.getParams()).toEqual({
-            locale: "en-GB",
-        });
-        done();
-    });
-
-    router.subscribe(Router.NOT_FOUND_EVENT, () => {
-        done.fail("404");
-    });
-
-    router.start();
-});
+// test("Router can have routes with SM based middlewares as fn", done => {
+//     class State {
+//         value = 0;
+//         inc() {
+//             this.value++;
+//         }
+//     }
+//
+//     function middleware(state) {
+//         return function middleware(from, to) {
+//             state.inc();
+//             return Promise.resolve();
+//         };
+//     }
+//
+//     function middlewareGeneratorProvider(sm) {
+//         return middleware(sm.get(State));
+//     }
+//
+//     const sm = new ServiceManager();
+//     const state = new State();
+//     sm.set(State, state);
+//     sm.provide(middleware, middlewareGeneratorProvider);
+//
+//     const history = generateServerHistory("/en-GB/tasks", "");
+//     const router = new Router({ history, serviceManager: sm });
+//     router.add({
+//         name: "base",
+//         path: "/",
+//         routes: [
+//             {
+//                 name: "locale",
+//                 path: ":locale",
+//                 routes: [
+//                     {
+//                         name: "tasks",
+//                         path: "tasks",
+//                         middleware: middleware,
+//                     },
+//                 ],
+//             },
+//         ],
+//     });
+//
+//     router.subscribe(Router.MATCHED_EVENT, routeMatch => {
+//         expect(state.value).toEqual(1);
+//         expect(routeMatch.getName()).toEqual("base.locale.tasks");
+//         expect(routeMatch.getParams()).toEqual({
+//             locale: "en-GB",
+//         });
+//         done();
+//     });
+//
+//     router.subscribe(Router.NOT_FOUND_EVENT, () => {
+//         done.fail("404");
+//     });
+//
+//     router.start();
+// });
