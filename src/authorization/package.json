@@ -1,6 +1,6 @@
 {
     "name": "@stejar/authorization",
-    "version": "4.0.26",
+    "version": "4.0.27",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,6 +8,6 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/interop": "^4.0.26"
+        "@stejar/interop": "^4.0.27"
     }
 }
