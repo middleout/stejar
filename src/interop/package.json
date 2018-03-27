@@ -1,6 +1,6 @@
 {
     "name": "@stejar/interop",
-    "version": "4.0.31",
+    "version": "4.0.32",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
