@@ -9,6 +9,7 @@ const USE_YARN = true;
 const ENABLE_JEST = true;
 const ENABLE_REACT = true;
 const ENABLE_ESLINT = true;
+const ENABLE_STYLELINT = true;
 const ENABLE_PRETTIER = true;
 const ENABLE_HUSKY = true;
 
@@ -28,7 +29,8 @@ let devPackages = [
     "style-loader",
     "resolve-url-loader",
     "html-webpack-plugin",
-    "extract-text-webpack-plugin@next", // TODO Still needed due to an error
+    // "extract-text-webpack-plugin@next", // TODO Still needed due to an error
+    "mini-css-extract-plugin",
     "clean-webpack-plugin",
     "webpack-build-notifier",
     "webpack",
@@ -88,6 +90,15 @@ let eslintConfig = {
     },
 };
 
+let styleLintConfig = {
+    stylelint: {
+        extends: "stylelint-config-standard",
+        rules: {
+            indentation: 4,
+        },
+    },
+};
+
 if (ENABLE_JEST) {
     devPackages.push("jest@22.4.3"); // TODO: needed to due error on facebook side
     devPackages.push("babel-jest");
@@ -136,7 +147,7 @@ if (ENABLE_REACT) {
 if (ENABLE_PRETTIER) {
     devPackages.push("prettier");
     devPackages.push("eslint-config-prettier");
-    lintCommands.push('prettier --write "src/**/*.{js,jsx}"');
+    lintCommands.push('node_modules/.bin/prettier --write "src/**/*.{js,jsx,scss}"');
     packageJson.prettier = {
         printWidth: 120,
         tabWidth: 4,
@@ -158,11 +169,18 @@ if (ENABLE_PRETTIER) {
 if (ENABLE_ESLINT) {
     devPackages.push("babel-eslint");
     devPackages.push("eslint");
-    lintCommands.push('eslint "src/**/*.{js,jsx}"');
+    lintCommands.push('node_modules/.bin/eslint "src/**/*.{js,jsx}"');
     packageJson.eslintConfig = eslintConfig;
 }
 
-if (ENABLE_PRETTIER || ENABLE_ESLINT) {
+if (ENABLE_STYLELINT) {
+    devPackages.push("stylelint");
+    devPackages.push("stylelint-config-standard");
+    lintCommands.push('node_modules/.bin/stylelint "src/**/*.scss"');
+    packageJson.styleLint = styleLintConfig;
+}
+
+if (ENABLE_PRETTIER || ENABLE_ESLINT || ENABLE_STYLELINT) {
     scripts.lint = lintCommands.join(" && ");
 }
 

@@ -2,16 +2,12 @@ require("dotenv").config();
 const path = require("path");
 const { ProvidePlugin, DefinePlugin } = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development",
-});
 
 (function clearTerminal() {
     process.stdout.write(process.platform === "win32" ? "\x1B[2J\x1B[0f" : "\x1B[2J\x1B[3J\x1B[H");
@@ -43,6 +39,7 @@ module.exports = (env, args) => {
             ],
         },
         {
+            cache: false, // disabling cache in watch mode for extractCss
             entry: ["@babel/polyfill", "./src/client.js"],
             output: {
                 path: path.resolve("./dist/client"),
@@ -83,31 +80,28 @@ module.exports = (env, args) => {
                     },
                     {
                         test: /\.scss$/,
-                        use: extractSass.extract({
-                            use: [
-                                {
-                                    loader: "css-loader",
-                                    options: {
-                                        sourceMap: mode === "production" ? false : true,
-                                        minimize: mode === "production" ? true : false,
-                                    },
+                        use: [
+                            MiniCssExtractPlugin.loader,
+                            {
+                                loader: "css-loader",
+                                options: {
+                                    sourceMap: mode === "production" ? false : true,
+                                    minimize: mode === "production" ? true : false,
                                 },
-                                {
-                                    loader: "resolve-url-loader",
-                                    options: {
-                                        sourceMap: mode === "production" ? false : true,
-                                    },
+                            },
+                            {
+                                loader: "resolve-url-loader",
+                                options: {
+                                    sourceMap: mode === "production" ? false : true,
                                 },
-                                {
-                                    loader: "sass-loader",
-                                    options: {
-                                        sourceMap: mode === "production" ? false : true,
-                                    },
+                            },
+                            {
+                                loader: "sass-loader",
+                                options: {
+                                    sourceMap: mode === "production" ? false : true,
                                 },
-                            ],
-                            // use style-loader in development
-                            fallback: "style-loader",
-                        }),
+                            },
+                        ],
                     },
                     // General images or fonts
                     {
@@ -135,7 +129,9 @@ module.exports = (env, args) => {
                 new DefinePlugin({
                     APP_ENV: JSON.stringify(env),
                 }),
-                extractSass,
+                new MiniCssExtractPlugin({
+                    filename: "[name].[hash].css",
+                }),
                 new CleanWebpackPlugin(["./dist/client/*.*"]),
                 new WebpackBuildNotifierPlugin(),
                 new AssetsPlugin({
