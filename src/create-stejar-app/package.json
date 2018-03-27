@@ -5,7 +5,7 @@
     "license": "MIT",
     "sideEffects": false,
     "files": [
-        "es"
+        "src"
     ],
     "bin": {
         "create-stejar-app": "./src/create-stejar-app.js"
