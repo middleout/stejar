@@ -14,8 +14,6 @@ export class Route {
         this._matchType = options.match || Route.MATCH_STANDARD;
         this._type = options.type || Route.TYPE_NORMAL;
         this._path = options.path || null;
-        this._component = options.component || null;
-        this._middleware = options.middleware || null;
         this._serviceManager = options.serviceManager || null;
         this._options = options.options || {};
         this._children = [];
@@ -72,14 +70,6 @@ export class Route {
         return this._matchType;
     }
 
-    getComponent() {
-        return this._component;
-    }
-
-    getMiddleware() {
-        return this._middleware;
-    }
-
     match(pathParts, routeParams, routeQuery) {
         let matchedRoutes = [];
 
@@ -88,14 +78,13 @@ export class Route {
             // Accumulate the path on each iteration until a match happens
             path += path ? "/" + pathParts[offset] : pathParts[offset];
 
-            let routePath;
-            routePath = this.getPath(routeParams, routeQuery);
-            if (!routePath) {
-                continue;
-            }
+            let routePath = this.getPath(routeParams, routeQuery);
 
-            let parser = this._generateParser(routePath);
-            const result = parser.match(path);
+            let result = {};
+            if (routePath) {
+                let parser = this._generateParser(routePath);
+                result = parser.match(path);
+            }
 
             if (!result) {
                 continue;
@@ -115,7 +104,10 @@ export class Route {
             }
 
             // Jump to next part of the path
-            let childParts = pathParts.slice(offset + 1);
+            let childParts = pathParts.slice(0);
+            if (routePath) {
+                childParts = childParts.slice(offset + 1);
+            }
 
             // But if there is no more parts to the path
             if (childParts.length === 0) {
@@ -182,6 +174,10 @@ export class Route {
 
             if (!result) {
                 continue;
+            }
+
+            if (!path) {
+                return result;
             }
 
             return (path === "/" ? path : path + "/") + result;

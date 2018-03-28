@@ -1,1 +1,1 @@
-console.warn("Hello world");
+export * from "./RouterProvider";

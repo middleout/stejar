@@ -12,9 +12,7 @@ export class ServerRouter extends Router {
             this.promiseResolve({
                 isRedirect: true,
                 code: statusCode,
-                details: {
-                    url: path + search,
-                },
+                url: path + search,
             });
         };
 
@@ -28,7 +26,7 @@ export class ServerRouter extends Router {
                 isRedirect: false,
                 notFound: false,
                 code: 200,
-                details: match,
+                match: match,
             });
         });
 
@@ -36,7 +34,7 @@ export class ServerRouter extends Router {
             this.promiseReject({
                 notFound: true,
                 code: 404,
-                details,
+                errorDetails: details,
             });
         });
 

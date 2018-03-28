@@ -16,6 +16,7 @@ export class Router {
         this._history = options.history;
         this._eventEmitter = new EventEmitter();
         this._currentRoute = null;
+        this._isStarted = false;
 
         if (this._serviceManager) {
             ensureContainerInterop(this._serviceManager);
@@ -45,11 +46,20 @@ export class Router {
         return this._eventEmitter.once(event, callback);
     }
 
-    start() {
+    start(onInitialMatch) {
+        if (this._isStarted) {
+            return () => null;
+        }
+
+        this._isStarted = true;
+
         const unlisten = this._history.listen(location => {
             this._dispatch(location.pathname, location.search);
         });
 
+        if (onInitialMatch) {
+            this.once(Router.MATCHED_EVENT, onInitialMatch.bind(onInitialMatch));
+        }
         this._dispatch(this._history.location.pathname, this._history.location.search);
         return unlisten;
     }

@@ -5,12 +5,11 @@ export class RouteFactory {
         const route = new Route({
             name: definition.name,
             path: definition.path,
-            component: definition.component,
-            middleware: definition.middleware,
             match: definition.match,
             type: definition.type,
             serviceManager: options.serviceManager,
             options: {
+                ...definition.options,
                 $redirectionDetails: definition.to,
             },
         });

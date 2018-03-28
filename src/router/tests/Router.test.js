@@ -39,41 +39,31 @@ function getMapByLocale(map, locale, part) {
     return map[locale][part];
 }
 
-function generateComponent(msg) {
-    return () => msg;
-}
-
 const generateRoutes = map => [
     {
         name: "base",
         path: "/",
-        component: generateComponent("base handler"),
         routes: [
             {
                 name: "locale",
                 path: ":locale",
-                component: generateComponent("locale handler"),
                 routes: [
                     {
                         name: "tasks",
                         path: ({ locale }) => getMapByLocale(map, locale, "tasks"),
-                        component: generateComponent("tasks handler"),
                         routes: [
                             {
                                 match: "exact",
-                                component: generateComponent("tasks exact handler"),
                                 routes: [
                                     {
                                         name: "delete",
                                         path: ({ locale }) => getMapByLocale(map, locale, "tasksDelete"),
-                                        component: generateComponent("delete task handler"),
                                     },
                                 ],
                             },
                             {
                                 name: "edit",
                                 path: ({ locale }) => getMapByLocale(map, locale, "tasksEdit"),
-                                component: generateComponent("edit task handler"),
                             },
                         ],
                     },
@@ -99,7 +89,6 @@ test("Router to allow root match", done => {
     });
 
     router.start();
-    // console.log(util.inspect(router, false, null));
 });
 
 test("Router to allow locale match", done => {
