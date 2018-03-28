@@ -9,6 +9,8 @@
     ],
     "dependencies": {
         "@stejar/router": "^4.0.32",
-        "react": "^16.2.0"
+        "react": "^16.2.0",
+        "create-react-context": "^0.2.1",
+        "hoist-non-react-statics": "^2.5.0"
     }
 }

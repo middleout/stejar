@@ -1063,6 +1063,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@stejar/interop@^4.0.37":
+  version "4.0.47"
+  resolved "https://npm.middleout.com/@stejar%2finterop/-/interop-4.0.47.tgz#ea5a15e9040fcfbf7265864f00e4864f36309fde"
+
 JSONStream@^1.0.4:
   version "1.3.2"
   resolved "https://npm.middleout.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"

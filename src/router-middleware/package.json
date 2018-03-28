@@ -10,6 +10,5 @@
     "dependencies": {
         "@stejar/interop": "^4.0.37",
         "items-promise": "^1.0.0"
-    },
-    "gitHead": "3f2f8d97b45ddc442ad0754744d9bc1ba0c19796"
+    }
 }

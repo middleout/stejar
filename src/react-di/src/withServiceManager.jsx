@@ -5,7 +5,7 @@ export function withServiceManager(WrappedComponent) {
     return function wrapWithServiceManager(props) {
         return (
             <ServiceContextConsumer>
-                {serviceManager => createElement(WrappedComponent, { ...props, serviceManager: serviceManager })}
+                {serviceManager => createElement(WrappedComponent, { ...props, serviceManager })}
             </ServiceContextConsumer>
         );
     };

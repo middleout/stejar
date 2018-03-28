@@ -33,7 +33,7 @@ export class Router {
     }
 
     add(routeDefinition) {
-        const route = RouteFactory.build(this, routeDefinition, { serviceManager: this._serviceManager });
+        const route = RouteFactory.build(this, { ...routeDefinition, serviceManager: this._serviceManager });
         this._routes.push(route);
         return this;
     }
@@ -44,6 +44,10 @@ export class Router {
 
     once(event, callback) {
         return this._eventEmitter.once(event, callback);
+    }
+
+    getCurrentRoute() {
+        return this._currentRoute;
     }
 
     start(onInitialMatch) {
@@ -178,7 +182,7 @@ export class Router {
         }
 
         this._currentRoute = {
-            to: routeMatch.getName(),
+            name: routeMatch.getName(),
             params: routeMatch.getParams(),
             query: routeMatch.getQuery(),
         };

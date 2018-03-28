@@ -1,7 +1,14 @@
-import { Component } from "react";
+import React, { Component, Children } from "react";
 import PropTypes from "prop-types";
+import createReactContext from "create-react-context";
 import { Router } from "@stejar/router";
 import { reduceComponents } from "@stejar/react-reduce-components";
+
+const { Provider, Consumer } = createReactContext(null);
+Provider.displayName = "RouterContextProvider";
+Consumer.displayName = "RouterContextConsumer";
+
+export const RouterContextConsumer = Consumer;
 
 export class RouterProvider extends Component {
     static propTypes = {
@@ -59,7 +66,11 @@ export class RouterProvider extends Component {
      * or the result from the previous dispatch
      */
     render() {
-        return this.state.component || null;
+        if (!this.state.component) {
+            return null;
+        }
+
+        return <Provider value={this._router}>{Children.only(this.state.component)}</Provider>;
     }
 
     /**

@@ -2,24 +2,23 @@ import { Route } from "./Route";
 
 export class RouteFactory {
     static build(router, definition, options = {}) {
+        const { name, path, match, type, serviceManager, routes = [], to, ...routeOptions } = definition;
+
         const route = new Route({
-            name: definition.name,
-            path: definition.path,
-            match: definition.match,
-            type: definition.type,
-            serviceManager: options.serviceManager,
+            name,
+            path,
+            match,
+            type,
+            serviceManager,
             options: {
-                ...definition.options,
-                $redirectionDetails: definition.to,
+                ...routeOptions,
+                $redirectionDetails: to,
             },
         });
 
-        if (definition.routes) {
-            route.attachChildren(
-                definition.routes.map(childDefinition => RouteFactory.build(router, childDefinition, options))
-            );
-        }
-
+        route.attachChildren(
+            routes.map(childDefinition => RouteFactory.build(router, { ...childDefinition, serviceManager }, options))
+        );
         return route;
     }
 }

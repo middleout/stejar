@@ -17,6 +17,7 @@ let devPackages = [
     "@babel/core",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-decorators",
+    "@babel/plugin-proposal-object-rest-spread",
     "babel-plugin-autobind-class-methods",
     "@babel/polyfill",
     "@babel/preset-env",
@@ -55,7 +56,12 @@ let packageJson = {
 };
 let babelRc = {
     sourceMaps: "inline",
-    plugins: ["autobind-class-methods", "@babel/plugin-proposal-decorators", "@babel/plugin-proposal-class-properties"],
+    plugins: [
+        "autobind-class-methods",
+        "@babel/plugin-proposal-decorators",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+    ],
     presets: ["@babel/preset-env"],
 };
 
