@@ -1,0 +1,15 @@
+{
+    "name": "@stejar/database",
+    "version": "4.0.53",
+    "main": "es/index.js",
+    "license": "MIT",
+    "sideEffects": false,
+    "files": [
+        "es"
+    ],
+    "dependencies": {
+        "@stejar/database": "^4.0.53",
+        "mysql2": "^1.5.3"
+    },
+    "gitHead": "5d6f81945a2a8b97e7481d11937b5498e79a6d58"
+}
