@@ -1,1 +1,1 @@
-export * from "./stdStorage";
+export * from "./StorageAdapter";

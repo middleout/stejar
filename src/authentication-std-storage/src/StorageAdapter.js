@@ -2,6 +2,8 @@ export function StorageAdapter() {
     let storedIdentity = null;
 
     return {
+
+
         setIdentity(identity) {
             storedIdentity = identity;
             return true;

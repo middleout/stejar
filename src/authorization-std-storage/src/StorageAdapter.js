@@ -1,4 +1,4 @@
-export function stdStorage() {
+export function StorageAdapter() {
     let resources = [];
     let roles = [];
     let rules = [];

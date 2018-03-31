@@ -15,7 +15,7 @@
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
         "lint": "prettier --write \"src/**/src/*.{js,jsx}\" && eslint --quiet \"src/**/src/*.{js,jsx}\"",
-        "precommit": "yarn lint",
+        "precommit": "(npx prettier-check \"src/**/src/*.{js,jsx}\" & prettier --write \"src/**/src/*.{js,jsx}\") && yarn lint",
         "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
     },
     "devDependencies": {

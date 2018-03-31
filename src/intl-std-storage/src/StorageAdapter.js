@@ -1,4 +1,4 @@
-export function stdStorage() {
+export function StorageAdapter() {
     let showMissingTranslations = false;
     let currentLocale = null;
     let catalogs = {};
