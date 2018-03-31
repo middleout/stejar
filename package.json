@@ -14,9 +14,17 @@
         "test": "jest --watchAll --no-watchman",
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
-        "lint": "prettier --write \"src/**/src/*.{js,jsx}\" && eslint --quiet \"src/**/src/*.{js,jsx}\" && git add",
-        "precommit": "yarn lint",
+        "lint": "prettier --write \"src/**/src/*.{js,jsx}\" && eslint --quiet \"src/**/src/*.{js,jsx}\"",
+        "precommit": "lint-staged",
         "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
+    },
+    "lint-staged": {
+        "debug": true,
+        "*.{js,jsx}": [
+            "prettier --write \"src/**/src/*.{js,jsx}\"",
+            "eslint --quiet \"src/**/src/*.{js,jsx}\"",
+            "git add"
+        ]
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0-beta.39",
