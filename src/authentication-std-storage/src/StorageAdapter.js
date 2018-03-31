@@ -4,6 +4,7 @@ export function StorageAdapter() {
     return {
 
 
+
         setIdentity(identity) {
             storedIdentity = identity;
             return true;
