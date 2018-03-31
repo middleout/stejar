@@ -592,12 +592,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@lerna/add@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fadd/-/add-3.0.0-beta.10.tgz#f51125fd7f89acca5b0e78a34864e23ff114538c"
+"@lerna/add@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fadd/-/add-3.0.0-beta.13.tgz#ed5a61d2dedea19271abcf8691e78f425016a030"
   dependencies:
-    "@lerna/bootstrap" "^3.0.0-beta.10"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/bootstrap" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
     "@lerna/validation-error" "^3.0.0-beta.10"
     dedent "^0.7.0"
@@ -605,34 +605,34 @@
     p-map "^1.2.0"
     package-json "^4.0.1"
     semver "^5.5.0"
-    write-pkg "^3.1.0"
 
-"@lerna/batch-packages@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fbatch-packages/-/batch-packages-3.0.0-beta.10.tgz#6de849c7404502840854a52a4418aecea1c4fd26"
+"@lerna/batch-packages@^3.0.0-beta.11":
+  version "3.0.0-beta.11"
+  resolved "https://npm.middleout.com/@lerna%2fbatch-packages/-/batch-packages-3.0.0-beta.11.tgz#ceb1242e28534c6933130035b288899a45519fe3"
   dependencies:
-    "@lerna/package-graph" "^3.0.0-beta.1"
+    "@lerna/package-graph" "^3.0.0-beta.11"
     "@lerna/validation-error" "^3.0.0-beta.10"
     npmlog "^4.1.2"
 
-"@lerna/bootstrap@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fbootstrap/-/bootstrap-3.0.0-beta.10.tgz#d23510309f0dd914e9b8f09749618843a544cc79"
+"@lerna/bootstrap@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fbootstrap/-/bootstrap-3.0.0-beta.13.tgz#56101de9160a33cb545d466c0a7034200677f9b5"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.10"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-beta.11"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
-    "@lerna/npm-conf" "^3.0.0-beta.8"
-    "@lerna/npm-install" "^3.0.0-beta.3"
-    "@lerna/rimraf-dir" "^3.0.0-beta.2"
+    "@lerna/npm-conf" "^3.0.0-beta.12"
+    "@lerna/npm-install" "^3.0.0-beta.13"
+    "@lerna/rimraf-dir" "^3.0.0-beta.13"
     "@lerna/run-lifecycle" "^3.0.0-beta.0"
     "@lerna/run-parallel-batches" "^3.0.0-beta.0"
-    "@lerna/symlink-binary" "^3.0.0-beta.2"
-    "@lerna/symlink-dependencies" "^3.0.0-beta.2"
+    "@lerna/symlink-binary" "^3.0.0-beta.12"
+    "@lerna/symlink-dependencies" "^3.0.0-beta.12"
     "@lerna/validation-error" "^3.0.0-beta.10"
     dedent "^0.7.0"
     get-port "^3.2.0"
     multimatch "^2.1.0"
+    npm-package-arg "^6.0.0"
     npmlog "^4.1.2"
     p-finally "^1.0.0"
     p-map "^1.2.0"
@@ -641,88 +641,88 @@
     read-package-tree "^5.1.6"
     semver "^5.5.0"
 
-"@lerna/changed@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fchanged/-/changed-3.0.0-beta.10.tgz#1e9d803313f38bce19fc0f513487709b9fbd5823"
+"@lerna/changed@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fchanged/-/changed-3.0.0-beta.13.tgz#076558a995927cae9c543b6a30d84b5f6898b133"
   dependencies:
-    "@lerna/collect-updates" "^3.0.0-beta.9"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/collect-updates" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/output" "^3.0.0-beta.0"
-    "@lerna/publish" "^3.0.0-beta.10"
+    "@lerna/publish" "^3.0.0-beta.13"
     chalk "^2.3.1"
 
-"@lerna/child-process@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fchild-process/-/child-process-3.0.0-beta.0.tgz#68e2340f46e3f04b10eff6d8c203bd445930d430"
+"@lerna/child-process@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fchild-process/-/child-process-3.0.0-beta.13.tgz#7424209a2ff0ab100d4146eb017efc55795a1534"
   dependencies:
     chalk "^2.3.1"
     execa "^0.9.0"
     strong-log-transformer "^1.0.6"
 
-"@lerna/clean@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fclean/-/clean-3.0.0-beta.10.tgz#7973488470c37a042221a40bc9a4b3b216557788"
+"@lerna/clean@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fclean/-/clean-3.0.0-beta.13.tgz#db77058b5a1b14839f5b998df4e4bad54459e200"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
     "@lerna/prompt" "^3.0.0-beta.0"
-    "@lerna/rimraf-dir" "^3.0.0-beta.2"
+    "@lerna/rimraf-dir" "^3.0.0-beta.13"
     p-map "^1.2.0"
     p-map-series "^1.0.0"
     p-waterfall "^1.0.0"
 
-"@lerna/cli@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fcli/-/cli-3.0.0-beta.10.tgz#336ac4e9d1cdb5b643e7babaa39650e067ffcd5c"
+"@lerna/cli@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fcli/-/cli-3.0.0-beta.13.tgz#fb4bcfd6d17e1a8b78877566fe110d08034af04d"
   dependencies:
-    "@lerna/add" "^3.0.0-beta.10"
-    "@lerna/bootstrap" "^3.0.0-beta.10"
-    "@lerna/changed" "^3.0.0-beta.10"
-    "@lerna/clean" "^3.0.0-beta.10"
-    "@lerna/create" "^3.0.0-beta.10"
-    "@lerna/diff" "^3.0.0-beta.10"
-    "@lerna/exec" "^3.0.0-beta.10"
-    "@lerna/global-options" "^3.0.0-beta.3"
-    "@lerna/import" "^3.0.0-beta.10"
-    "@lerna/init" "^3.0.0-beta.10"
-    "@lerna/link" "^3.0.0-beta.10"
-    "@lerna/list" "^3.0.0-beta.10"
-    "@lerna/publish" "^3.0.0-beta.10"
-    "@lerna/run" "^3.0.0-beta.10"
+    "@lerna/add" "^3.0.0-beta.13"
+    "@lerna/bootstrap" "^3.0.0-beta.13"
+    "@lerna/changed" "^3.0.0-beta.13"
+    "@lerna/clean" "^3.0.0-beta.13"
+    "@lerna/create" "^3.0.0-beta.13"
+    "@lerna/diff" "^3.0.0-beta.13"
+    "@lerna/exec" "^3.0.0-beta.13"
+    "@lerna/global-options" "^3.0.0-beta.13"
+    "@lerna/import" "^3.0.0-beta.13"
+    "@lerna/init" "^3.0.0-beta.13"
+    "@lerna/link" "^3.0.0-beta.13"
+    "@lerna/list" "^3.0.0-beta.13"
+    "@lerna/publish" "^3.0.0-beta.13"
+    "@lerna/run" "^3.0.0-beta.13"
     dedent "^0.7.0"
     is-ci "^1.0.10"
     npmlog "^4.1.2"
     yargs "^11.0.0"
 
-"@lerna/collect-packages@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fcollect-packages/-/collect-packages-3.0.0-beta.10.tgz#e88914ea1678e93549886272d90b2e72c3438ee6"
+"@lerna/collect-packages@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fcollect-packages/-/collect-packages-3.0.0-beta.12.tgz#ee4912b7f328b198c420a163f5a1644e800228ba"
   dependencies:
-    "@lerna/package" "^3.0.0-beta.0"
+    "@lerna/package" "^3.0.0-beta.12"
     "@lerna/validation-error" "^3.0.0-beta.10"
     globby "^8.0.1"
     load-json-file "^4.0.0"
     p-map "^1.2.0"
 
-"@lerna/collect-updates@^3.0.0-beta.9":
-  version "3.0.0-beta.9"
-  resolved "https://npm.middleout.com/@lerna%2fcollect-updates/-/collect-updates-3.0.0-beta.9.tgz#e82025ea3f8ec55a0cdccc9c6669969ba96dd662"
+"@lerna/collect-updates@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fcollect-updates/-/collect-updates-3.0.0-beta.13.tgz#a73c9f7372086e183468c1f67a9c7ccfe225cd67"
   dependencies:
-    "@lerna/git-utils" "^3.0.0-beta.9"
+    "@lerna/git-utils" "^3.0.0-beta.13"
     minimatch "^3.0.4"
     semver "^5.5.0"
 
-"@lerna/command@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fcommand/-/command-3.0.0-beta.10.tgz#45f88bc5d8d9da66c8f8415fc591991b590a4cda"
+"@lerna/command@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fcommand/-/command-3.0.0-beta.13.tgz#aed7a051b222e4df22a265d526abab289f8db12a"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
-    "@lerna/collect-packages" "^3.0.0-beta.10"
-    "@lerna/collect-updates" "^3.0.0-beta.9"
+    "@lerna/child-process" "^3.0.0-beta.13"
+    "@lerna/collect-packages" "^3.0.0-beta.12"
+    "@lerna/collect-updates" "^3.0.0-beta.13"
     "@lerna/filter-packages" "^3.0.0-beta.10"
-    "@lerna/git-utils" "^3.0.0-beta.9"
-    "@lerna/package-graph" "^3.0.0-beta.1"
-    "@lerna/project" "^3.0.0-beta.10"
+    "@lerna/git-utils" "^3.0.0-beta.13"
+    "@lerna/package-graph" "^3.0.0-beta.11"
+    "@lerna/project" "^3.0.0-beta.12"
     "@lerna/validation-error" "^3.0.0-beta.10"
     "@lerna/write-log-file" "^3.0.0-beta.0"
     dedent "^0.7.0"
@@ -752,13 +752,13 @@
     fs-extra "^5.0.0"
     npmlog "^4.1.2"
 
-"@lerna/create@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fcreate/-/create-3.0.0-beta.10.tgz#87a3a5359b8a3e1cd9efd4db644c0ebd8db79552"
+"@lerna/create@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fcreate/-/create-3.0.0-beta.13.tgz#7067c01058fd2ec5cf85d6fb7a7113f7bd2d1db9"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
-    "@lerna/command" "^3.0.0-beta.10"
-    "@lerna/npm-conf" "^3.0.0-beta.8"
+    "@lerna/child-process" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
+    "@lerna/npm-conf" "^3.0.0-beta.12"
     "@lerna/validation-error" "^3.0.0-beta.10"
     camelcase "^4.1.0"
     dedent "^0.7.0"
@@ -772,22 +772,22 @@
     validate-npm-package-license "^3.0.3"
     validate-npm-package-name "^3.0.0"
 
-"@lerna/diff@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fdiff/-/diff-3.0.0-beta.10.tgz#63c47b8e8aec01d7f87097ba8569c8a1c9c68e7c"
+"@lerna/diff@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fdiff/-/diff-3.0.0-beta.13.tgz#84de0151f86bcc90fa60b7e9a7569435bfdefc78"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
-    "@lerna/command" "^3.0.0-beta.10"
-    "@lerna/git-utils" "^3.0.0-beta.9"
+    "@lerna/child-process" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
+    "@lerna/git-utils" "^3.0.0-beta.13"
     "@lerna/validation-error" "^3.0.0-beta.10"
 
-"@lerna/exec@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fexec/-/exec-3.0.0-beta.10.tgz#f0913c5ea493de8bf2434c5e4311c434d22d263b"
+"@lerna/exec@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fexec/-/exec-3.0.0-beta.13.tgz#c4670dc4d012de24904ea6bc0d8d21ce4133fff0"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.10"
-    "@lerna/child-process" "^3.0.0-beta.0"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-beta.11"
+    "@lerna/child-process" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
     "@lerna/run-parallel-batches" "^3.0.0-beta.0"
     "@lerna/validation-error" "^3.0.0-beta.10"
@@ -812,81 +812,80 @@
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/git-utils@^3.0.0-beta.9":
-  version "3.0.0-beta.9"
-  resolved "https://npm.middleout.com/@lerna%2fgit-utils/-/git-utils-3.0.0-beta.9.tgz#a9736476faee06a258105b8e5578443d68d23ecb"
+"@lerna/git-utils@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fgit-utils/-/git-utils-3.0.0-beta.13.tgz#e74b2ccd65fdaf930cfd9972f68ecd0a6be1d3d2"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     npmlog "^4.1.2"
     slash "^1.0.0"
     temp-write "^3.4.0"
 
-"@lerna/global-options@^3.0.0-beta.3":
-  version "3.0.0-beta.3"
-  resolved "https://npm.middleout.com/@lerna%2fglobal-options/-/global-options-3.0.0-beta.3.tgz#6154cfb08e6a8ad88f9ab4c67624aec76417fdea"
+"@lerna/global-options@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fglobal-options/-/global-options-3.0.0-beta.13.tgz#4ca84443056f0dce3f4a55528ad5345237675f3a"
 
-"@lerna/import@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fimport/-/import-3.0.0-beta.10.tgz#1106423aa13f327b7cbb27ccf248cb07e2596ff8"
+"@lerna/import@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fimport/-/import-3.0.0-beta.13.tgz#d4a6a78f00a05b7be4200b6036c4c2bc47122de8"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
-    "@lerna/command" "^3.0.0-beta.10"
-    "@lerna/git-utils" "^3.0.0-beta.9"
+    "@lerna/child-process" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
+    "@lerna/git-utils" "^3.0.0-beta.13"
     "@lerna/prompt" "^3.0.0-beta.0"
     "@lerna/validation-error" "^3.0.0-beta.10"
     dedent "^0.7.0"
     fs-extra "^5.0.0"
     p-map-series "^1.0.0"
 
-"@lerna/init@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2finit/-/init-3.0.0-beta.10.tgz#ff7969d1100a296c188586fde9dbae5ae21670fd"
+"@lerna/init@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2finit/-/init-3.0.0-beta.13.tgz#186a214b7fcdda92d6952d47d5476fbcc9f98e13"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.10"
-    "@lerna/git-utils" "^3.0.0-beta.9"
+    "@lerna/command" "^3.0.0-beta.13"
+    "@lerna/git-utils" "^3.0.0-beta.13"
     fs-extra "^5.0.0"
     p-map "^1.2.0"
     write-json-file "^2.3.0"
-    write-pkg "^3.1.0"
 
-"@lerna/link@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2flink/-/link-3.0.0-beta.10.tgz#7bf7a4807b96fa62b8fcfd594dcec0a7481336f0"
+"@lerna/link@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2flink/-/link-3.0.0-beta.13.tgz#fc4f174a7ae997cef77c75c636b8ac51c64f4c6e"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.10"
-    "@lerna/package-graph" "^3.0.0-beta.1"
-    "@lerna/symlink-dependencies" "^3.0.0-beta.2"
+    "@lerna/command" "^3.0.0-beta.13"
+    "@lerna/package-graph" "^3.0.0-beta.11"
+    "@lerna/symlink-dependencies" "^3.0.0-beta.12"
 
-"@lerna/list@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2flist/-/list-3.0.0-beta.10.tgz#acf93c89f4d82a540f875f4bf5b584ea37d9db48"
+"@lerna/list@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2flist/-/list-3.0.0-beta.13.tgz#0fe37a2ec065021790f7a07d6591006feec99490"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
     "@lerna/output" "^3.0.0-beta.0"
     chalk "^2.3.1"
     columnify "^1.5.4"
 
-"@lerna/npm-conf@^3.0.0-beta.8":
-  version "3.0.0-beta.8"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-conf/-/npm-conf-3.0.0-beta.8.tgz#bca95bafaf0cd731ead3244bf8a00c33479994a9"
+"@lerna/npm-conf@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-conf/-/npm-conf-3.0.0-beta.12.tgz#ff684c4a7e3b7bff804fb1eb38decd0fc26580f2"
   dependencies:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
-"@lerna/npm-dist-tag@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-dist-tag/-/npm-dist-tag-3.0.0-beta.0.tgz#62240163bfca29c78dbed30a179f5b06b992998e"
+"@lerna/npm-dist-tag@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-dist-tag/-/npm-dist-tag-3.0.0-beta.13.tgz#29c41a082c816125f6e8233feca879b62124f119"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     "@lerna/get-npm-exec-opts" "^3.0.0-beta.0"
     npmlog "^4.1.2"
 
-"@lerna/npm-install@^3.0.0-beta.3":
-  version "3.0.0-beta.3"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-install/-/npm-install-3.0.0-beta.3.tgz#3182ee998f9a2e15864519c8138d0e1007d4c14e"
+"@lerna/npm-install@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-install/-/npm-install-3.0.0-beta.13.tgz#cdb86d52a70b2cf922bbf9b6d4819cd7fcf3ac5a"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     "@lerna/get-npm-exec-opts" "^3.0.0-beta.0"
     fs-extra "^5.0.0"
     npm-package-arg "^6.0.0"
@@ -894,19 +893,19 @@
     signal-exit "^3.0.2"
     write-pkg "^3.1.0"
 
-"@lerna/npm-publish@^3.0.0-beta.1":
-  version "3.0.0-beta.1"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-publish/-/npm-publish-3.0.0-beta.1.tgz#a6867eb48f691cfbda7f0fd7d520e3bd3ead5748"
+"@lerna/npm-publish@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-publish/-/npm-publish-3.0.0-beta.13.tgz#c3ac5e25f320feecbb77eca622bee2a9c90afe60"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     "@lerna/get-npm-exec-opts" "^3.0.0-beta.0"
     npmlog "^4.1.2"
 
-"@lerna/npm-run-script@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-run-script/-/npm-run-script-3.0.0-beta.0.tgz#61cc139e2b915c7b6c5da17cfa9b59d15f57a522"
+"@lerna/npm-run-script@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-run-script/-/npm-run-script-3.0.0-beta.13.tgz#b249f67014197922971083432757fe473e533529"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     "@lerna/get-npm-exec-opts" "^3.0.0-beta.0"
     npmlog "^4.1.2"
 
@@ -916,24 +915,25 @@
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/package-graph@^3.0.0-beta.1":
-  version "3.0.0-beta.1"
-  resolved "https://npm.middleout.com/@lerna%2fpackage-graph/-/package-graph-3.0.0-beta.1.tgz#4e21fc0288eb3f3ce6e1855913cd2a1bfa311278"
+"@lerna/package-graph@^3.0.0-beta.11":
+  version "3.0.0-beta.11"
+  resolved "https://npm.middleout.com/@lerna%2fpackage-graph/-/package-graph-3.0.0-beta.11.tgz#aba45380a0cf94fb6901e1e568ede6ecd4d19d0a"
   dependencies:
     npm-package-arg "^6.0.0"
     semver "^5.5.0"
 
-"@lerna/package@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fpackage/-/package-3.0.0-beta.0.tgz#69cf8233cf5e405db5d5aaec6960b408543b6a14"
+"@lerna/package@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fpackage/-/package-3.0.0-beta.12.tgz#810ebb0b265eac7dd6e9e4139c46cee0183166f4"
   dependencies:
     npm-package-arg "^6.0.0"
+    write-pkg "^3.1.0"
 
-"@lerna/project@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fproject/-/project-3.0.0-beta.10.tgz#4ea50e22a3e2eb2295a349a4680ee2458498a44e"
+"@lerna/project@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fproject/-/project-3.0.0-beta.12.tgz#38a5160fe6b42407092a70c2dc96e4ba941fc3b7"
   dependencies:
-    "@lerna/package" "^3.0.0-beta.0"
+    "@lerna/package" "^3.0.0-beta.12"
     "@lerna/validation-error" "^3.0.0-beta.10"
     cosmiconfig "^4.0.0"
     dedent "^0.7.0"
@@ -950,18 +950,18 @@
     inquirer "^5.1.0"
     npmlog "^4.1.2"
 
-"@lerna/publish@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fpublish/-/publish-3.0.0-beta.10.tgz#985b0fdeafc0563199ca91293fa8178bd02f043d"
+"@lerna/publish@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2fpublish/-/publish-3.0.0-beta.13.tgz#2da4a2359aa18b4ab7c5606cdc21905510bbf616"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.10"
-    "@lerna/collect-updates" "^3.0.0-beta.9"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-beta.11"
+    "@lerna/collect-updates" "^3.0.0-beta.13"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/conventional-commits" "^3.0.0-beta.10"
-    "@lerna/git-utils" "^3.0.0-beta.9"
-    "@lerna/npm-conf" "^3.0.0-beta.8"
-    "@lerna/npm-dist-tag" "^3.0.0-beta.0"
-    "@lerna/npm-publish" "^3.0.0-beta.1"
+    "@lerna/git-utils" "^3.0.0-beta.13"
+    "@lerna/npm-conf" "^3.0.0-beta.12"
+    "@lerna/npm-dist-tag" "^3.0.0-beta.13"
+    "@lerna/npm-publish" "^3.0.0-beta.13"
     "@lerna/output" "^3.0.0-beta.0"
     "@lerna/prompt" "^3.0.0-beta.0"
     "@lerna/run-lifecycle" "^3.0.0-beta.0"
@@ -976,7 +976,6 @@
     p-waterfall "^1.0.0"
     semver "^5.5.0"
     write-json-file "^2.3.0"
-    write-pkg "^3.1.0"
 
 "@lerna/resolve-symlink@^3.0.0-beta.0":
   version "3.0.0-beta.0"
@@ -986,11 +985,11 @@
     npmlog "^4.1.2"
     read-cmd-shim "^1.0.1"
 
-"@lerna/rimraf-dir@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://npm.middleout.com/@lerna%2frimraf-dir/-/rimraf-dir-3.0.0-beta.2.tgz#ba9f414bdb72965a4f809274332fab3a350e66f3"
+"@lerna/rimraf-dir@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2frimraf-dir/-/rimraf-dir-3.0.0-beta.13.tgz#28bed318672d7df0444a39cb63c7fa207b3a7727"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-beta.13"
     npmlog "^4.1.2"
     path-exists "^3.0.0"
     rimraf "^2.6.2"
@@ -1009,35 +1008,36 @@
     p-map "^1.2.0"
     p-map-series "^1.0.0"
 
-"@lerna/run@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2frun/-/run-3.0.0-beta.10.tgz#df3b998ba0ac85401ac569e4c4f93985caeea650"
+"@lerna/run@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/@lerna%2frun/-/run-3.0.0-beta.13.tgz#833d5a587ac656d508182f27d17240b5ef33e78a"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.10"
-    "@lerna/command" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-beta.11"
+    "@lerna/command" "^3.0.0-beta.13"
     "@lerna/filter-options" "^3.0.0-beta.9"
-    "@lerna/npm-run-script" "^3.0.0-beta.0"
+    "@lerna/npm-run-script" "^3.0.0-beta.13"
     "@lerna/output" "^3.0.0-beta.0"
     "@lerna/run-parallel-batches" "^3.0.0-beta.0"
+    "@lerna/validation-error" "^3.0.0-beta.10"
     p-map "^1.2.0"
 
-"@lerna/symlink-binary@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://npm.middleout.com/@lerna%2fsymlink-binary/-/symlink-binary-3.0.0-beta.2.tgz#830934cdb913a60666d6893a0d9c42623025b486"
+"@lerna/symlink-binary@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fsymlink-binary/-/symlink-binary-3.0.0-beta.12.tgz#f17ccd3352677065c1319ca7a85f05c9652bf466"
   dependencies:
     "@lerna/create-symlink" "^3.0.0-beta.0"
-    "@lerna/package" "^3.0.0-beta.0"
+    "@lerna/package" "^3.0.0-beta.12"
     fs-extra "^5.0.0"
     p-map "^1.2.0"
     read-pkg "^3.0.0"
 
-"@lerna/symlink-dependencies@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://npm.middleout.com/@lerna%2fsymlink-dependencies/-/symlink-dependencies-3.0.0-beta.2.tgz#0d1318a706f9bca2a7e5c2eeaac5a1057eda3741"
+"@lerna/symlink-dependencies@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://npm.middleout.com/@lerna%2fsymlink-dependencies/-/symlink-dependencies-3.0.0-beta.12.tgz#8f9047e152246758dae2a75b6dcb21d62b13fe48"
   dependencies:
     "@lerna/create-symlink" "^3.0.0-beta.0"
     "@lerna/resolve-symlink" "^3.0.0-beta.0"
-    "@lerna/symlink-binary" "^3.0.0-beta.2"
+    "@lerna/symlink-binary" "^3.0.0-beta.12"
     fs-extra "^5.0.0"
     p-finally "^1.0.0"
     p-map "^1.2.0"
@@ -1133,12 +1133,6 @@ align-text@^0.1.1, align-text@^0.1.3:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://npm.middleout.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
-
-ansi-align@^2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
-  dependencies:
-    string-width "^2.0.0"
 
 ansi-escapes@^1.0.0:
   version "1.4.0"
@@ -1553,18 +1547,6 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-boxen@^1.2.1:
-  version "1.3.0"
-  resolved "https://npm.middleout.com/boxen/-/boxen-1.3.0.tgz#55c6c39a8ba58d9c61ad22cd877532deb665a20b"
-  dependencies:
-    ansi-align "^2.0.0"
-    camelcase "^4.0.0"
-    chalk "^2.0.1"
-    cli-boxes "^1.0.0"
-    string-width "^2.0.0"
-    term-size "^1.2.0"
-    widest-line "^2.0.0"
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://npm.middleout.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1580,7 +1562,7 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
-braces@^2.3.0, braces@^2.3.1:
+braces@^2.3.1:
   version "2.3.1"
   resolved "https://npm.middleout.com/braces/-/braces-2.3.1.tgz#7086c913b4e5a08dbe37ac0ee6a2500c4ba691bb"
   dependencies:
@@ -1608,11 +1590,11 @@ browser-resolve@^1.11.2:
     resolve "1.1.7"
 
 browserslist@^3.0.0:
-  version "3.2.3"
-  resolved "https://npm.middleout.com/browserslist/-/browserslist-3.2.3.tgz#ad36e56a43daeacf4d2b7bb16441b7ac30be4510"
+  version "3.2.4"
+  resolved "https://npm.middleout.com/browserslist/-/browserslist-3.2.4.tgz#fb9ad70fd09875137ae943a31ab815ed76896031"
   dependencies:
-    caniuse-lite "^1.0.30000819"
-    electron-to-chromium "^1.3.40"
+    caniuse-lite "^1.0.30000821"
+    electron-to-chromium "^1.3.41"
 
 bser@^2.0.0:
   version "2.0.0"
@@ -1691,11 +1673,11 @@ camelcase@^2.0.0:
   version "2.1.1"
   resolved "https://npm.middleout.com/camelcase/-/camelcase-2.1.1.tgz#7c1d16d679a1bbe59ca02cacecfb011e201f5a1f"
 
-camelcase@^4.0.0, camelcase@^4.1.0:
+camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://npm.middleout.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-caniuse-lite@^1.0.30000819:
+caniuse-lite@^1.0.30000821:
   version "1.0.30000821"
   resolved "https://npm.middleout.com/caniuse-lite/-/caniuse-lite-1.0.30000821.tgz#0f3223f1e048ed96451c56ca6cf197058c42cb93"
 
@@ -1758,24 +1740,6 @@ chokidar@^1.6.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
-chokidar@^2.0.2:
-  version "2.0.3"
-  resolved "https://npm.middleout.com/chokidar/-/chokidar-2.0.3.tgz#dcbd4f6cbb2a55b4799ba8a840ac527e5f4b1176"
-  dependencies:
-    anymatch "^2.0.0"
-    async-each "^1.0.0"
-    braces "^2.3.0"
-    glob-parent "^3.1.0"
-    inherits "^2.0.1"
-    is-binary-path "^1.0.0"
-    is-glob "^4.0.0"
-    normalize-path "^2.1.1"
-    path-is-absolute "^1.0.0"
-    readdirp "^2.0.0"
-    upath "^1.0.0"
-  optionalDependencies:
-    fsevents "^1.1.2"
-
 ci-info@^1.0.0:
   version "1.1.3"
   resolved "https://npm.middleout.com/ci-info/-/ci-info-1.1.3.tgz#710193264bb05c77b8c90d02f5aaf22216a667b2"
@@ -1792,10 +1756,6 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
-
-cli-boxes@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
 
 cli-cursor@^1.0.2:
   version "1.0.2"
@@ -1931,17 +1891,6 @@ config-chain@^1.1.11:
   dependencies:
     ini "^1.3.4"
     proto-list "~1.2.1"
-
-configstore@^3.0.0:
-  version "3.1.2"
-  resolved "https://npm.middleout.com/configstore/-/configstore-3.1.2.tgz#c6f25defaeef26df12dd33414b001fe81a543f8f"
-  dependencies:
-    dot-prop "^4.1.0"
-    graceful-fs "^4.1.2"
-    make-dir "^1.0.0"
-    unique-string "^1.0.0"
-    write-file-atomic "^2.0.0"
-    xdg-basedir "^3.0.0"
 
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
@@ -2088,10 +2037,6 @@ cryptiles@3.x.x:
   resolved "https://npm.middleout.com/cryptiles/-/cryptiles-3.1.2.tgz#a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe"
   dependencies:
     boom "5.x.x"
-
-crypto-random-string@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
 
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.2"
@@ -2292,17 +2237,11 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
-dot-prop@^4.1.0:
-  version "4.2.0"
-  resolved "https://npm.middleout.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
-  dependencies:
-    is-obj "^1.0.0"
-
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://npm.middleout.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
 
-duplexer@^0.1.1, duplexer@~0.1.1:
+duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://npm.middleout.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
@@ -2312,7 +2251,7 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
-electron-to-chromium@^1.3.40:
+electron-to-chromium@^1.3.41:
   version "1.3.41"
   resolved "https://npm.middleout.com/electron-to-chromium/-/electron-to-chromium-1.3.41.tgz#7e33643e00cd85edfd17e04194f6d00e73737235"
 
@@ -2472,18 +2411,6 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
 esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://npm.middleout.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
-
-event-stream@~3.3.0:
-  version "3.3.4"
-  resolved "https://npm.middleout.com/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
-  dependencies:
-    duplexer "~0.1.1"
-    from "~0"
-    map-stream "~0.1.0"
-    pause-stream "0.0.11"
-    split "0.3"
-    stream-combiner "~0.0.4"
-    through "~2.3.1"
 
 exec-sh@^0.2.0:
   version "0.2.1"
@@ -2773,10 +2700,6 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-from@~0:
-  version "0.1.7"
-  resolved "https://npm.middleout.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
-
 fs-extra@^5.0.0:
   version "5.0.0"
   resolved "https://npm.middleout.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
@@ -2793,7 +2716,7 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fsevents@^1.0.0, fsevents@^1.1.1, fsevents@^1.1.2:
+fsevents@^1.0.0, fsevents@^1.1.1:
   version "1.1.3"
   resolved "https://npm.middleout.com/fsevents/-/fsevents-1.1.3.tgz#11f82318f5fe7bb2cd22965a108e9306208216d8"
   dependencies:
@@ -2954,12 +2877,6 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2:
     minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
-
-global-dirs@^0.1.0:
-  version "0.1.1"
-  resolved "https://npm.middleout.com/global-dirs/-/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
-  dependencies:
-    ini "^1.3.4"
 
 globals@^11.0.1, globals@^11.1.0:
   version "11.4.0"
@@ -3188,17 +3105,9 @@ iconv-lite@0.4.19, iconv-lite@^0.4.17, iconv-lite@^0.4.18, iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://npm.middleout.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-ignore-by-default@^1.0.1:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/ignore-by-default/-/ignore-by-default-1.0.1.tgz#48ca6d72f6c6a3af00a9ad4ae6876be3889e2b09"
-
 ignore@^3.3.3, ignore@^3.3.5:
   version "3.3.7"
   resolved "https://npm.middleout.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
-
-import-lazy@^2.1.0:
-  version "2.1.0"
-  resolved "https://npm.middleout.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
 
 import-local@^1.0.0:
   version "1.0.0"
@@ -3440,17 +3349,6 @@ is-glob@^4.0.0:
   dependencies:
     is-extglob "^2.1.1"
 
-is-installed-globally@^0.1.0:
-  version "0.1.0"
-  resolved "https://npm.middleout.com/is-installed-globally/-/is-installed-globally-0.1.0.tgz#0dfd98f5a9111716dd535dda6492f67bf3d25a80"
-  dependencies:
-    global-dirs "^0.1.0"
-    is-path-inside "^1.0.0"
-
-is-npm@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
-
 is-number@^2.1.0:
   version "2.1.0"
   resolved "https://npm.middleout.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
@@ -3591,7 +3489,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://npm.middleout.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
+isomorphic-fetch@^2.1.1:
   version "2.2.1"
   resolved "https://npm.middleout.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   dependencies:
@@ -3998,8 +3896,8 @@ jsesc@~0.5.0:
   resolved "https://npm.middleout.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
 
 json-parse-better-errors@^1.0.1:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/json-parse-better-errors/-/json-parse-better-errors-1.0.1.tgz#50183cd1b2d25275de069e9e71b467ac9eab973a"
+  version "1.0.2"
+  resolved "https://npm.middleout.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -4076,12 +3974,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://npm.middleout.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-latest-version@^3.0.0:
-  version "3.1.0"
-  resolved "https://npm.middleout.com/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
-  dependencies:
-    package-json "^4.0.0"
-
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://npm.middleout.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
@@ -4096,11 +3988,11 @@ left-pad@^1.2.0:
   version "1.2.0"
   resolved "https://npm.middleout.com/left-pad/-/left-pad-1.2.0.tgz#d30a73c6b8201d8f7d8e7956ba9616087a68e0ee"
 
-lerna@^3.0.0-alpha.1:
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/lerna/-/lerna-3.0.0-beta.10.tgz#43cbcfab7d32a20a8653dfadb7ab9a08dfcf006c"
+lerna@^3.0.0-beta.13:
+  version "3.0.0-beta.13"
+  resolved "https://npm.middleout.com/lerna/-/lerna-3.0.0-beta.13.tgz#5ac9994a1fdf3ba4be482a59cf4ec6ae103e08bb"
   dependencies:
-    "@lerna/cli" "^3.0.0-beta.10"
+    "@lerna/cli" "^3.0.0-beta.13"
     import-local "^1.0.0"
     npmlog "^4.1.2"
 
@@ -4338,10 +4230,6 @@ map-obj@^2.0.0:
   version "2.0.0"
   resolved "https://npm.middleout.com/map-obj/-/map-obj-2.0.0.tgz#a65cd29087a92598b8791257a523e021222ac1f9"
 
-map-stream@~0.1.0:
-  version "0.1.0"
-  resolved "https://npm.middleout.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
-
 map-visit@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
@@ -4494,8 +4382,8 @@ modify-values@^1.0.0:
   resolved "https://npm.middleout.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
 
 moment@^2.6.0:
-  version "2.21.0"
-  resolved "https://npm.middleout.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
+  version "2.22.0"
+  resolved "https://npm.middleout.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
 
 ms@2.0.0:
   version "2.0.0"
@@ -4616,21 +4504,6 @@ node-pre-gyp@^0.6.39:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-nodemon@^1.14.12:
-  version "1.17.2"
-  resolved "https://npm.middleout.com/nodemon/-/nodemon-1.17.2.tgz#17c0062629610e03dd01241c576f1c4068da9fdd"
-  dependencies:
-    chokidar "^2.0.2"
-    debug "^3.1.0"
-    ignore-by-default "^1.0.1"
-    minimatch "^3.0.4"
-    pstree.remy "^1.1.0"
-    semver "^5.5.0"
-    supports-color "^5.2.0"
-    touch "^3.1.0"
-    undefsafe "^2.0.2"
-    update-notifier "^2.3.0"
-
 "nopt@2 || 3":
   version "3.0.6"
   resolved "https://npm.middleout.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -4643,12 +4516,6 @@ nopt@^4.0.1:
   dependencies:
     abbrev "1"
     osenv "^0.1.4"
-
-nopt@~1.0.10:
-  version "1.0.10"
-  resolved "https://npm.middleout.com/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
-  dependencies:
-    abbrev "1"
 
 normalize-package-data@^2.0.0, normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.3.5:
   version "2.4.0"
@@ -4888,7 +4755,7 @@ p-waterfall@^1.0.0:
   dependencies:
     p-reduce "^1.0.0"
 
-package-json@^4.0.0, package-json@^4.0.1:
+package-json@^4.0.1:
   version "4.0.1"
   resolved "https://npm.middleout.com/package-json/-/package-json-4.0.1.tgz#8869a0401253661c4c4ca3da6c2121ed555f5eed"
   dependencies:
@@ -4978,12 +4845,6 @@ path-type@^3.0.0:
   resolved "https://npm.middleout.com/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
   dependencies:
     pify "^3.0.0"
-
-pause-stream@0.0.11:
-  version "0.0.11"
-  resolved "https://npm.middleout.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
-  dependencies:
-    through "~2.3"
 
 performance-now@^0.2.0:
   version "0.2.0"
@@ -5092,21 +4953,9 @@ proto-list@~1.2.1:
   version "1.2.4"
   resolved "https://npm.middleout.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
 
-ps-tree@^1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/ps-tree/-/ps-tree-1.1.0.tgz#b421b24140d6203f1ed3c76996b4427b08e8c014"
-  dependencies:
-    event-stream "~3.3.0"
-
 pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://npm.middleout.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
-
-pstree.remy@^1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/pstree.remy/-/pstree.remy-1.1.0.tgz#f2af27265bd3e5b32bbfcc10e80bac55ba78688b"
-  dependencies:
-    ps-tree "^1.1.0"
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -5156,8 +5005,8 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     strip-json-comments "~2.0.1"
 
 react@^16.2.0:
-  version "16.2.0"
-  resolved "https://npm.middleout.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+  version "16.3.0"
+  resolved "https://npm.middleout.com/react/-/react-16.3.0.tgz#fc5a01c68f91e9b38e92cf83f7b795ebdca8ddff"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -5321,8 +5170,8 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     safe-regex "^1.1.0"
 
 regexpp@^1.0.1:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/regexpp/-/regexpp-1.0.1.tgz#d857c3a741dce075c2848dcb019a0a975b190d43"
+  version "1.1.0"
+  resolved "https://npm.middleout.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
 
 regexpu-core@^4.1.3:
   version "4.1.3"
@@ -5579,13 +5428,7 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://npm.middleout.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semver-diff@^2.0.0:
-  version "2.1.0"
-  resolved "https://npm.middleout.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
-  dependencies:
-    semver "^5.0.3"
-
-"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://npm.middleout.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -5782,12 +5625,6 @@ split2@^2.0.0:
   dependencies:
     through2 "^2.0.2"
 
-split@0.3:
-  version "0.3.3"
-  resolved "https://npm.middleout.com/split/-/split-0.3.3.tgz#cd0eea5e63a211dfff7eb0f091c4133e2d0dd28f"
-  dependencies:
-    through "2"
-
 split@^1.0.0:
   version "1.0.1"
   resolved "https://npm.middleout.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
@@ -5838,12 +5675,6 @@ static-extend@^0.1.1:
 stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://npm.middleout.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
-
-stream-combiner@~0.0.4:
-  version "0.0.4"
-  resolved "https://npm.middleout.com/stream-combiner/-/stream-combiner-0.0.4.tgz#4d5e433c185261dde623ca3f44c586bcf5c4ad14"
-  dependencies:
-    duplexer "~0.1.1"
 
 stream-to-observable@^0.2.0:
   version "0.2.0"
@@ -5955,7 +5786,7 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^5.2.0, supports-color@^5.3.0:
+supports-color@^5.3.0:
   version "5.3.0"
   resolved "https://npm.middleout.com/supports-color/-/supports-color-5.3.0.tgz#5b24ac15db80fa927cf5227a4a33fd3c4c7676c0"
   dependencies:
@@ -6020,12 +5851,6 @@ temp-write@^3.4.0:
     temp-dir "^1.0.0"
     uuid "^3.0.1"
 
-term-size@^1.2.0:
-  version "1.2.0"
-  resolved "https://npm.middleout.com/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
-  dependencies:
-    execa "^0.7.0"
-
 test-exclude@^4.1.1:
   version "4.2.1"
   resolved "https://npm.middleout.com/test-exclude/-/test-exclude-4.2.1.tgz#dfa222f03480bca69207ca728b37d74b45f724fa"
@@ -6055,7 +5880,7 @@ through2@^2.0.0, through2@^2.0.2:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6, through@~2.3, through@~2.3.1:
+through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
   version "2.3.8"
   resolved "https://npm.middleout.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -6106,12 +5931,6 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
-
-touch@^3.1.0:
-  version "3.1.0"
-  resolved "https://npm.middleout.com/touch/-/touch-3.1.0.tgz#fe365f5f75ec9ed4e56825e0bb76d24ab74af83b"
-  dependencies:
-    nopt "~1.0.10"
 
 tough-cookie@>=2.3.3, tough-cookie@^2.3.3, tough-cookie@~2.3.0, tough-cookie@~2.3.3:
   version "2.3.4"
@@ -6195,12 +6014,6 @@ umask@^1.1.0:
   version "1.1.0"
   resolved "https://npm.middleout.com/umask/-/umask-1.1.0.tgz#f29cebf01df517912bb58ff9c4e50fde8e33320d"
 
-undefsafe@^2.0.2:
-  version "2.0.2"
-  resolved "https://npm.middleout.com/undefsafe/-/undefsafe-2.0.2.tgz#225f6b9e0337663e0d8e7cfd686fc2836ccace76"
-  dependencies:
-    debug "^2.2.0"
-
 unicode-canonical-property-names-ecmascript@^1.0.2:
   version "1.0.3"
   resolved "https://npm.middleout.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.3.tgz#f6119f417467593c0086357c85546b6ad5abc583"
@@ -6229,12 +6042,6 @@ union-value@^1.0.0:
     is-extendable "^0.1.1"
     set-value "^0.4.3"
 
-unique-string@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/unique-string/-/unique-string-1.0.0.tgz#9e1057cca851abb93398f8b33ae187b99caec11a"
-  dependencies:
-    crypto-random-string "^1.0.0"
-
 universalify@^0.1.0:
   version "0.1.1"
   resolved "https://npm.middleout.com/universalify/-/universalify-0.1.1.tgz#fa71badd4437af4c148841e3b3b165f9e9e590b7"
@@ -6249,25 +6056,6 @@ unset-value@^1.0.0:
 unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://npm.middleout.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
-
-upath@^1.0.0:
-  version "1.0.4"
-  resolved "https://npm.middleout.com/upath/-/upath-1.0.4.tgz#ee2321ba0a786c50973db043a50b7bcba822361d"
-
-update-notifier@^2.3.0:
-  version "2.4.0"
-  resolved "https://npm.middleout.com/update-notifier/-/update-notifier-2.4.0.tgz#f9b4c700fbfd4ec12c811587258777d563d8c866"
-  dependencies:
-    boxen "^1.2.1"
-    chalk "^2.0.1"
-    configstore "^3.0.0"
-    import-lazy "^2.1.0"
-    is-ci "^1.0.10"
-    is-installed-globally "^0.1.0"
-    is-npm "^1.0.0"
-    latest-version "^3.0.0"
-    semver-diff "^2.0.0"
-    xdg-basedir "^3.0.0"
 
 urix@^0.1.0:
   version "0.1.0"
@@ -6371,8 +6159,8 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
     iconv-lite "0.4.19"
 
 whatwg-fetch@>=0.10.0:
-  version "2.0.3"
-  resolved "https://npm.middleout.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
+  version "2.0.4"
+  resolved "https://npm.middleout.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 whatwg-url@^6.4.0:
   version "6.4.0"
@@ -6397,12 +6185,6 @@ wide-align@^1.1.0:
   resolved "https://npm.middleout.com/wide-align/-/wide-align-1.1.2.tgz#571e0f1b0604636ebc0dfc21b0339bbe31341710"
   dependencies:
     string-width "^1.0.2"
-
-widest-line@^2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/widest-line/-/widest-line-2.0.0.tgz#0142a4e8a243f8882c0233aa0e0281aa76152273"
-  dependencies:
-    string-width "^2.1.1"
 
 window-size@0.1.0:
   version "0.1.0"
@@ -6469,10 +6251,6 @@ ws@^4.0.0:
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
-
-xdg-basedir@^3.0.0:
-  version "3.0.0"
-  resolved "https://npm.middleout.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
 xml-name-validator@^3.0.0:
   version "3.0.0"

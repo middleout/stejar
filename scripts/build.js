@@ -20,5 +20,6 @@ const dirs = getDirectories("./src")
 dirs.forEach(dir => {
     console.log(`Building ${dir} \n--`);
     exec(`babel src/${dir}/src -d src/${dir}/es --ignore tests`);
+    console.info(`Built ${dir} !\n--`);
     console.log(`\n`);
 });

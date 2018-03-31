@@ -1,4 +1,4 @@
-export function authorizationService(storageAdapter) {
+export function AuthorizationService(storageAdapter) {
     return {
         addResource(resource) {
             let resources = storageAdapter.getResources();

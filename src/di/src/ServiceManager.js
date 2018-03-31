@@ -12,7 +12,68 @@ export class ServiceManager {
         this._providersKeys = [];
         this._providersValues = {};
         this._implementsList = {};
+        this._debug = false;
         this.set(ServiceManager, this);
+    }
+
+    _log(msg, ...args) {
+        if (!this._debug) {
+            return;
+        }
+
+        while (args.length > 0) {
+            let arg = args.shift();
+
+            let canStringify = false;
+            try {
+                arg = JSON.stringify(arg);
+                if (arg !== "{}") {
+                    canStringify = true;
+                }
+            } catch (err) {
+                // nothing to do
+            }
+
+            if (!arg || typeof arg === "number" || typeof arg === "string" || typeof arg === "boolean") {
+                arg = typeof arg + " (type based naming)";
+            } else if (
+                arg.constructor &&
+                arg.constructor.name &&
+                arg.constructor.name !== "Function" &&
+                arg.constructor.name !== "Object"
+            ) {
+                arg = arg.constructor.name + " (constructor based naming)";
+            } else if (arg.name && arg.name !== "function") {
+                arg = arg.name + " (name based naming)";
+            } else if (arg.toString && arg.toString() !== "" && arg.toString() !== "[object Object]") {
+                arg = arg.toString() + " (toString() based naming)";
+            } else if (canStringify) {
+                arg = JSON.stringify(arg) + " (JSON.stringify() based naming)";
+            } else {
+                arg = "(Unknown)";
+            }
+            msg = msg.replace("%s", arg);
+        }
+
+        const stack = new Error().stack;
+        console.info("[@stejar - Service Manager]: " + msg, stack);
+        // console.debug(stack);
+    }
+
+    /**
+     * @return {ServiceManager}
+     */
+    enableDebug() {
+        this._debug = true;
+        return this;
+    }
+
+    /**
+     * @return {ServiceManager}
+     */
+    disableDebug() {
+        this._debug = false;
+        return this;
     }
 
     /**
@@ -24,6 +85,7 @@ export class ServiceManager {
      * @returns {ServiceManager}
      */
     setAllowOverride(flag) {
+        this._log("Enabling system override. You can now overwrite definitions in the container");
         this._allowOverride = flag;
         return this;
     }
@@ -50,6 +112,7 @@ export class ServiceManager {
         // finalInstance = () => instance;
         // }
 
+        this._log(`Setting a resource %s to an instance of %s`, resource, instance);
         this._containerKeys.push(resource);
         this._containerValues[this._containerKeys.length - 1] = () => instance;
 
@@ -76,6 +139,8 @@ export class ServiceManager {
         if (!this.has(targetResource)) {
             throw new Error("Resource " + JSON.stringify(targetResource) + " does not exists in the ServiceManager.");
         }
+
+        this._log(`Aliasing a resource %s to the alias of %s`, targetResource, aliasResource);
 
         this._containerKeys.push(aliasResource);
         this._containerValues[this._containerKeys.length - 1] = () => this.get(targetResource);
@@ -120,6 +185,8 @@ export class ServiceManager {
                     `The provider for the class "${r}" must provide *something*. Got "${typeof instance}" instead.`
                 );
             }
+
+            this._log(`Providing %s via provider %s ...`, resourceToProvide, callback);
             this.set(resourceToProvide, instance);
             return instance;
         };
@@ -164,6 +231,8 @@ export class ServiceManager {
      * @returns {*}
      */
     get(resource) {
+        this._log(`Getting %s`, resource);
+
         if (this._containerKeys.includes(resource)) {
             return this._containerValues[this._containerKeys.indexOf(resource)]();
         }
@@ -196,6 +265,7 @@ export class ServiceManager {
      * @returns {*}
      */
     instantiate(resource) {
+        this._log(`Instantiating %s`, resource);
         const args = (Reflect.getMetadata("design:paramtypes", resource) || []).concat(resource.$inject || []);
 
         const dependencies = [];
