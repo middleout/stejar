@@ -3,15 +3,24 @@
 const fs = require("fs");
 const { execSync } = require("child_process");
 const path = require("path");
+const args = process.argv;
+const target = args[2] || "";
 
-const APP_PATH = "./"; // TODO: Change where to create the app
+const APP_PATH = path.resolve(target ? target : "./");
+if (target !== path.resolve("./") && fs.existsSync(APP_PATH)) {
+    throw new Error("Directory already exists: " + APP_PATH);
+}
+
+console.log("Creating stejar app into " + APP_PATH);
+
 const USE_YARN = true;
 const ENABLE_JEST = true;
 const ENABLE_REACT = true;
 const ENABLE_ESLINT = true;
 const ENABLE_STYLELINT = true;
 const ENABLE_PRETTIER = true;
-const ENABLE_HUSKY = true;
+const ENABLE_HUSKY_LINTING = true;
+const ENABLE_LINT_STAGED = true;
 
 let devPackages = [
     "@babel/core",
@@ -48,7 +57,8 @@ let scripts = {
     start: "webpack --mode development --watch --progress --hide-modules",
     build: "webpack --mode production",
 };
-let lintCommands = [];
+let jsLintCommands = [];
+let sassLintCommands = [];
 
 let packageJson = {
     name: "stejar-app",
@@ -73,6 +83,11 @@ let editorConfigFile = fs.readFileSync(path.resolve(__dirname) + "/.editorconfig
 let envFile = fs.readFileSync(path.resolve(__dirname) + "/.env.tpl");
 let webpackConfig = fs.readFileSync(path.resolve(__dirname) + "/webpack.config.js.tpl");
 let gitIgnore = fs.readFileSync(path.resolve(__dirname) + "/.gitignore.tpl");
+
+let lintStagedConfig = {
+    "*.{js,jsx}": [],
+    "*.{scss}": [],
+};
 
 let eslintConfig = {
     extends: ["eslint:recommended", "prettier", "prettier/react"],
@@ -153,7 +168,7 @@ if (ENABLE_REACT) {
 if (ENABLE_PRETTIER) {
     devPackages.push("prettier");
     devPackages.push("eslint-config-prettier");
-    lintCommands.push('node_modules/.bin/prettier --write "src/**/*.{js,jsx,scss}"');
+    jsLintCommands.push('node_modules/.bin/prettier --write "src/**/*.{js,jsx,scss}"');
     packageJson.prettier = {
         printWidth: 120,
         tabWidth: 4,
@@ -175,28 +190,42 @@ if (ENABLE_PRETTIER) {
 if (ENABLE_ESLINT) {
     devPackages.push("babel-eslint");
     devPackages.push("eslint");
-    lintCommands.push('node_modules/.bin/eslint "src/**/*.{js,jsx}"');
+    jsLintCommands.push('node_modules/.bin/eslint "src/**/*.{js,jsx}"');
     packageJson.eslintConfig = eslintConfig;
 }
 
 if (ENABLE_STYLELINT) {
     devPackages.push("stylelint");
     devPackages.push("stylelint-config-standard");
-    lintCommands.push('node_modules/.bin/stylelint "src/**/*.scss"');
+    sassLintCommands.push('node_modules/.bin/stylelint "src/**/*.scss"');
     packageJson.styleLint = styleLintConfig;
 }
 
 if (ENABLE_PRETTIER || ENABLE_ESLINT || ENABLE_STYLELINT) {
-    scripts.lint = lintCommands.join(" && ");
+    scripts.lint = jsLintCommands.concat(sassLintCommands).join(" && ");
 }
 
-if (ENABLE_HUSKY) {
-    scripts.precommit = "yarn lint";
+if (ENABLE_HUSKY_LINTING) {
     devPackages.push("husky");
+
+    lintStagedConfig["*.{js,jsx}"] = jsLintCommands;
+    lintStagedConfig["*.{scss}"].push(sassLintCommands);
+    lintStagedConfig["*.{js,jsx}"].push("git add");
+    lintStagedConfig["*.{scss}"].push("git add");
+
+    packageJson["lint-staged"] = lintStagedConfig;
+
+    if (ENABLE_LINT_STAGED) {
+        scripts.precommit = "lint-staged";
+        devPackages.push("lint-staged");
+    } else {
+        scripts.precommit = "yarn lint";
+    }
 }
 
 packageJson.scripts = scripts;
 
+console.log("Setting up filesystem...");
 if (!fs.existsSync(APP_PATH)) {
     fs.mkdirSync(APP_PATH);
 }
@@ -217,12 +246,17 @@ devPackages = devPackages.join(" ");
 packages = packages.join(" ");
 
 if (USE_YARN) {
+    console.log("Installing dev packages: " + devPackages);
     execSync(`yarn add ${devPackages} --dev`, { cwd: APP_PATH });
+    console.log("Installing packages: " + packages);
     execSync(`yarn add ${packages}`, { cwd: APP_PATH });
 } else {
+    console.log("Installing dev packages: " + devPackages);
     execSync(`npm install ${devPackages} --dev`, { cwd: APP_PATH });
+    console.log("Installing packages: " + packages);
     execSync(`npm install ${packages}`, { cwd: APP_PATH });
 }
+
 execSync(`npx sort-package-json`, { cwd: APP_PATH });
 
-console.log("DONE !");
+console.log("Done ! Build an awesome Stejar ! :)");
