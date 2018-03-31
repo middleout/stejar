@@ -1,26 +1,107 @@
 #!/usr/bin/env node
 
+const chalk = require("chalk");
+const program = require("commander");
 const fs = require("fs");
 const { execSync } = require("child_process");
 const path = require("path");
-const args = process.argv;
-const target = args[2] || "";
+let APP_PATH = undefined;
+let USE_YARN = true;
+let ENABLE_JEST = true;
+let ENABLE_REACT = true;
+let ENABLE_ESLINT = true;
+let ENABLE_STYLELINT = true;
+let ENABLE_PRETTIER = true;
+let ENABLE_HUSKY_LINTING = true;
+let ENABLE_LINT_STAGED = true;
 
-const APP_PATH = path.resolve(target ? target : "./");
-if (target !== path.resolve("./") && fs.existsSync(APP_PATH)) {
-    throw new Error("Directory already exists: " + APP_PATH);
+program
+    .version(require("./../package.json").version)
+    .arguments("<project-directory>")
+    .usage(`${chalk.green("<project-directory>")} [options]`)
+    .action(name => (APP_PATH = name))
+    .option("--version", "Show version")
+    .option("-v, --verbose", "Show additional logs")
+    .option("--use-npm", "Use NPM client")
+    .option("--no-jest", "Disable JEST testing")
+    .option("--no-react", "Disable all react related items")
+    .option("--no-eslint", "Disable all eslint related items")
+    .option("--no-stylelint", "Disable all stylelint related items")
+    .option("--no-prettier", "Disable all prettier related items")
+    .option("--no-husky", "Disable all husky related items")
+    .option("--no-lint-staged", "Disable all lint-staged related items")
+    .on("--help", () => {
+        console.log(`    Only ${chalk.green("<project-directory>")} is required.`);
+        console.log();
+    })
+    .parse(process.argv);
+
+if (typeof APP_PATH === "undefined") {
+    console.error("Please specify the project directory:");
+    console.log(`  ${chalk.cyan(program.name())} ${chalk.green("<project-directory>")}`);
+    console.log();
+    console.log("For example:");
+    console.log(`  ${chalk.cyan(program.name())} ${chalk.green("my-stejar-app")}`);
+    console.log();
+    console.log(`Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`);
+    process.exit(1);
 }
 
-console.log("Creating stejar app into " + APP_PATH);
+if (program.useNpm) {
+    USE_YARN = false;
+}
+if (!program.jest) {
+    ENABLE_JEST = false;
+}
+if (!program.react) {
+    ENABLE_REACT = false;
+}
+if (!program.eslint) {
+    ENABLE_ESLINT = false;
+}
+if (!program.stylelint) {
+    ENABLE_STYLELINT = false;
+}
+if (!program.prettier) {
+    ENABLE_PRETTIER = false;
+}
+if (!program.husky) {
+    ENABLE_HUSKY_LINTING = false;
+}
+if (!program.lintStaged) {
+    ENABLE_LINT_STAGED = false;
+}
 
-const USE_YARN = true;
-const ENABLE_JEST = true;
-const ENABLE_REACT = true;
-const ENABLE_ESLINT = true;
-const ENABLE_STYLELINT = true;
-const ENABLE_PRETTIER = true;
-const ENABLE_HUSKY_LINTING = true;
-const ENABLE_LINT_STAGED = true;
+if (USE_YARN) {
+    console.debug("[DEBUG] Using YARN client...");
+} else {
+    console.debug("[DEBUG] Using NPM client...");
+}
+if (!ENABLE_JEST) {
+    console.debug("[DEBUG] Will not install Jest...");
+}
+if (!ENABLE_REACT) {
+    console.debug("[DEBUG] Will not install React...");
+}
+if (!ENABLE_ESLINT) {
+    console.debug("[DEBUG] Will not install Eslint...");
+}
+if (!ENABLE_STYLELINT) {
+    console.debug("[DEBUG] Will not install Stylelint...");
+}
+if (!ENABLE_PRETTIER) {
+    console.debug("[DEBUG] Will not install Prettier...");
+}
+if (!ENABLE_HUSKY_LINTING) {
+    console.debug("[DEBUG] Will not install Husky...");
+}
+if (!ENABLE_LINT_STAGED) {
+    console.debug("[DEBUG] Will not install Lint Staged...");
+}
+
+console.log("");
+console.log("--- Creating stejar app into " + APP_PATH + " ---");
+console.log("");
 
 let devPackages = [
     "@babel/core",
@@ -112,11 +193,9 @@ let eslintConfig = {
 };
 
 let styleLintConfig = {
-    stylelint: {
-        extends: "stylelint-config-standard",
-        rules: {
-            indentation: 4,
-        },
+    extends: "stylelint-config-standard",
+    rules: {
+        indentation: 4,
     },
 };
 
@@ -168,7 +247,7 @@ if (ENABLE_REACT) {
 if (ENABLE_PRETTIER) {
     devPackages.push("prettier");
     devPackages.push("eslint-config-prettier");
-    jsLintCommands.push('node_modules/.bin/prettier --write "src/**/*.{js,jsx,scss}"');
+    jsLintCommands.push('node_modules/.bin/prettier --write "src/**/*.{js,jsx}"');
     packageJson.prettier = {
         printWidth: 120,
         tabWidth: 4,
@@ -198,7 +277,7 @@ if (ENABLE_STYLELINT) {
     devPackages.push("stylelint");
     devPackages.push("stylelint-config-standard");
     sassLintCommands.push('node_modules/.bin/stylelint "src/**/*.scss"');
-    packageJson.styleLint = styleLintConfig;
+    packageJson.stylelint = styleLintConfig;
 }
 
 if (ENABLE_PRETTIER || ENABLE_ESLINT || ENABLE_STYLELINT) {
@@ -241,22 +320,29 @@ fs.writeFileSync(`${APP_PATH}/.gitignore`, gitIgnore);
 fs.writeFileSync(`${APP_PATH}/.env`, envFile);
 fs.writeFileSync(`${APP_PATH}/.env.dist`, envFile);
 fs.writeFileSync(`${APP_PATH}/webpack.config.js`, webpackConfig);
+console.log("Done !");
+console.log("");
 
 devPackages = devPackages.join(" ");
 packages = packages.join(" ");
 
 if (USE_YARN) {
-    console.log("Installing dev packages: " + devPackages);
+    console.log("Installing dev packages ... This might take a while ... ");
     execSync(`yarn add ${devPackages} --dev`, { cwd: APP_PATH });
-    console.log("Installing packages: " + packages);
+    console.log("Done !");
+    console.log("");
+    console.log("Installing packages ...");
+    console.log("Done !");
+    console.log("");
     execSync(`yarn add ${packages}`, { cwd: APP_PATH });
 } else {
-    console.log("Installing dev packages: " + devPackages);
+    console.log("Installing dev packages ... This might take a while ... ");
     execSync(`npm install ${devPackages} --dev`, { cwd: APP_PATH });
-    console.log("Installing packages: " + packages);
+    console.log("Installing packages ...");
     execSync(`npm install ${packages}`, { cwd: APP_PATH });
 }
 
 execSync(`npx sort-package-json`, { cwd: APP_PATH });
 
-console.log("Done ! Build an awesome Stejar ! :)");
+console.log("");
+console.log("Everything looks good ! Build an awesome Stejar ! :)");

@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl",
-    "version": "4.0.32",
+    "version": "4.0.59",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -10,5 +10,6 @@
     "dependencies": {
         "@stejar/interop": "^4.0.32",
         "sprintf-js": "^1.1.1"
-    }
+    },
+    "gitHead": "881981ee93aa0a22371b8589719a876b724f3c63"
 }
