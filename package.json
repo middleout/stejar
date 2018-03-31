@@ -21,8 +21,8 @@
     "lint-staged": {
         "debug": true,
         "*.{js,jsx}": [
+            "eslint \"src/**/src/*.{js,jsx}\"",
             "prettier --write \"src/**/src/*.{js,jsx}\"",
-            "eslint --quiet \"src/**/src/*.{js,jsx}\"",
             "git add"
         ]
     },
