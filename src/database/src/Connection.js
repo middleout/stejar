@@ -138,7 +138,7 @@ export class Connection {
      * @param bindings
      * @return {Promise<any>}
      */
-    async select(query, bindings) {
+    select(query, bindings) {
         return this._run(query, bindings, (query, bindings) => this._adapter.execute(query, bindings));
     }
 
@@ -147,7 +147,7 @@ export class Connection {
      * @param bindings
      * @return {Promise<*>}
      */
-    async insert(query, bindings) {
+    insert(query, bindings) {
         return this._run(query, bindings, (query, bindings) => this._adapter.execute(query, bindings)).then(
             r => r.insertId // TODO
         );
@@ -158,7 +158,7 @@ export class Connection {
      * @param bindings
      * @return {Promise<boolean>}
      */
-    async update(query, bindings) {
+    update(query, bindings) {
         return this._run(query, bindings, (query, bindings) => this._adapter.execute(query, bindings)).then(
             r => (r.affectedRows > 0 ? true : false) // TODO
         );
@@ -169,7 +169,7 @@ export class Connection {
      * @param bindings
      * @return {Promise<*>}
      */
-    async delete(query, bindings) {
+    delete(query, bindings) {
         return this._run(query, bindings, (query, bindings) => this._adapter.execute(query, bindings)).then(
             r => (r.affectedRows > 0 ? true : false) // TODO
         );
@@ -178,47 +178,52 @@ export class Connection {
     /**
      * @return {Promise<void>}
      */
-    async beginTransaction() {
+    beginTransaction() {
         this._transactionLevel++;
 
         if (this._transactionLevel > 1) {
             return Promise.resolve();
         }
 
-        await this._run("START TRANSACTION", {}, (query, bindings) => this._adapter.query(query, bindings));
+        return this._run("START TRANSACTION", {}, (query, bindings) => this._adapter.query(query, bindings)).then(
+            () => true
+        );
     }
 
     /**
      * @return {Promise<void>}
      */
-    async commitTransaction() {
+    commitTransaction() {
         this._transactionLevel--;
 
         if (this._transactionLevel > 0) {
             return Promise.resolve();
         }
 
-        await this._run("COMMIT", {}, (query, bindings) => this._adapter.query(query, bindings));
+        return this._run("COMMIT", {}, (query, bindings) => this._adapter.query(query, bindings)).then(() => true);
     }
 
     /**
      * @return {Promise<void>}
      */
-    async rollbackTransaction() {
+    rollbackTransaction() {
         this._transactionLevel = 0;
-        await this._run("ROLLBACK", {}, (query, bindings) => this._adapter.query(query, bindings));
+        return this._run("ROLLBACK", {}, (query, bindings) => this._adapter.query(query, bindings)).then(() => true);
     }
 
-    async transaction(callback) {
-        try {
-            await this.beginTransaction();
-            const result = await callback();
-            await this.commitTransaction();
-            return result;
-        } catch (error) {
-            await this.rollbackTransaction();
-            throw error;
-        }
+    /**
+     * @param callback : Function
+     * @return {Promise<void>}
+     */
+    transaction(callback) {
+        return this.beginTransaction()
+            .then(() => callback())
+            .then(result => this.commitTransaction().then(() => result))
+            .catch(error =>
+                this.rollbackTransaction().then(() => {
+                    throw error;
+                })
+            );
     }
 
     /**
@@ -229,18 +234,14 @@ export class Connection {
      * @param callback
      * @private
      */
-    async _run(query, bindings, callback) {
+    _run(query, bindings, callback) {
         const start = (Date.now() % 1000) / 1000;
-        const result = await new Promise((resolve, reject) => {
-            try {
-                resolve(callback(query, bindings));
-            } catch (err) {
-                reject(err);
-            }
-        });
-        this._logQuery(query, bindings, this._getElapsedTime(start));
 
-        return result;
+        return callback(query, bindings).then(result => {
+            this._logQuery(query, bindings, this._getElapsedTime(start));
+
+            return result;
+        });
     }
 
     /**

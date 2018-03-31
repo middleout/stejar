@@ -9,3 +9,5 @@ export function ensureInterop(container) {
 
     return container;
 }
+
+export default ensureInterop;

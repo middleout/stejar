@@ -1,10 +1,6 @@
 import { sprintf } from "sprintf-js";
-import { ensureIntlAdapterInterop, ensureIntlStorageInterop } from "@stejar/interop";
 
-export function intlService(intlAdapter, intlStorageAdapter) {
-    ensureIntlAdapterInterop(intlAdapter);
-    ensureIntlStorageInterop(intlStorageAdapter);
-
+export function IntlService(intlAdapter, intlStorageAdapter) {
     const getCurrentLocale = locale => intlStorageAdapter.getCurrentLocale(locale);
     const isLocaleCodeValid = locale => intlAdapter.isValid(locale);
 
@@ -16,7 +12,7 @@ export function intlService(intlAdapter, intlStorageAdapter) {
             intlStorageAdapter.disableShowMissingTranslations();
         },
         isLocaleCodeValid,
-        async loadLocale(locale, force = false) {
+        loadLocale(locale, force = false) {
             if (!isLocaleCodeValid(locale)) {
                 throw new Error(`"${locale}" is an invalid locale`);
             }
@@ -25,9 +21,10 @@ export function intlService(intlAdapter, intlStorageAdapter) {
                 return intlStorageAdapter.getCatalog(locale);
             }
 
-            const catalog = await intlAdapter.load(locale);
-            intlStorageAdapter.setCatalog(locale, catalog);
-            return catalog;
+            return intlAdapter.load(locale).then(catalog => {
+                intlStorageAdapter.setCatalog(locale, catalog);
+                return catalog;
+            });
         },
         changeLocale(locale) {
             if (!intlStorageAdapter.hasCatalogForLocale(locale)) {

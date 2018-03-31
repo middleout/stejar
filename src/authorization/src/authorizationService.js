@@ -1,7 +1,4 @@
-import { ensureAuthorizationInterop } from "@stejar/interop";
-
 export function authorizationService(storageAdapter) {
-    ensureAuthorizationInterop(storageAdapter);
 
     return {
         addResource(resource) {
@@ -54,7 +51,7 @@ export function authorizationService(storageAdapter) {
 
             return storageAdapter.addRule("deny", role, resource);
         },
-        async isAllowed(role, resource) {
+        isAllowed(role, resource) {
             const resources = storageAdapter.getResources();
             const roles = storageAdapter.getRoles();
             const rules = storageAdapter.getRules();

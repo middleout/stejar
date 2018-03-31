@@ -1,4 +1,4 @@
-export function stdStorage() {
+export function StorageAdapter() {
     let storedIdentity = null;
 
     return {

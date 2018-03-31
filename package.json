@@ -9,6 +9,7 @@
     "scripts": {
         "watch": "node scripts/watch.js",
         "build": "node scripts/build.js",
+        "bootstrap": "lerna bootstrap",
         "publish": "lerna updated && yarn build && yarn test:once && lerna publish --registry $(yarn config get registry) --skip-git",
         "test": "jest --watchAll --no-watchman",
         "test:once": "jest --no-watchman",

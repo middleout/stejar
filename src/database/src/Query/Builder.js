@@ -742,7 +742,7 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async count(column = ["*"]) {
+    count(column = ["*"]) {
         return this.aggregate("count", Array.isArray(column) ? column : [column]);
     }
 
@@ -750,7 +750,7 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async min(column) {
+    min(column) {
         return this.aggregate("min", Array.isArray(column) ? column : [column]);
     }
 
@@ -758,7 +758,7 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async max(column) {
+    max(column) {
         return this.aggregate("max", Array.isArray(column) ? column : [column]);
     }
 
@@ -766,7 +766,7 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async sum(column) {
+    sum(column) {
         return this.aggregate("sum", Array.isArray(column) ? column : [column]);
     }
 
@@ -774,7 +774,7 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async avg(column) {
+    avg(column) {
         return this.aggregate("avg", Array.isArray(column) ? column : [column]);
     }
 
@@ -782,27 +782,27 @@ export class Builder {
      * @param column
      * @returns {Promise<Number>}
      */
-    async average(column) {
+    average(column) {
         return this.avg(column);
     }
 
     /**
      * @param func : string
      * @param columns : Array
-     * @return {number|Null}
+     * @return {Promise<Number|Null>}
      */
-    async aggregate(func, columns = ["*"]) {
+    aggregate(func, columns = ["*"]) {
         const query = this._resetColumns()
             ._resetBindings(["select"])
             ._setAggregate(func, columns);
 
-        const results = await query.get();
+        return query.get().then(results => {
+            if (results.length === 0) {
+                return null;
+            }
 
-        if (results.length === 0) {
-            return null;
-        }
-
-        return results[0].aggregate;
+            return results[0].aggregate;
+        });
     }
 
     /**
@@ -810,16 +810,19 @@ export class Builder {
      *
      * @return {Promise<*>}
      */
-    async get() {
+    get() {
         return this._runSelect();
     }
 
-    async first(id = null) {
+    /**
+     * @param id
+     * @return {Promise<*>}
+     */
+    first(id = null) {
         if (id) {
             this.where(this._identifier, "=", id);
         }
-        const results = await this.get();
-        return results.length > 0 ? results[0] : null;
+        return this.get().then(results => (results.length > 0 ? results[0] : null));
     }
 
     /**
@@ -828,17 +831,17 @@ export class Builder {
      * @param values
      * @return {Promise<*>}
      */
-    async insert(values) {
+    insert(values) {
         // Since every insert gets treated like a batch insert, we will make sure the
         // bindings are structured in a way that is convenient when building these
         // inserts statements by verifying these elements are actually an array.
         if (Array.isArray(values)) {
             if (values.length === 0) {
-                return true;
+                return Promise.resolve(true);
             }
         } else {
             if (Object.keys(values).length === 0) {
-                return true;
+                return Promise.resolve(true);
             }
 
             values = [values];
@@ -861,7 +864,7 @@ export class Builder {
      * @param value
      * @return {Promise<boolean>}
      */
-    async update(values, value = undefined) {
+    update(values, value = undefined) {
         if (value !== undefined) {
             if (typeof values === "object") {
                 throw new Error("Cannot update with object key");
@@ -883,7 +886,7 @@ export class Builder {
      * @param id
      * @return {Promise<*>}
      */
-    async delete(id = null) {
+    delete(id = null) {
         // If an ID is passed to the method, we will set the where clause to check the
         // ID to let developers to simply and quickly remove a single row from this
         // database without manually specifying the "where" clauses on the query.
@@ -981,7 +984,7 @@ export class Builder {
      * @return {Promise<*>}
      * @private
      */
-    async _runSelect() {
+    _runSelect() {
         const sql = this.toSql();
         return this._connection.select(sql, this._getBindings());
     }

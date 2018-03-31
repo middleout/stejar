@@ -1,5 +1,5 @@
 import queryString from "query-string";
-import { ensureContainerInterop } from "@stejar/interop";
+import { ensureInterop } from "@stejar/container-interop";
 import invariant from "invariant";
 import { EventEmitter } from "@stejar/event-emitter";
 import { RouteFactory } from "./RouteFactory";
@@ -19,7 +19,7 @@ export class Router {
         this._isStarted = false;
 
         if (this._serviceManager) {
-            ensureContainerInterop(this._serviceManager);
+            ensureInterop(this._serviceManager);
             this._serviceManager.set(Router, this);
         }
 

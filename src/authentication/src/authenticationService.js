@@ -1,9 +1,4 @@
-import { ensureAuthenticationAdapterInterop, ensureAuthenticationStorageInterop } from "@stejar/interop";
-
-export function authenticationService(authAdapter, storageAdapter) {
-    ensureAuthenticationAdapterInterop(authAdapter);
-    ensureAuthenticationStorageInterop(storageAdapter);
-
+export function AuthenticationService(authAdapter, storageAdapter) {
     return {
         hasIdentity() {
             return !!storageAdapter.getIdentity();
@@ -19,20 +14,23 @@ export function authenticationService(authAdapter, storageAdapter) {
             storageAdapter.clearIdentity(...data);
             return true;
         },
-        async setIdentityFromToken(token) {
-            const identity = await authAdapter.getIdentityFromToken(token);
-            storageAdapter.setIdentity(identity);
-            return identity;
+        setIdentityFromToken(token) {
+            return authAdapter.getIdentityFromToken(token).then(identity => {
+                storageAdapter.setIdentity(identity);
+                return identity;
+            });
         },
-        async login(...data) {
-            const identity = await authAdapter.login(...data);
-            storageAdapter.setIdentity(identity);
-            return identity;
+        login(...data) {
+            return authAdapter.login(...data).then(identity => {
+                storageAdapter.setIdentity(identity);
+                return identity;
+            });
         },
-        async logout(...data) {
-            await authAdapter.logout(...data, storageAdapter.getIdentity());
-            storageAdapter.clearIdentity(...data);
-            return true;
+        logout(...data) {
+            return authAdapter.logout(...data, storageAdapter.getIdentity()).then(() => {
+                storageAdapter.clearIdentity(...data);
+                return true;
+            });
         },
     };
 }

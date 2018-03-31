@@ -14,7 +14,8 @@ export class MySqlAdapter {
             user: config.user,
             password: config.password,
             database: config.db,
-            charset: "utf8",
+            charset: config.charset || "utf8",
+            dateStrings: true
         });
 
         /**
@@ -45,7 +46,7 @@ export class MySqlAdapter {
      * @param bindings
      * @return {Promise<any>}
      */
-    async execute(sql, bindings) {
+    execute(sql, bindings) {
         return new Promise((resolve, reject) => {
             return this.getConnection().execute(sql, bindings, (err, rows) => {
                 if (err) {
@@ -64,7 +65,7 @@ export class MySqlAdapter {
      * @param bindings
      * @return {Promise<any>}
      */
-    async query(sql, bindings) {
+    query(sql, bindings) {
         return new Promise((resolve, reject) => {
             return this.getConnection().query(sql, bindings, (err, rows) => {
                 if (err) {
