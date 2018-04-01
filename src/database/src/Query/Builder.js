@@ -879,13 +879,24 @@ export class Builder {
      * @param id
      * @return {Promise<*>}
      */
-    first(id = null) {
+    first() {
+        return this.get().then(results => (results.length > 0 ? results[0] : null));
+    }
+
+    /**
+     * @param id
+     * @return {Promise<*>}
+     */
+    find(id) {
         let query = this;
 
-        if (id) {
-            query = this.where(this._identifier, "=", id);
+        if (Array.isArray(id)) {
+            query = this.whereIn(this._identifier, id);
+            return query.get();
         }
-        return query.get().then(results => (results.length > 0 ? results[0] : null));
+
+        query = this.where(this._identifier, id);
+        return query.first();
     }
 
     /**

@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-browser",
-    "version": "4.0.59",
+    "version": "4.0.62",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,14 +8,14 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/router": "^4.0.59",
+        "@stejar/router": "^4.0.62",
         "history": "^4.7.2"
     },
     "devDependencies": {
-        "@stejar/router-std-state-adapter": "^4.0.59"
+        "@stejar/router-std-state-adapter": "^4.0.62"
     },
     "peerDependencies": {
         "@stejar/di": "^4.0.1"
     },
-    "gitHead": "881981ee93aa0a22371b8589719a876b724f3c63"
+    "gitHead": "50e0e3e921aea056cd69ab83e457da32e3824e9f"
 }
