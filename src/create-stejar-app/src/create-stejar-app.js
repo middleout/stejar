@@ -166,8 +166,8 @@ let webpackConfig = fs.readFileSync(path.resolve(__dirname) + "/webpack.config.j
 let gitIgnore = fs.readFileSync(path.resolve(__dirname) + "/.gitignore.tpl");
 
 let lintStagedConfig = {
-    "*.{js,jsx}": [],
-    "*.{scss}": [],
+    "src/**/*.{js,jsx}": [],
+    "src/**/*.{scss}": [],
 };
 
 let eslintConfig = {
@@ -287,10 +287,10 @@ if (ENABLE_PRETTIER || ENABLE_ESLINT || ENABLE_STYLELINT) {
 if (ENABLE_HUSKY_LINTING) {
     devPackages.push("husky");
 
-    lintStagedConfig["*.{js,jsx}"] = jsLintCommands;
-    lintStagedConfig["*.{scss}"].push(sassLintCommands);
-    lintStagedConfig["*.{js,jsx}"].push("git add");
-    lintStagedConfig["*.{scss}"].push("git add");
+    lintStagedConfig["src/**/*.{js,jsx}"] = jsLintCommands;
+    lintStagedConfig["src/**/*.scss"].push(sassLintCommands);
+    lintStagedConfig["src/**/*.{js,jsx}"].push("git add");
+    lintStagedConfig["src/**/*.scss"].push("git add");
 
     packageJson["lint-staged"] = lintStagedConfig;
 
