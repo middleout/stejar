@@ -1,8 +1,5 @@
 export function AuthenticationService(authAdapter, storageAdapter) {
     return {
-        hello() {
-            return "world35";
-        },
         hasIdentity() {
             return !!storageAdapter.getIdentity();
         },

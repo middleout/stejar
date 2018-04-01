@@ -44,7 +44,6 @@ export class MySqlGrammar extends Grammar {
             sql += this._compileOrders(query, query.getOrders());
         }
 
-        // TODO
         if (query.getLimit()) {
             sql += " " + this._compileLimit(query, query.getLimit());
         }

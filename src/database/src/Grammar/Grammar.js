@@ -1,4 +1,4 @@
-import { Expression } from "../Expression";
+import { isExpression } from "../Helpers/isExpression";
 
 export class Grammar {
     /**
@@ -17,7 +17,7 @@ export class Grammar {
     }
 
     /**
-     * @param columns : Array<string|Expression>
+     * @param columns : Array<string|*>
      * @return {string}
      */
     columnize(columns) {
@@ -25,7 +25,7 @@ export class Grammar {
     }
 
     /**
-     * @param values : Array<string|Expression>
+     * @param values : Array<string|*>
      * @return {string}
      */
     parameterize(values) {
@@ -33,7 +33,7 @@ export class Grammar {
     }
 
     /**
-     * @param value : Expression|string
+     * @param value : *|string
      * @return {string}
      */
     parameter(value) {
@@ -43,7 +43,7 @@ export class Grammar {
     /**
      * Wrap a value in keyword identifiers.
      *
-     * @param value : string|Expression
+     * @param value : string|*
      * @param prefixAlias : boolean
      * @return {string}
      */
@@ -66,13 +66,13 @@ export class Grammar {
      * @return {boolean}
      */
     isExpression(value) {
-        return value instanceof Expression;
+        return isExpression(value);
     }
 
     /**
      * Get the value of a raw expression.
      *
-     * @param expression : Expression
+     * @param expression : *
      * @return {string}
      */
     getValue(expression) {
@@ -119,7 +119,7 @@ export class Grammar {
     /**
      * Wrap the given value segments.
      *
-     * @param segments : Array<string|Expression>
+     * @param segments : Array<string|*>
      * @return {string}
      * @private
      */
@@ -135,7 +135,7 @@ export class Grammar {
     /**
      * Wrap a table in keyword identifiers.
      *
-     * @param table : string|Expression
+     * @param table : string|*
      * @return {string}
      * @private
      */

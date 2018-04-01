@@ -32,7 +32,7 @@ export class Grammar extends BaseGrammar {
         const original = queryBuilder.getColumns();
 
         if (null === original) {
-            queryBuilder.columns(["*"]);
+            queryBuilder = queryBuilder.columns(["*"]);
         }
 
         // To compile the query, we'll spin through each component of the query and
@@ -60,6 +60,8 @@ export class Grammar extends BaseGrammar {
         if (!Array.isArray(values)) {
             values = [values];
         }
+
+        // We assume the smae columns are in the whole VALUES array
         const columns = this.columnize(Object.keys(values[0]));
 
         const parameters = values.map(record => "(" + this.parameterize(Object.values(record)) + ")").join(", ");

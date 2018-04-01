@@ -1,5 +1,6 @@
 import { Expression } from "../Expression";
 import { Arr } from "../Helpers/Arr";
+import { isExpression } from "../Helpers/isExpression";
 
 export class Builder {
     /**
@@ -26,13 +27,13 @@ export class Builder {
         this._identifier = "id";
 
         /**
-         * @type {null}
+         * @type {null|Array}
          * @private
          */
         this._orders = null;
 
         /**
-         * @type {null}
+         * @type {null|Array}
          * @private
          */
         this._unionOrders = null;
@@ -134,7 +135,7 @@ export class Builder {
         this._columns = null;
 
         /**
-         * @type {undefined|Array<*>}
+         * @type {undefined|*}
          * @private
          */
         this._aggregate = null;
@@ -171,6 +172,47 @@ export class Builder {
     }
 
     /**
+     * @return {Builder}
+     */
+    clone() {
+        const query = new Builder(this._connection, this._grammar);
+        query._identifier = this._identifier;
+        if (this._orders) {
+            query._orders = this._orders.map(item => Object.assign({}, item));
+        }
+        if (this._unionOrders) {
+            query._unionOrders = this._unionOrders.map(item => Object.assign({}, item));
+        }
+        if (this._groups) {
+            query._groups = this._groups.map(item => Object.assign({}, item));
+        }
+        if (this._wheres) {
+            query._wheres = this._wheres.map(item => Object.assign({}, item));
+        }
+        if (this._unions) {
+            query._unions = this._unions.map(item => Object.assign({}, item));
+        }
+        Object.keys(this._bindings).forEach(type => {
+            query._bindings[type] = this._bindings[type].slice();
+        });
+        if (this._columns) {
+            query._columns = this._columns.map(item => item);
+        }
+        if (this._aggregate) {
+            query._aggregate = Object.assign({}, this._aggregate);
+            query._aggregate.columns = query._aggregate.columns.slice();
+        }
+        query._from = this._from;
+        query._distinct = this._distinct;
+        query._offset = this._offset;
+        query._unionOffset = this._unionOffset;
+        query._limit = this._limit;
+        query._unionLimit = this._unionLimit;
+
+        return query;
+    }
+
+    /**
      * @return {Array<*>}
      */
     getColumns() {
@@ -182,12 +224,13 @@ export class Builder {
      * @return {Builder}
      */
     columns(columns) {
-        this._columns = columns;
-        return this;
+        const query = this.clone();
+        query._columns = columns;
+        return query;
     }
 
     /**
-     * @return {Array<*>}
+     * @return {*}
      */
     getAggregate() {
         return this._aggregate;
@@ -200,8 +243,11 @@ export class Builder {
         return this._distinct;
     }
 
+    /**
+     * @return {Array}
+     */
     getOrders() {
-        return null;
+        return this._orders;
     }
 
     /**
@@ -232,9 +278,9 @@ export class Builder {
      * @returns {Builder}
      */
     from(table) {
-        this._from = table;
-
-        return this;
+        const query = this.clone();
+        query._from = table;
+        return query;
     }
 
     /**
@@ -299,13 +345,14 @@ export class Builder {
         }
 
         const type = "Basic";
-        this._wheres.push({ type, column, operator, value, boolean });
+        let query = this.clone();
+        query._wheres.push({ type, column, operator, value, boolean });
 
         if (!(value instanceof Expression)) {
-            this._addBinding(value, "where");
+            query = query._addBinding(value, "where");
         }
 
-        return this;
+        return query;
     }
 
     /**
@@ -352,15 +399,16 @@ export class Builder {
             return this;
         }
 
-        this._wheres.push({ type, column, values, boolean });
+        let query = this.clone();
+        query._wheres.push({ type, column, values, boolean });
 
         values.forEach(value => {
             if (!(value instanceof Expression)) {
-                this._addBinding(value, "where");
+                query = query._addBinding(value, "where");
             }
         });
 
-        return this;
+        return query;
     }
 
     /**
@@ -408,13 +456,14 @@ export class Builder {
     whereNull(column, boolean = "and", not = false) {
         const type = not ? "NotNull" : "Null";
 
-        this._wheres.push({
+        const query = this.clone();
+        query._wheres.push({
             type,
             column,
             boolean,
         });
 
-        return this;
+        return query;
     }
 
     /**
@@ -447,12 +496,12 @@ export class Builder {
      * @return {Builder}}
      */
     whereExists(callback, boolean = "and", not = false) {
-        const query = this._forSubQuery();
+        let query = this._forSubQuery();
 
         // Similar to the sub-select clause, we will create a new query instance so
         // the developer may cleanly specify the entire exists query and we will
         // compile the whole thing in the grammar and insert it into the SQL.
-        callback(query);
+        query = callback(query);
 
         return this._addWhereExistsQuery(query, boolean, not);
     }
@@ -499,10 +548,12 @@ export class Builder {
     _addWhereExistsQuery(query, boolean = "and", not = false) {
         const type = not ? "NotExists" : "Exists";
 
-        this._wheres.push({ type, query, boolean });
-        this._addBinding(query._getBindings(), "where");
+        let clone = this.clone();
 
-        return this;
+        clone._wheres.push({ type, query, boolean });
+        clone = clone._addBinding(query._getBindings(), "where");
+
+        return clone;
     }
 
     /**
@@ -534,19 +585,21 @@ export class Builder {
             direction: direction.toLowerCase() === "asc" ? "asc" : "desc",
         };
 
-        if (this._unions) {
-            if (null === this._unionOrders) {
-                this._unionOrders = [];
+        let clone = this.clone();
+
+        if (clone._unions) {
+            if (null === clone._unionOrders) {
+                clone._unionOrders = [];
             }
-            this._unionOrders.push(item);
+            clone._unionOrders.push(item);
         } else {
-            if (null === this._orders) {
-                this._orders = [];
+            if (null === clone._orders) {
+                clone._orders = [];
             }
-            this._orders.push(item);
+            clone._orders.push(item);
         }
 
-        return this;
+        return clone;
     }
 
     /**
@@ -608,21 +661,23 @@ export class Builder {
      */
     orderByRaw(sql, bindings = []) {
         const type = "Raw";
+        let clone = this.clone();
+
         if (this._unions) {
             if (null === this._unionOrders) {
-                this._unionOrders = [];
+                clone._unionOrders = [];
             }
             this._unionOrders.push({ type, sql });
         } else {
             if (null === this._orders) {
-                this._orders = [];
+                clone._orders = [];
             }
-            this._orders.push({ type, sql });
+            clone._orders.push({ type, sql });
         }
 
-        this._addBinding(bindings, "order");
+        clone = clone._addBinding(bindings, "order");
 
-        return this;
+        return clone;
     }
 
     /**
@@ -642,13 +697,15 @@ export class Builder {
      * @return {Builder}
      */
     offset(value) {
+        let clone = this.clone();
+
         if (this._unions) {
-            this._unionOffset = Math.max(0, value);
+            clone._unionOffset = Math.max(0, value);
         } else {
-            this._offset = Math.max(0, value);
+            clone._offset = Math.max(0, value);
         }
 
-        return this;
+        return clone;
     }
 
     /**
@@ -668,17 +725,19 @@ export class Builder {
      * @return {Builder}
      */
     limit(value) {
+        let clone = this.clone();
+
         if (this._unions) {
             if (value >= 0) {
-                this._unionLimit = value;
+                clone._unionLimit = value;
             }
         } else {
             if (value >= 0) {
-                this._limit = value;
+                clone._limit = value;
             }
         }
 
-        return this;
+        return clone;
     }
 
     /**
@@ -701,9 +760,11 @@ export class Builder {
      * @return {Builder}
      */
     forPageAfterId(perPage = 15, lastId = 0, column = "id") {
-        this._orders = this._removeExistingOrdersFor(column);
+        let clone = this.clone();
+        clone._orders = clone._removeExistingOrdersFor(column);
 
-        return this.where(column, ">", lastId)
+        return clone
+            .where(column, ">", lastId)
             .orderByAsc(column)
             .take(perPage);
     }
@@ -724,7 +785,7 @@ export class Builder {
      */
     toSql(withBindings = false) {
         if (withBindings) {
-            return [this._grammar.compileSelect(this), this._getBindings()];
+            return [this._grammar.compileSelect(this), this._cleanBindings(this._getBindings())];
         }
 
         return this._grammar.compileSelect(this);
@@ -819,10 +880,12 @@ export class Builder {
      * @return {Promise<*>}
      */
     first(id = null) {
+        let query = this;
+
         if (id) {
-            this.where(this._identifier, "=", id);
+            query = this.where(this._identifier, "=", id);
         }
-        return this.get().then(results => (results.length > 0 ? results[0] : null));
+        return query.get().then(results => (results.length > 0 ? results[0] : null));
     }
 
     /**
@@ -887,16 +950,18 @@ export class Builder {
      * @return {Promise<*>}
      */
     delete(id = null) {
+        let query = this;
+
         // If an ID is passed to the method, we will set the where clause to check the
         // ID to let developers to simply and quickly remove a single row from this
         // database without manually specifying the "where" clauses on the query.
         if (id) {
-            this.where(this._from + ".id", "=", id);
+            query = this.where(this._from + ".id", "=", id);
         }
 
-        return this._connection.delete(
-            this._grammar.compileDelete(this),
-            this._cleanBindings(this._grammar.prepareBindingsForDelete(this._bindings))
+        return query._connection.delete(
+            query._grammar.compileDelete(query),
+            query._cleanBindings(query._grammar.prepareBindingsForDelete(query._bindings))
         );
     }
 
@@ -959,13 +1024,15 @@ export class Builder {
             throw new Error(`Invalid binding type: ${type}."`);
         }
 
+        const query = this.clone();
+
         if (Array.isArray(value)) {
-            this._bindings[type] = this._bindings[type].concat(value);
+            query._bindings[type] = this._bindings[type].concat(value);
         } else {
-            this._bindings[type].push(value);
+            query._bindings[type].push(value);
         }
 
-        return this;
+        return query;
     }
 
     /**
@@ -986,7 +1053,7 @@ export class Builder {
      */
     _runSelect() {
         const sql = this.toSql();
-        return this._connection.select(sql, this._getBindings());
+        return this._connection.select(sql, this._cleanBindings(this._getBindings()));
     }
 
     /**
@@ -994,8 +1061,7 @@ export class Builder {
      * @private
      */
     _resetColumns() {
-        this.columns(null);
-        return this;
+        return this.columns(null);
     }
 
     /**
@@ -1006,11 +1072,13 @@ export class Builder {
      * @private
      */
     _resetBindings(properties) {
+        let clone = this.clone();
+
         properties.forEach(property => {
-            this._bindings[property] = [];
+            clone._bindings[property] = [];
         });
 
-        return this;
+        return clone;
     }
 
     /**
@@ -1021,14 +1089,15 @@ export class Builder {
      * @returns {Builder}
      */
     _setAggregate(func, columns) {
-        this._aggregate = { function: func, columns };
+        let clone = this.clone();
+        clone._aggregate = { function: func, columns };
 
-        if (!this._groups) {
-            this._orders = null;
-            this._bindings.order = [];
+        if (!clone._groups) {
+            clone._orders = null;
+            clone._bindings.order = [];
         }
 
-        return this;
+        return clone;
     }
 
     /**
@@ -1037,7 +1106,7 @@ export class Builder {
      */
     _cleanBindings(bindings) {
         return Object.keys(bindings)
-            .filter(key => !(bindings[key] instanceof Expression))
+            .filter(key => !isExpression(bindings[key]))
             .map(key => bindings[key]);
     }
 }

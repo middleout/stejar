@@ -1,4 +1,4 @@
-import { Expression } from "../Expression";
+import { isExpression } from "./isExpression";
 
 export class Arr {
     /**
@@ -20,7 +20,7 @@ export class Arr {
      * @private
      */
     static _isObject(item) {
-        return !(item instanceof Expression) && null !== item && typeof item === "object" && !Array.isArray(item);
+        return !isExpression(item) && null !== item && typeof item === "object" && !Array.isArray(item);
     }
 
     /**
