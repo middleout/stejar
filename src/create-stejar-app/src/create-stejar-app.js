@@ -143,6 +143,7 @@ let sassLintCommands = [];
 
 let packageJson = {
     name: "stejar-app",
+    private: true,
     version: "1.0.0",
 };
 let babelRc = {

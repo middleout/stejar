@@ -1,5 +1,5 @@
 {
-    "name": "@stejar/create-app",
+    "name": "@stejar/create-stejar-app",
     "version": "4.0.62",
     "main": "src/index.js",
     "license": "MIT",
