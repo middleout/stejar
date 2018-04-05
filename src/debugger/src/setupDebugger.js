@@ -7,7 +7,7 @@ export function setupDebugger() {
             showHidden: true,
             depth: 4,
         },
-        format: '\n[{{timestamp}}] "{{file}}" at line {{line}}\n\n  {{message}}\n',
+        format: '\n[{{timestamp}}] "{{file}}" at line {{line}}\n\n_____\n{{message}}\n-----\n',
         dateformat: "HH:MM:ss.L",
     });
 

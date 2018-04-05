@@ -13,9 +13,9 @@ export class MySqlAdapter {
             host: config.host,
             user: config.user,
             password: config.password,
-            database: config.db,
+            database: config.database,
             charset: config.charset || "utf8",
-            dateStrings: true
+            dateStrings: true,
         });
 
         /**

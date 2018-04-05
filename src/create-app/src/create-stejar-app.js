@@ -167,7 +167,7 @@ let gitIgnore = fs.readFileSync(path.resolve(__dirname) + "/.gitignore.tpl");
 
 let lintStagedConfig = {
     "src/**/*.{js,jsx}": [],
-    "src/**/*.{scss}": [],
+    "src/**/*.scss": [],
 };
 
 let eslintConfig = {

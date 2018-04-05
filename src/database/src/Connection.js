@@ -1,4 +1,4 @@
-import { createExpression } from "./Helpers/isExpression";
+import { raw } from "./Helpers/raw";
 import { Builder } from "./Query/Builder";
 
 export class Connection {
@@ -121,7 +121,7 @@ export class Connection {
      * @return {*}
      */
     raw(value) {
-        return createExpression(value);
+        return raw(value);
     }
 
     /**
