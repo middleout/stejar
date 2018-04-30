@@ -1,1 +1,1 @@
-export * from "./AuthorizationService";
+export * from "./AuthenticationService";

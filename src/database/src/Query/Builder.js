@@ -859,7 +859,7 @@ export class Builder {
 
         return query.get().then(results => {
             if (results.length === 0) {
-                return null;
+                return 0;
             }
 
             return results[0].aggregate;

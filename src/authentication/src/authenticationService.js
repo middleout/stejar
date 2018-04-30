@@ -1,36 +1,17 @@
+import { getIdentity } from "./getIdentity";
+import { hasIdentity } from "./hasIdentity";
+import { setIdentity } from "./setIdentity";
+import { clearIdentity } from "./clearIdentity";
+import { login } from "./login";
+import { logout } from "./logout";
+
 export function AuthenticationService(authAdapter, storageAdapter) {
     return {
-        hasIdentity() {
-            return !!storageAdapter.getIdentity();
-        },
-        getIdentity() {
-            return storageAdapter.getIdentity();
-        },
-        setIdentity(identity) {
-            storageAdapter.setIdentity(identity);
-            return identity;
-        },
-        clearIdentity(...data) {
-            storageAdapter.clearIdentity(...data);
-            return true;
-        },
-        setIdentityFromToken(token) {
-            return authAdapter.getIdentityFromToken(token).then(identity => {
-                storageAdapter.setIdentity(identity);
-                return identity;
-            });
-        },
-        login(...data) {
-            return authAdapter.login(...data).then(identity => {
-                storageAdapter.setIdentity(identity);
-                return identity;
-            });
-        },
-        logout(...data) {
-            return authAdapter.logout(...data, storageAdapter.getIdentity()).then(() => {
-                storageAdapter.clearIdentity(...data);
-                return true;
-            });
-        },
+        hasIdentity: () => hasIdentity(storageAdapter),
+        getIdentity: () => getIdentity(storageAdapter),
+        setIdentity: identity => setIdentity(storageAdapter, identity),
+        clearIdentity: () => clearIdentity(storageAdapter),
+        login: (...data) => login(authAdapter, storageAdapter, ...data),
+        logout: (...data) => logout(authAdapter, storageAdapter, ...data),
     };
 }

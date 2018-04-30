@@ -8,11 +8,11 @@ export class ServerRouter extends Router {
         const path = parts[0];
         const queryString = parts.length > 0 ? parts[1] : "";
 
-        const onPush = (path, search = "", statusCode = 301) => {
+        const onPush = (path, statusCode = 301) => {
             this.promiseResolve({
                 isRedirect: true,
                 code: statusCode,
-                url: path + search,
+                url: path,
             });
         };
 

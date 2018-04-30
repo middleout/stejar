@@ -289,7 +289,7 @@ if (ENABLE_HUSKY_LINTING) {
     devPackages.push("husky");
 
     lintStagedConfig["src/**/*.{js,jsx}"] = jsLintCommands;
-    lintStagedConfig["src/**/*.scss"].push(sassLintCommands);
+    lintStagedConfig["src/**/*.scss"] = sassLintCommands;
     lintStagedConfig["src/**/*.{js,jsx}"].push("git add");
     lintStagedConfig["src/**/*.scss"].push("git add");
 

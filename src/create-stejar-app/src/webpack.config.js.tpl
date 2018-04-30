@@ -1,4 +1,5 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
+const { clearTerminal } = require("@stejar/clear-terminal");
 const path = require("path");
 const { ProvidePlugin, DefinePlugin } = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -9,14 +10,8 @@ const AssetsPlugin = require("assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
 
-(function clearTerminal() {
-    process.stdout.write(process.platform === "win32" ? "\x1B[2J\x1B[0f" : "\x1B[2J\x1B[3J\x1B[H");
-})();
-
-const env = {
-    BASE_URL: process.env.BASE_URL,
-    STATIC_URL: process.env.STATIC_URL,
-};
+clearTerminal();
+const APP_ENV = dotenv.config().parsed;
 
 module.exports = (env, args) => {
     const mode = args.mode || "development";
@@ -29,6 +24,7 @@ module.exports = (env, args) => {
             target: "node",
             output: {
                 path: path.resolve("./dist/server"),
+                publicPath: APP_ENV.STATIC_URL + "/",
             },
             externals: nodeExternals(),
             plugins: [
@@ -126,9 +122,7 @@ module.exports = (env, args) => {
                 new ProvidePlugin({
                     React: "react",
                 }),
-                new DefinePlugin({
-                    APP_ENV: JSON.stringify(env),
-                }),
+                new DefinePlugin({ APP_ENV: JSON.stringify(APP_ENV) }),
                 new MiniCssExtractPlugin({
                     filename: "[name].[hash].css",
                 }),

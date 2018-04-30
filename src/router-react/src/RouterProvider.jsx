@@ -93,6 +93,11 @@ export class RouterProvider extends Component {
                     return;
                 }
 
+                // Do we do the following ??????
+                // Here we should check if the match "components" is a Promise() instead of a component
+                // and if so - load it first THEN update the state. This way we can show a loader when starting
+                // the transition... keep the loader when the component is shown
+
                 this.updateStateComponent(match);
             });
         });

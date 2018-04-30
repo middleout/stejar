@@ -2,3 +2,8 @@ export * from "./RouterProvider";
 export * from "./Link";
 export * from "./provideRouter";
 export * from "./withRouter";
+export * from "./convertRoutes";
+export * from "./Index";
+export * from "./IndexRedirect";
+export * from "./Redirect";
+export * from "./Route";

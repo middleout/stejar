@@ -131,10 +131,8 @@ export class Router {
     }
 
     navigate(to = null, params = {}, query = {}, options = {}) {
-        const parts = this.buildPath(to, params, query, options).split("?");
         this._history.push(
-            parts[0],
-            parts.length > 1 ? parts[1] : "",
+            this.buildPath(to, params, query, options),
             options.statusCode ? options.statusCode : undefined
         );
     }
