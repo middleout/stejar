@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export class Redirect extends Component {
+export class IndexRedirectRoute extends Component {
     render() {
         return null;
     }

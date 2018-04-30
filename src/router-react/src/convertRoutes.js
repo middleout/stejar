@@ -1,9 +1,9 @@
 import invariant from "invariant";
 import { Children } from "react";
 import { Route as RouterRoute } from "@stejar/router";
-import { Index } from "./Index";
-import { IndexRedirect } from "./IndexRedirect";
-import { Redirect } from "./Redirect";
+import { IndexRoute } from "./IndexRoute";
+import { IndexRedirectRoute } from "./IndexRedirectRoute";
+import { RedirectRoute } from "./RedirectRoute";
 import { Route } from "./Route";
 
 export function convertRoutes(routes) {
@@ -27,7 +27,7 @@ function processRoutes(routes) {
             case Route:
                 parsedRoute = { ...props };
                 break;
-            case Index: {
+            case IndexRoute: {
                 const { path, ...remaining } = props;
                 invariant(
                     !path,
@@ -41,7 +41,7 @@ function processRoutes(routes) {
                 };
                 break;
             }
-            case Redirect: {
+            case RedirectRoute: {
                 const { path, toName, toParams, toQuery, ...remaining } = props;
                 invariant(path, `A "Redirect" route *requires* a "path" prop in order to know how to match.`);
 
@@ -57,7 +57,7 @@ function processRoutes(routes) {
                 };
                 break;
             }
-            case IndexRedirect: {
+            case IndexRedirectRoute: {
                 const { path, toName, toParams, toQuery, ...remaining } = props;
                 invariant(
                     !path,
