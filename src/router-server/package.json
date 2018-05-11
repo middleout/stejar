@@ -9,7 +9,7 @@
     ],
     "dependencies": {
         "@stejar/router": "^4.0.62",
-        "@stejar/router-server-history": "^4.0.62"
+        "history": "^4.7.2"
     },
     "devDependencies": {
         "@stejar/router-std-state-adapter": "^4.0.62"

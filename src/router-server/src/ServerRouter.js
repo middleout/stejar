@@ -1,49 +1,62 @@
-import { Router } from "@stejar/router";
-import { createServerHistory } from "@stejar/router-server-history";
+import { Router, Events } from "@stejar/router";
+import { createMemoryHistory } from "history";
 
-export class ServerRouter extends Router {
-    constructor(options) {
-        const url = options.url;
-        const parts = url.split("?");
-        const path = parts[0];
-        const queryString = parts.length > 0 ? parts[1] : "";
+export function ServerRouter({ url, ...options }) {
+    const history = createMemoryHistory({
+        initialEntries: [url],
+        getUserConfirmation: () => null,
+    });
 
-        const onPush = (path, statusCode = 301) => {
-            this.promiseResolve({
-                isRedirect: true,
-                code: statusCode,
-                url: path,
+    const router = Router({
+        history,
+        ...options,
+    });
+
+    const _start = router.start;
+    router.start = () => {
+        return new Promise(resolve => {
+            let resolved = false;
+
+            history.block(location => {
+                resolve({
+                    redirect: location.pathname,
+                    notFound: false,
+                    statusCode: location.state.statusCode || 301,
+                    error: null,
+                    match: null,
+                });
+                resolved = true;
             });
-        };
 
-        options.history = createServerHistory(onPush, () => null, path, queryString);
-        super(options);
-    }
+            router.once(Events.NOT_FOUND, details => {
+                if (resolved) {
+                    return;
+                }
 
-    start() {
-        this.once(Router.MATCHED_EVENT, match => {
-            this.promiseResolve({
-                isRedirect: false,
-                notFound: false,
-                code: 200,
-                match: match,
+                resolve({
+                    redirect: false,
+                    notFound: true,
+                    statusCode: 404,
+                    error: details,
+                    match: null,
+                });
+            });
+
+            _start(match => {
+                if (resolved) {
+                    return;
+                }
+
+                resolve({
+                    redirect: false,
+                    notFound: false,
+                    statusCode: 200,
+                    error: null,
+                    match: match,
+                });
             });
         });
+    };
 
-        this.once(Router.NOT_FOUND_EVENT, details => {
-            this.promiseReject({
-                notFound: true,
-                code: 404,
-                errorDetails: details,
-            });
-        });
-
-        const promise = new Promise((resolve, reject) => {
-            this.promiseResolve = resolve;
-            this.promiseReject = reject;
-        });
-        super.start();
-
-        return promise;
-    }
+    return router;
 }
