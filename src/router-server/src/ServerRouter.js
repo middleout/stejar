@@ -18,6 +18,7 @@ export function ServerRouter({ url, ...options }) {
             let resolved = false;
 
             history.block(location => {
+                resolved = true;
                 resolve({
                     redirect: location.pathname,
                     notFound: false,
@@ -25,7 +26,6 @@ export function ServerRouter({ url, ...options }) {
                     error: null,
                     match: null,
                 });
-                resolved = true;
             });
 
             router.once(Events.NOT_FOUND, details => {

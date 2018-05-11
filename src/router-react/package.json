@@ -13,5 +13,9 @@
         "hoist-non-react-statics": "^2.5.0",
         "react": "^16.2.0"
     },
-    "gitHead": "50e0e3e921aea056cd69ab83e457da32e3824e9f"
+    "gitHead": "50e0e3e921aea056cd69ab83e457da32e3824e9f",
+    "devDependencies": {
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1"
+    }
 }

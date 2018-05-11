@@ -9,11 +9,6 @@ export function provideRouter(WrappedComponent) {
                     createElement(WrappedComponent, {
                         ...props,
                         router,
-                        // routeMatch: {
-                        //     params: router.getCurrentRoute().params,
-                        //     query: router.getCurrentRoute().query,
-                        //     routeName: router.getCurrentRoute().name,
-                        // },
                     })
                 }
             </RouterContextConsumer>

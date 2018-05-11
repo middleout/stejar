@@ -10,9 +10,9 @@ export function stdAdapter() {
         },
         hydrate(match) {
             return {
-                name: match.getName(),
-                params: match.getParams(),
-                query: match.getQuery(),
+                name: match.name,
+                params: match.params,
+                query: match.query,
             };
         },
     };

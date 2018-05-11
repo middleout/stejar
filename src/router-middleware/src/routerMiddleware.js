@@ -6,10 +6,7 @@ export function routerMiddlewareRunnerFactory(stateAdapter, fetchMiddleware, opt
     }
 
     return function routerMiddleware(match) {
-        const promises = match
-            .getRoutes()
-            .map(item => fetchMiddleware(item.getOptions()))
-            .filter(i => !!i);
+        const promises = match.routes.map(item => fetchMiddleware(item)).filter(i => !!i);
 
         const args = [stateAdapter.getPreviousMatch() || null, stateAdapter.hydrate(match), options];
         return serial(promises, item => item(...args)).then(() => {
@@ -20,6 +17,6 @@ export function routerMiddlewareRunnerFactory(stateAdapter, fetchMiddleware, opt
 }
 
 export function routerMiddleware(stateAdapter, options = {}) {
-    let fetchMiddleware = routeOptions => routeOptions["middleware"];
+    let fetchMiddleware = route => route.middleware;
     return routerMiddlewareRunnerFactory(stateAdapter, fetchMiddleware, options);
 }

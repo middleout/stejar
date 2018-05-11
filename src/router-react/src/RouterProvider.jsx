@@ -1,7 +1,7 @@
 import React, { Component, Children } from "react";
 import PropTypes from "prop-types";
 import createReactContext from "create-react-context";
-import { Router } from "@stejar/router";
+import { Events } from "@stejar/router";
 import { reduceComponents } from "@stejar/react-reduce-components";
 
 const { Provider, Consumer } = createReactContext(null);
@@ -32,21 +32,15 @@ export class RouterProvider extends Component {
     }
 
     getComponentFromMatch(match, props) {
-        return reduceComponents(
-            match
-                .getRoutes()
-                .filter(route => !!route.getOptions().component || !!route.getOptions().handler)
-                .map(route => route.getOptions().component || route.getOptions().handler),
-            props
-        );
+        return reduceComponents(match.routes.filter(route => !!route.component).map(route => route.component), props);
     }
 
     updateStateComponent(match, useCurrentState) {
         const component = this.getComponentFromMatch(match, {
             routeMatch: {
-                name: match.getName(),
-                params: match.getParams(),
-                query: match.getQuery(),
+                name: match.name,
+                params: match.params,
+                query: match.query,
             },
         });
 
@@ -79,7 +73,7 @@ export class RouterProvider extends Component {
      * We can now proceed into starting the router normally
      */
     componentDidMount() {
-        this._unlisten = this._router.subscribe(Router.MATCHED_EVENT, match => {
+        this._unlisten = this._router.subscribe(Events.MATCHED, match => {
             const onRouteMatch = this.props.onRouteMatch || Promise.resolve();
 
             // If the component unmounted, do not continue
@@ -103,7 +97,7 @@ export class RouterProvider extends Component {
         });
 
         // TODO: Proper not found ? Using components
-        this._router.subscribe(Router.NOT_FOUND_EVENT, () => console.warn("NOT FOUND"));
+        this._router.subscribe(Events.NOT_FOUND, () => console.warn("NOT FOUND"));
 
         this._stop = this._router.start();
     }
