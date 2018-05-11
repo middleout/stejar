@@ -1,3 +1,2 @@
-export * from "./Route";
+export * from "./Events";
 export * from "./Router";
-export * from "./RouteFactory";

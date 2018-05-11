@@ -1,4 +1,5 @@
 const { readFileSync, existsSync, mkdirSync, writeFileSync } = require("fs");
+const { execSync } = require("child_process");
 const args = process.argv;
 const appName = JSON.parse(readFileSync("./package.json"))._name;
 const version = JSON.parse(readFileSync("./lerna.json")).version;
@@ -36,3 +37,8 @@ writeFileSync(
 writeFileSync(`./src/${target}/src/index.js`, "// TODO");
 
 writeFileSync(`./src/${target}/tests/.gitkeep`, "");
+
+execSync("yarn link", {
+    stdio: "inherit",
+    cwd: `./src/${target}`,
+});

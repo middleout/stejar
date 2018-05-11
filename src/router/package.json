@@ -8,11 +8,10 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/event-emitter": "^4.0.62",
-        "@stejar/interop": "^4.0.32",
+        "@stejar/router-routes": "^4.0.62",
+        "fbemitter": "^2.1.1",
         "invariant": "^2.2.2",
-        "query-string": "^6.0.0",
-        "url-pattern": "^1.0.3"
+        "query-string": "^6.0.0"
     },
     "devDependencies": {
         "@stejar/di": "^4.0.62",

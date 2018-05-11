@@ -4,10 +4,11 @@ const { execSync } = require("child_process");
 const args = process.argv;
 const target = (args[2] || "").replace("@stejar/", "");
 
-const exec = (command, extraEnv) =>
+const exec = (command, extraEnv, cwd) =>
     execSync(command, {
         stdio: "inherit",
         env: Object.assign({}, process.env, extraEnv),
+        cwd,
     });
 
 const isDirectory = (source, name) => lstatSync(join(source, name)).isDirectory();
@@ -20,7 +21,7 @@ const dirs = getDirectories("./src")
 
 dirs.forEach(dir => {
     console.log(`Building ${dir} \n--`);
-    exec(`babel src/${dir}/src -d src/${dir}/es --ignore tests`);
+    exec(`yarn link`, {}, "./src/" + dir);
     console.info(`Built ${dir} !\n--`);
     console.log(`\n`);
 });

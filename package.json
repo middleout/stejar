@@ -52,7 +52,7 @@
     },
     "jest": {
         "testMatch": [
-            "<rootDir>/src/**/tests/**/*.test.js?(x)"
+            "<rootDir>/src/!(_)**/tests/**/*.test.js?(x)"
         ],
         "transform": {
             ".js$": "babel-jest",
@@ -60,6 +60,7 @@
         },
         "collectCoverageFrom": [
             "**/src/**/*.{js,jsx}",
+            "!**/src/**/index.{js,jsx}",
             "!**/src/**/*.test.{js,jsx}",
             "!**/es/**",
             "!**/node_modules/**"
