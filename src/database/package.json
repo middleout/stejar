@@ -8,7 +8,6 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/database": "^4.0.62",
         "mysql2": "^1.5.3"
     },
     "gitHead": "50e0e3e921aea056cd69ab83e457da32e3824e9f"
