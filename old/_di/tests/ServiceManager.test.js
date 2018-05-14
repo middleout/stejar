@@ -1,5 +1,5 @@
 import { injectable } from "../src/injectable";
-import { inject } from "../src";
+import { inject } from "../src/index";
 import { ServiceManager } from "../src/ServiceManager";
 import { AbstractProvider } from "../src/AbstractProvider";
 
