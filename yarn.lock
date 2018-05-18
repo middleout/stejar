@@ -1144,7 +1144,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@stejar/router-server-history@^4.0.65":
+"@stejar/router-server-history@^4.0.66":
   version "4.0.65"
   resolved "https://npm.middleout.com/@stejar%2frouter-server-history/-/router-server-history-4.0.65.tgz#01a4fdc79b0c9394a577bcc131ea7324cd47fba2"
 

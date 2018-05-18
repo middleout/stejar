@@ -1,4 +1,3 @@
-import { Expression } from "../Expression";
 import { Arr } from "../Helpers/Arr";
 import { isExpression } from "../Helpers/isExpression";
 
@@ -348,7 +347,7 @@ export class Builder {
         let query = this.clone();
         query._wheres.push({ type, column, operator, value, boolean });
 
-        if (!(value instanceof Expression)) {
+        if (!isExpression(value)) {
             query = query._addBinding(value, "where");
         }
 
@@ -403,7 +402,7 @@ export class Builder {
         query._wheres.push({ type, column, values, boolean });
 
         values.forEach(value => {
-            if (!(value instanceof Expression)) {
+            if (!isExpression(value)) {
                 query = query._addBinding(value, "where");
             }
         });

@@ -1,4 +1,3 @@
-export * from "./Expression";
 export * from "./Connection";
 export * from "./Query/Builder";
 export * from "./Query/Grammar/Grammar";
