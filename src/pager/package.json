@@ -1,6 +1,6 @@
 {
     "name": "@stejar/pager",
-    "version": "4.0.62",
+    "version": "4.0.66",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,

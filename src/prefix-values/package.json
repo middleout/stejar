@@ -1,15 +1,13 @@
 {
     "name": "@stejar/prefix-values",
-    "version": "4.0.62",
+    "version": "4.0.66",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
     "files": [
         "es"
     ],
-    "dependencies": {
-        "query-string": "^6.0.0"
-    },
+    "dependencies": {},
     "devDependencies": {
     },
     "peerDependencies": {

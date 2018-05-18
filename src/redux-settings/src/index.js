@@ -15,3 +15,5 @@ export const getState = identifier => {
 
     return database[identifier];
 };
+
+export const getStateSelector = identifier => (state, props) => getState(identifier)(state, props);

@@ -46,7 +46,11 @@ export function createLoader(debug = false) {
         function load() {
             return loader().then(component => {
                 component = resolve(loader, component);
-                usedChunks.push(chunksIds[loaders.indexOf(loader)]);
+
+                const value = chunksIds[loaders.indexOf(loader)];
+                if (!usedChunks.includes(value)) {
+                    usedChunks.push(value);
+                }
 
                 return component;
             });

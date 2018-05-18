@@ -1144,22 +1144,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@stejar/container-interop@^4.0.62":
-  version "4.0.65"
-  resolved "https://npm.middleout.com/@stejar%2fcontainer-interop/-/container-interop-4.0.65.tgz#1483e37c7971f8f4a93aab8d4c845e8929cc5068"
-
-"@stejar/di@^4.0.62":
-  version "4.0.65"
-  resolved "https://npm.middleout.com/@stejar%2fdi/-/di-4.0.65.tgz#83a84e1cd9c09aa016a1ff3beec6d76d027c1050"
-  dependencies:
-    invariant "^2.2.2"
-    reflect-metadata "^0.1.12"
-
-"@stejar/interop@^4.0.37":
-  version "4.0.53"
-  resolved "https://npm.middleout.com/@stejar%2finterop/-/interop-4.0.53.tgz#bfd28399f9734091472b14a58e0114a7be7b62e0"
-
-"@stejar/router-server-history@^4.0.62":
+"@stejar/router-server-history@^4.0.65":
   version "4.0.65"
   resolved "https://npm.middleout.com/@stejar%2frouter-server-history/-/router-server-history-4.0.65.tgz#01a4fdc79b0c9394a577bcc131ea7324cd47fba2"
 
@@ -2112,7 +2097,7 @@ create-error-class@^3.0.0:
   dependencies:
     capture-stack-trace "^1.0.0"
 
-create-react-context@^0.2.1:
+create-react-context@^0.2.2:
   version "0.2.2"
   resolved "https://npm.middleout.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
   dependencies:
@@ -5241,7 +5226,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.6.0:
+prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://npm.middleout.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -5317,6 +5302,15 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-dom@^16.3.2:
+  version "16.3.2"
+  resolved "https://npm.middleout.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 react-is@^16.3.2:
   version "16.3.2"
   resolved "https://npm.middleout.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
@@ -5339,7 +5333,7 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.3.2"
 
-react@^16.2.0:
+react@^16.2.0, react@^16.3.2:
   version "16.3.2"
   resolved "https://npm.middleout.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
@@ -5478,10 +5472,6 @@ redeyed@~1.0.0:
   resolved "https://npm.middleout.com/redeyed/-/redeyed-1.0.1.tgz#e96c193b40c0816b00aec842698e61185e55498a"
   dependencies:
     esprima "~3.0.0"
-
-reflect-metadata@^0.1.12:
-  version "0.1.12"
-  resolved "https://npm.middleout.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
 
 regenerate-unicode-properties@^5.1.1:
   version "5.1.3"

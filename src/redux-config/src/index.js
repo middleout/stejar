@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 import typeToReducer from "type-to-reducer";
 import keyMirror from "keymirror";
 import { prefixValues } from "@stejar/prefix-values";
-import { getState, setMountPoint } from "@stejar/redux-settings";
+import { getStateSelector, setMountPoint } from "@stejar/redux-settings";
 
 /**
  * Define the module name
@@ -13,9 +13,9 @@ const moduleName = "@stejar/config";
  * The action types of the module - prefixed (and keymirrored)
  */
 let ActionTypes = {
-    LOADING_CONFIG: null,
-    LOADED_CONFIG: null,
-    FAILED_TO_LOAD_CONFIG: null,
+    LOADING: null,
+    LOADED: null,
+    FAILED_TO_LOAD: null,
 };
 ActionTypes = prefixValues(moduleName, keyMirror(ActionTypes));
 
@@ -43,38 +43,23 @@ const failedToLoadConfig = (state, action) => ({
     isLoading: false,
     lastKnownError: action.payload,
 });
-const reducer = typeToReducer(
-    {
-        [ActionTypes.LOADING_CONFIG]: loadingConfig,
-        [ActionTypes.LOADED_CONFIG]: loadedConfig,
-        [ActionTypes.FAILED_TO_LOAD_CONFIG]: failedToLoadConfig,
-    },
-    defaultState
-);
-
-/**
- * Small helper to facilitate booting of the module
- */
-const throwBootError = type => {
-    throw new Error(`Cannot use ${type} without booting the module first`);
-};
 
 /**
  * Module Selectors
  */
 export const Selectors = {
-    isLoading: () => throwBootError("selectors"),
-    getConfig: () => throwBootError("selectors"),
-    getError: () => throwBootError("selectors"),
+    isLoading: createSelector(getStateSelector(moduleName), state => state.isLoading),
+    getConfig: createSelector(getStateSelector(moduleName), state => state.data),
+    getError: createSelector(getStateSelector(moduleName), state => state.lastKnownError),
 };
 
 /**
  * Module Actions
  */
 export const Actions = {
-    loadingConfig: () => throwBootError("actions"),
-    loadedConfig: () => throwBootError("actions"),
-    failedToLoadConfig: () => throwBootError("actions"),
+    loadingConfig: () => ({ type: ActionTypes.LOADING }),
+    loadedConfig: payload => ({ type: ActionTypes.LOADED, payload }),
+    failedToLoadConfig: error => ({ type: ActionTypes.FAILED_TO_LOAD, payload: error }),
 };
 
 /**
@@ -82,12 +67,12 @@ export const Actions = {
  */
 export const createReducer = (stateSelector, userModuleName = moduleName) => {
     setMountPoint(userModuleName, stateSelector);
-    Actions.loadingConfig = () => ({ type: ActionTypes.LOADING_CONFIG });
-    Actions.loadedConfig = payload => ({ type: ActionTypes.LOADED_CONFIG, payload });
-    Actions.failedToLoadConfig = error => ({ type: ActionTypes.FAILED_TO_LOAD_CONFIG, payload: error });
-    Selectors.isLoading = createSelector(getState(moduleName), state => state.isLoading);
-    Selectors.getConfig = createSelector(getState(moduleName), state => state.data);
-    Selectors.getError = createSelector(getState(moduleName), state => state.lastKnownError);
-
-    return reducer;
+    return typeToReducer(
+        {
+            [ActionTypes.LOADING]: loadingConfig,
+            [ActionTypes.LOADED]: loadedConfig,
+            [ActionTypes.FAILED_TO_LOAD]: failedToLoadConfig,
+        },
+        defaultState
+    );
 };
