@@ -1,6 +1,6 @@
 {
     "name": "@stejar/create-stejar-app",
-    "version": "4.0.66",
+    "version": "4.0.69",
     "main": "src/index.js",
     "license": "MIT",
     "sideEffects": false,
