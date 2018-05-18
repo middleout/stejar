@@ -1,6 +1,6 @@
 {
     "name": "@stejar/binded-components",
-    "version": "4.0.69",
+    "version": "4.0.71",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -9,6 +9,5 @@
     ],
     "dependencies": {
         "react": "^16.2.0"
-    },
-    "gitHead": "50e0e3e921aea056cd69ab83e457da32e3824e9f"
+    }
 }
