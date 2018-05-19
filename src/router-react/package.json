@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-react",
-    "version": "4.0.71",
+    "version": "4.0.72",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
