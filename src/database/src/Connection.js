@@ -226,6 +226,10 @@ export class Connection {
             );
     }
 
+    disconnect() {
+        return this._adapter.disconnect();
+    }
+
     /**
      * Run a SQL statement and log its execution context.
      *

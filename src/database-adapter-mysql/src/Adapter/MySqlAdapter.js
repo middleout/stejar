@@ -76,4 +76,19 @@ export class MySqlAdapter {
             });
         });
     }
+
+    /**
+     * @return {Promise<*>}
+     */
+    disconnect() {
+        return new Promise((resolve, reject) => {
+            this._connection.end(err => {
+                if (err) {
+                    return reject(err);
+                }
+
+                return resolve();
+            });
+        });
+    }
 }

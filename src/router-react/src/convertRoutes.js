@@ -12,17 +12,31 @@ export function convertRoutes(routes) {
     return processRoutes(routes);
 }
 
+function parentIsNamed(parent) {
+    if (!parent.name || !parent.path) {
+        // if (parent.parent) {
+        //     return parentIsNamed(parent.parent);
+        // }
+
+        return false;
+    }
+
+    return true;
+}
+
 function processRoutes(routes, parent = null) {
     let jsRoutes = [];
 
     routes.forEach(route => {
-        let parsedRoute = {};
+        let parsedRoute = {
+            parent,
+        };
 
         const { children, ...props } = route.props;
 
         switch (route.type) {
             case Route:
-                parsedRoute = { ...props };
+                parsedRoute = { ...parsedRoute, ...props };
                 break;
             case IndexRoute: {
                 if (!parent) {
@@ -30,9 +44,9 @@ function processRoutes(routes, parent = null) {
                         "Cannot have a root route as an Index(Redirect) route. All Index routes require a parent"
                     );
                 }
-                if (!parent.name || !parent.path) {
+                if (!parentIsNamed(parent)) {
                     throw new Error(
-                        "Cannot an Index route with a pathless or unnamed route. All Index routes require a parent with a name and path"
+                        "Cannot have an Index route with a pathless or unnamed route. All Index routes require a parent with a name and path (not necessarily a direct parent)"
                     );
                 }
 
@@ -47,6 +61,7 @@ function processRoutes(routes, parent = null) {
                 );
 
                 parsedRoute = {
+                    ...parsedRoute,
                     ...remaining,
                     exact: true,
                 };
@@ -58,6 +73,7 @@ function processRoutes(routes, parent = null) {
                 invariant(to, `A "Redirect" route *requires* a "to" prop.`);
 
                 parsedRoute = {
+                    ...parsedRoute,
                     ...remaining,
                     path,
                     redirect: {
@@ -75,9 +91,9 @@ function processRoutes(routes, parent = null) {
                         "Cannot have a root route as an Index(Redirect) route. All Index routes require a parent"
                     );
                 }
-                if (!parent.name || !parent.path) {
+                if (!parentIsNamed(parent)) {
                     throw new Error(
-                        "Cannot an Index route with a pathless or unnamed route. All Index routes require a parent with a name and path"
+                        "Cannot have an Index route with a pathless or unnamed route. All Index routes require a parent with a name and path (not necessarily a direct parent)"
                     );
                 }
 
@@ -90,6 +106,7 @@ function processRoutes(routes, parent = null) {
                 invariant(to, `A "Redirect" route *requires* a "to" prop.`);
 
                 parsedRoute = {
+                    ...parsedRoute,
                     ...remaining,
                     exact: true,
                     redirect: {
@@ -107,7 +124,9 @@ function processRoutes(routes, parent = null) {
             parsedRoute.routes = processRoutes(Array.isArray(children) ? children : [children], parsedRoute);
         }
 
-        jsRoutes.push(parsedRoute);
+        const finalRoute = { ...parsedRoute };
+        delete finalRoute.parent;
+        jsRoutes.push(finalRoute);
     });
 
     return jsRoutes;
