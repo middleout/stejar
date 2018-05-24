@@ -1,6 +1,6 @@
 {
     "name": "@stejar/clear-terminal",
-    "version": "4.0.71",
+    "version": "4.0.76",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
