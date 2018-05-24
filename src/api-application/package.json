@@ -1,0 +1,23 @@
+{
+    "name": "@stejar/api-application",
+    "version": "4.0.76",
+    "main": "es/index.js",
+    "license": "MIT",
+    "sideEffects": false,
+    "files": [
+        "es"
+    ],
+    "dependencies": {
+        "cors": "^2.8.4",
+        "express-rate-limit": "^2.11.0",
+        "items-promise": "^1.0.0",
+        "body-parser": "^1.18.2",
+        "fbemitter": "^2.1.1",
+        "@stejar/debugger": "^4.0.25",
+        "@stejar/clear-terminal": "^4.0.71",
+        "express": "^4.16.2",
+        "helmet": "^3.12.1",
+        "pretty-error": "^2.1.1",
+        "yup": "^0.25.1"
+    }
+}
