@@ -37,7 +37,7 @@ export class Grammar {
      * @return {string}
      */
     parameter(value) {
-        return this.isExpression(value) ? this.getValue(value) : "?";
+        return isExpression(value) ? this.getValue(value) : "?";
     }
 
     /**
@@ -48,7 +48,7 @@ export class Grammar {
      * @return {string}
      */
     wrap(value, prefixAlias = false) {
-        if (this.isExpression(value)) {
+        if (isExpression(value)) {
             return this.getValue(value);
         }
 
@@ -140,7 +140,7 @@ export class Grammar {
      * @private
      */
     _wrapTable(table) {
-        if (!this.isExpression(table)) {
+        if (!isExpression(table)) {
             return this.wrap(this._tablePrefix + table, true);
         }
 

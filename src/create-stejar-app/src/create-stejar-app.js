@@ -120,7 +120,7 @@ let devPackages = [
     "style-loader",
     "resolve-url-loader",
     "html-webpack-plugin",
-    // "extract-text-webpack-plugin@next", // TODO Still needed due to an error
+    // "extract-text-webpack-plugin@next",
     "mini-css-extract-plugin",
     "clean-webpack-plugin",
     "webpack-build-notifier",
