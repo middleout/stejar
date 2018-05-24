@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl",
-    "version": "4.0.76",
+    "version": "4.0.77",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -12,15 +12,15 @@
         "extract:locale": "./bin/extract.locale.js"
     },
     "dependencies": {
+        "@babel/traverse": "^7.0.0-beta.47",
+        "@stejar/prefix-values": "^4.0.77",
+        "@stejar/redux-settings": "^4.0.77",
+        "babylon": "^7.0.0-beta.47",
         "es6-promise": "^4.2.4",
         "isomorphic-fetch": "^2.2.1",
-        "mkdirp": "^0.5.1",
-        "babylon": "^7.0.0-beta.47",
-        "@babel/traverse": "^7.0.0-beta.47",
-        "reselect": "^3.0.1",
-        "type-to-reducer": "^1.1.0",
         "keymirror": "^0.1.1",
-        "@stejar/prefix-values": "^4.0.76",
-        "@stejar/redux-settings": "^4.0.76"
+        "mkdirp": "^0.5.1",
+        "reselect": "^3.0.1",
+        "type-to-reducer": "^1.1.0"
     }
 }
