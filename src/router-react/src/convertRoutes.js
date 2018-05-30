@@ -28,6 +28,14 @@ function processRoutes(routes, parent = null) {
     let jsRoutes = [];
 
     routes.forEach(route => {
+        const allowed = [Route, IndexRedirectRoute, IndexRoute, RedirectRoute];
+
+        if (typeof route !== "object" || !allowed.includes(route.type)) {
+            throw new Error(
+                "All routes passed to the convertRoutes() function must be React elements and be of type Route, IndexRoute, IndexRedirectRoute, or RedirectRoute. You have passed a different type of element. Please check your route config."
+            );
+        }
+
         let parsedRoute = {
             parent,
         };

@@ -60,5 +60,20 @@ describe("convert-routes", () => {
                 },
             ]);
         });
+
+        test("cannnot create a route with an invalid child", () => {
+            const routes = () =>
+                convertRoutes(
+                    <Route name="base" path="base">
+                        <Route>
+                            <Route name="foo" path="foo" />
+                            some invalid child
+                        </Route>
+                    </Route>
+                );
+            expect(routes).toThrow(
+                "All routes passed to the convertRoutes() function must be React elements and be of type Route, IndexRoute, IndexRedirectRoute, or RedirectRoute. You have passed a different type of element. Please check your route config."
+            );
+        });
     });
 });

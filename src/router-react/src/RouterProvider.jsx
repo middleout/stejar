@@ -74,7 +74,8 @@ export class RouterProvider extends Component {
      */
     componentDidMount() {
         this._unlisten = this._router.subscribe(Events.MATCHED, match => {
-            const onRouteMatch = this.props.onRouteMatch || Promise.resolve();
+            const onRouteMatch = this.props.onRouteMatch || (() => Promise.resolve());
+            // const onRouteMatch = this.props.onRouteMatch || Promise.resolve();
 
             // If the component unmounted, do not continue
             if (!this._stop) {
@@ -96,8 +97,7 @@ export class RouterProvider extends Component {
             });
         });
 
-        // TODO: Proper not found ? Using components
-        this._router.subscribe(Events.NOT_FOUND, () => console.warn("NOT FOUND"));
+        this._router.subscribe(Events.NOT_FOUND, () => console.error("No route matched"));
 
         this._stop = this._router.start();
     }

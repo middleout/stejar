@@ -54,6 +54,12 @@ function createRoute(
  *
  * @constructor
  */
-export const Route = ({ name = null, path = null, routes = [], exact = false, ...options }) => {
+export const Route = constructor => {
+    if (constructor.props) {
+        throw new Error("A route cannot be created using a React spec. Did you forget to use convertRoutes() ?");
+    }
+
+    const { name = null, path = null, routes = [], exact = false, ...options } = constructor;
+
     return createRoute({ name, path, routes, exact, ...options });
 };
