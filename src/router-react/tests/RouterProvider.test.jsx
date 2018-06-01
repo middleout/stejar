@@ -71,4 +71,44 @@ describe("RouterProvider", () => {
             done();
         }, 100);
     });
+
+    test("can work with componentS instead of component", done => {
+        const router = ServerRouter({
+            url: "/foo/baz",
+            routes: [
+                {
+                    name: "foo",
+                    path: "/foo",
+                    component: ({ baz1, baz2, children }) => {
+                        if (children) {
+                            throw new Error("Children passed!");
+                        }
+
+                        return (
+                            <div>
+                                Foo {baz1} {baz2}
+                            </div>
+                        );
+                    },
+                    routes: [
+                        {
+                            name: "baz",
+                            path: "baz",
+                            components: {
+                                baz1: () => <div>Baz 1</div>,
+                                baz2: () => <div>Baz 2</div>,
+                            },
+                        },
+                    ],
+                },
+            ],
+        });
+
+        router.start().then(result => {
+            const comp = render(<RouterProvider router={router} match={result.match} />);
+            expect(comp.text()).toEqual("Foo Baz 1 Baz 2");
+
+            done();
+        });
+    });
 });

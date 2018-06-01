@@ -32,7 +32,8 @@ export class RouterProvider extends Component {
     }
 
     getComponentFromMatch(match, props) {
-        return reduceComponents(match.routes.filter(route => !!route.component).map(route => route.component), props);
+        const routesWithComponent = match.routes.filter(route => route.component || route.components);
+        return reduceComponents(routesWithComponent, props);
     }
 
     updateStateComponent(match, useCurrentState) {
