@@ -12,7 +12,6 @@
         "history": "^4.7.2"
     },
     "devDependencies": {
-        "@stejar/router-std-state-adapter": "^4.0.80"
     },
     "gitHead": "ebc34c3549da5e6b03036c333beed7569ed10a57"
 }
