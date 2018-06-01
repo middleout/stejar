@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl",
-    "version": "4.0.78",
+    "version": "4.0.79",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -13,8 +13,8 @@
     },
     "dependencies": {
         "@babel/traverse": "^7.0.0-beta.47",
-        "@stejar/prefix-values": "^4.0.78",
-        "@stejar/redux-settings": "^4.0.78",
+        "@stejar/prefix-values": "^4.0.79",
+        "@stejar/redux-settings": "^4.0.79",
         "babylon": "^7.0.0-beta.47",
         "es6-promise": "^4.2.4",
         "isomorphic-fetch": "^2.2.1",

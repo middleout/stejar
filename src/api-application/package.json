@@ -1,6 +1,6 @@
 {
     "name": "@stejar/api-application",
-    "version": "4.0.78",
+    "version": "4.0.79",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,8 +8,8 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/clear-terminal": "^4.0.78",
-        "@stejar/debugger": "^4.0.78",
+        "@stejar/clear-terminal": "^4.0.79",
+        "@stejar/debugger": "^4.0.79",
         "body-parser": "^1.18.2",
         "cors": "^2.8.4",
         "express": "^4.16.2",
