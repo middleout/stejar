@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl-react",
-    "version": "4.0.79",
+    "version": "4.0.80",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,8 +8,9 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/intl": "^4.0.79",
+        "@stejar/intl": "^4.0.80",
         "react": "^16.4.0",
         "react-redux": "^5.0.7"
-    }
+    },
+    "gitHead": "ebc34c3549da5e6b03036c333beed7569ed10a57"
 }

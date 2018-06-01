@@ -1,10 +1,11 @@
 {
     "name": "@stejar/redux-settings",
-    "version": "4.0.79",
+    "version": "4.0.80",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
     "files": [
         "es"
-    ]
+    ],
+    "gitHead": "ebc34c3549da5e6b03036c333beed7569ed10a57"
 }
