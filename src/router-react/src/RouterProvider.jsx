@@ -75,7 +75,7 @@ export class RouterProvider extends Component {
      */
     componentDidMount() {
         this._unlisten = this._router.subscribe(Events.MATCHED, match => {
-            const onRouteMatch = this.props.onRouteMatch || (() => Promise.resolve());
+            const onRouteMatch = (this.props.onRouteMatch || (() => () => Promise.resolve()))(this._router);
             // const onRouteMatch = this.props.onRouteMatch || Promise.resolve();
 
             // If the component unmounted, do not continue
