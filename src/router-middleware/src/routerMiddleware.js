@@ -1,22 +1,17 @@
 import { serial } from "items-promise";
 
-export function routerMiddlewareRunnerFactory(stateAdapter, fetchMiddleware, options = {}) {
+export function routerMiddlewareRunnerFactory(fetchMiddleware, options = {}) {
     if (typeof fetchMiddleware !== "function") {
         throw new Error("FetchMiddleware must be a function");
     }
 
-    return function routerMiddleware(match) {
+    return router => match => {
         const promises = match.routes.map(item => fetchMiddleware(item)).filter(i => !!i);
-
-        const args = [stateAdapter.getPreviousMatch() || null, stateAdapter.hydrate(match), options];
-        return serial(promises, item => item(...args)).then(() => {
-            stateAdapter.update(match);
-            return match;
-        });
+        return serial(promises, item => item(match, { ...options, router })).then(() => match);
     };
 }
 
-export function routerMiddleware(stateAdapter, options = {}) {
+export function routerMiddleware(options = {}) {
     let fetchMiddleware = route => route.middleware;
-    return routerMiddlewareRunnerFactory(stateAdapter, fetchMiddleware, options);
+    return routerMiddlewareRunnerFactory(fetchMiddleware, options);
 }
