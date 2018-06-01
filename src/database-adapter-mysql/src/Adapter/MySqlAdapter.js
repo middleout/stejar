@@ -6,16 +6,22 @@ export class MySqlAdapter {
      * @param config
      */
     constructor(config) {
+        const { user, charset, ...otherConfig } = config;
+        if (!user) {
+            throw new Error(`Database "user" is required`);
+        }
+
         /**
+         * All the actual config is from
+         * https://github.com/mysqljs/mysql#connection-options
+         *
          * @private
          */
         this._connection = mysql.createConnection({
-            host: config.host,
-            user: config.user,
-            password: config.password,
-            database: config.database,
-            charset: config.charset || "utf8",
+            user: user,
+            charset: charset || "utf8",
             dateStrings: true,
+            ...otherConfig,
         });
 
         /**
