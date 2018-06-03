@@ -5,8 +5,13 @@
     "license": "MIT",
     "sideEffects": false,
     "files": [
-        "es"
+        "es",
+        "bin"
     ],
+    "bin": {
+        "download:poeditor": "./bin/download.poeditor.js",
+        "extract:locale": "./bin/extract.locale.js"
+    },
     "dependencies": {
         "@stejar/intl": "^4.0.81",
         "react": "^16.4.0",

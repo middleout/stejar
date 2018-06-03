@@ -7,10 +7,6 @@
     "files": [
         "es"
     ],
-    "bin": {
-        "download:poeditor": "./bin/download.poeditor.js",
-        "extract:locale": "./bin/extract.locale.js"
-    },
     "dependencies": {
         "@babel/traverse": "^7.0.0-beta.47",
         "@stejar/prefix-values": "^4.0.81",

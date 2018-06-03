@@ -1,4 +1,4 @@
-import { extract } from "../bin/extractor";
+import { extract } from "../src/extractor";
 
 describe("extractor", () => {
     test("it can work with a simple string", () => {

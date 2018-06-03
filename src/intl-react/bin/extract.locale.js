@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { extract } = require("./extractor");
+const { extract } = require("../src/extractor");
 const args = process.argv.slice(2);
 const inputPath = args[0];
 const outputPath = args[1];
