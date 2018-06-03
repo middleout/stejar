@@ -7,6 +7,7 @@
     "files": [
         "es"
     ],
+    "types": "./es/index.d.ts",
     "dependencies": {
         "@stejar/clear-terminal": "^4.0.81",
         "@stejar/debugger": "^4.0.81",
