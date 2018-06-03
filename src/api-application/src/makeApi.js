@@ -109,6 +109,25 @@ export function makeApi() {
              */
             _plugins.map(p => p(app));
 
+            app.use((req, res, next) => {
+                const headers = req.headers;
+                const parsedHeaders = {};
+                Object.keys(headers).forEach(key => {
+                    parsedHeaders[key.toLowerCase()] = headers[key];
+                });
+
+                req.getHeader = (headerName, defaultValue = null) => {
+                    headerName = headerName.toLowerCase();
+                    if (!Object.keys(parsedHeaders).includes(headerName)) {
+                        return defaultValue;
+                    }
+
+                    return parsedHeaders[headerName];
+                };
+
+                return next();
+            });
+
             /**
              *************************
              * Setup the DI container and EventEmitter + clear terminal
