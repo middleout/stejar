@@ -1,6 +1,6 @@
 {
     "name": "@stejar/debugger",
-    "version": "4.0.81",
+    "version": "4.0.82",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
