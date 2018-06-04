@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-browser",
-    "version": "4.0.84",
+    "version": "4.0.85",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,7 +8,7 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/router": "^4.0.84",
+        "@stejar/router": "^4.0.85",
         "history": "^4.7.2"
     },
     "gitHead": "ebc34c3549da5e6b03036c333beed7569ed10a57"
