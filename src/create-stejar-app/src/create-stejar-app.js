@@ -120,6 +120,7 @@ let devPackages = [
     "style-loader",
     "resolve-url-loader",
     "html-webpack-plugin",
+    "@stejar/clear-terminal",
     // "extract-text-webpack-plugin@next",
     "mini-css-extract-plugin",
     "clean-webpack-plugin",
@@ -150,11 +151,25 @@ let babelRc = {
     sourceMaps: "inline",
     plugins: [
         "autobind-class-methods",
-        "@babel/plugin-proposal-decorators",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                legacy: true,
+            },
+        ],
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
     ],
-    presets: ["@babel/preset-env"],
+    presets: [
+        [
+            "@babel/preset-env",
+            {
+                targets: {
+                    node: "current",
+                },
+            },
+        ],
+    ],
 };
 
 let clientFile = fs.readFileSync(path.resolve(__dirname) + "/client.js.tpl");

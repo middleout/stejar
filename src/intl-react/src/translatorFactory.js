@@ -10,7 +10,7 @@ export function translatorFactory(catalog, debug) {
     prevCatalog = catalog;
     prevDebug = debug;
 
-    return (prevTranslator = function translator(key, namedArgs) {
+    return (prevTranslator = function translator(key, namedArgs = {}) {
         let translated = catalog[key] ? catalog[key] : key;
         if (debug) {
             translated = "*" + translated + "*";

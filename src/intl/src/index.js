@@ -70,6 +70,7 @@ export const Selectors = {
     isDebugEnabled,
     getCatalogs,
     getCurrentCatalog,
+    getCurrentLocale,
 };
 
 /**

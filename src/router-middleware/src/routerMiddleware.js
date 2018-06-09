@@ -5,9 +5,9 @@ export function routerMiddlewareRunnerFactory(fetchMiddleware, options = {}) {
         throw new Error("FetchMiddleware must be a function");
     }
 
-    return router => match => {
+    return match => {
         const promises = match.routes.map(item => fetchMiddleware(item)).filter(i => !!i);
-        return serial(promises, item => item(match, { ...options, router })).then(() => match);
+        return serial(promises, item => item(match, options)).then(() => match);
     };
 }
 
