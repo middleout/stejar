@@ -9,7 +9,7 @@
     ],
     "dependencies": {
         "source-map-support": "^0.5.4",
-        "tracer": "^0.8.12"
+        "tracer": "^0.9.1"
     },
     "gitHead": "ebc34c3549da5e6b03036c333beed7569ed10a57"
 }
