@@ -7,6 +7,7 @@ const { extract } = require("../es/extractor");
 const args = process.argv.slice(2);
 const inputPath = args[0];
 const outputPath = args[1];
+const extensions = args[2] || ".js,.jsx,.ts,.tsx";
 
 if (!inputPath) {
     throw new Error("You must provide the first argument as an input path");
@@ -31,13 +32,19 @@ const walkSync = function(dir, filelist) {
     return filelist;
 };
 
-function extractLocale(pathToDir, rootPath, outputPath) {
+function extractLocale(pathToDir, rootPath, outputPath, extensions) {
     let locale = [];
     const fileList = [];
+    const exts = extensions.split(",");
 
     walkSync(pathToDir, fileList);
 
     fileList.forEach((file, index) => {
+        const fileExt = "." + path.extname(file);
+        if (!exts.includes(fileExt)) {
+            return;
+        }
+
         console.log("Parsing " + file + "..." + ("(" + Math.round(((index + 1) * 100) / fileList.length) + " %)"));
 
         const content = fs.readFileSync(file, "utf-8");
@@ -68,4 +75,4 @@ function extractLocale(pathToDir, rootPath, outputPath) {
     fs.writeFileSync(outputPath, JSON.stringify(final));
 }
 
-extractLocale(path.join(inputPath, "/"), inputPath, path.join(outputPath, "template.json"));
+extractLocale(path.join(inputPath, "/"), inputPath, path.join(outputPath, "template.json"), extensions);
