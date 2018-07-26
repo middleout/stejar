@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+"use strict";
+
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 var fs = require("fs");

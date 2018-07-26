@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+"use strict";
+
 const fs = require("fs");
 const path = require("path");
 const { extract } = require("../src/extractor");
@@ -35,7 +38,7 @@ function extractLocale(pathToDir, rootPath, outputPath) {
     walkSync(pathToDir, fileList);
 
     fileList.forEach((file, index) => {
-        console.log("Parsing " + file + "..." + ("(" + Math.round((index + 1) * 100 / fileList.length) + " %)"));
+        console.log("Parsing " + file + "..." + ("(" + Math.round(((index + 1) * 100) / fileList.length) + " %)"));
 
         const content = fs.readFileSync(file, "utf-8");
         const jsxResult = extract(content, ["Translate"], ["translate", "__"]);

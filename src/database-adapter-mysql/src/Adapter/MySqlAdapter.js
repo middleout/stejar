@@ -2,27 +2,15 @@ import mysql from "mysql2";
 import { MySqlGrammar } from "../Query/Grammar/MySqlGrammar";
 
 export class MySqlAdapter {
+    _config;
+
+    _connection;
+
     /**
      * @param config
      */
     constructor(config) {
-        const { user, charset, ...otherConfig } = config;
-        if (!user) {
-            throw new Error(`Database "user" is required`);
-        }
-
-        /**
-         * All the actual config is from
-         * https://github.com/mysqljs/mysql#connection-options
-         *
-         * @private
-         */
-        this._connection = mysql.createConnection({
-            user: user,
-            charset: charset || "utf8",
-            dateStrings: true,
-            ...otherConfig,
-        });
+        this._config = config;
 
         /**
          * @type {MySqlGrammar}
@@ -35,7 +23,42 @@ export class MySqlAdapter {
      * @return {*}
      */
     getConnection() {
-        return this._connection;
+        if (!this._connection) {
+            const { pool = true, user, charset, ...otherConfig } = this._config;
+            if (!user) {
+                throw new Error(`Database "user" is required`);
+            }
+
+            if (pool) {
+                this._connection = mysql
+                    .createPoolPromise({
+                        user: user,
+                        charset: charset || "utf8",
+                        dateStrings: true,
+                        ...otherConfig,
+                    })
+                    .getConnection();
+
+                return this._connection;
+            }
+
+            /**
+             * All the actual config is from
+             * https://github.com/mysqljs/mysql#connection-options
+             *
+             * @private
+             */
+            this._connection = mysql.createConnectionPromise({
+                user: user,
+                charset: charset || "utf8",
+                dateStrings: true,
+                ...otherConfig,
+            });
+
+            return this._connection;
+        }
+
+        return Promise.resolve(this._connection);
     }
 
     /**
@@ -53,15 +76,9 @@ export class MySqlAdapter {
      * @return {Promise<any>}
      */
     execute(sql, bindings) {
-        return new Promise((resolve, reject) => {
-            return this.getConnection().execute(sql, bindings, (err, rows) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                return resolve(rows);
-            });
-        });
+        return this.getConnection()
+            .then(conn => conn.execute(sql, bindings))
+            .then(([data]) => data);
     }
 
     /**
@@ -72,29 +89,21 @@ export class MySqlAdapter {
      * @return {Promise<any>}
      */
     query(sql, bindings) {
-        return new Promise((resolve, reject) => {
-            return this.getConnection().query(sql, bindings, (err, rows) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                return resolve(rows);
-            });
-        });
+        return this.getConnection()
+            .then(conn => conn.query(sql, bindings))
+            .then(([data]) => data);
     }
 
     /**
      * @return {Promise<*>}
      */
     disconnect() {
-        return new Promise((resolve, reject) => {
-            this._connection.end(err => {
-                if (err) {
-                    return reject(err);
-                }
+        const { pool = true } = this._config;
 
-                return resolve();
-            });
-        });
+        if (pool) {
+            return this.getConnection().then(conn => conn.release());
+        }
+
+        return this.getConnection().then(conn => conn.disconnect());
     }
 }
