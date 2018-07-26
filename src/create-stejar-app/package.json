@@ -1,6 +1,6 @@
 {
     "name": "@stejar/create-stejar-app",
-    "version": "4.0.90",
+    "version": "4.0.91",
     "main": "src/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -14,5 +14,5 @@
         "chalk": "^2.3.2",
         "commander": "^2.15.1"
     },
-    "gitHead": "70d9adee0ec0971b3745ab752c3610b8412313db"
+    "gitHead": "908c698d0562d081cf28224d28ca729885325883"
 }

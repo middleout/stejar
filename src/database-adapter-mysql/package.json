@@ -1,6 +1,6 @@
 {
     "name": "@stejar/database-adapter-mysql",
-    "version": "4.0.90",
+    "version": "4.0.91",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,8 +8,8 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/database": "^4.0.90",
+        "@stejar/database": "^4.0.91",
         "mysql2": "^1.5.3"
     },
-    "gitHead": "70d9adee0ec0971b3745ab752c3610b8412313db"
+    "gitHead": "908c698d0562d081cf28224d28ca729885325883"
 }
