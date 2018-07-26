@@ -1,6 +1,6 @@
 {
     "name": "@stejar/redux-config",
-    "version": "4.0.88",
+    "version": "4.0.89",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,11 +8,11 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/prefix-values": "^4.0.88",
-        "@stejar/redux-settings": "^4.0.88",
+        "@stejar/prefix-values": "^4.0.89",
+        "@stejar/redux-settings": "^4.0.89",
         "keymirror": "^0.1.1",
         "reselect": "^3.0.1",
         "type-to-reducer": "^1.1.0"
     },
-    "gitHead": "d7907e40b00ad4a61f478a429a8a625c4c8aeab9"
+    "gitHead": "6fe9994b52b4b66170c8e652b0d6e04ec30c5b99"
 }
