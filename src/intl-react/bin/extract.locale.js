@@ -40,7 +40,7 @@ function extractLocale(pathToDir, rootPath, outputPath, extensions) {
     walkSync(pathToDir, fileList);
 
     fileList.forEach((file, index) => {
-        const fileExt = "." + path.extname(file);
+        const fileExt = path.extname(file);
         if (!exts.includes(fileExt)) {
             return;
         }
