@@ -1,6 +1,6 @@
 {
     "name": "@stejar/redux-config",
-    "version": "4.0.95",
+    "version": "4.0.96",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,8 +8,8 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/prefix-values": "^4.0.95",
-        "@stejar/redux-settings": "^4.0.95",
+        "@stejar/prefix-values": "^4.0.96",
+        "@stejar/redux-settings": "^4.0.96",
         "keymirror": "^0.1.1",
         "reselect": "^3.0.1",
         "type-to-reducer": "^1.1.0"
