@@ -31,13 +31,13 @@ export class Connection {
 
     query(): Builder;
 
-    select<R>(query: Builder, bindings: any): Promise<R[]>;
+    select<R>(query: string, bindings?: any): Promise<R[]>;
 
-    insert(query: Builder, bindings: any): Promise<number>;
+    insert(query: string, bindings?: any): Promise<number>;
 
-    update(query: Builder, bindings: any): Promise<number>;
+    update(query: string, bindings?: any): Promise<number>;
 
-    delete(query: Builder, bindings: any): Promise<number>;
+    delete(query: string, bindings?: any): Promise<number>;
 
     beginTransaction(): Promise<true>;
 

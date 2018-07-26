@@ -52,5 +52,8 @@ watch.watchTree("./src", function(f, curr, prev) {
         return;
     }
 
-    match(["src/**/src/**/*.js", "src/**/src/**/*.jsx"], f, [getModuleName, rebuild]);
+    match(["src/**/src/**/*.js", "src/**/src/**/*.jsx", "src/**/src/**/*.ts", "src/**/src/**/*.tsx"], f, [
+        getModuleName,
+        rebuild,
+    ]);
 });

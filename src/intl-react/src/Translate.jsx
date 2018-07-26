@@ -1,4 +1,4 @@
-import React from "react";
+import { createElement, Fragment } from "react";
 import { withTranslate } from "./withTranslate";
 
 function _Translate({ __, children, ...args }) {
@@ -18,8 +18,8 @@ function _Translate({ __, children, ...args }) {
     const result = [];
     const parts = translated.split("__REACT__");
     parts.forEach((part, idx) => {
-        result.push(<span key={`part_${idx}`}>{part}</span>);
-        result.push(<span key={`item_${idx}`}>{list.shift()}</span>);
+        result.push(createElement(Fragment, { key: `part_${idx}` }, part));
+        result.push(createElement(Fragment, { key: `item_${idx}` }, list.shift()));
     });
 
     if (result.length > 0) {
