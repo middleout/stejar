@@ -10,7 +10,32 @@ function checkFn(expression, functions) {
 }
 
 function getNodeValue(node) {
-    return node.children[0].value.trim();
+    let children = node.children.map(item => {
+        // If we have a weird <Translate>{"..."}</Translate> we need to use the "expression" value
+        if (item.type === "JSXExpressionContainer") {
+            return item.expression;
+        }
+
+        return item;
+    });
+
+    children = children.filter(item => {
+        // If we have more than 1 child but these children actually are spaces/new lines, filter them out
+        let val = item.value.replace(/(?:\r\n|\r|\n)/g, "");
+        val = val.replace(/ /g, "");
+
+        if (!val) {
+            return false;
+        }
+
+        return true;
+    });
+
+    if (children.length === 0) {
+        return "";
+    }
+
+    return children[0].value.trim();
 }
 
 function getFnFirstArg(node) {
