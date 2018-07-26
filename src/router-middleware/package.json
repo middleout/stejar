@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-middleware",
-    "version": "4.0.91",
+    "version": "4.0.92",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -10,5 +10,5 @@
     "dependencies": {
         "items-promise": "^1.0.0"
     },
-    "gitHead": "908c698d0562d081cf28224d28ca729885325883"
+    "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"
 }
