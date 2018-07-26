@@ -29,6 +29,7 @@ function extract(code, components = ["Translate"], functions = ["translate", "__
             "exportNamespaceFrom",
             "asyncGenerators",
             "dynamicImport",
+            "typescript",
         ],
     });
 
