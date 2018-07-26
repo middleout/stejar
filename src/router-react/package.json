@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-react",
-    "version": "4.0.89",
+    "version": "4.0.90",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,18 +8,18 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/react-reduce-components": "^4.0.89",
-        "@stejar/router": "^4.0.89",
+        "@stejar/react-reduce-components": "^4.0.90",
+        "@stejar/router": "^4.0.90",
         "create-react-context": "^0.2.2",
         "hoist-non-react-statics": "^2.5.0",
         "prop-types": "^15.6.1",
         "react": "^16.3.2"
     },
     "devDependencies": {
-        "@stejar/router-server": "^4.0.89",
+        "@stejar/router-server": "^4.0.90",
         "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
         "react-dom": "^16.3.2"
     },
-    "gitHead": "6fe9994b52b4b66170c8e652b0d6e04ec30c5b99"
+    "gitHead": "70d9adee0ec0971b3745ab752c3610b8412313db"
 }

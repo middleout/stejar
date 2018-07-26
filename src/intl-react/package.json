@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl-react",
-    "version": "4.0.89",
+    "version": "4.0.90",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -13,9 +13,9 @@
         "extract:locale": "./bin/extract.locale.js"
     },
     "dependencies": {
-        "@stejar/intl": "^4.0.89",
+        "@stejar/intl": "^4.0.90",
         "react": "^16.4.0",
         "react-redux": "^5.0.7"
     },
-    "gitHead": "6fe9994b52b4b66170c8e652b0d6e04ec30c5b99"
+    "gitHead": "70d9adee0ec0971b3745ab752c3610b8412313db"
 }
