@@ -1,6 +1,6 @@
 {
     "name": "@stejar/webpack-chunks-to-assets",
-    "version": "4.0.98",
+    "version": "4.0.99",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
