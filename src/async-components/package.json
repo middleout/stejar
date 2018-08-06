@@ -1,6 +1,6 @@
 {
     "name": "@stejar/async-components",
-    "version": "4.0.100",
+    "version": "4.0.101",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
