@@ -3,14 +3,14 @@
 
 
 "@babel/cli@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fcli/-/cli-7.0.0-beta.54.tgz#c3b9766ad3218988f120e4058509adff0b72b183"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fcli/-/cli-7.0.0-beta.56.tgz#fba46b162ca2b7d36469e27cbb8da6e9a85f24c9"
   dependencies:
     commander "^2.8.1"
     convert-source-map "^1.1.0"
     fs-readdir-recursive "^1.0.0"
     glob "^7.0.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     mkdirp "^0.5.1"
     output-file-sync "^2.0.0"
     slash "^1.0.0"
@@ -24,27 +24,27 @@
   dependencies:
     "@babel/highlight" "7.0.0-beta.44"
 
-"@babel/code-frame@7.0.0-beta.54", "@babel/code-frame@^7.0.0-beta.35":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fcode-frame/-/code-frame-7.0.0-beta.54.tgz#0024f96fdf7028a21d68e273afd4e953214a1ead"
+"@babel/code-frame@7.0.0-beta.56", "@babel/code-frame@^7.0.0-beta.35":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fcode-frame/-/code-frame-7.0.0-beta.56.tgz#09f76300673ac085d3b90e02aafa0ffc2c96846a"
   dependencies:
-    "@babel/highlight" "7.0.0-beta.54"
+    "@babel/highlight" "7.0.0-beta.56"
 
 "@babel/core@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fcore/-/core-7.0.0-beta.54.tgz#253c54d0095403a5cfa764e7d9b458194692d02b"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fcore/-/core-7.0.0-beta.56.tgz#cc03ffbb62564fef58fd1cefcbb3e32011c21df9"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.54"
-    "@babel/generator" "7.0.0-beta.54"
-    "@babel/helpers" "7.0.0-beta.54"
-    "@babel/parser" "7.0.0-beta.54"
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/code-frame" "7.0.0-beta.56"
+    "@babel/generator" "7.0.0-beta.56"
+    "@babel/helpers" "7.0.0-beta.56"
+    "@babel/parser" "7.0.0-beta.56"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
     convert-source-map "^1.1.0"
     debug "^3.1.0"
     json5 "^0.5.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
@@ -59,58 +59,58 @@
     source-map "^0.5.0"
     trim-right "^1.0.1"
 
-"@babel/generator@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fgenerator/-/generator-7.0.0-beta.54.tgz#c043c7eebeebfd7e665d95c281a4aafc83d4e1c9"
+"@babel/generator@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fgenerator/-/generator-7.0.0-beta.56.tgz#07d9c2f45990c453130e080eddcd252a9cbd8d66"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
     jsesc "^2.5.1"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     source-map "^0.5.0"
     trim-right "^1.0.1"
 
-"@babel/helper-annotate-as-pure@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0-beta.54.tgz#1626126a3f9fc4ed280ac942372c7d39653d7121"
+"@babel/helper-annotate-as-pure@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0-beta.56.tgz#3814bfda01ec19f7daac810cc2375932a79acbbc"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-builder-binary-assignment-operator-visitor@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-builder-binary-assignment-operator-visitor/-/helper-builder-binary-assignment-operator-visitor-7.0.0-beta.54.tgz#d0a1967635b9eebcafdba80491917ee4981c12fa"
+"@babel/helper-builder-binary-assignment-operator-visitor@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-builder-binary-assignment-operator-visitor/-/helper-builder-binary-assignment-operator-visitor-7.0.0-beta.56.tgz#c80d0edb162eb91d44dd5b25c5083cf6d72d7088"
   dependencies:
-    "@babel/helper-explode-assignable-expression" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-explode-assignable-expression" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-builder-react-jsx@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-builder-react-jsx/-/helper-builder-react-jsx-7.0.0-beta.54.tgz#cad582ab1cb831f4dc34e9bcb4c4fa2f1fb6c986"
+"@babel/helper-builder-react-jsx@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-builder-react-jsx/-/helper-builder-react-jsx-7.0.0-beta.56.tgz#4e3e3be02f006a89452a2e4541e1db53468c763e"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
     esutils "^2.0.0"
 
-"@babel/helper-call-delegate@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-call-delegate/-/helper-call-delegate-7.0.0-beta.54.tgz#f6b72cfd832fb26eb2a806e18de05f88d3a8f302"
+"@babel/helper-call-delegate@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-call-delegate/-/helper-call-delegate-7.0.0-beta.56.tgz#eacdf2f2943be79dfe259011ee8362cd61012acd"
   dependencies:
-    "@babel/helper-hoist-variables" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-hoist-variables" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-define-map@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-define-map/-/helper-define-map-7.0.0-beta.54.tgz#2036d7c49365987f091db9702ce2f3b55f677730"
+"@babel/helper-define-map@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-define-map/-/helper-define-map-7.0.0-beta.56.tgz#2c3d0a584843c2d6fc555f8f80e335eddc34ec38"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
-"@babel/helper-explode-assignable-expression@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-explode-assignable-expression/-/helper-explode-assignable-expression-7.0.0-beta.54.tgz#cf067f3330965c2048bf087ea06f62c76d94a792"
+"@babel/helper-explode-assignable-expression@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-explode-assignable-expression/-/helper-explode-assignable-expression-7.0.0-beta.56.tgz#3e21d74e8d46e591dc305c70824561a80d0a53d2"
   dependencies:
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
 "@babel/helper-function-name@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -120,13 +120,13 @@
     "@babel/template" "7.0.0-beta.44"
     "@babel/types" "7.0.0-beta.44"
 
-"@babel/helper-function-name@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-function-name/-/helper-function-name-7.0.0-beta.54.tgz#307875507a1eda2482a09a9a4df6a25632ffb34b"
+"@babel/helper-function-name@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-function-name/-/helper-function-name-7.0.0-beta.56.tgz#4e9c8a84ce4368b4a779409d0c4fe3f714be60ab"
   dependencies:
-    "@babel/helper-get-function-arity" "7.0.0-beta.54"
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-get-function-arity" "7.0.0-beta.56"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
 "@babel/helper-get-function-arity@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -134,84 +134,84 @@
   dependencies:
     "@babel/types" "7.0.0-beta.44"
 
-"@babel/helper-get-function-arity@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.54.tgz#757bd189b077074a004028cfde5f083c306cc6c4"
+"@babel/helper-get-function-arity@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.56.tgz#872864d67e25705b94d1c71afc72344aafc8dc9c"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-hoist-variables@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-hoist-variables/-/helper-hoist-variables-7.0.0-beta.54.tgz#8635be8095135ff73f753ed189e449f68b4f43cb"
+"@babel/helper-hoist-variables@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-hoist-variables/-/helper-hoist-variables-7.0.0-beta.56.tgz#6d32ac403a51b0a19e2144820d53a793a04df263"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-member-expression-to-functions@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-member-expression-to-functions/-/helper-member-expression-to-functions-7.0.0-beta.54.tgz#bce9ddc484317b13d2615bafe2b524d0d56d99df"
+"@babel/helper-member-expression-to-functions@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-member-expression-to-functions/-/helper-member-expression-to-functions-7.0.0-beta.56.tgz#f7d8d673e140c1bf051abf9661652788ae37b1b4"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-module-imports@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-module-imports/-/helper-module-imports-7.0.0-beta.54.tgz#c2d8e14ff034225bf431356db77ef467b8d35aac"
+"@babel/helper-module-imports@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-module-imports/-/helper-module-imports-7.0.0-beta.56.tgz#edf9494ef1f36674bb19cec9ea142b70f186406d"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/types" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
-"@babel/helper-module-transforms@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-module-transforms/-/helper-module-transforms-7.0.0-beta.54.tgz#8cc57eb0db5f0945d866524d555abd084e30cc35"
+"@babel/helper-module-transforms@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-module-transforms/-/helper-module-transforms-7.0.0-beta.56.tgz#327ba3bd62bcfa597b008f48c0826cdc690ba944"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.54"
-    "@babel/helper-simple-access" "7.0.0-beta.54"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.54"
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/helper-module-imports" "7.0.0-beta.56"
+    "@babel/helper-simple-access" "7.0.0-beta.56"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.56"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
-"@babel/helper-optimise-call-expression@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-optimise-call-expression/-/helper-optimise-call-expression-7.0.0-beta.54.tgz#4af8dd4ff90dbd29b3bcf85fff43952e2ae1016e"
+"@babel/helper-optimise-call-expression@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-optimise-call-expression/-/helper-optimise-call-expression-7.0.0-beta.56.tgz#e9814da0d175ca39901f2d895d6dfef658fe8953"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-plugin-utils@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.54.tgz#61d2a9a0f9a3e31838a458debb9eebd7bdd249b4"
+"@babel/helper-plugin-utils@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.56.tgz#e5f63cae8b3b716825d64e69ad8b59d71cd2080c"
 
-"@babel/helper-regex@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-regex/-/helper-regex-7.0.0-beta.54.tgz#8ac562f855f132fc68dfd10b132552555ac870d9"
+"@babel/helper-regex@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-regex/-/helper-regex-7.0.0-beta.56.tgz#88d8a15c853892f603193e5adf10c428cd588fc0"
   dependencies:
-    lodash "^4.17.5"
+    lodash "^4.17.10"
 
-"@babel/helper-remap-async-to-generator@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-remap-async-to-generator/-/helper-remap-async-to-generator-7.0.0-beta.54.tgz#39a50052aadd74d40c73b7c58eb963b90fac56d3"
+"@babel/helper-remap-async-to-generator@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-remap-async-to-generator/-/helper-remap-async-to-generator-7.0.0-beta.56.tgz#e5c8958f324395c16606b85ecdf4de1335eaa541"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.54"
-    "@babel/helper-wrap-function" "7.0.0-beta.54"
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.56"
+    "@babel/helper-wrap-function" "7.0.0-beta.56"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-replace-supers@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-replace-supers/-/helper-replace-supers-7.0.0-beta.54.tgz#901f5a1493a410799fd3ab3e0c0d29d18071c89f"
+"@babel/helper-replace-supers@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-replace-supers/-/helper-replace-supers-7.0.0-beta.56.tgz#52f25c16b3dee1f4e8cd96eb4d1d7f9af9db18d8"
   dependencies:
-    "@babel/helper-member-expression-to-functions" "7.0.0-beta.54"
-    "@babel/helper-optimise-call-expression" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-member-expression-to-functions" "7.0.0-beta.56"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-simple-access@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-simple-access/-/helper-simple-access-7.0.0-beta.54.tgz#5f760a19589a9b6f07e80a65ef4bcbd4fba8c253"
+"@babel/helper-simple-access@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-simple-access/-/helper-simple-access-7.0.0-beta.56.tgz#bb6569e0ada73f408ca6e00514f9ca2c02970c0d"
   dependencies:
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
 "@babel/helper-split-export-declaration@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -219,28 +219,28 @@
   dependencies:
     "@babel/types" "7.0.0-beta.44"
 
-"@babel/helper-split-export-declaration@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.54.tgz#89cd8833c95481a0827ac6a1bfccddb92b75a109"
+"@babel/helper-split-export-declaration@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.56.tgz#82d53382836134ba3ed0ea2394ca21fe579ec241"
   dependencies:
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helper-wrap-function@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelper-wrap-function/-/helper-wrap-function-7.0.0-beta.54.tgz#dc1b7a483a3074a3531b36523e03156d910a3a2a"
+"@babel/helper-wrap-function@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelper-wrap-function/-/helper-wrap-function-7.0.0-beta.56.tgz#e493eff444f161569c2c0091a7bd60670fc03d8d"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
-"@babel/helpers@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhelpers/-/helpers-7.0.0-beta.54.tgz#b86a99a80efd81668caef307610b961197446a74"
+"@babel/helpers@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhelpers/-/helpers-7.0.0-beta.56.tgz#a01cac1481c6fa38197ae410137539045b160443"
   dependencies:
-    "@babel/template" "7.0.0-beta.54"
-    "@babel/traverse" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/template" "7.0.0-beta.56"
+    "@babel/traverse" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
 
 "@babel/highlight@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -250,379 +250,372 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@babel/highlight@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fhighlight/-/highlight-7.0.0-beta.54.tgz#155d507358329b8e7068970017c3fd74a9b08584"
+"@babel/highlight@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fhighlight/-/highlight-7.0.0-beta.56.tgz#f8b0fc8c5c2de53bb2c12f9001ad3d99e573696d"
   dependencies:
     chalk "^2.0.0"
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@babel/parser@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fparser/-/parser-7.0.0-beta.54.tgz#c01aa63b57c9c8dce8744796c81d9df121f20db4"
+"@babel/parser@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fparser/-/parser-7.0.0-beta.56.tgz#8638aa02e0130cd10b2ba4128e2b804112073ed3"
 
-"@babel/plugin-proposal-async-generator-functions@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.0.0-beta.54.tgz#19871bd655b5d748b0ae3e9ecebe247be8b7f83b"
+"@babel/plugin-proposal-async-generator-functions@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.0.0-beta.56.tgz#078b8763a7423c99dfb7af8906966fc6b667dfb1"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-remap-async-to-generator" "7.0.0-beta.54"
-    "@babel/plugin-syntax-async-generators" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-remap-async-to-generator" "7.0.0-beta.56"
+    "@babel/plugin-syntax-async-generators" "7.0.0-beta.56"
 
 "@babel/plugin-proposal-class-properties@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-beta.54.tgz#5953f0499c1e69e732d33a550bce8799aa6b76f3"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-beta.56.tgz#cfa5adf4aef4480ef3de3e8896f1524804cdf3d0"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/helper-member-expression-to-functions" "7.0.0-beta.54"
-    "@babel/helper-optimise-call-expression" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-replace-supers" "7.0.0-beta.54"
-    "@babel/plugin-syntax-class-properties" "7.0.0-beta.54"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/helper-member-expression-to-functions" "7.0.0-beta.56"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-replace-supers" "7.0.0-beta.56"
+    "@babel/plugin-syntax-class-properties" "7.0.0-beta.56"
 
 "@babel/plugin-proposal-decorators@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-decorators/-/plugin-proposal-decorators-7.0.0-beta.54.tgz#eb14bd5223ced8ccec8e6b900ba025e04f49578d"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-decorators/-/plugin-proposal-decorators-7.0.0-beta.56.tgz#cfd22a591c1c6dde8b1c9e7b60ba0bdb8b1e85e7"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-decorators" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-decorators" "7.0.0-beta.56"
 
-"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.54.tgz#5481269a020dd0d38715a8094fed015d30ef4c2a"
+"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.56.tgz#5a8b8c89e94155d766baacdf8e50ea7dead96741"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.56"
 
-"@babel/plugin-proposal-optional-catch-binding@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.0.0-beta.54.tgz#931f69298fa0c411b2596616cf5a1d82925b87a9"
+"@babel/plugin-proposal-optional-catch-binding@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.0.0-beta.56.tgz#0b0afe131ba4b42f0961435cfec0f4d5525fe06c"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.56"
 
-"@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.54.tgz#1624631faf688bcbde4918712bd0af7186f7d245"
+"@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.56.tgz#df00a82966ebaf2ddd3a7fee8f746dbbf0013956"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-regex" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-regex" "7.0.0-beta.56"
     regexpu-core "^4.2.0"
 
-"@babel/plugin-syntax-async-generators@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0-beta.54.tgz#ffac8f64927614762897cc9643495fd38097dd41"
+"@babel/plugin-syntax-async-generators@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0-beta.56.tgz#e784a9f104fa9df3a6273079a8be7ef5085259ea"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-syntax-class-properties@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0-beta.54.tgz#5e70f22dc3628c1d35402b63ff1a8f8e005bd871"
+"@babel/plugin-syntax-class-properties@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0-beta.56.tgz#ab0cfbb1aa681810fb109e73ae125d3682837c33"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-syntax-decorators@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-decorators/-/plugin-syntax-decorators-7.0.0-beta.54.tgz#4b3c57ecb3b35a9c995447e083bd6b503edc95ba"
+"@babel/plugin-syntax-decorators@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-decorators/-/plugin-syntax-decorators-7.0.0-beta.56.tgz#f0d03aefa62d758f5be890c0ab2f1400d2631e8d"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-syntax-jsx@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.54.tgz#71171aee902b94ccf2e22a810d1426b5165b8d84"
+"@babel/plugin-syntax-jsx@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.56.tgz#d018279f6fc3cae489f72022fa449c568d913681"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-syntax-object-rest-spread@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.0.0-beta.54.tgz#e0f445612081ab573e2535adbabc7b710d17940c"
+"@babel/plugin-syntax-object-rest-spread@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.0.0-beta.56.tgz#ebcb1406eaadb1307df02b2ebbc91fd069729f73"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.54.tgz#2eb8ddde19ddf73a343d087a087159ed44e54809"
+"@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.56.tgz#3606e382384507b71adaf2f2f239395c5695ec2c"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-arrow-functions@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.54.tgz#44a977b8e61e4efcc7658bbbe260f204ca1bcf72"
+"@babel/plugin-transform-arrow-functions@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.56.tgz#b547c40003f6795a824c3af501dc963acc6b2492"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-async-to-generator@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.0.0-beta.54.tgz#d035e65c50884937d64dbe68d16498c032f8bbec"
+"@babel/plugin-transform-async-to-generator@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.0.0-beta.56.tgz#1ce419953fc3c4364ab95442653e4bd460815ed3"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-remap-async-to-generator" "7.0.0-beta.54"
+    "@babel/helper-module-imports" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-remap-async-to-generator" "7.0.0-beta.56"
 
-"@babel/plugin-transform-block-scoped-functions@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-block-scoped-functions/-/plugin-transform-block-scoped-functions-7.0.0-beta.54.tgz#938a77fb12f0e11661bdf5386e4aeca47f0c053b"
+"@babel/plugin-transform-block-scoped-functions@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-block-scoped-functions/-/plugin-transform-block-scoped-functions-7.0.0-beta.56.tgz#ad6fe88ef1b1d5c6f301a13e5185942e963202c3"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-block-scoping@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-block-scoping/-/plugin-transform-block-scoping-7.0.0-beta.54.tgz#bcae1c2ffae4cc3b7b3e5455f0a98daecc09a3c6"
+"@babel/plugin-transform-block-scoping@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-block-scoping/-/plugin-transform-block-scoping-7.0.0-beta.56.tgz#b4a3ec153d19b92680db95f4c3823b88e6f93197"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
-"@babel/plugin-transform-classes@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.54.tgz#b15781d2e499ce25438e73fea2fa5a09858568ff"
+"@babel/plugin-transform-classes@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.56.tgz#99b405dee3fb466c09c1e0874e795f4682ee690d"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.54"
-    "@babel/helper-define-map" "7.0.0-beta.54"
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/helper-optimise-call-expression" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-replace-supers" "7.0.0-beta.54"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.54"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.56"
+    "@babel/helper-define-map" "7.0.0-beta.56"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-replace-supers" "7.0.0-beta.56"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.56"
     globals "^11.1.0"
 
-"@babel/plugin-transform-computed-properties@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.54.tgz#b28494942b94fb86d01994763d2b5c43bdd986af"
+"@babel/plugin-transform-computed-properties@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.56.tgz#774e705279d5ca3bdb132d93b6a7fc046a660608"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-destructuring@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-destructuring/-/plugin-transform-destructuring-7.0.0-beta.54.tgz#81f649a3e4fcb62c2b2ad497f783a800b994472f"
+"@babel/plugin-transform-destructuring@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-destructuring/-/plugin-transform-destructuring-7.0.0-beta.56.tgz#41ab43ad5a885b73cc44192948109076a95c2bf0"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-dotall-regex@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.54.tgz#2835b7f4141b19fa0648eb96ffe3c4fccd1eca20"
+"@babel/plugin-transform-dotall-regex@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.56.tgz#f8586e81e4d5f6609f1b7be0dcbce77a2bd3bd24"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-regex" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-regex" "7.0.0-beta.56"
     regexpu-core "^4.1.3"
 
-"@babel/plugin-transform-duplicate-keys@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.0.0-beta.54.tgz#4b8f4fb349902a800679191f59d0fa53fca49400"
+"@babel/plugin-transform-duplicate-keys@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.0.0-beta.56.tgz#8217b5a3c3ef078009e64989b0c6bdb3a5ad9960"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-exponentiation-operator@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.54.tgz#1017096366fb43ebca8ed8d8d0cdd1ebd64febb2"
+"@babel/plugin-transform-exponentiation-operator@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.56.tgz#da1c786c70af6249d142771d408dc1abb2fb8871"
   dependencies:
-    "@babel/helper-builder-binary-assignment-operator-visitor" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-builder-binary-assignment-operator-visitor" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-for-of@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.54.tgz#261d2992058a9e09234b9ff67820054ffc55f79c"
+"@babel/plugin-transform-for-of@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.56.tgz#a95335820f8dedf30b96ec03e4cac09a5bb4edf2"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-function-name@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-function-name/-/plugin-transform-function-name-7.0.0-beta.54.tgz#cc722f9973931337def3d1e6c55138581edd371e"
+"@babel/plugin-transform-function-name@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-function-name/-/plugin-transform-function-name-7.0.0-beta.56.tgz#7382a1cc8df0d8b04be36d83773dd6b451ddd045"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-literals@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.54.tgz#70f07ecc2f3b7bc9f542a578e82eec18a5504098"
+"@babel/plugin-transform-literals@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.56.tgz#5f6d3d0dad64c52df64fe8654a8e6d6fd884d60f"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-modules-amd@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-amd/-/plugin-transform-modules-amd-7.0.0-beta.54.tgz#fb50740741420bb485ee1315d2e1133db4e433d2"
+"@babel/plugin-transform-modules-amd@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-amd/-/plugin-transform-modules-amd-7.0.0-beta.56.tgz#000ae2a3f41a9dd43d55211df3fcc74ac8e17418"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-module-transforms" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-modules-commonjs@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.0.0-beta.54.tgz#07d912a7a24dad2d9bf5d44ce322ddc457a8db37"
+"@babel/plugin-transform-modules-commonjs@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.0.0-beta.56.tgz#d0c96de58d11c032d9098b891b25874a387f496c"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-simple-access" "7.0.0-beta.54"
+    "@babel/helper-module-transforms" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-simple-access" "7.0.0-beta.56"
 
-"@babel/plugin-transform-modules-systemjs@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.54.tgz#0923f012ac252e037467245ff27f8954f4ce6803"
+"@babel/plugin-transform-modules-systemjs@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.56.tgz#7aecc2a886a151aabfe86e5c01811f5cf9c27d04"
   dependencies:
-    "@babel/helper-hoist-variables" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-hoist-variables" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-modules-umd@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.54.tgz#3af0e2cf8f533b2984a8ca6da316246850c3aeda"
+"@babel/plugin-transform-modules-umd@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.56.tgz#1dd72699fd8fbafda4c259318771d97f91cd8410"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-module-transforms" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-new-target@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-new-target/-/plugin-transform-new-target-7.0.0-beta.54.tgz#634ee57fa805720195cd31086c973f1fc5c9949b"
+"@babel/plugin-transform-new-target@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-new-target/-/plugin-transform-new-target-7.0.0-beta.56.tgz#a8b219cece600e57cdc372b8a41c21e01f8165d8"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-object-super@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-object-super/-/plugin-transform-object-super-7.0.0-beta.54.tgz#d25fad66eff90de03ee62f8384f0af57bcd065d9"
+"@babel/plugin-transform-object-super@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-object-super/-/plugin-transform-object-super-7.0.0-beta.56.tgz#b02d5d99aeffd9770e2a5de95260bf720f90ebab"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-replace-supers" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-replace-supers" "7.0.0-beta.56"
 
-"@babel/plugin-transform-parameters@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-parameters/-/plugin-transform-parameters-7.0.0-beta.54.tgz#76306f19b9acac6cf13721af15ecb9f382864ff7"
+"@babel/plugin-transform-parameters@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-parameters/-/plugin-transform-parameters-7.0.0-beta.56.tgz#9010f8743e8bb213e14c1fe9f801588e509f46b1"
   dependencies:
-    "@babel/helper-call-delegate" "7.0.0-beta.54"
-    "@babel/helper-get-function-arity" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-call-delegate" "7.0.0-beta.56"
+    "@babel/helper-get-function-arity" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-react-display-name@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-display-name/-/plugin-transform-react-display-name-7.0.0-beta.54.tgz#87cb6a2bbc25db16fad7f6ec86a10787f482118c"
+"@babel/plugin-transform-react-display-name@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-display-name/-/plugin-transform-react-display-name-7.0.0-beta.56.tgz#fc833da81d558d43fda061a1e3e833600555380c"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-react-jsx-self@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.0.0-beta.54.tgz#004e6358bcdecd0f9e9042cbbf80b6e9d81a6e75"
+"@babel/plugin-transform-react-jsx-self@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.0.0-beta.56.tgz#739a1eec00954e066e382b2a0670abc48957b8c9"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.56"
 
-"@babel/plugin-transform-react-jsx-source@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.0.0-beta.54.tgz#1d6eee65ff772fb002b995e538c0c9615ed6a3f7"
+"@babel/plugin-transform-react-jsx-source@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.0.0-beta.56.tgz#fca2cbf49dad9d44188d804905223ab3fddfa9d5"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.56"
 
-"@babel/plugin-transform-react-jsx@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx/-/plugin-transform-react-jsx-7.0.0-beta.54.tgz#7e9b6a624b6406d438b44a8fad23d437a7613b66"
+"@babel/plugin-transform-react-jsx@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-react-jsx/-/plugin-transform-react-jsx-7.0.0-beta.56.tgz#d1d92fa3ff51670f4174660fe7a649c7e4067338"
   dependencies:
-    "@babel/helper-builder-react-jsx" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.54"
+    "@babel/helper-builder-react-jsx" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.56"
 
-"@babel/plugin-transform-regenerator@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-regenerator/-/plugin-transform-regenerator-7.0.0-beta.54.tgz#8b46e192f3bfe096bbbf86e27764e7662e5f9a0f"
+"@babel/plugin-transform-regenerator@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-regenerator/-/plugin-transform-regenerator-7.0.0-beta.56.tgz#03999df0a27e5cc38686d90e83be0190660f3960"
   dependencies:
     regenerator-transform "^0.13.3"
 
-"@babel/plugin-transform-shorthand-properties@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.0.0-beta.54.tgz#50e73c2afc5898b1055510ddf60ee13a6301517f"
+"@babel/plugin-transform-shorthand-properties@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.0.0-beta.56.tgz#bf78900f016774a28d56ec8e83d0cec4d662b7ff"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-spread@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-spread/-/plugin-transform-spread-7.0.0-beta.54.tgz#4f0852df0f4b1db2426c40facd8fe5f028a3dbc9"
+"@babel/plugin-transform-spread@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-spread/-/plugin-transform-spread-7.0.0-beta.56.tgz#a8681e7d78b648b7170a211068bea31aaedf0ea2"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-sticky-regex@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.54.tgz#568f35eb5118ae96fad82eac36374d7923b47883"
+"@babel/plugin-transform-sticky-regex@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.56.tgz#89b37d31fac03f0c87b99dd7b190159d098f7398"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-regex" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-regex" "7.0.0-beta.56"
 
-"@babel/plugin-transform-template-literals@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-template-literals/-/plugin-transform-template-literals-7.0.0-beta.54.tgz#cb1f6303cafb8442a6c6c69a0dfbb60699f327bc"
+"@babel/plugin-transform-template-literals@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-template-literals/-/plugin-transform-template-literals-7.0.0-beta.56.tgz#2ddc47b1b26f60bf8d755d71d4b8e1440ebad2c7"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-typeof-symbol@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.54.tgz#6d068686239c9ebaf534d1c0d8032953f7b521bc"
+"@babel/plugin-transform-typeof-symbol@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.56.tgz#76160d2bfee43b7d4ea07cf3c51dd7fa6578f8ec"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
 
-"@babel/plugin-transform-unicode-regex@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fplugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.54.tgz#1dc7e9150b39aaeb19fca1c863e082f6096afc60"
+"@babel/plugin-transform-unicode-regex@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fplugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.56.tgz#b3fad34e9c5a6d4181af443713d9e38a292c8bb0"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/helper-regex" "7.0.0-beta.54"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/helper-regex" "7.0.0-beta.56"
     regexpu-core "^4.1.3"
 
 "@babel/preset-env@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fpreset-env/-/preset-env-7.0.0-beta.54.tgz#4b05c4e3aaed64a509098e4e854dfc0e02edf053"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fpreset-env/-/preset-env-7.0.0-beta.56.tgz#1d00bb1768c422b363be214c12f3b99dc5e4cc0c"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.54"
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-proposal-async-generator-functions" "7.0.0-beta.54"
-    "@babel/plugin-proposal-object-rest-spread" "7.0.0-beta.54"
-    "@babel/plugin-proposal-optional-catch-binding" "7.0.0-beta.54"
-    "@babel/plugin-proposal-unicode-property-regex" "7.0.0-beta.54"
-    "@babel/plugin-syntax-async-generators" "7.0.0-beta.54"
-    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.54"
-    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.54"
-    "@babel/plugin-transform-arrow-functions" "7.0.0-beta.54"
-    "@babel/plugin-transform-async-to-generator" "7.0.0-beta.54"
-    "@babel/plugin-transform-block-scoped-functions" "7.0.0-beta.54"
-    "@babel/plugin-transform-block-scoping" "7.0.0-beta.54"
-    "@babel/plugin-transform-classes" "7.0.0-beta.54"
-    "@babel/plugin-transform-computed-properties" "7.0.0-beta.54"
-    "@babel/plugin-transform-destructuring" "7.0.0-beta.54"
-    "@babel/plugin-transform-dotall-regex" "7.0.0-beta.54"
-    "@babel/plugin-transform-duplicate-keys" "7.0.0-beta.54"
-    "@babel/plugin-transform-exponentiation-operator" "7.0.0-beta.54"
-    "@babel/plugin-transform-for-of" "7.0.0-beta.54"
-    "@babel/plugin-transform-function-name" "7.0.0-beta.54"
-    "@babel/plugin-transform-literals" "7.0.0-beta.54"
-    "@babel/plugin-transform-modules-amd" "7.0.0-beta.54"
-    "@babel/plugin-transform-modules-commonjs" "7.0.0-beta.54"
-    "@babel/plugin-transform-modules-systemjs" "7.0.0-beta.54"
-    "@babel/plugin-transform-modules-umd" "7.0.0-beta.54"
-    "@babel/plugin-transform-new-target" "7.0.0-beta.54"
-    "@babel/plugin-transform-object-super" "7.0.0-beta.54"
-    "@babel/plugin-transform-parameters" "7.0.0-beta.54"
-    "@babel/plugin-transform-regenerator" "7.0.0-beta.54"
-    "@babel/plugin-transform-shorthand-properties" "7.0.0-beta.54"
-    "@babel/plugin-transform-spread" "7.0.0-beta.54"
-    "@babel/plugin-transform-sticky-regex" "7.0.0-beta.54"
-    "@babel/plugin-transform-template-literals" "7.0.0-beta.54"
-    "@babel/plugin-transform-typeof-symbol" "7.0.0-beta.54"
-    "@babel/plugin-transform-unicode-regex" "7.0.0-beta.54"
+    "@babel/helper-module-imports" "7.0.0-beta.56"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-proposal-async-generator-functions" "7.0.0-beta.56"
+    "@babel/plugin-proposal-object-rest-spread" "7.0.0-beta.56"
+    "@babel/plugin-proposal-optional-catch-binding" "7.0.0-beta.56"
+    "@babel/plugin-proposal-unicode-property-regex" "7.0.0-beta.56"
+    "@babel/plugin-syntax-async-generators" "7.0.0-beta.56"
+    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.56"
+    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.56"
+    "@babel/plugin-transform-arrow-functions" "7.0.0-beta.56"
+    "@babel/plugin-transform-async-to-generator" "7.0.0-beta.56"
+    "@babel/plugin-transform-block-scoped-functions" "7.0.0-beta.56"
+    "@babel/plugin-transform-block-scoping" "7.0.0-beta.56"
+    "@babel/plugin-transform-classes" "7.0.0-beta.56"
+    "@babel/plugin-transform-computed-properties" "7.0.0-beta.56"
+    "@babel/plugin-transform-destructuring" "7.0.0-beta.56"
+    "@babel/plugin-transform-dotall-regex" "7.0.0-beta.56"
+    "@babel/plugin-transform-duplicate-keys" "7.0.0-beta.56"
+    "@babel/plugin-transform-exponentiation-operator" "7.0.0-beta.56"
+    "@babel/plugin-transform-for-of" "7.0.0-beta.56"
+    "@babel/plugin-transform-function-name" "7.0.0-beta.56"
+    "@babel/plugin-transform-literals" "7.0.0-beta.56"
+    "@babel/plugin-transform-modules-amd" "7.0.0-beta.56"
+    "@babel/plugin-transform-modules-commonjs" "7.0.0-beta.56"
+    "@babel/plugin-transform-modules-systemjs" "7.0.0-beta.56"
+    "@babel/plugin-transform-modules-umd" "7.0.0-beta.56"
+    "@babel/plugin-transform-new-target" "7.0.0-beta.56"
+    "@babel/plugin-transform-object-super" "7.0.0-beta.56"
+    "@babel/plugin-transform-parameters" "7.0.0-beta.56"
+    "@babel/plugin-transform-regenerator" "7.0.0-beta.56"
+    "@babel/plugin-transform-shorthand-properties" "7.0.0-beta.56"
+    "@babel/plugin-transform-spread" "7.0.0-beta.56"
+    "@babel/plugin-transform-sticky-regex" "7.0.0-beta.56"
+    "@babel/plugin-transform-template-literals" "7.0.0-beta.56"
+    "@babel/plugin-transform-typeof-symbol" "7.0.0-beta.56"
+    "@babel/plugin-transform-unicode-regex" "7.0.0-beta.56"
     browserslist "^3.0.0"
     invariant "^2.2.2"
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
 
 "@babel/preset-react@^7.0.0-beta.39":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fpreset-react/-/preset-react-7.0.0-beta.54.tgz#98021037a74b27b46a46d3b28e84a1f2f406dadb"
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2fpreset-react/-/preset-react-7.0.0-beta.56.tgz#1c0914d968f3ff4d11bf91fd86857b965c528bb3"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.54"
-    "@babel/plugin-transform-react-display-name" "7.0.0-beta.54"
-    "@babel/plugin-transform-react-jsx" "7.0.0-beta.54"
-    "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.54"
-    "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.54"
-
-"@babel/runtime@^7.0.0-beta.47":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2fruntime/-/runtime-7.0.0-beta.54.tgz#39ebb42723fe7ca4b3e1b00e967e80138d47cadf"
-  dependencies:
-    core-js "^2.5.7"
-    regenerator-runtime "^0.12.0"
+    "@babel/helper-plugin-utils" "7.0.0-beta.56"
+    "@babel/plugin-transform-react-display-name" "7.0.0-beta.56"
+    "@babel/plugin-transform-react-jsx" "7.0.0-beta.56"
+    "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.56"
+    "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.56"
 
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -633,14 +626,14 @@
     babylon "7.0.0-beta.44"
     lodash "^4.2.0"
 
-"@babel/template@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2ftemplate/-/template-7.0.0-beta.54.tgz#d5b0d2d2d55c0e78b048c61a058f36cfd7d91af3"
+"@babel/template@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2ftemplate/-/template-7.0.0-beta.56.tgz#a428197e0c9db142f8581cbfdcfa9289b0dd7fd7"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.54"
-    "@babel/parser" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
-    lodash "^4.17.5"
+    "@babel/code-frame" "7.0.0-beta.56"
+    "@babel/parser" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
+    lodash "^4.17.10"
 
 "@babel/traverse@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -657,19 +650,19 @@
     invariant "^2.2.0"
     lodash "^4.2.0"
 
-"@babel/traverse@7.0.0-beta.54", "@babel/traverse@^7.0.0-beta.47":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2ftraverse/-/traverse-7.0.0-beta.54.tgz#2c17f98dcdbf19aa918fde128f0e1a0bc089e05a"
+"@babel/traverse@7.0.0-beta.56", "@babel/traverse@^7.0.0-beta.47", "@babel/traverse@^7.0.0-beta.54":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2ftraverse/-/traverse-7.0.0-beta.56.tgz#62fdfe69328cfaad414ef01844f5ab40e32f4ad0"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.54"
-    "@babel/generator" "7.0.0-beta.54"
-    "@babel/helper-function-name" "7.0.0-beta.54"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.54"
-    "@babel/parser" "7.0.0-beta.54"
-    "@babel/types" "7.0.0-beta.54"
+    "@babel/code-frame" "7.0.0-beta.56"
+    "@babel/generator" "7.0.0-beta.56"
+    "@babel/helper-function-name" "7.0.0-beta.56"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.56"
+    "@babel/parser" "7.0.0-beta.56"
+    "@babel/types" "7.0.0-beta.56"
     debug "^3.1.0"
     globals "^11.1.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
 
 "@babel/types@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -679,51 +672,51 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@babel/types@7.0.0-beta.54":
-  version "7.0.0-beta.54"
-  resolved "https://npm.middleout.com/@babel%2ftypes/-/types-7.0.0-beta.54.tgz#025ad68492fed542c13f14c579a44c848e531063"
+"@babel/types@7.0.0-beta.56":
+  version "7.0.0-beta.56"
+  resolved "https://npm.middleout.com/@babel%2ftypes/-/types-7.0.0-beta.56.tgz#df456947a82510ec30361971e566110d89489056"
   dependencies:
     esutils "^2.0.2"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@lerna/add@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fadd/-/add-3.0.0-beta.21.tgz#5634492930b5f97eca3775b85f39f9e382680425"
+"@lerna/add@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fadd/-/add-3.0.0-rc.0.tgz#a2963cecda704b0030601c1db2aee3a579d3af74"
   dependencies:
-    "@lerna/bootstrap" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/bootstrap" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     dedent "^0.7.0"
     npm-package-arg "^6.0.0"
     p-map "^1.2.0"
     package-json "^4.0.1"
     semver "^5.5.0"
 
-"@lerna/batch-packages@^3.0.0-beta.18":
-  version "3.0.0-beta.18"
-  resolved "https://npm.middleout.com/@lerna%2fbatch-packages/-/batch-packages-3.0.0-beta.18.tgz#69d5e3f5003e454a1615c38d9f0b65b10853625a"
+"@lerna/batch-packages@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fbatch-packages/-/batch-packages-3.0.0-rc.0.tgz#8e630a8042da8dd8cf5d3c61ab55f669d9a67d56"
   dependencies:
-    "@lerna/package-graph" "^3.0.0-beta.18"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/package-graph" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     npmlog "^4.1.2"
 
-"@lerna/bootstrap@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fbootstrap/-/bootstrap-3.0.0-beta.21.tgz#de9233d0c7f9881bc7c27948e515f34d47f27710"
+"@lerna/bootstrap@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fbootstrap/-/bootstrap-3.0.0-rc.0.tgz#8a36f1ebfa17faf6d483fa5e8e73c2c22fbc608c"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.18"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/npm-conf" "^3.0.0-beta.19"
-    "@lerna/npm-install" "^3.0.0-beta.21"
-    "@lerna/rimraf-dir" "^3.0.0-beta.21"
-    "@lerna/run-lifecycle" "^3.0.0-beta.0"
-    "@lerna/run-parallel-batches" "^3.0.0-beta.0"
-    "@lerna/symlink-binary" "^3.0.0-beta.17"
-    "@lerna/symlink-dependencies" "^3.0.0-beta.17"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/npm-conf" "^3.0.0-rc.0"
+    "@lerna/npm-install" "^3.0.0-rc.0"
+    "@lerna/rimraf-dir" "^3.0.0-rc.0"
+    "@lerna/run-lifecycle" "^3.0.0-rc.0"
+    "@lerna/run-parallel-batches" "^3.0.0-rc.0"
+    "@lerna/symlink-binary" "^3.0.0-rc.0"
+    "@lerna/symlink-dependencies" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     dedent "^0.7.0"
     get-port "^3.2.0"
     multimatch "^2.1.0"
@@ -736,130 +729,119 @@
     read-package-tree "^5.1.6"
     semver "^5.5.0"
 
-"@lerna/changed@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fchanged/-/changed-3.0.0-beta.21.tgz#e768dba7573dbc9cfb96c4f47ae9efcec4cb5d65"
+"@lerna/changed@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fchanged/-/changed-3.0.0-rc.0.tgz#7686a93dcd0630eac3b6114153dc8a301df6870c"
   dependencies:
-    "@lerna/collect-updates" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/output" "^3.0.0-beta.0"
-    "@lerna/publish" "^3.0.0-beta.21"
+    "@lerna/collect-updates" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/output" "^3.0.0-rc.0"
+    "@lerna/publish" "^3.0.0-rc.0"
     chalk "^2.3.1"
 
-"@lerna/child-process@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fchild-process/-/child-process-3.0.0-beta.21.tgz#9fb32cb79ee75bf0806141bac5fc64bb38aa2dbd"
+"@lerna/child-process@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fchild-process/-/child-process-3.0.0-rc.0.tgz#52bede46bd244992bbea41c79893cefe5c90e17a"
   dependencies:
     chalk "^2.3.1"
     execa "^0.10.0"
     strong-log-transformer "^1.0.6"
 
-"@lerna/clean@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fclean/-/clean-3.0.0-beta.21.tgz#e31ff8edce00fe6eea9fb68e6057630392da1f1e"
+"@lerna/clean@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fclean/-/clean-3.0.0-rc.0.tgz#bc65a7b4ec1b404e42d508b9c2a0c67d02665efc"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/prompt" "^3.0.0-beta.0"
-    "@lerna/rimraf-dir" "^3.0.0-beta.21"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/prompt" "^3.0.0-rc.0"
+    "@lerna/rimraf-dir" "^3.0.0-rc.0"
     p-map "^1.2.0"
     p-map-series "^1.0.0"
     p-waterfall "^1.0.0"
 
-"@lerna/cli@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fcli/-/cli-3.0.0-beta.21.tgz#ba4cd8512a851fedcdd45028d05c9e739ebc6feb"
+"@lerna/cli@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fcli/-/cli-3.0.0-rc.0.tgz#0934ca57f26570359cc8be9bda5ae80ba911e650"
   dependencies:
-    "@lerna/add" "^3.0.0-beta.21"
-    "@lerna/bootstrap" "^3.0.0-beta.21"
-    "@lerna/changed" "^3.0.0-beta.21"
-    "@lerna/clean" "^3.0.0-beta.21"
-    "@lerna/create" "^3.0.0-beta.21"
-    "@lerna/diff" "^3.0.0-beta.21"
-    "@lerna/exec" "^3.0.0-beta.21"
-    "@lerna/global-options" "^3.0.0-beta.13"
-    "@lerna/import" "^3.0.0-beta.21"
-    "@lerna/init" "^3.0.0-beta.21"
-    "@lerna/link" "^3.0.0-beta.21"
-    "@lerna/list" "^3.0.0-beta.21"
-    "@lerna/publish" "^3.0.0-beta.21"
-    "@lerna/run" "^3.0.0-beta.21"
+    "@lerna/add" "^3.0.0-rc.0"
+    "@lerna/bootstrap" "^3.0.0-rc.0"
+    "@lerna/changed" "^3.0.0-rc.0"
+    "@lerna/clean" "^3.0.0-rc.0"
+    "@lerna/create" "^3.0.0-rc.0"
+    "@lerna/diff" "^3.0.0-rc.0"
+    "@lerna/exec" "^3.0.0-rc.0"
+    "@lerna/global-options" "^3.0.0-rc.0"
+    "@lerna/import" "^3.0.0-rc.0"
+    "@lerna/init" "^3.0.0-rc.0"
+    "@lerna/link" "^3.0.0-rc.0"
+    "@lerna/list" "^3.0.0-rc.0"
+    "@lerna/publish" "^3.0.0-rc.0"
+    "@lerna/run" "^3.0.0-rc.0"
     dedent "^0.7.0"
     is-ci "^1.0.10"
     npmlog "^4.1.2"
-    yargs "^11.0.0"
+    yargs "^12.0.1"
 
-"@lerna/collect-packages@^3.0.0-beta.17":
-  version "3.0.0-beta.17"
-  resolved "https://npm.middleout.com/@lerna%2fcollect-packages/-/collect-packages-3.0.0-beta.17.tgz#c4965df6328e191947dbcaa37c8c76ac89b515f8"
+"@lerna/collect-updates@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fcollect-updates/-/collect-updates-3.0.0-rc.0.tgz#f00f4b70750d21fa14100dcc83f665d8ee7c1e53"
   dependencies:
-    "@lerna/package" "^3.0.0-beta.17"
-    "@lerna/validation-error" "^3.0.0-beta.10"
-    globby "^8.0.1"
-    load-json-file "^4.0.0"
-    p-map "^1.2.0"
-
-"@lerna/collect-updates@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fcollect-updates/-/collect-updates-3.0.0-beta.21.tgz#92d165476e586222e6edd5d3b61c26e838ccd7ee"
-  dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
+    "@lerna/child-process" "^3.0.0-rc.0"
     minimatch "^3.0.4"
     npmlog "^4.1.2"
     semver "^5.5.0"
     slash "^1.0.0"
 
-"@lerna/command@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fcommand/-/command-3.0.0-beta.21.tgz#da4d3895e4ad458ffc2c8508156762785bcabc41"
+"@lerna/command@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fcommand/-/command-3.0.0-rc.0.tgz#2bf6b25468f95d7c4a9e947f0c5cb1acd598eb44"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/collect-packages" "^3.0.0-beta.17"
-    "@lerna/collect-updates" "^3.0.0-beta.21"
-    "@lerna/filter-packages" "^3.0.0-beta.10"
-    "@lerna/package-graph" "^3.0.0-beta.18"
-    "@lerna/project" "^3.0.0-beta.20"
-    "@lerna/validation-error" "^3.0.0-beta.10"
-    "@lerna/write-log-file" "^3.0.0-beta.0"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/collect-updates" "^3.0.0-rc.0"
+    "@lerna/filter-packages" "^3.0.0-rc.0"
+    "@lerna/package-graph" "^3.0.0-rc.0"
+    "@lerna/project" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
+    "@lerna/write-log-file" "^3.0.0-rc.0"
     dedent "^0.7.0"
     execa "^0.10.0"
     lodash "^4.17.5"
     npmlog "^4.1.2"
 
-"@lerna/conventional-commits@^3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://npm.middleout.com/@lerna%2fconventional-commits/-/conventional-commits-3.0.0-beta.15.tgz#42536ec435a20016205a0d30a683692bc1b93c98"
+"@lerna/conventional-commits@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fconventional-commits/-/conventional-commits-3.0.0-rc.0.tgz#da5e1a0f6f6cc6bd7426a54274cccdfefa761d7c"
   dependencies:
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     conventional-changelog-angular "^1.6.6"
     conventional-changelog-core "^2.0.5"
     conventional-recommended-bump "^2.0.6"
     dedent "^0.7.0"
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.1"
     get-stream "^3.0.0"
     npm-package-arg "^6.0.0"
     npmlog "^4.1.2"
     semver "^5.5.0"
 
-"@lerna/create-symlink@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fcreate-symlink/-/create-symlink-3.0.0-beta.0.tgz#99457b7f636d35a665a2de3cae79c2c45045a0df"
+"@lerna/create-symlink@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fcreate-symlink/-/create-symlink-3.0.0-rc.0.tgz#88c998cb352194ecc0596fcab132e657f1ada02d"
   dependencies:
     cmd-shim "^2.0.2"
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.1"
     npmlog "^4.1.2"
 
-"@lerna/create@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fcreate/-/create-3.0.0-beta.21.tgz#53d86397403c12f350c859e30e2a582aed16612e"
+"@lerna/create@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fcreate/-/create-3.0.0-rc.0.tgz#5607b7791d652f3754a9360199253605b8d3fd13"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/npm-conf" "^3.0.0-beta.19"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/npm-conf" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     camelcase "^4.1.0"
     dedent "^0.7.0"
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.1"
     globby "^8.0.1"
     init-package-json "^1.10.3"
     npm-package-arg "^6.0.0"
@@ -869,196 +851,198 @@
     validate-npm-package-license "^3.0.3"
     validate-npm-package-name "^3.0.0"
 
-"@lerna/diff@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fdiff/-/diff-3.0.0-beta.21.tgz#39c5842b425135e8d6cffbe0eb2e7a1a08faf048"
+"@lerna/diff@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fdiff/-/diff-3.0.0-rc.0.tgz#e52e54c104618ca60d3e55a314cf8312f6005df9"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     npmlog "^4.1.2"
 
-"@lerna/exec@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fexec/-/exec-3.0.0-beta.21.tgz#5bbdd1b1ed22c42224f1ed21fe0873003182b0ec"
+"@lerna/exec@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fexec/-/exec-3.0.0-rc.0.tgz#5b42b876354e6643b792f7be66e71e8be25f0173"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.18"
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/run-parallel-batches" "^3.0.0-beta.0"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-rc.0"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/run-parallel-batches" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
 
-"@lerna/filter-options@^3.0.0-beta.18":
-  version "3.0.0-beta.18"
-  resolved "https://npm.middleout.com/@lerna%2ffilter-options/-/filter-options-3.0.0-beta.18.tgz#f4014951ec7f58446ee0e29c0fb62c553433530a"
+"@lerna/filter-options@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2ffilter-options/-/filter-options-3.0.0-rc.0.tgz#9e22b3326eece8f45adad878d44c905271967a59"
   dependencies:
     dedent "^0.7.0"
 
-"@lerna/filter-packages@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2ffilter-packages/-/filter-packages-3.0.0-beta.10.tgz#793a9f53964d2a1e2292fec63a2d337a559b7a78"
+"@lerna/filter-packages@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2ffilter-packages/-/filter-packages-3.0.0-rc.0.tgz#e78b48d000301d6750fff9a777988563d5cae0ed"
   dependencies:
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     multimatch "^2.1.0"
     npmlog "^4.1.2"
 
-"@lerna/get-npm-exec-opts@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fget-npm-exec-opts/-/get-npm-exec-opts-3.0.0-beta.21.tgz#ca2c721411a95ee3c1fb0292ebd89d1855706557"
+"@lerna/get-npm-exec-opts@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fget-npm-exec-opts/-/get-npm-exec-opts-3.0.0-rc.0.tgz#74cf4364fac1b3c8b6645259e892e34509c3b1d9"
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/global-options@^3.0.0-beta.13":
-  version "3.0.0-beta.13"
-  resolved "https://npm.middleout.com/@lerna%2fglobal-options/-/global-options-3.0.0-beta.13.tgz#4ca84443056f0dce3f4a55528ad5345237675f3a"
+"@lerna/global-options@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fglobal-options/-/global-options-3.0.0-rc.0.tgz#1745cf71c473099f8e0fb12cf426dc6a2dd1f2c5"
 
-"@lerna/import@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fimport/-/import-3.0.0-beta.21.tgz#a459988605986c75e017f45d4657d47e0aefc0b1"
+"@lerna/import@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fimport/-/import-3.0.0-rc.0.tgz#3b0b86ac89039d0a94b326013de8595d8d5ea214"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/prompt" "^3.0.0-beta.0"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/prompt" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     dedent "^0.7.0"
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.1"
     p-map-series "^1.0.0"
 
-"@lerna/init@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2finit/-/init-3.0.0-beta.21.tgz#7cf225b7d2add644fc262408df8cd5c9861c81bb"
+"@lerna/init@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2finit/-/init-3.0.0-rc.0.tgz#d75929096b3a2b09de2afa067cb9ea36f2a284cb"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    fs-extra "^5.0.0"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    fs-extra "^6.0.1"
     p-map "^1.2.0"
     write-json-file "^2.3.0"
 
-"@lerna/link@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2flink/-/link-3.0.0-beta.21.tgz#5fd5435092e17a0e558a81b5b0c2422486232ba3"
+"@lerna/link@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2flink/-/link-3.0.0-rc.0.tgz#87e7c59914ee205d79383d967e694e0acfaebb73"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/package-graph" "^3.0.0-beta.18"
-    "@lerna/symlink-dependencies" "^3.0.0-beta.17"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/package-graph" "^3.0.0-rc.0"
+    "@lerna/symlink-dependencies" "^3.0.0-rc.0"
     p-map "^1.2.0"
     slash "^1.0.0"
 
-"@lerna/list@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2flist/-/list-3.0.0-beta.21.tgz#840866592a6460302a4587da3aa4e5d3850eb8b9"
+"@lerna/list@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2flist/-/list-3.0.0-rc.0.tgz#14acc6839f8fe1e1a0f3c20e9b2312160bda5b85"
   dependencies:
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/output" "^3.0.0-beta.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/output" "^3.0.0-rc.0"
     chalk "^2.3.1"
     columnify "^1.5.4"
 
-"@lerna/npm-conf@^3.0.0-beta.19":
-  version "3.0.0-beta.19"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-conf/-/npm-conf-3.0.0-beta.19.tgz#957f164a33e958e60a1c1c70a2879e9fa1bb08b2"
+"@lerna/npm-conf@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-conf/-/npm-conf-3.0.0-rc.0.tgz#8b38a3ce8280c9f5cd2958ef7a14861f2e540060"
   dependencies:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
-"@lerna/npm-dist-tag@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-dist-tag/-/npm-dist-tag-3.0.0-beta.21.tgz#c15a2dc7c57d3f50b590b206e0ebb66d4eb47a7f"
+"@lerna/npm-dist-tag@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-dist-tag/-/npm-dist-tag-3.0.0-rc.0.tgz#77efdc087f44de5853cbe47cebf0307b47d4fd99"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/get-npm-exec-opts" "^3.0.0-beta.21"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/get-npm-exec-opts" "^3.0.0-rc.0"
     npmlog "^4.1.2"
 
-"@lerna/npm-install@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-install/-/npm-install-3.0.0-beta.21.tgz#726057f1bd684ad9fa6f87a70d9c246b966e7491"
+"@lerna/npm-install@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-install/-/npm-install-3.0.0-rc.0.tgz#0a338f7b4dbed4b504f1fabe66c1c008d1e5ed98"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/get-npm-exec-opts" "^3.0.0-beta.21"
-    fs-extra "^5.0.0"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/get-npm-exec-opts" "^3.0.0-rc.0"
+    fs-extra "^6.0.1"
     npm-package-arg "^6.0.0"
     npmlog "^4.1.2"
     signal-exit "^3.0.2"
     write-pkg "^3.1.0"
 
-"@lerna/npm-publish@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-publish/-/npm-publish-3.0.0-beta.21.tgz#25a65820a6036c72fb37c914fa0fb2d615346e1d"
+"@lerna/npm-publish@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-publish/-/npm-publish-3.0.0-rc.0.tgz#9c3058ca5a35e239f4219a84b0ae76b1589f7de3"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/get-npm-exec-opts" "^3.0.0-beta.21"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/get-npm-exec-opts" "^3.0.0-rc.0"
     npmlog "^4.1.2"
 
-"@lerna/npm-run-script@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fnpm-run-script/-/npm-run-script-3.0.0-beta.21.tgz#8f45cbee40061946942a5184f09a2b086c41fe0b"
+"@lerna/npm-run-script@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fnpm-run-script/-/npm-run-script-3.0.0-rc.0.tgz#3f9906a80908529cda1832522834fce1cb165303"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/get-npm-exec-opts" "^3.0.0-beta.21"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/get-npm-exec-opts" "^3.0.0-rc.0"
     npmlog "^4.1.2"
 
-"@lerna/output@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2foutput/-/output-3.0.0-beta.0.tgz#0fba8a24f425ac6705b4949ab90f74aae05955bc"
+"@lerna/output@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2foutput/-/output-3.0.0-rc.0.tgz#5d7f4278842d79be0636a1863e23ba478116c0c9"
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/package-graph@^3.0.0-beta.18":
-  version "3.0.0-beta.18"
-  resolved "https://npm.middleout.com/@lerna%2fpackage-graph/-/package-graph-3.0.0-beta.18.tgz#8c33a6a10453d310e14fc9d317dc51e845e11963"
+"@lerna/package-graph@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fpackage-graph/-/package-graph-3.0.0-rc.0.tgz#0a63ec93e4613ee58f753fcb53b2f4c6cb678d8d"
   dependencies:
     npm-package-arg "^6.0.0"
     semver "^5.5.0"
 
-"@lerna/package@^3.0.0-beta.17":
-  version "3.0.0-beta.17"
-  resolved "https://npm.middleout.com/@lerna%2fpackage/-/package-3.0.0-beta.17.tgz#ccc833926ddfce5cac6194d2e6b415899a8e753e"
+"@lerna/package@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fpackage/-/package-3.0.0-rc.0.tgz#40dd1939d8a644b6ab4afa297d35ef52b1997d4e"
   dependencies:
     npm-package-arg "^6.0.0"
     write-pkg "^3.1.0"
 
-"@lerna/project@^3.0.0-beta.20":
-  version "3.0.0-beta.20"
-  resolved "https://npm.middleout.com/@lerna%2fproject/-/project-3.0.0-beta.20.tgz#27a0330b7b13d8eebe9266f03eb60de94b15c86d"
+"@lerna/project@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fproject/-/project-3.0.0-rc.0.tgz#82c9194e602e35b5574d6d238da33a537fe8b160"
   dependencies:
-    "@lerna/package" "^3.0.0-beta.17"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/package" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     cosmiconfig "^5.0.2"
     dedent "^0.7.0"
     dot-prop "^4.2.0"
     glob-parent "^3.1.0"
+    globby "^8.0.1"
     load-json-file "^4.0.0"
     npmlog "^4.1.2"
+    p-map "^1.2.0"
     resolve-from "^4.0.0"
     write-json-file "^2.3.0"
 
-"@lerna/prompt@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fprompt/-/prompt-3.0.0-beta.0.tgz#f1baa4d1fe30eef4cf3f2add49aac917cfc1368b"
+"@lerna/prompt@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fprompt/-/prompt-3.0.0-rc.0.tgz#5d9a4c192f10f3a0050869c5cfefc7671229b3fd"
   dependencies:
     inquirer "^5.1.0"
     npmlog "^4.1.2"
 
-"@lerna/publish@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2fpublish/-/publish-3.0.0-beta.21.tgz#8d2563793ba5b2e8f9914e799746b5a711adbc5f"
+"@lerna/publish@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fpublish/-/publish-3.0.0-rc.0.tgz#ddbd7170c9169f84517f5e0c839acfddad4c2714"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.18"
-    "@lerna/child-process" "^3.0.0-beta.21"
-    "@lerna/collect-updates" "^3.0.0-beta.21"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/conventional-commits" "^3.0.0-beta.15"
-    "@lerna/npm-conf" "^3.0.0-beta.19"
-    "@lerna/npm-dist-tag" "^3.0.0-beta.21"
-    "@lerna/npm-publish" "^3.0.0-beta.21"
-    "@lerna/output" "^3.0.0-beta.0"
-    "@lerna/prompt" "^3.0.0-beta.0"
-    "@lerna/run-lifecycle" "^3.0.0-beta.0"
-    "@lerna/run-parallel-batches" "^3.0.0-beta.0"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-rc.0"
+    "@lerna/child-process" "^3.0.0-rc.0"
+    "@lerna/collect-updates" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/conventional-commits" "^3.0.0-rc.0"
+    "@lerna/npm-dist-tag" "^3.0.0-rc.0"
+    "@lerna/npm-publish" "^3.0.0-rc.0"
+    "@lerna/output" "^3.0.0-rc.0"
+    "@lerna/prompt" "^3.0.0-rc.0"
+    "@lerna/run-lifecycle" "^3.0.0-rc.0"
+    "@lerna/run-parallel-batches" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     chalk "^2.3.1"
     dedent "^0.7.0"
+    fs-extra "^6.0.1"
     minimatch "^3.0.4"
     npmlog "^4.1.2"
     p-finally "^1.0.0"
@@ -1070,81 +1054,82 @@
     temp-write "^3.4.0"
     write-json-file "^2.3.0"
 
-"@lerna/resolve-symlink@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fresolve-symlink/-/resolve-symlink-3.0.0-beta.0.tgz#ca170d8190acf915c5160dc19111543989191987"
+"@lerna/resolve-symlink@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fresolve-symlink/-/resolve-symlink-3.0.0-rc.0.tgz#fe7c8663e36761e51ffb6977de142fa6ea960bdd"
   dependencies:
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.1"
     npmlog "^4.1.2"
     read-cmd-shim "^1.0.1"
 
-"@lerna/rimraf-dir@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2frimraf-dir/-/rimraf-dir-3.0.0-beta.21.tgz#006b4e61e8d76e369e3749936862fb182def1dff"
+"@lerna/rimraf-dir@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2frimraf-dir/-/rimraf-dir-3.0.0-rc.0.tgz#9942a5fbb084dea251ac9fda98ea242b7672126b"
   dependencies:
-    "@lerna/child-process" "^3.0.0-beta.21"
+    "@lerna/child-process" "^3.0.0-rc.0"
     npmlog "^4.1.2"
     path-exists "^3.0.0"
     rimraf "^2.6.2"
 
-"@lerna/run-lifecycle@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2frun-lifecycle/-/run-lifecycle-3.0.0-beta.0.tgz#b30442df543dcfafa863c854c2d7338fe3bd13b3"
+"@lerna/run-lifecycle@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2frun-lifecycle/-/run-lifecycle-3.0.0-rc.0.tgz#50787d9d8726723fe625f7b6418f41f446c86b21"
   dependencies:
+    "@lerna/npm-conf" "^3.0.0-rc.0"
     npm-lifecycle "^2.0.0"
     npmlog "^4.1.2"
 
-"@lerna/run-parallel-batches@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2frun-parallel-batches/-/run-parallel-batches-3.0.0-beta.0.tgz#24d69314ad0fd6fa65c70d239b4f2ccdd08a2eeb"
+"@lerna/run-parallel-batches@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2frun-parallel-batches/-/run-parallel-batches-3.0.0-rc.0.tgz#80265e1fe6cad8d321297c7445b0e6f57984fa3e"
   dependencies:
     p-map "^1.2.0"
     p-map-series "^1.0.0"
 
-"@lerna/run@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/@lerna%2frun/-/run-3.0.0-beta.21.tgz#f7fce5d1b1043a48b0bf33a7565527ee6e26061e"
+"@lerna/run@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2frun/-/run-3.0.0-rc.0.tgz#f2ae27dcc35eb32854ffe89764d425ecc013961b"
   dependencies:
-    "@lerna/batch-packages" "^3.0.0-beta.18"
-    "@lerna/command" "^3.0.0-beta.21"
-    "@lerna/filter-options" "^3.0.0-beta.18"
-    "@lerna/npm-run-script" "^3.0.0-beta.21"
-    "@lerna/output" "^3.0.0-beta.0"
-    "@lerna/run-parallel-batches" "^3.0.0-beta.0"
-    "@lerna/validation-error" "^3.0.0-beta.10"
+    "@lerna/batch-packages" "^3.0.0-rc.0"
+    "@lerna/command" "^3.0.0-rc.0"
+    "@lerna/filter-options" "^3.0.0-rc.0"
+    "@lerna/npm-run-script" "^3.0.0-rc.0"
+    "@lerna/output" "^3.0.0-rc.0"
+    "@lerna/run-parallel-batches" "^3.0.0-rc.0"
+    "@lerna/validation-error" "^3.0.0-rc.0"
     p-map "^1.2.0"
 
-"@lerna/symlink-binary@^3.0.0-beta.17":
-  version "3.0.0-beta.17"
-  resolved "https://npm.middleout.com/@lerna%2fsymlink-binary/-/symlink-binary-3.0.0-beta.17.tgz#e0be4394ee4e828a496aa8b9f8f48084ed7cb0f3"
+"@lerna/symlink-binary@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fsymlink-binary/-/symlink-binary-3.0.0-rc.0.tgz#0b3a6723fb857942baec6118ecee35ee0c6d082e"
   dependencies:
-    "@lerna/create-symlink" "^3.0.0-beta.0"
-    "@lerna/package" "^3.0.0-beta.17"
-    fs-extra "^5.0.0"
+    "@lerna/create-symlink" "^3.0.0-rc.0"
+    "@lerna/package" "^3.0.0-rc.0"
+    fs-extra "^6.0.1"
     p-map "^1.2.0"
     read-pkg "^3.0.0"
 
-"@lerna/symlink-dependencies@^3.0.0-beta.17":
-  version "3.0.0-beta.17"
-  resolved "https://npm.middleout.com/@lerna%2fsymlink-dependencies/-/symlink-dependencies-3.0.0-beta.17.tgz#82d3f2d5b76606772773d306e7640fcf309b8c56"
+"@lerna/symlink-dependencies@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fsymlink-dependencies/-/symlink-dependencies-3.0.0-rc.0.tgz#bbd73ca0835bbb005e5ee8df875d8f6f80ee6038"
   dependencies:
-    "@lerna/create-symlink" "^3.0.0-beta.0"
-    "@lerna/resolve-symlink" "^3.0.0-beta.0"
-    "@lerna/symlink-binary" "^3.0.0-beta.17"
-    fs-extra "^5.0.0"
+    "@lerna/create-symlink" "^3.0.0-rc.0"
+    "@lerna/resolve-symlink" "^3.0.0-rc.0"
+    "@lerna/symlink-binary" "^3.0.0-rc.0"
+    fs-extra "^6.0.1"
     p-finally "^1.0.0"
     p-map "^1.2.0"
     p-map-series "^1.0.0"
 
-"@lerna/validation-error@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://npm.middleout.com/@lerna%2fvalidation-error/-/validation-error-3.0.0-beta.10.tgz#cf5cbc39c4d27b89c6080e326de745f6fb7451ab"
+"@lerna/validation-error@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fvalidation-error/-/validation-error-3.0.0-rc.0.tgz#da81862666992b6befab25a4c855440679005e46"
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/write-log-file@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://npm.middleout.com/@lerna%2fwrite-log-file/-/write-log-file-3.0.0-beta.0.tgz#e128fee7cd7cb218ed767598ac45c6d2db5c6c89"
+"@lerna/write-log-file@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/@lerna%2fwrite-log-file/-/write-log-file-3.0.0-rc.0.tgz#c506b0024f77ee8333c5b825b4bfae2243c471ab"
   dependencies:
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
@@ -1167,8 +1152,8 @@
     any-observable "^0.3.0"
 
 "@types/node@*":
-  version "10.5.2"
-  resolved "https://npm.middleout.com/@types%2fnode/-/node-10.5.2.tgz#f19f05314d5421fe37e74153254201a7bf00a707"
+  version "10.5.6"
+  resolved "https://npm.middleout.com/@types%2fnode/-/node-10.5.6.tgz#1640f021dd0eaf12e731e54198c12ad2e020dc8e"
 
 JSONStream@^1.0.4:
   version "1.3.3"
@@ -1181,16 +1166,13 @@ abab@^1.0.4:
   version "1.0.4"
   resolved "https://npm.middleout.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
 
+abab@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.middleout.com/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://npm.middleout.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
-
-accepts@~1.3.5:
-  version "1.3.5"
-  resolved "https://npm.middleout.com/accepts/-/accepts-1.3.5.tgz#eb777df6011723a3b14e8a72c0805c8e86746bd2"
-  dependencies:
-    mime-types "~2.1.18"
-    negotiator "0.6.1"
 
 acorn-globals@^4.1.0:
   version "4.1.0"
@@ -1204,7 +1186,7 @@ acorn-jsx@^4.1.1:
   dependencies:
     acorn "^5.0.3"
 
-acorn@^5.0.0, acorn@^5.0.3, acorn@^5.3.0, acorn@^5.6.0:
+acorn@^5.0.0, acorn@^5.0.3, acorn@^5.5.3, acorn@^5.6.0:
   version "5.7.1"
   resolved "https://npm.middleout.com/acorn/-/acorn-5.7.1.tgz#f095829297706a7c9776958c0afc8930a9b9d9d8"
 
@@ -1275,9 +1257,9 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ansicolors@~0.2.1:
-  version "0.2.1"
-  resolved "https://npm.middleout.com/ansicolors/-/ansicolors-0.2.1.tgz#be089599097b74a5c9c4a84a0cdbcdb62bd87aef"
+ansicolors@~0.3.2:
+  version "0.3.2"
+  resolved "https://npm.middleout.com/ansicolors/-/ansicolors-0.3.2.tgz#665597de86a9ffe3aa9bfbe6cae5c6ea426b4979"
 
 any-observable@^0.3.0:
   version "0.3.0"
@@ -1347,10 +1329,6 @@ array-find-index@^1.0.1:
   version "1.0.2"
   resolved "https://npm.middleout.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
 
-array-flatten@1.1.1:
-  version "1.1.1"
-  resolved "https://npm.middleout.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
-
 array-ify@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/array-ify/-/array-ify-1.0.0.tgz#9e528762b4a9066ad163a6962a364418e9626ece"
@@ -1389,8 +1367,10 @@ asap@^2.0.0, asap@~2.0.3:
   resolved "https://npm.middleout.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
 asn1@~0.2.3:
-  version "0.2.3"
-  resolved "https://npm.middleout.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
+  version "0.2.4"
+  resolved "https://npm.middleout.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
+  dependencies:
+    safer-buffer "~2.1.0"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -1513,9 +1493,9 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@^23.0.1, babel-jest@^23.4.0:
-  version "23.4.0"
-  resolved "https://npm.middleout.com/babel-jest/-/babel-jest-23.4.0.tgz#22c34c392e2176f6a4c367992a7fcff69d2e8557"
+babel-jest@^23.0.1, babel-jest@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/babel-jest/-/babel-jest-23.4.2.tgz#f276de67798a5d68f2d6e87ff518c2f6e1609877"
   dependencies:
     babel-plugin-istanbul "^4.1.6"
     babel-preset-jest "^23.2.0"
@@ -1654,36 +1634,6 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-body-parser@1.18.2:
-  version "1.18.2"
-  resolved "https://npm.middleout.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
-  dependencies:
-    bytes "3.0.0"
-    content-type "~1.0.4"
-    debug "2.6.9"
-    depd "~1.1.1"
-    http-errors "~1.6.2"
-    iconv-lite "0.4.19"
-    on-finished "~2.3.0"
-    qs "6.5.1"
-    raw-body "2.3.2"
-    type-is "~1.6.15"
-
-body-parser@^1.18.2:
-  version "1.18.3"
-  resolved "https://npm.middleout.com/body-parser/-/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
-  dependencies:
-    bytes "3.0.0"
-    content-type "~1.0.4"
-    debug "2.6.9"
-    depd "~1.1.2"
-    http-errors "~1.6.3"
-    iconv-lite "0.4.23"
-    on-finished "~2.3.0"
-    qs "6.5.2"
-    raw-body "2.3.3"
-    type-is "~1.6.16"
-
 boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -1748,8 +1698,8 @@ bser@^2.0.0:
     node-int64 "^0.4.0"
 
 buffer-from@^1.0.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/buffer-from/-/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"
+  version "1.1.1"
+  resolved "https://npm.middleout.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -1762,10 +1712,6 @@ builtins@^1.0.3:
 byline@^5.0.0:
   version "5.0.0"
   resolved "https://npm.middleout.com/byline/-/byline-5.0.0.tgz#741c5216468eadc457b03410118ad77de8c1ddb1"
-
-bytes@3.0.0:
-  version "3.0.0"
-  resolved "https://npm.middleout.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
 
 cache-base@^1.0.1:
   version "1.0.1"
@@ -1826,13 +1772,9 @@ camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://npm.middleout.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-camelize@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
-
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000865"
-  resolved "https://npm.middleout.com/caniuse-lite/-/caniuse-lite-1.0.30000865.tgz#70026616e8afe6e1442f8bb4e1092987d81a2f25"
+  version "1.0.30000874"
+  resolved "https://npm.middleout.com/caniuse-lite/-/caniuse-lite-1.0.30000874.tgz#a641b1f1c420d58d9b132920ef6ba87bbdcd2223"
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -1844,12 +1786,12 @@ capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
 
-cardinal@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/cardinal/-/cardinal-1.0.0.tgz#50e21c1b0aa37729f9377def196b5a9cec932ee9"
+cardinal@2.1.1:
+  version "2.1.1"
+  resolved "https://npm.middleout.com/cardinal/-/cardinal-2.1.1.tgz#7cc1055d822d212954d07b085dea251cc7bc5505"
   dependencies:
-    ansicolors "~0.2.1"
-    redeyed "~1.0.0"
+    ansicolors "~0.3.2"
+    redeyed "~2.1.0"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2036,8 +1978,8 @@ combined-stream@1.0.6, combined-stream@^1.0.5, combined-stream@~1.0.5:
     delayed-stream "~1.0.0"
 
 commander@^2.14.1, commander@^2.15.1, commander@^2.8.1, commander@^2.9.0:
-  version "2.16.0"
-  resolved "https://npm.middleout.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
+  version "2.17.0"
+  resolved "https://npm.middleout.com/commander/-/commander-2.17.0.tgz#9d07b25e2a6f198b76d8b756a0e8a9604a6a1a60"
 
 compare-func@^1.3.1:
   version "1.3.2"
@@ -2077,18 +2019,6 @@ config-chain@^1.1.11:
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://npm.middleout.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
-
-content-disposition@0.5.2:
-  version "0.5.2"
-  resolved "https://npm.middleout.com/content-disposition/-/content-disposition-0.5.2.tgz#0cf68bb9ddf5f2be7961c3a85178cb85dba78cb4"
-
-content-security-policy-builder@2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/content-security-policy-builder/-/content-security-policy-builder-2.0.0.tgz#8749a1d542fcbe82237281ea9f716ce68b394dd2"
-
-content-type@~1.0.4:
-  version "1.0.4"
-  resolved "https://npm.middleout.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
 conventional-changelog-angular@^1.6.6:
   version "1.6.6"
@@ -2170,14 +2100,6 @@ convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.1:
   version "1.5.1"
   resolved "https://npm.middleout.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
 
-cookie-signature@1.0.6:
-  version "1.0.6"
-  resolved "https://npm.middleout.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
-
-cookie@0.3.1:
-  version "0.3.1"
-  resolved "https://npm.middleout.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
-
 copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://npm.middleout.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
@@ -2186,20 +2108,13 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://npm.middleout.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.7"
   resolved "https://npm.middleout.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://npm.middleout.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
-
-cors@^2.8.4:
-  version "2.8.4"
-  resolved "https://npm.middleout.com/cors/-/cors-2.8.4.tgz#2bd381f2eb201020105cd50ea59da63090694686"
-  dependencies:
-    object-assign "^4"
-    vary "^1"
 
 cosmiconfig@^5.0.2:
   version "5.0.5"
@@ -2246,7 +2161,7 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-css-select@^1.1.0, css-select@~1.2.0:
+css-select@~1.2.0:
   version "1.2.0"
   resolved "https://npm.middleout.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
   dependencies:
@@ -2263,9 +2178,9 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.4"
   resolved "https://npm.middleout.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
 
-"cssstyle@>= 0.3.1 < 0.4.0":
-  version "0.3.1"
-  resolved "https://npm.middleout.com/cssstyle/-/cssstyle-0.3.1.tgz#6da9b4cff1bc5d716e6e5fe8e04fcb1b50a49adf"
+cssstyle@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.middleout.com/cssstyle/-/cssstyle-1.0.0.tgz#79b16d51ec5591faec60e688891f15d2a5705129"
   dependencies:
     cssom "0.3.x"
 
@@ -2287,10 +2202,6 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-dasherize@2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/dasherize/-/dasherize-2.0.0.tgz#6d809c9cd0cf7bb8952d80fc84fa13d47ddb1308"
-
 data-urls@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/data-urls/-/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
@@ -2307,7 +2218,7 @@ dateformat@3.0.3, dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://npm.middleout.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
+debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://npm.middleout.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -2333,6 +2244,12 @@ decamelize-keys@^1.0.0:
 decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://npm.middleout.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+
+decamelize@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.middleout.com/decamelize/-/decamelize-2.0.0.tgz#656d7bbc8094c4c788ea53c5840908c9c7d063c7"
+  dependencies:
+    xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -2408,21 +2325,9 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
 
-denque@1.2.3:
-  version "1.2.3"
-  resolved "https://npm.middleout.com/denque/-/denque-1.2.3.tgz#98c50c8dd8cdfae318cc5859cc8ee3da0f9b0cc2"
-
-depd@1.1.1:
-  version "1.1.1"
-  resolved "https://npm.middleout.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
-
-depd@~1.1.1, depd@~1.1.2:
-  version "1.1.2"
-  resolved "https://npm.middleout.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
-
-destroy@~1.0.4:
-  version "1.0.4"
-  resolved "https://npm.middleout.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
+denque@1.3.0:
+  version "1.3.0"
+  resolved "https://npm.middleout.com/denque/-/denque-1.3.0.tgz#681092ef44a630246d3f6edb2a199230eae8e76b"
 
 detect-indent@^4.0.0:
   version "4.0.0"
@@ -2464,21 +2369,11 @@ discontinuous-range@1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/discontinuous-range/-/discontinuous-range-1.0.0.tgz#e38331f0844bba49b9a9cb71c771585aab1bc65a"
 
-dns-prefetch-control@0.1.0:
-  version "0.1.0"
-  resolved "https://npm.middleout.com/dns-prefetch-control/-/dns-prefetch-control-0.1.0.tgz#60ddb457774e178f1f9415f0cabb0e85b0b300b2"
-
 doctrine@^2.1.0:
   version "2.1.0"
   resolved "https://npm.middleout.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
   dependencies:
     esutils "^2.0.2"
-
-dom-converter@~0.1:
-  version "0.1.4"
-  resolved "https://npm.middleout.com/dom-converter/-/dom-converter-0.1.4.tgz#a45ef5727b890c9bffe6d7c876e7b19cb0e17f3b"
-  dependencies:
-    utila "~0.3"
 
 dom-serializer@0, dom-serializer@~0.1.0:
   version "0.1.0"
@@ -2495,27 +2390,15 @@ domelementtype@~1.1.1:
   version "1.1.3"
   resolved "https://npm.middleout.com/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
 
-domexception@^1.0.0:
+domexception@^1.0.1:
   version "1.0.1"
   resolved "https://npm.middleout.com/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
   dependencies:
     webidl-conversions "^4.0.2"
 
-domhandler@2.1:
-  version "2.1.0"
-  resolved "https://npm.middleout.com/domhandler/-/domhandler-2.1.0.tgz#d2646f5e57f6c3bab11cf6cb05d3c0acf7412594"
-  dependencies:
-    domelementtype "1"
-
 domhandler@^2.3.0:
   version "2.4.2"
   resolved "https://npm.middleout.com/domhandler/-/domhandler-2.4.2.tgz#8805097e933d65e85546f726d60f5eb88b44f803"
-  dependencies:
-    domelementtype "1"
-
-domutils@1.1:
-  version "1.1.6"
-  resolved "https://npm.middleout.com/domutils/-/domutils-1.1.6.tgz#bddc3de099b9a2efacc51c623f28f416ecc57485"
   dependencies:
     domelementtype "1"
 
@@ -2532,10 +2415,6 @@ domutils@^1.5.1:
   dependencies:
     dom-serializer "0"
     domelementtype "1"
-
-dont-sniff-mimetype@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/dont-sniff-mimetype/-/dont-sniff-mimetype-1.0.0.tgz#5932890dc9f4e2f19e5eb02a20026e5e5efc8f58"
 
 dot-prop@^3.0.0:
   version "3.0.0"
@@ -2558,26 +2437,19 @@ duplexer@^0.1.1:
   resolved "https://npm.middleout.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
 ecc-jsbn@~0.1.1:
-  version "0.1.1"
-  resolved "https://npm.middleout.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
+  version "0.1.2"
+  resolved "https://npm.middleout.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
   dependencies:
     jsbn "~0.1.0"
-
-ee-first@1.1.1:
-  version "1.1.1"
-  resolved "https://npm.middleout.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+    safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.47:
-  version "1.3.52"
-  resolved "https://npm.middleout.com/electron-to-chromium/-/electron-to-chromium-1.3.52.tgz#d2d9f1270ba4a3b967b831c40ef71fb4d9ab5ce0"
+  version "1.3.55"
+  resolved "https://npm.middleout.com/electron-to-chromium/-/electron-to-chromium-1.3.55.tgz#f150e10b20b77d9d41afcca312efe0c3b1a7fdce"
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://npm.middleout.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
-
-encodeurl@~1.0.2:
-  version "1.0.2"
-  resolved "https://npm.middleout.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
 
 encoding@^0.1.11:
   version "0.1.12"
@@ -2657,15 +2529,11 @@ es6-promise@^4.2.4:
   version "4.2.4"
   resolved "https://npm.middleout.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
 
-escape-html@~1.0.3:
-  version "1.0.3"
-  resolved "https://npm.middleout.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
-
 escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://npm.middleout.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-escodegen@^1.9.0:
+escodegen@^1.9.1:
   version "1.11.0"
   resolved "https://npm.middleout.com/escodegen/-/escodegen-1.11.0.tgz#b27a9389481d5bfd5bec76f7bb1eb3f8f4556589"
   dependencies:
@@ -2676,22 +2544,11 @@ escodegen@^1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-origami-component@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/eslint-config-origami-component/-/eslint-config-origami-component-1.0.0.tgz#c6a1d758b227b39d506796f8d44345653a705e46"
-
 eslint-config-prettier@^2.9.0:
   version "2.9.0"
   resolved "https://npm.middleout.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
   dependencies:
     get-stdin "^5.0.1"
-
-eslint-plugin-prettier@^2.6.1:
-  version "2.6.2"
-  resolved "https://npm.middleout.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.2.tgz#71998c60aedfa2141f7bfcbf9d1c459bf98b4fad"
-  dependencies:
-    fast-diff "^1.1.1"
-    jest-docblock "^21.0.0"
 
 eslint-plugin-react@^7.7.0:
   version "7.10.0"
@@ -2725,8 +2582,8 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://npm.middleout.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
 eslint@^5.1.0:
-  version "5.1.0"
-  resolved "https://npm.middleout.com/eslint/-/eslint-5.1.0.tgz#2ed611f1ce163c0fb99e1e0cda5af8f662dff645"
+  version "5.3.0"
+  resolved "https://npm.middleout.com/eslint/-/eslint-5.3.0.tgz#53695aca5213968aacdf970ccb231e42a2b285f8"
   dependencies:
     ajv "^6.5.0"
     babel-code-frame "^6.26.0"
@@ -2744,7 +2601,7 @@ eslint@^5.1.0:
     functional-red-black-tree "^1.0.1"
     glob "^7.1.2"
     globals "^11.7.0"
-    ignore "^3.3.3"
+    ignore "^4.0.2"
     imurmurhash "^0.1.4"
     inquirer "^5.2.0"
     is-resolvable "^1.1.0"
@@ -2759,7 +2616,7 @@ eslint@^5.1.0:
     path-is-inside "^1.0.2"
     pluralize "^7.0.0"
     progress "^2.0.0"
-    regexpp "^1.1.0"
+    regexpp "^2.0.0"
     require-uncached "^1.0.3"
     semver "^5.5.0"
     string.prototype.matchall "^2.0.0"
@@ -2779,13 +2636,9 @@ esprima@^3.1.3:
   version "3.1.3"
   resolved "https://npm.middleout.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
 
-esprima@^4.0.0:
+esprima@^4.0.0, esprima@~4.0.0:
   version "4.0.1"
   resolved "https://npm.middleout.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
-
-esprima@~3.0.0:
-  version "3.0.0"
-  resolved "https://npm.middleout.com/esprima/-/esprima-3.0.0.tgz#53cf247acda77313e551c3aa2e73342d3fb4f7d9"
 
 esquery@^1.0.1:
   version "1.0.1"
@@ -2806,10 +2659,6 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
 esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://npm.middleout.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
-
-etag@~1.8.1:
-  version "1.8.1"
-  resolved "https://npm.middleout.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
 exec-sh@^0.2.0:
   version "0.2.2"
@@ -2885,10 +2734,6 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expect-ct@0.1.1:
-  version "0.1.1"
-  resolved "https://npm.middleout.com/expect-ct/-/expect-ct-0.1.1.tgz#de84476a2dbcb85000d5903737e9bc8a5ba7b897"
-
 expect@^23.4.0:
   version "23.4.0"
   resolved "https://npm.middleout.com/expect/-/expect-23.4.0.tgz#6da4ecc99c1471253e7288338983ad1ebadb60c3"
@@ -2899,47 +2744,6 @@ expect@^23.4.0:
     jest-matcher-utils "^23.2.0"
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
-
-express-rate-limit@^2.11.0:
-  version "2.11.0"
-  resolved "https://npm.middleout.com/express-rate-limit/-/express-rate-limit-2.11.0.tgz#092122218c86eddb56fb350f431e522fb8024ea9"
-  dependencies:
-    defaults "^1.0.3"
-
-express@^4.16.2:
-  version "4.16.3"
-  resolved "https://npm.middleout.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
-  dependencies:
-    accepts "~1.3.5"
-    array-flatten "1.1.1"
-    body-parser "1.18.2"
-    content-disposition "0.5.2"
-    content-type "~1.0.4"
-    cookie "0.3.1"
-    cookie-signature "1.0.6"
-    debug "2.6.9"
-    depd "~1.1.2"
-    encodeurl "~1.0.2"
-    escape-html "~1.0.3"
-    etag "~1.8.1"
-    finalhandler "1.1.1"
-    fresh "0.5.2"
-    merge-descriptors "1.0.1"
-    methods "~1.1.2"
-    on-finished "~2.3.0"
-    parseurl "~1.3.2"
-    path-to-regexp "0.1.7"
-    proxy-addr "~2.0.3"
-    qs "6.5.1"
-    range-parser "~1.2.0"
-    safe-buffer "5.1.1"
-    send "0.16.2"
-    serve-static "1.13.2"
-    setprototypeof "1.1.0"
-    statuses "~1.4.0"
-    type-is "~1.6.16"
-    utils-merge "1.0.1"
-    vary "~1.1.2"
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -2955,8 +2759,8 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     is-extendable "^1.0.1"
 
 extend@~3.0.0, extend@~3.0.1:
-  version "3.0.1"
-  resolved "https://npm.middleout.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
+  version "3.0.2"
+  resolved "https://npm.middleout.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
 
 external-editor@^2.1.0:
   version "2.2.0"
@@ -3000,10 +2804,6 @@ fast-deep-equal@^1.0.0:
 fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://npm.middleout.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
-
-fast-diff@^1.1.1:
-  version "1.1.2"
-  resolved "https://npm.middleout.com/fast-diff/-/fast-diff-1.1.2.tgz#4b62c42b8e03de3f848460b639079920695d0154"
 
 fast-glob@^2.0.2:
   version "2.2.2"
@@ -3049,16 +2849,12 @@ fbjs@^0.8.0, fbjs@^0.8.16, fbjs@^0.8.4:
     ua-parser-js "^0.7.18"
 
 fetch-mock@^6.0.0:
-  version "6.5.1"
-  resolved "https://npm.middleout.com/fetch-mock/-/fetch-mock-6.5.1.tgz#62e903b1444fc921f97edd4b16b3b9bf42711177"
+  version "6.5.2"
+  resolved "https://npm.middleout.com/fetch-mock/-/fetch-mock-6.5.2.tgz#b3842b305c13ea0f81c85919cfaa7de387adfa3e"
   dependencies:
     babel-polyfill "^6.26.0"
-    eslint-config-origami-component "^1.0.0"
-    eslint-config-prettier "^2.9.0"
-    eslint-plugin-prettier "^2.6.1"
     glob-to-regexp "^0.4.0"
     path-to-regexp "^2.2.1"
-    prettier "^1.13.7"
 
 figures@^1.7.0:
   version "1.7.0"
@@ -3110,18 +2906,6 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-finalhandler@1.1.1:
-  version "1.1.1"
-  resolved "https://npm.middleout.com/finalhandler/-/finalhandler-1.1.1.tgz#eebf4ed840079c83f4249038c9d703008301b105"
-  dependencies:
-    debug "2.6.9"
-    encodeurl "~1.0.2"
-    escape-html "~1.0.3"
-    on-finished "~2.3.0"
-    parseurl "~1.3.2"
-    statuses "~1.4.0"
-    unpipe "~1.0.0"
-
 find-parent-dir@^0.3.0:
   version "0.3.0"
   resolved "https://npm.middleout.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
@@ -3139,6 +2923,12 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+find-up@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.middleout.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
+  dependencies:
+    locate-path "^3.0.0"
+
 flat-cache@^1.2.1:
   version "1.3.0"
   resolved "https://npm.middleout.com/flat-cache/-/flat-cache-1.3.0.tgz#d3030b32b38154f4e3b7e9c709f490f7ef97c481"
@@ -3147,10 +2937,6 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
-
-fn-name@~2.0.1:
-  version "2.0.1"
-  resolved "https://npm.middleout.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -3186,27 +2972,15 @@ form-data@~2.3.1:
     combined-stream "1.0.6"
     mime-types "^2.1.12"
 
-forwarded@~0.1.2:
-  version "0.1.2"
-  resolved "https://npm.middleout.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
-
 fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://npm.middleout.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
     map-cache "^0.2.2"
 
-frameguard@3.0.0:
-  version "3.0.0"
-  resolved "https://npm.middleout.com/frameguard/-/frameguard-3.0.0.tgz#7bcad469ee7b96e91d12ceb3959c78235a9272e9"
-
-fresh@0.5.2:
-  version "0.5.2"
-  resolved "https://npm.middleout.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
-
-fs-extra@^5.0.0:
-  version "5.0.0"
-  resolved "https://npm.middleout.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+fs-extra@^6.0.1:
+  version "6.0.1"
+  resolved "https://npm.middleout.com/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -3551,37 +3325,6 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-helmet-csp@2.7.0:
-  version "2.7.0"
-  resolved "https://npm.middleout.com/helmet-csp/-/helmet-csp-2.7.0.tgz#7934094617d1feb7bb2dc43bb7d9e8830f774716"
-  dependencies:
-    camelize "1.0.0"
-    content-security-policy-builder "2.0.0"
-    dasherize "2.0.0"
-    lodash.reduce "4.6.0"
-    platform "1.3.5"
-
-helmet@^3.12.1:
-  version "3.12.1"
-  resolved "https://npm.middleout.com/helmet/-/helmet-3.12.1.tgz#8b05bbd60f3966d70f13dad0de2c1d6c1a8303f1"
-  dependencies:
-    dns-prefetch-control "0.1.0"
-    dont-sniff-mimetype "1.0.0"
-    expect-ct "0.1.1"
-    frameguard "3.0.0"
-    helmet-csp "2.7.0"
-    hide-powered-by "1.0.0"
-    hpkp "2.0.0"
-    hsts "2.1.0"
-    ienoopen "1.0.0"
-    nocache "2.0.0"
-    referrer-policy "1.1.0"
-    x-xss-protection "1.1.0"
-
-hide-powered-by@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/hide-powered-by/-/hide-powered-by-1.0.0.tgz#4a85ad65881f62857fc70af7174a1184dccce32b"
-
 history@^4.7.2:
   version "4.7.2"
   resolved "https://npm.middleout.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
@@ -3611,14 +3354,6 @@ hosted-git-info@^2.1.4, hosted-git-info@^2.6.0:
   version "2.7.1"
   resolved "https://npm.middleout.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
 
-hpkp@2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/hpkp/-/hpkp-2.0.0.tgz#10e142264e76215a5d30c44ec43de64dee6d1672"
-
-hsts@2.1.0:
-  version "2.1.0"
-  resolved "https://npm.middleout.com/hsts/-/hsts-2.1.0.tgz#cbd6c918a2385fee1dd5680bfb2b3a194c0121cc"
-
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
   resolved "https://npm.middleout.com/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
@@ -3635,33 +3370,6 @@ htmlparser2@^3.9.1:
     entities "^1.1.1"
     inherits "^2.0.1"
     readable-stream "^2.0.2"
-
-htmlparser2@~3.3.0:
-  version "3.3.0"
-  resolved "https://npm.middleout.com/htmlparser2/-/htmlparser2-3.3.0.tgz#cc70d05a59f6542e43f0e685c982e14c924a9efe"
-  dependencies:
-    domelementtype "1"
-    domhandler "2.1"
-    domutils "1.1"
-    readable-stream "1.0"
-
-http-errors@1.6.2:
-  version "1.6.2"
-  resolved "https://npm.middleout.com/http-errors/-/http-errors-1.6.2.tgz#0a002cc85707192a7e7946ceedc11155f60ec736"
-  dependencies:
-    depd "1.1.1"
-    inherits "2.0.3"
-    setprototypeof "1.0.3"
-    statuses ">= 1.3.1 < 2"
-
-http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
-  version "1.6.3"
-  resolved "https://npm.middleout.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
-  dependencies:
-    depd "~1.1.2"
-    inherits "2.0.3"
-    setprototypeof "1.1.0"
-    statuses ">= 1.4.0 < 2"
 
 http-signature@~1.1.0:
   version "1.1.1"
@@ -3691,15 +3399,11 @@ iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://npm.middleout.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-iconv-lite@0.4.23, iconv-lite@^0.4.17, iconv-lite@^0.4.18, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@^0.4.17, iconv-lite@^0.4.18, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.23"
   resolved "https://npm.middleout.com/iconv-lite/-/iconv-lite-0.4.23.tgz#297871f63be507adcfbfca715d0cd0eed84e9a63"
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
-
-ienoopen@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/ienoopen/-/ienoopen-1.0.0.tgz#346a428f474aac8f50cf3784ea2d0f16f62bda6b"
 
 ignore-walk@^3.0.1:
   version "3.0.1"
@@ -3707,9 +3411,13 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
-ignore@^3.3.3, ignore@^3.3.5:
+ignore@^3.3.5:
   version "3.3.10"
   resolved "https://npm.middleout.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
+
+ignore@^4.0.2:
+  version "4.0.3"
+  resolved "https://npm.middleout.com/ignore/-/ignore-4.0.3.tgz#e2d58c9654d75b542529fa28d80ac95b29e4f467"
 
 import-local@^1.0.0:
   version "1.0.0"
@@ -3739,7 +3447,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
+inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://npm.middleout.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
@@ -3787,10 +3495,6 @@ invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
 invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
-
-ipaddr.js@1.6.0:
-  version "1.6.0"
-  resolved "https://npm.middleout.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
@@ -4064,10 +3768,6 @@ is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://npm.middleout.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
 
-isarray@0.0.1:
-  version "0.0.1"
-  resolved "https://npm.middleout.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
-
 isarray@1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
@@ -4165,15 +3865,15 @@ items-promise@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/items-promise/-/items-promise-1.0.0.tgz#a71ff03063078eb82db468f1e2f12df4da34dc01"
 
-jest-changed-files@^23.4.0:
-  version "23.4.0"
-  resolved "https://npm.middleout.com/jest-changed-files/-/jest-changed-files-23.4.0.tgz#f1b304f98c235af5d9a31ec524262c5e4de3c6ff"
+jest-changed-files@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-changed-files/-/jest-changed-files-23.4.2.tgz#1eed688370cd5eebafe4ae93d34bb3b64968fe83"
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-cli/-/jest-cli-23.4.1.tgz#c1ffd33254caee376990aa2abe2963e0de4ca76b"
+jest-cli@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-cli/-/jest-cli-23.4.2.tgz#49d56bcfe6cf01871bfcc4a0494e08edaf2b61d0"
   dependencies:
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
@@ -4186,17 +3886,17 @@ jest-cli@^23.4.1:
     istanbul-lib-coverage "^1.2.0"
     istanbul-lib-instrument "^1.10.1"
     istanbul-lib-source-maps "^1.2.4"
-    jest-changed-files "^23.4.0"
-    jest-config "^23.4.1"
+    jest-changed-files "^23.4.2"
+    jest-config "^23.4.2"
     jest-environment-jsdom "^23.4.0"
     jest-get-type "^22.1.0"
     jest-haste-map "^23.4.1"
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
-    jest-resolve-dependencies "^23.4.1"
-    jest-runner "^23.4.1"
-    jest-runtime "^23.4.1"
-    jest-snapshot "^23.4.1"
+    jest-resolve-dependencies "^23.4.2"
+    jest-runner "^23.4.2"
+    jest-runtime "^23.4.2"
+    jest-snapshot "^23.4.2"
     jest-util "^23.4.0"
     jest-validate "^23.4.0"
     jest-watcher "^23.4.0"
@@ -4212,18 +3912,18 @@ jest-cli@^23.4.1:
     which "^1.2.12"
     yargs "^11.0.0"
 
-jest-config@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-config/-/jest-config-23.4.1.tgz#3172fa21f0507d7f8a088ed1dbe4157057f201e9"
+jest-config@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-config/-/jest-config-23.4.2.tgz#62a105e14b8266458f2bf4d32403b2c44418fa77"
   dependencies:
     babel-core "^6.0.0"
-    babel-jest "^23.4.0"
+    babel-jest "^23.4.2"
     chalk "^2.0.1"
     glob "^7.1.1"
     jest-environment-jsdom "^23.4.0"
     jest-environment-node "^23.4.0"
     jest-get-type "^22.1.0"
-    jest-jasmine2 "^23.4.1"
+    jest-jasmine2 "^23.4.2"
     jest-regex-util "^23.3.0"
     jest-resolve "^23.4.1"
     jest-util "^23.4.0"
@@ -4238,10 +3938,6 @@ jest-diff@^23.2.0:
     diff "^3.2.0"
     jest-get-type "^22.1.0"
     pretty-format "^23.2.0"
-
-jest-docblock@^21.0.0:
-  version "21.2.0"
-  resolved "https://npm.middleout.com/jest-docblock/-/jest-docblock-21.2.0.tgz#51529c3b30d5fd159da60c27ceedc195faf8d414"
 
 jest-docblock@^23.2.0:
   version "23.2.0"
@@ -4287,10 +3983,11 @@ jest-haste-map@^23.4.1:
     micromatch "^2.3.11"
     sane "^2.0.0"
 
-jest-jasmine2@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-jasmine2/-/jest-jasmine2-23.4.1.tgz#fa192262430d418e827636e4a98423e5e7ff0fce"
+jest-jasmine2@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-jasmine2/-/jest-jasmine2-23.4.2.tgz#2fbf52f93e43ed4c5e7326a90bb1d785be4321ac"
   dependencies:
+    babel-traverse "^6.0.0"
     chalk "^2.0.1"
     co "^4.6.0"
     expect "^23.4.0"
@@ -4299,7 +3996,7 @@ jest-jasmine2@^23.4.1:
     jest-each "^23.4.0"
     jest-matcher-utils "^23.2.0"
     jest-message-util "^23.4.0"
-    jest-snapshot "^23.4.1"
+    jest-snapshot "^23.4.2"
     jest-util "^23.4.0"
     pretty-format "^23.2.0"
 
@@ -4335,12 +4032,12 @@ jest-regex-util@^23.3.0:
   version "23.3.0"
   resolved "https://npm.middleout.com/jest-regex-util/-/jest-regex-util-23.3.0.tgz#5f86729547c2785c4002ceaa8f849fe8ca471bc5"
 
-jest-resolve-dependencies@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-resolve-dependencies/-/jest-resolve-dependencies-23.4.1.tgz#a1d85247e2963f8b3859f6b0ec61b741b359378e"
+jest-resolve-dependencies@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-resolve-dependencies/-/jest-resolve-dependencies-23.4.2.tgz#0675ba876a5b819deffc449ad72e9985c2592048"
   dependencies:
     jest-regex-util "^23.3.0"
-    jest-snapshot "^23.4.1"
+    jest-snapshot "^23.4.2"
 
 jest-resolve@^23.4.1:
   version "23.4.1"
@@ -4350,27 +4047,27 @@ jest-resolve@^23.4.1:
     chalk "^2.0.1"
     realpath-native "^1.0.0"
 
-jest-runner@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-runner/-/jest-runner-23.4.1.tgz#d41fd1459b95d35d6df685f1468c09e617c8c260"
+jest-runner@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-runner/-/jest-runner-23.4.2.tgz#579a88524ac52c846075b0129a21c7b483e75a7e"
   dependencies:
     exit "^0.1.2"
     graceful-fs "^4.1.11"
-    jest-config "^23.4.1"
+    jest-config "^23.4.2"
     jest-docblock "^23.2.0"
     jest-haste-map "^23.4.1"
-    jest-jasmine2 "^23.4.1"
+    jest-jasmine2 "^23.4.2"
     jest-leak-detector "^23.2.0"
     jest-message-util "^23.4.0"
-    jest-runtime "^23.4.1"
+    jest-runtime "^23.4.2"
     jest-util "^23.4.0"
     jest-worker "^23.2.0"
     source-map-support "^0.5.6"
     throat "^4.0.0"
 
-jest-runtime@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-runtime/-/jest-runtime-23.4.1.tgz#c1822eba5eb19294debe6b25b2760d0a8c532fd1"
+jest-runtime@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-runtime/-/jest-runtime-23.4.2.tgz#00c3bb8385253d401a394a27d1112d3615e5a65c"
   dependencies:
     babel-core "^6.0.0"
     babel-plugin-istanbul "^4.1.6"
@@ -4379,12 +4076,12 @@ jest-runtime@^23.4.1:
     exit "^0.1.2"
     fast-json-stable-stringify "^2.0.0"
     graceful-fs "^4.1.11"
-    jest-config "^23.4.1"
+    jest-config "^23.4.2"
     jest-haste-map "^23.4.1"
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
     jest-resolve "^23.4.1"
-    jest-snapshot "^23.4.1"
+    jest-snapshot "^23.4.2"
     jest-util "^23.4.0"
     jest-validate "^23.4.0"
     micromatch "^2.3.11"
@@ -4398,11 +4095,10 @@ jest-serializer@^23.0.1:
   version "23.0.1"
   resolved "https://npm.middleout.com/jest-serializer/-/jest-serializer-23.0.1.tgz#a3776aeb311e90fe83fab9e533e85102bd164165"
 
-jest-snapshot@^23.4.1:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest-snapshot/-/jest-snapshot-23.4.1.tgz#090de9acae927f6a3af3005bda40d912b83e9c96"
+jest-snapshot@^23.4.2:
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest-snapshot/-/jest-snapshot-23.4.2.tgz#8fa6130feb5a527dac73e5fa80d86f29f7c42ab6"
   dependencies:
-    babel-traverse "^6.0.0"
     babel-types "^6.0.0"
     chalk "^2.0.1"
     jest-diff "^23.2.0"
@@ -4451,11 +4147,11 @@ jest-worker@^23.2.0:
     merge-stream "^1.0.1"
 
 jest@^23.1.0:
-  version "23.4.1"
-  resolved "https://npm.middleout.com/jest/-/jest-23.4.1.tgz#39550c72f3237f63ae1b434d8d122cdf6fa007b6"
+  version "23.4.2"
+  resolved "https://npm.middleout.com/jest/-/jest-23.4.2.tgz#1fae3ed832192143070ae85156b25cea891a1260"
   dependencies:
     import-local "^1.0.0"
-    jest-cli "^23.4.1"
+    jest-cli "^23.4.2"
 
 js-levenshtein@^1.1.3:
   version "1.1.3"
@@ -4481,34 +4177,34 @@ jsbn@~0.1.0:
   resolved "https://npm.middleout.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jsdom@^11.5.1:
-  version "11.11.0"
-  resolved "https://npm.middleout.com/jsdom/-/jsdom-11.11.0.tgz#df486efad41aee96c59ad7a190e2449c7eb1110e"
+  version "11.12.0"
+  resolved "https://npm.middleout.com/jsdom/-/jsdom-11.12.0.tgz#1a80d40ddd378a1de59656e9e6dc5a3ba8657bc8"
   dependencies:
-    abab "^1.0.4"
-    acorn "^5.3.0"
+    abab "^2.0.0"
+    acorn "^5.5.3"
     acorn-globals "^4.1.0"
     array-equal "^1.0.0"
     cssom ">= 0.3.2 < 0.4.0"
-    cssstyle ">= 0.3.1 < 0.4.0"
+    cssstyle "^1.0.0"
     data-urls "^1.0.0"
-    domexception "^1.0.0"
-    escodegen "^1.9.0"
+    domexception "^1.0.1"
+    escodegen "^1.9.1"
     html-encoding-sniffer "^1.0.2"
-    left-pad "^1.2.0"
-    nwsapi "^2.0.0"
+    left-pad "^1.3.0"
+    nwsapi "^2.0.7"
     parse5 "4.0.0"
     pn "^1.1.0"
-    request "^2.83.0"
+    request "^2.87.0"
     request-promise-native "^1.0.5"
     sax "^1.2.4"
     symbol-tree "^3.2.2"
-    tough-cookie "^2.3.3"
+    tough-cookie "^2.3.4"
     w3c-hr-time "^1.0.1"
     webidl-conversions "^4.0.2"
     whatwg-encoding "^1.0.3"
     whatwg-mimetype "^2.1.0"
     whatwg-url "^6.4.1"
-    ws "^4.0.0"
+    ws "^5.2.0"
     xml-name-validator "^3.0.0"
 
 jsesc@^1.3.0:
@@ -4610,9 +4306,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://npm.middleout.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kleur@^1.0.0:
-  version "1.0.2"
-  resolved "https://npm.middleout.com/kleur/-/kleur-1.0.2.tgz#637f126d3cda40a423b1297da88cf753bd04ebdd"
+kleur@^2.0.1:
+  version "2.0.1"
+  resolved "https://npm.middleout.com/kleur/-/kleur-2.0.1.tgz#7cc64b0d188d0dcbc98bdcdfdda2cc10619ddce8"
 
 lazy-cache@^1.0.3:
   version "1.0.4"
@@ -4624,15 +4320,15 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-left-pad@^1.2.0:
+left-pad@^1.3.0:
   version "1.3.0"
   resolved "https://npm.middleout.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
 
 lerna@^3.0.0-beta.21:
-  version "3.0.0-beta.21"
-  resolved "https://npm.middleout.com/lerna/-/lerna-3.0.0-beta.21.tgz#866252f70e5e6d95faab8eca193fd66488cc6d1b"
+  version "3.0.0-rc.0"
+  resolved "https://npm.middleout.com/lerna/-/lerna-3.0.0-rc.0.tgz#ce7aa6a13151d75e36fe92cf6c9dd27821acae30"
   dependencies:
-    "@lerna/cli" "^3.0.0-beta.21"
+    "@lerna/cli" "^3.0.0-rc.0"
     import-local "^1.0.0"
     npmlog "^4.1.2"
 
@@ -4748,6 +4444,13 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+locate-path@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.middleout.com/locate-path/-/locate-path-3.0.0.tgz#dbec3b3ab759758071b58fe59fc41871af21400e"
+  dependencies:
+    p-locate "^3.0.0"
+    path-exists "^3.0.0"
+
 lodash-es@^4.17.5:
   version "4.17.10"
   resolved "https://npm.middleout.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
@@ -4763,10 +4466,6 @@ lodash.debounce@^4.0.8:
 lodash.flattendeep@^4.4.0:
   version "4.4.0"
   resolved "https://npm.middleout.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
-
-lodash.reduce@4.6.0:
-  version "4.6.0"
-  resolved "https://npm.middleout.com/lodash.reduce/-/lodash.reduce-4.6.0.tgz#f1ab6b839299ad48f784abbf476596f03b914d3b"
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -4885,10 +4584,6 @@ math-random@^1.0.1:
   version "1.0.1"
   resolved "https://npm.middleout.com/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac"
 
-media-typer@0.3.0:
-  version "0.3.0"
-  resolved "https://npm.middleout.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
-
 mem@^1.1.0:
   version "1.1.0"
   resolved "https://npm.middleout.com/mem/-/mem-1.1.0.tgz#5edd52b485ca1d900fe64895505399a0dfa45f76"
@@ -4924,10 +4619,6 @@ meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
-merge-descriptors@1.0.1:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
-
 merge-stream@^1.0.1:
   version "1.0.1"
   resolved "https://npm.middleout.com/merge-stream/-/merge-stream-1.0.1.tgz#4041202d508a342ba00174008df0c251b8c135e1"
@@ -4941,10 +4632,6 @@ merge2@^1.2.1:
 merge@^1.2.0:
   version "1.2.0"
   resolved "https://npm.middleout.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
-
-methods@~1.1.2:
-  version "1.1.2"
-  resolved "https://npm.middleout.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
 micromatch@^2.3.11:
   version "2.3.11"
@@ -4986,15 +4673,11 @@ mime-db@~1.35.0:
   version "1.35.0"
   resolved "https://npm.middleout.com/mime-db/-/mime-db-1.35.0.tgz#0569d657466491283709663ad379a99b90d9ab47"
 
-mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.18, mime-types@~2.1.7:
+mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.7:
   version "2.1.19"
   resolved "https://npm.middleout.com/mime-types/-/mime-types-2.1.19.tgz#71e464537a7ef81c15f2db9d97e913fc0ff606f0"
   dependencies:
     mime-db "~1.35.0"
-
-mime@1.4.1:
-  version "1.4.1"
-  resolved "https://npm.middleout.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -5063,6 +4746,10 @@ moment@^2.6.0:
   version "2.22.2"
   resolved "https://npm.middleout.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
+moo@^0.4.3:
+  version "0.4.3"
+  resolved "https://npm.middleout.com/moo/-/moo-0.4.3.tgz#3f847a26f31cf625a956a87f2b10fbc013bfd10e"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://npm.middleout.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5081,19 +4768,17 @@ mute-stream@0.0.7, mute-stream@~0.0.4:
   resolved "https://npm.middleout.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
 mysql2@^1.5.3:
-  version "1.5.3"
-  resolved "https://npm.middleout.com/mysql2/-/mysql2-1.5.3.tgz#d905a1a06da0469828287608ce68647b8130748f"
+  version "1.6.1"
+  resolved "https://npm.middleout.com/mysql2/-/mysql2-1.6.1.tgz#9027fd93a05c5d86e79bfada35c9b677b3a0d7c5"
   dependencies:
-    cardinal "1.0.0"
-    denque "1.2.3"
+    cardinal "2.1.1"
+    denque "1.3.0"
     generate-function "^2.0.0"
     iconv-lite "^0.4.18"
     long "^4.0.0"
     lru-cache "4.1.1"
     named-placeholders "1.1.1"
     object-assign "^4.1.1"
-    readable-stream "2.3.5"
-    safe-buffer "^5.0.1"
     seq-queue "0.0.5"
     sqlstring "2.3.1"
 
@@ -5128,9 +4813,10 @@ natural-compare@^1.4.0:
   resolved "https://npm.middleout.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
 nearley@^2.7.10:
-  version "2.13.0"
-  resolved "https://npm.middleout.com/nearley/-/nearley-2.13.0.tgz#6e7b0f4e68bfc3e74c99eaef2eda39e513143439"
+  version "2.15.0"
+  resolved "https://npm.middleout.com/nearley/-/nearley-2.15.0.tgz#d1ff5406a58064615fe6eafb429cf06fbb1b7eab"
   dependencies:
+    moo "^0.4.3"
     nomnom "~1.6.2"
     railroad-diagrams "^1.0.0"
     randexp "0.4.6"
@@ -5144,17 +4830,9 @@ needle@^2.2.1:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-negotiator@0.6.1:
-  version "0.6.1"
-  resolved "https://npm.middleout.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
-
 nice-try@^1.0.4:
   version "1.0.4"
   resolved "https://npm.middleout.com/nice-try/-/nice-try-1.0.4.tgz#d93962f6c52f2c1558c0fbda6d512819f1efe1c4"
-
-nocache@2.0.0:
-  version "2.0.0"
-  resolved "https://npm.middleout.com/nocache/-/nocache-2.0.0.tgz#202b48021a0c4cbde2df80de15a17443c8b43980"
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -5274,8 +4952,8 @@ npm-lifecycle@^2.0.0:
     validate-npm-package-name "^3.0.0"
 
 npm-packlist@^1.1.6:
-  version "1.1.10"
-  resolved "https://npm.middleout.com/npm-packlist/-/npm-packlist-1.1.10.tgz#1039db9e985727e464df066f4cf0ab6ef85c398a"
+  version "1.1.11"
+  resolved "https://npm.middleout.com/npm-packlist/-/npm-packlist-1.1.11.tgz#84e8c683cbe7867d34b1d357d893ce29e28a02de"
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -5319,15 +4997,15 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://npm.middleout.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nwsapi@^2.0.0:
-  version "2.0.5"
-  resolved "https://npm.middleout.com/nwsapi/-/nwsapi-2.0.5.tgz#3998cfe7a014600e5e30dedb1fef2a4404b2871f"
+nwsapi@^2.0.7:
+  version "2.0.8"
+  resolved "https://npm.middleout.com/nwsapi/-/nwsapi-2.0.8.tgz#e3603579b7e162b3dbedae4fb24e46f771d8fa24"
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
   resolved "https://npm.middleout.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://npm.middleout.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -5403,12 +5081,6 @@ object.values@^1.0.4:
     es-abstract "^1.6.1"
     function-bind "^1.1.0"
     has "^1.0.1"
-
-on-finished@~2.3.0:
-  version "2.3.0"
-  resolved "https://npm.middleout.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
-  dependencies:
-    ee-first "1.1.1"
 
 once@^1.3.0, once@^1.4.0:
   version "1.4.0"
@@ -5494,11 +5166,23 @@ p-limit@^1.1.0:
   dependencies:
     p-try "^1.0.0"
 
+p-limit@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.middleout.com/p-limit/-/p-limit-2.0.0.tgz#e624ed54ee8c460a778b3c9f3670496ff8a57aec"
+  dependencies:
+    p-try "^2.0.0"
+
 p-locate@^2.0.0:
   version "2.0.0"
   resolved "https://npm.middleout.com/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
   dependencies:
     p-limit "^1.1.0"
+
+p-locate@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.middleout.com/p-locate/-/p-locate-3.0.0.tgz#322d69a05c0264b25997d9f40cd8a891ab0064a4"
+  dependencies:
+    p-limit "^2.0.0"
 
 p-map-series@^1.0.0:
   version "1.0.0"
@@ -5517,6 +5201,10 @@ p-reduce@^1.0.0:
 p-try@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
+
+p-try@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.middleout.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
 
 p-waterfall@^1.0.0:
   version "1.0.0"
@@ -5569,10 +5257,6 @@ parse5@^3.0.1:
   dependencies:
     "@types/node" "*"
 
-parseurl@~1.3.2:
-  version "1.3.2"
-  resolved "https://npm.middleout.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
-
 pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://npm.middleout.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
@@ -5604,12 +5288,8 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://npm.middleout.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
 path-parse@^1.0.5:
-  version "1.0.5"
-  resolved "https://npm.middleout.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
-
-path-to-regexp@0.1.7:
-  version "0.1.7"
-  resolved "https://npm.middleout.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
+  version "1.0.6"
+  resolved "https://npm.middleout.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
 
 path-to-regexp@^2.2.1:
   version "2.2.1"
@@ -5661,10 +5341,6 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-platform@1.3.5:
-  version "1.3.5"
-  resolved "https://npm.middleout.com/platform/-/platform-1.3.5.tgz#fb6958c696e07e2918d2eeda0f0bc9448d733444"
-
 please-upgrade-node@^3.0.2:
   version "3.1.1"
   resolved "https://npm.middleout.com/please-upgrade-node/-/please-upgrade-node-3.1.1.tgz#ed320051dfcc5024fae696712c8288993595e8ac"
@@ -5695,16 +5371,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://npm.middleout.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.11.0, prettier@^1.13.7:
-  version "1.13.7"
-  resolved "https://npm.middleout.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
-
-pretty-error@^2.1.1:
-  version "2.1.1"
-  resolved "https://npm.middleout.com/pretty-error/-/pretty-error-2.1.1.tgz#5f4f87c8f91e5ae3f3ba87ab4cf5e03b1a17f1a3"
-  dependencies:
-    renderkid "^2.0.1"
-    utila "~0.4"
+prettier@^1.11.0:
+  version "1.14.0"
+  resolved "https://npm.middleout.com/prettier/-/prettier-1.14.0.tgz#847c235522035fd988100f1f43cf20a7d24f9372"
 
 pretty-format@^23.2.0:
   version "23.2.0"
@@ -5732,10 +5401,10 @@ promise@^7.1.1:
     asap "~2.0.3"
 
 prompts@^0.1.9:
-  version "0.1.12"
-  resolved "https://npm.middleout.com/prompts/-/prompts-0.1.12.tgz#39dc42de7d2f0ec3e2af76bf40713fcb8726090d"
+  version "0.1.14"
+  resolved "https://npm.middleout.com/prompts/-/prompts-0.1.14.tgz#a8e15c612c5c9ec8f8111847df3337c9cbd443b2"
   dependencies:
-    kleur "^1.0.0"
+    kleur "^2.0.1"
     sisteransi "^0.1.1"
 
 promzard@^0.3.0:
@@ -5751,28 +5420,17 @@ prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-property-expr@^1.2.0:
-  version "1.4.0"
-  resolved "https://npm.middleout.com/property-expr/-/property-expr-1.4.0.tgz#e28cfe4e7a5a231fb14c8ad687a93a5342e05a8c"
-
 proto-list@~1.2.1:
   version "1.2.4"
   resolved "https://npm.middleout.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
-
-proxy-addr@~2.0.3:
-  version "2.0.3"
-  resolved "https://npm.middleout.com/proxy-addr/-/proxy-addr-2.0.3.tgz#355f262505a621646b3130a728eb647e22055341"
-  dependencies:
-    forwarded "~0.1.2"
-    ipaddr.js "1.6.0"
 
 pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://npm.middleout.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
 psl@^1.1.24:
-  version "1.1.28"
-  resolved "https://npm.middleout.com/psl/-/psl-1.1.28.tgz#4fb6ceb08a1e2214d4fd4de0ca22dae13740bc7b"
+  version "1.1.29"
+  resolved "https://npm.middleout.com/psl/-/psl-1.1.29.tgz#60f580d360170bb722a797cc704411e6da850c67"
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -5786,17 +5444,13 @@ q@^1.5.1:
   version "1.5.1"
   resolved "https://npm.middleout.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
-qs@6.5.1:
-  version "6.5.1"
-  resolved "https://npm.middleout.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
-
-qs@6.5.2, qs@~6.5.1:
-  version "6.5.2"
-  resolved "https://npm.middleout.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-
 qs@~6.4.0:
   version "6.4.0"
   resolved "https://npm.middleout.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
+qs@~6.5.1:
+  version "6.5.2"
+  resolved "https://npm.middleout.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
 query-string@^6.0.0:
   version "6.1.0"
@@ -5834,28 +5488,6 @@ randomatic@^3.0.0:
     kind-of "^6.0.0"
     math-random "^1.0.1"
 
-range-parser@~1.2.0:
-  version "1.2.0"
-  resolved "https://npm.middleout.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
-
-raw-body@2.3.2:
-  version "2.3.2"
-  resolved "https://npm.middleout.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
-  dependencies:
-    bytes "3.0.0"
-    http-errors "1.6.2"
-    iconv-lite "0.4.19"
-    unpipe "1.0.0"
-
-raw-body@2.3.3:
-  version "2.3.3"
-  resolved "https://npm.middleout.com/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"
-  dependencies:
-    bytes "3.0.0"
-    http-errors "1.6.3"
-    iconv-lite "0.4.23"
-    unpipe "1.0.0"
-
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://npm.middleout.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
@@ -5866,17 +5498,17 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     strip-json-comments "~2.0.1"
 
 react-dom@^16.3.2:
-  version "16.4.1"
-  resolved "https://npm.middleout.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
+  version "16.4.2"
+  resolved "https://npm.middleout.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-is@^16.4.1:
-  version "16.4.1"
-  resolved "https://npm.middleout.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
+react-is@^16.4.2:
+  version "16.4.2"
+  resolved "https://npm.middleout.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
 react-reconciler@^0.7.0:
   version "0.7.0"
@@ -5899,17 +5531,17 @@ react-redux@^5.0.7:
     prop-types "^15.6.0"
 
 react-test-renderer@^16.0.0-0:
-  version "16.4.1"
-  resolved "https://npm.middleout.com/react-test-renderer/-/react-test-renderer-16.4.1.tgz#f2fb30c2c7b517db6e5b10ed20bb6b0a7ccd8d70"
+  version "16.4.2"
+  resolved "https://npm.middleout.com/react-test-renderer/-/react-test-renderer-16.4.2.tgz#4e03eca9359bb3210d4373f7547d1364218ef74e"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
-    react-is "^16.4.1"
+    react-is "^16.4.2"
 
 react@^16.2.0, react@^16.3.2, react@^16.4.0:
-  version "16.4.1"
-  resolved "https://npm.middleout.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
+  version "16.4.2"
+  resolved "https://npm.middleout.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -5979,27 +5611,6 @@ read@1, read@~1.0.1:
   dependencies:
     mute-stream "~0.0.4"
 
-readable-stream@1.0:
-  version "1.0.34"
-  resolved "https://npm.middleout.com/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
-readable-stream@2.3.5:
-  version "2.3.5"
-  resolved "https://npm.middleout.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.3"
-    isarray "~1.0.0"
-    process-nextick-args "~2.0.0"
-    safe-buffer "~5.1.1"
-    string_decoder "~1.0.3"
-    util-deprecate "~1.0.1"
-
 readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.3.6"
   resolved "https://npm.middleout.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
@@ -6050,15 +5661,11 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
-redeyed@~1.0.0:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/redeyed/-/redeyed-1.0.1.tgz#e96c193b40c0816b00aec842698e61185e55498a"
+redeyed@~2.1.0:
+  version "2.1.1"
+  resolved "https://npm.middleout.com/redeyed/-/redeyed-2.1.1.tgz#8984b5815d99cb220469c99eeeffe38913e6cc0b"
   dependencies:
-    esprima "~3.0.0"
-
-referrer-policy@1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/referrer-policy/-/referrer-policy-1.1.0.tgz#35774eb735bf50fb6c078e83334b472350207d79"
+    esprima "~4.0.0"
 
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
@@ -6077,10 +5684,6 @@ regenerator-runtime@^0.10.5:
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://npm.middleout.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
-
-regenerator-runtime@^0.12.0:
-  version "0.12.0"
-  resolved "https://npm.middleout.com/regenerator-runtime/-/regenerator-runtime-0.12.0.tgz#8052ac952d85b10f3425192cd0c53f45cf65c6cb"
 
 regenerator-transform@^0.13.3:
   version "0.13.3"
@@ -6107,9 +5710,9 @@ regexp.prototype.flags@^1.2.0:
   dependencies:
     define-properties "^1.1.2"
 
-regexpp@^1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
+regexpp@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.middleout.com/regexpp/-/regexpp-2.0.0.tgz#b2a7534a85ca1b033bcf5ce9ff8e56d4e0755365"
 
 regexpu-core@^4.1.3, regexpu-core@^4.2.0:
   version "4.2.0"
@@ -6148,16 +5751,6 @@ regjsparser@^0.3.0:
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://npm.middleout.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
-
-renderkid@^2.0.1:
-  version "2.0.1"
-  resolved "https://npm.middleout.com/renderkid/-/renderkid-2.0.1.tgz#898cabfc8bede4b7b91135a3ffd323e58c0db319"
-  dependencies:
-    css-select "^1.1.0"
-    dom-converter "~0.1"
-    htmlparser2 "~3.3.0"
-    strip-ansi "^3.0.0"
-    utila "~0.3"
 
 repeat-element@^1.1.2:
   version "1.1.2"
@@ -6214,7 +5807,7 @@ request-promise-native@^1.0.5:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.83.0:
+request@^2.87.0:
   version "2.87.0"
   resolved "https://npm.middleout.com/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
   dependencies:
@@ -6353,10 +5946,6 @@ rxjs@^6.1.0:
   dependencies:
     tslib "^1.9.0"
 
-safe-buffer@5.1.1:
-  version "5.1.1"
-  resolved "https://npm.middleout.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
-
 safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://npm.middleout.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -6367,7 +5956,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2:
+"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "https://npm.middleout.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
@@ -6402,36 +5991,9 @@ semver@~5.3.0:
   version "5.3.0"
   resolved "https://npm.middleout.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-send@0.16.2:
-  version "0.16.2"
-  resolved "https://npm.middleout.com/send/-/send-0.16.2.tgz#6ecca1e0f8c156d141597559848df64730a6bbc1"
-  dependencies:
-    debug "2.6.9"
-    depd "~1.1.2"
-    destroy "~1.0.4"
-    encodeurl "~1.0.2"
-    escape-html "~1.0.3"
-    etag "~1.8.1"
-    fresh "0.5.2"
-    http-errors "~1.6.2"
-    mime "1.4.1"
-    ms "2.0.0"
-    on-finished "~2.3.0"
-    range-parser "~1.2.0"
-    statuses "~1.4.0"
-
 seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://npm.middleout.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
-
-serve-static@1.13.2:
-  version "1.13.2"
-  resolved "https://npm.middleout.com/serve-static/-/serve-static-1.13.2.tgz#095e8472fd5b46237db50ce486a43f4b86c6cec1"
-  dependencies:
-    encodeurl "~1.0.2"
-    escape-html "~1.0.3"
-    parseurl "~1.3.2"
-    send "0.16.2"
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
@@ -6462,14 +6024,6 @@ set-value@^2.0.0:
 setimmediate@^1.0.5:
   version "1.0.5"
   resolved "https://npm.middleout.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
-
-setprototypeof@1.0.3:
-  version "1.0.3"
-  resolved "https://npm.middleout.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
-
-setprototypeof@1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
 shebang-command@^1.2.0:
   version "1.2.0"
@@ -6669,14 +6223,6 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-"statuses@>= 1.3.1 < 2", "statuses@>= 1.4.0 < 2":
-  version "1.5.0"
-  resolved "https://npm.middleout.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
-
-statuses@~1.4.0:
-  version "1.4.0"
-  resolved "https://npm.middleout.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
-
 stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://npm.middleout.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
@@ -6720,16 +6266,6 @@ string.prototype.matchall@^2.0.0:
     function-bind "^1.1.1"
     has-symbols "^1.0.0"
     regexp.prototype.flags "^1.2.0"
-
-string_decoder@~0.10.x:
-  version "0.10.31"
-  resolved "https://npm.middleout.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
-
-string_decoder@~1.0.3:
-  version "1.0.3"
-  resolved "https://npm.middleout.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
-  dependencies:
-    safe-buffer "~5.1.0"
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -6827,10 +6363,6 @@ symbol-tree@^3.2.2:
   version "3.2.2"
   resolved "https://npm.middleout.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
 
-synchronous-promise@^1.0.18:
-  version "1.0.18"
-  resolved "https://npm.middleout.com/synchronous-promise/-/synchronous-promise-1.0.18.tgz#936e8763e6554088cdcf78dc64f7473b972fcefc"
-
 table@^4.0.3:
   version "4.0.3"
   resolved "https://npm.middleout.com/table/-/table-4.0.3.tgz#00b5e2b602f1794b9acaf9ca908a76386a7813bc"
@@ -6851,8 +6383,8 @@ tar@^2.0.0:
     inherits "2"
 
 tar@^4:
-  version "4.4.4"
-  resolved "https://npm.middleout.com/tar/-/tar-4.4.4.tgz#ec8409fae9f665a4355cc3b4087d0820232bb8cd"
+  version "4.4.6"
+  resolved "https://npm.middleout.com/tar/-/tar-4.4.6.tgz#63110f09c00b4e60ac8bcfe1bf3c8660235fbc9b"
   dependencies:
     chownr "^1.0.1"
     fs-minipass "^1.2.5"
@@ -6958,11 +6490,7 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-toposort@^2.0.2:
-  version "2.0.2"
-  resolved "https://npm.middleout.com/toposort/-/toposort-2.0.2.tgz#ae21768175d1559d48bef35420b2f4962f09c330"
-
-tough-cookie@>=2.3.3, tough-cookie@^2.3.3:
+tough-cookie@>=2.3.3, tough-cookie@^2.3.4:
   version "2.4.3"
   resolved "https://npm.middleout.com/tough-cookie/-/tough-cookie-2.4.3.tgz#53f36da3f47783b0925afa06ff9f3b165280f781"
   dependencies:
@@ -7025,13 +6553,6 @@ type-check@~0.3.2:
   resolved "https://npm.middleout.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:
     prelude-ls "~1.1.2"
-
-type-is@~1.6.15, type-is@~1.6.16:
-  version "1.6.16"
-  resolved "https://npm.middleout.com/type-is/-/type-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
-  dependencies:
-    media-typer "0.3.0"
-    mime-types "~2.1.18"
 
 type-to-reducer@^1.1.0:
   version "1.1.0"
@@ -7102,10 +6623,6 @@ universalify@^0.1.0:
   version "0.1.2"
   resolved "https://npm.middleout.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
 
-unpipe@1.0.0, unpipe@~1.0.0:
-  version "1.0.0"
-  resolved "https://npm.middleout.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
-
 unset-value@^1.0.0:
   version "1.0.0"
   resolved "https://npm.middleout.com/unset-value/-/unset-value-1.0.0.tgz#8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559"
@@ -7156,25 +6673,13 @@ util.promisify@^1.0.0:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
 
-utila@~0.3:
-  version "0.3.3"
-  resolved "https://npm.middleout.com/utila/-/utila-0.3.3.tgz#d7e8e7d7e309107092b05f8d9688824d633a4226"
-
-utila@~0.4:
-  version "0.4.0"
-  resolved "https://npm.middleout.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
-
-utils-merge@1.0.1:
-  version "1.0.1"
-  resolved "https://npm.middleout.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
-
 uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.3.2"
   resolved "https://npm.middleout.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
 validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.3:
-  version "3.0.3"
-  resolved "https://npm.middleout.com/validate-npm-package-license/-/validate-npm-package-license-3.0.3.tgz#81643bcbef1bdfecd4623793dc4648948ba98338"
+  version "3.0.4"
+  resolved "https://npm.middleout.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
@@ -7188,10 +6693,6 @@ validate-npm-package-name@^3.0.0:
 value-equal@^0.4.0:
   version "0.4.0"
   resolved "https://npm.middleout.com/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
-
-vary@^1, vary@~1.1.2:
-  version "1.1.2"
-  resolved "https://npm.middleout.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
 verror@1.10.0:
   version "1.10.0"
@@ -7333,20 +6834,19 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^4.0.0:
-  version "4.1.0"
-  resolved "https://npm.middleout.com/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
+ws@^5.2.0:
+  version "5.2.2"
+  resolved "https://npm.middleout.com/ws/-/ws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
   dependencies:
     async-limiter "~1.0.0"
-    safe-buffer "~5.1.0"
-
-x-xss-protection@1.1.0:
-  version "1.1.0"
-  resolved "https://npm.middleout.com/x-xss-protection/-/x-xss-protection-1.1.0.tgz#4f1898c332deb1e7f2be1280efb3e2c53d69c1a7"
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://npm.middleout.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
+
+xregexp@4.0.0:
+  version "4.0.0"
+  resolved "https://npm.middleout.com/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
 
 xtend@~4.0.1:
   version "4.0.1"
@@ -7356,6 +6856,10 @@ y18n@^3.2.1:
   version "3.2.1"
   resolved "https://npm.middleout.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
 
+"y18n@^3.2.1 || ^4.0.0":
+  version "4.0.0"
+  resolved "https://npm.middleout.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
+
 yallist@^2.1.2:
   version "2.1.2"
   resolved "https://npm.middleout.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
@@ -7363,6 +6867,12 @@ yallist@^2.1.2:
 yallist@^3.0.0, yallist@^3.0.2:
   version "3.0.2"
   resolved "https://npm.middleout.com/yallist/-/yallist-3.0.2.tgz#8452b4bb7e83c7c188d8041c1a837c773d6d8bb9"
+
+yargs-parser@^10.1.0:
+  version "10.1.0"
+  resolved "https://npm.middleout.com/yargs-parser/-/yargs-parser-10.1.0.tgz#7202265b89f7e9e9f2e5765e0fe735a905edbaa8"
+  dependencies:
+    camelcase "^4.1.0"
 
 yargs-parser@^9.0.2:
   version "9.0.2"
@@ -7387,6 +6897,23 @@ yargs@^11.0.0:
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
 
+yargs@^12.0.1:
+  version "12.0.1"
+  resolved "https://npm.middleout.com/yargs/-/yargs-12.0.1.tgz#6432e56123bb4e7c3562115401e98374060261c2"
+  dependencies:
+    cliui "^4.0.0"
+    decamelize "^2.0.0"
+    find-up "^3.0.0"
+    get-caller-file "^1.0.1"
+    os-locale "^2.0.0"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^2.0.0"
+    which-module "^2.0.0"
+    y18n "^3.2.1 || ^4.0.0"
+    yargs-parser "^10.1.0"
+
 yargs@~3.10.0:
   version "3.10.0"
   resolved "https://npm.middleout.com/yargs/-/yargs-3.10.0.tgz#f7ee7bd857dd7c1d2d38c0e74efbd681d1431fd1"
@@ -7395,14 +6922,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
-
-yup@^0.25.1:
-  version "0.25.1"
-  resolved "https://npm.middleout.com/yup/-/yup-0.25.1.tgz#09afe22af635fe11cf830a96ff4b906f8008f34e"
-  dependencies:
-    "@babel/runtime" "^7.0.0-beta.47"
-    fn-name "~2.0.1"
-    lodash "^4.17.10"
-    property-expr "^1.2.0"
-    synchronous-promise "^1.0.18"
-    toposort "^2.0.2"

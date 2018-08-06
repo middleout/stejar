@@ -125,6 +125,15 @@ export class Connection {
     }
 
     /**
+     * @param query
+     * @param bindings
+     * @return {Promise<any>}
+     */
+    rawQuery(query, bindings) {
+        return this._run(query, bindings, (query, bindings) => this._adapter.execute(query, bindings));
+    }
+
+    /**
      * Get a new query builder instance.
      *
      * @return Builder

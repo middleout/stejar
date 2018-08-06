@@ -52,6 +52,7 @@
         "rimraf": "^2.6.2"
     },
     "jest": {
+        "testURL": "http://localhost",
         "testMatch": [
             "<rootDir>/src/!(_)**/tests/**/*.test.js?(x)"
         ],
