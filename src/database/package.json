@@ -1,6 +1,6 @@
 {
     "name": "@stejar/database",
-    "version": "4.0.103",
+    "version": "4.0.104",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
