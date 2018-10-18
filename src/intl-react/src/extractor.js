@@ -20,6 +20,10 @@ function getNodeValue(node) {
     });
 
     children = children.filter(item => {
+        if (!item.value) {
+            return false;
+        }
+
         // If we have more than 1 child but these children actually are spaces/new lines, filter them out
         let val = item.value.replace(/(?:\r\n|\r|\n)/g, "");
         val = val.replace(/ /g, "");
