@@ -4,6 +4,8 @@ import { Selectors } from "@stejar/intl";
 import { translatorFactory } from "./translatorFactory";
 
 export function withTranslate(WrappedComponent) {
+    // console.warn(here);
+
     @connect(state => ({
         "@stejar/intl/catalog": Selectors.getCurrentCatalog(state),
         "@stejar/intl/debug": Selectors.isDebugEnabled(state),
