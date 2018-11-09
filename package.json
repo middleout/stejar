@@ -23,9 +23,6 @@
     },
     "lint-staged": {
         "*.{js,jsx}": [
-            "eslint \"src/**/src/*.{js,jsx}\"",
-            "prettier --write \"src/**/src/*.{js,jsx}\"",
-            "git add"
         ]
     },
     "devDependencies": {
@@ -36,17 +33,17 @@
         "@babel/preset-env": "^7.0.0-beta.39",
         "@babel/preset-react": "^7.0.0-beta.39",
         "babel-core": "7.0.0-bridge.0",
-        "babel-eslint": "^9.0.0",
+        "babel-eslint": "^10.0.0",
         "babel-jest": "^23.0.1",
         "eslint": "^5.1.0",
         "eslint-config-prettier": "^3.0.1",
         "eslint-plugin-react": "^7.7.0",
         "fetch-mock": "^7.0.0-alpha.6",
         "fs-extra": "^7.0.0",
-        "husky": "^0.14.3",
+        "husky": "^1.0.0",
         "jest": "^23.1.0",
         "lerna": "^3.0.0-beta.21",
-        "lint-staged": "^7.0.1",
+        "lint-staged": "^8.0.0",
         "nanomatch": "^1.2.9",
         "prettier": "^1.11.0",
         "rimraf": "^2.6.2"

@@ -11,7 +11,7 @@
         "@stejar/prefix-values": "^4.0.105",
         "@stejar/redux-settings": "^4.0.105",
         "keymirror": "^0.1.1",
-        "reselect": "^3.0.1",
+        "reselect": "^4.0.0",
         "type-to-reducer": "^1.1.0"
     },
     "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"
