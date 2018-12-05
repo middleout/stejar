@@ -1,7 +1,5 @@
 import { createSelector } from "reselect";
 import typeToReducer from "type-to-reducer";
-import keyMirror from "keymirror";
-import { prefixValues } from "@stejar/prefix-values";
 import { getStateSelector, setMountPoint } from "@stejar/redux-settings";
 
 /**
@@ -18,7 +16,10 @@ let ActionTypes = {
     FAILED_TO_LOAD: null,
     CHANGED_LOCALE: null,
 };
-ActionTypes = prefixValues(moduleName, keyMirror(ActionTypes));
+
+Object.keys(ActionTypes).forEach(key => {
+    ActionTypes[key] = moduleName + "/" + key;
+});
 
 /**
  * The default state of the module

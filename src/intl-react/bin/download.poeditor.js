@@ -15,7 +15,7 @@ if (!apiKey) {
 }
 
 if (!projectId) {
-    throw new Error("You must provide the second argument the api key");
+    throw new Error("You must provide the second argument the project ID");
 }
 
 if (!outputDir) {

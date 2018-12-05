@@ -10,12 +10,10 @@
     "types": "./es/index.d.ts",
     "dependencies": {
         "@babel/traverse": "^7.0.0-beta.47",
-        "@stejar/prefix-values": "^4.0.106",
         "@stejar/redux-settings": "^4.0.106",
         "babylon": "^7.0.0-beta.47",
         "es6-promise": "^4.2.4",
         "isomorphic-fetch": "^2.2.1",
-        "keymirror": "^0.1.1",
         "mkdirp": "^0.5.1",
         "reselect": "^4.0.0",
         "type-to-reducer": "^1.1.0"

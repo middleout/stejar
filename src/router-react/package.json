@@ -13,7 +13,7 @@
         "create-react-context": "^0.2.2",
         "hoist-non-react-statics": "^3.0.0",
         "prop-types": "^15.6.1",
-        "react": "^16.3.2"
+        "react": "^16.0.0"
     },
     "devDependencies": {
         "@stejar/router-server": "^4.0.106",
