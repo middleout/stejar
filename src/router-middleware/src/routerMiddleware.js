@@ -8,11 +8,13 @@ export function routerMiddlewareRunnerFactory(fetchMiddleware, options = {}) {
     return match => {
         const promises = match.routes.map(item => fetchMiddleware(item)).filter(i => !!i);
         return serial(promises, item => {
-            if (item instanceof Promise) {
-                return item.then(result => result.default(match, options));
-            }
+            return item(match, options).then(result => {
+                if (result && result.default) {
+                    return result.default(match, options);
+                }
 
-            return item(match, options);
+                return result;
+            });
         }).then(() => match);
     };
 }
