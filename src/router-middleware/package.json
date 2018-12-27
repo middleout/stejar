@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-middleware",
-    "version": "5.0.3",
+    "version": "5.0.4",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,

@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-server",
-    "version": "5.0.3",
+    "version": "5.0.4",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,7 +8,7 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/router": "^5.0.3",
+        "@stejar/router": "^5.0.4",
         "history": "^4.7.2"
     },
     "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"

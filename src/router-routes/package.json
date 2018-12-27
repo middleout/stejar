@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-routes",
-    "version": "5.0.3",
+    "version": "5.0.4",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -11,7 +11,7 @@
         "url-pattern": "^1.0.3"
     },
     "devDependencies": {
-        "@stejar/router-react": "^5.0.3"
+        "@stejar/router-react": "^5.0.4"
     },
     "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"
 }
