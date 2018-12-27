@@ -13,14 +13,15 @@
         "extract-locale": "./bin/extract.locale.js"
     },
     "dependencies": {
-        "@babel/traverse": "^7.0.0-beta.54",
+        "@babel/traverse": "^7",
         "@stejar/intl": "^5.0.4",
         "babylon": "^7.0.0-beta.47",
-        "es6-promise": "^4.2.4",
-        "isomorphic-fetch": "^2.2.1",
-        "mkdirp": "^0.5.1",
-        "react": "^16.0.0",
-        "react-redux": "^6.0.0"
+        "es6-promise": "^4",
+        "isomorphic-fetch": "^2",
+        "mkdirp": "^0",
+        "react": "^16",
+        "react-redux": "^6",
+        "redux": "^4"
     },
     "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"
 }

@@ -8,7 +8,7 @@
         "es"
     ],
     "dependencies": {
-        "url-pattern": "^1.0.3"
+        "url-pattern": "^1"
     },
     "devDependencies": {
         "@stejar/router-react": "^5.0.4"

@@ -9,9 +9,9 @@
     ],
     "dependencies": {
         "@stejar/router-routes": "^5.0.4",
-        "fbemitter": "^2.1.1",
-        "invariant": "^2.2.2",
-        "query-string": "^6.0.0"
+        "fbemitter": "^2",
+        "invariant": "^2",
+        "query-string": "^6"
     },
     "gitHead": "8f9c7483eed750f66afa18c022d727e2b48c24a9"
 }
