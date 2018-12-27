@@ -1,1 +1,1 @@
-export * from "./Route";
+export { Route } from "./Route";

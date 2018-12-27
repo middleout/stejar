@@ -1,2 +1,2 @@
-export * from "./Translate";
-export * from "./withTranslate";
+export { Translate } from "./Translate";
+export { withTranslate } from "./withTranslate";

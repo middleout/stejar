@@ -1,1 +1,1 @@
-export * from "./ServerRouter";
+export { ServerRouter } from "./ServerRouter";

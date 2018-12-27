@@ -1,1 +1,2 @@
-export * from "./routerMiddleware";
+export { routerMiddleware } from "./routerMiddleware";
+export { routerMiddlewareRunnerFactory } from "./routerMiddleware";

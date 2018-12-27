@@ -1,1 +1,1 @@
-export * from "./reduceComponents";
+export { reduceComponents } from "./reduceComponents";

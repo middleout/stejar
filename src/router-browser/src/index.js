@@ -1,1 +1,1 @@
-export * from "./BrowserRouter";
+export { BrowserRouter } from "./BrowserRouter";
