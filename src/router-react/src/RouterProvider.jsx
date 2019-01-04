@@ -68,6 +68,24 @@ export class RouterProvider extends Component {
         return <Provider value={this._router}>{Children.only(this.state.component)}</Provider>;
     }
 
+    runOnRouteMatch(match) {
+        const onRouteMatch = this.props.onRouteMatch || (() => Promise.resolve());
+
+        onRouteMatch(match).then(() => {
+            // If the component unmounted, do not continue
+            if (!this._stop) {
+                return;
+            }
+
+            // Do we do the following ??????
+            // Here we should check if the match "components" is a Promise() instead of a component
+            // and if so - load it first THEN update the state. This way we can show a loader when starting
+            // the transition... keep the loader when the component is shown
+
+            this.updateStateComponent(match);
+        });
+    }
+
     /**
      * We know we are in a browser environment here.
      * SSR already happened (and we already handled it)
@@ -75,26 +93,12 @@ export class RouterProvider extends Component {
      */
     componentDidMount() {
         this._unlisten = this._router.subscribe(Events.MATCHED, match => {
-            const onRouteMatch = this.props.onRouteMatch || (() => Promise.resolve());
-
             // If the component unmounted, do not continue
             if (!this._stop) {
                 return;
             }
 
-            onRouteMatch(match).then(() => {
-                // If the component unmounted, do not continue
-                if (!this._stop) {
-                    return;
-                }
-
-                // Do we do the following ??????
-                // Here we should check if the match "components" is a Promise() instead of a component
-                // and if so - load it first THEN update the state. This way we can show a loader when starting
-                // the transition... keep the loader when the component is shown
-
-                this.updateStateComponent(match);
-            });
+            this.runOnRouteMatch(match);
         });
 
         this._router.subscribe(Events.NOT_FOUND, () => console.error("No route matched"));

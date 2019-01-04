@@ -42,13 +42,20 @@ function extractLocale(pathToDir, rootPath, outputPath, extensions) {
 
     walkSync(pathToDir, fileList);
 
+    const projectRoot = __dirname.replace("node_modules/@stejar/intl-react/bin", "");
+
     fileList.forEach((file, index) => {
         const fileExt = path.extname(file);
         if (!exts.includes(fileExt)) {
             return;
         }
 
-        console.log("Parsing " + file + "..." + ("(" + Math.round(((index + 1) * 100) / fileList.length) + " %)"));
+        console.log(
+            "Parsing " +
+                file.replace(projectRoot, "") +
+                "..." +
+                ("(" + Math.round(((index + 1) * 100) / fileList.length) + " %)")
+        );
 
         const content = fs.readFileSync(file, "utf-8");
         const jsxResult = extract(content, ["Translate"], ["translate", "__"]);
@@ -56,7 +63,7 @@ function extractLocale(pathToDir, rootPath, outputPath, extensions) {
         jsxResult.forEach(item => {
             locale.push({
                 term: item.value,
-                reference: file + ":" + item.line,
+                reference: file.replace(projectRoot, "") + ":" + item.line,
             });
         });
     });

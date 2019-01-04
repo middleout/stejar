@@ -17,6 +17,7 @@
     },
     "devDependencies": {
         "@stejar/router-server": "^5.0.4",
+        "@stejar/router-middleware": "^5.0.4",
         "enzyme": "^3",
         "enzyme-adapter-react-16": "^1",
         "react-dom": "^16"

@@ -4,6 +4,7 @@ import Adapter from "enzyme-adapter-react-16";
 import { createMemoryHistory } from "history";
 import { Router } from "@stejar/router";
 import { ServerRouter } from "@stejar/router-server";
+import { routerMiddleware } from "@stejar/router-middleware";
 import { RouterProvider } from "../src";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -110,5 +111,48 @@ describe("RouterProvider", () => {
 
             done();
         });
+    });
+
+    test("can onRouteMatch to provide the component", done => {
+        const router = ServerRouter({
+            url: "/foo/bar",
+            routes: [
+                {
+                    name: "foo",
+                    path: "/foo",
+                    middleware: match => {
+                        return new Promise(resolve =>
+                            setTimeout(() => {
+                                match.routes[0].component = ({ children }) => <div>Hello World {children}</div>;
+                                resolve(match);
+                            }, 100)
+                        );
+                    },
+                    routes: [
+                        {
+                            name: "bar",
+                            path: "bar",
+                            middleware: match => {
+                                return new Promise(resolve =>
+                                    setTimeout(() => {
+                                        match.routes[1].component = () => <div>Baz</div>;
+                                        resolve(match);
+                                    }, 100)
+                                );
+                            },
+                        },
+                    ],
+                },
+            ],
+        });
+
+        router
+            .start()
+            .then(({ match }) => routerMiddleware()(match))
+            .then(match => {
+                const comp = render(<RouterProvider router={router} match={match} />);
+                expect(comp.text()).toEqual("Hello World Baz");
+                done();
+            });
     });
 });

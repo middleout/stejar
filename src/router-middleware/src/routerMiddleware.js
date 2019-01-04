@@ -7,15 +7,7 @@ export function routerMiddlewareRunnerFactory(fetchMiddleware, options = {}) {
 
     return match => {
         const promises = match.routes.map(item => fetchMiddleware(item)).filter(i => !!i);
-        return serial(promises, item => {
-            return item(match, options).then(result => {
-                if (result && result.default) {
-                    return result.default(match, options);
-                }
-
-                return result;
-            });
-        }).then(() => match);
+        return serial(promises, item => item(match, options));
     };
 }
 
