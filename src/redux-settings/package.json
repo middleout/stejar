@@ -1,6 +1,6 @@
 {
     "name": "@stejar/redux-settings",
-    "version": "5.0.4",
+    "version": "5.0.5",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
