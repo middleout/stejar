@@ -58,9 +58,18 @@ const changedLocale = (state, { payload }) => ({
 /**
  * Module Selectors
  */
-const isDebugEnabled = createSelector(getStateSelector(moduleName), state => state.debug);
-const getCatalogs = createSelector(getStateSelector(moduleName), state => state.catalogs);
-const getCurrentLocale = createSelector(getStateSelector(moduleName), state => state.currentLocale);
+const isDebugEnabled = createSelector(
+    getStateSelector(moduleName),
+    state => state.debug
+);
+const getCatalogs = createSelector(
+    getStateSelector(moduleName),
+    state => state.catalogs
+);
+const getCurrentLocale = createSelector(
+    getStateSelector(moduleName),
+    state => state.currentLocale
+);
 const getCurrentCatalog = createSelector(
     getCatalogs,
     getCurrentLocale,
