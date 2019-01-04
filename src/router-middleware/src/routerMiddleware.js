@@ -1,4 +1,5 @@
 import { serial } from "items-promise";
+// a very small change to force publish
 
 export function routerMiddlewareRunnerFactory(fetchMiddleware, options = {}) {
     if (typeof fetchMiddleware !== "function") {
