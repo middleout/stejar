@@ -9,11 +9,6 @@
     ],
     "types": "./es/index.d.ts",
     "dependencies": {
-        "@babel/traverse": "^7",
-        "babylon": "^7.0.0-beta.47",
-        "es6-promise": "^4",
-        "isomorphic-fetch": "^2",
-        "mkdirp": "^0",
         "reselect": "^4",
         "type-to-reducer": "^1"
     },

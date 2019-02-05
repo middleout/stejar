@@ -7,11 +7,6 @@ import typeToReducer from "type-to-reducer";
 const moduleName = "@stejar/intl";
 
 /**
- * Define the function that returns the base state for this module
- */
-let stateSelector = state => state[moduleName];
-
-/**
  * The action types of the module - prefixed (and keymirrored)
  */
 let ActionTypes = {
@@ -59,32 +54,11 @@ const changedLocale = (state, { payload }) => ({
     currentLocale: payload.locale,
 });
 
-/**
- * Module Selectors
- */
-const isDebugEnabled = createSelector(
-    stateSelector,
-    state => state.debug
-);
-const getCatalogs = createSelector(
-    stateSelector,
-    state => state.catalogs
-);
-const getCurrentLocale = createSelector(
-    stateSelector,
-    state => state.currentLocale
-);
-const getCurrentCatalog = createSelector(
-    getCatalogs,
-    getCurrentLocale,
-    (catalogs, currentLocale) => catalogs[currentLocale]
-);
-
 export const Selectors = {
-    isDebugEnabled,
-    getCatalogs,
-    getCurrentCatalog,
-    getCurrentLocale,
+    isDebugEnabled: () => null,
+    getCatalogs: () => null,
+    getCurrentCatalog: () => null,
+    getCurrentLocale: () => null,
 };
 
 /**
@@ -108,8 +82,27 @@ export const Actions = {
 /**
  * Boot the module and return the reducer
  */
-export const createReducer = (stateSelectorFn, debug = false) => {
-    stateSelector = stateSelectorFn;
+export const createReducer = (stateSelector = state => state[moduleName], debug = false) => {
+    /**
+     * Module Selectors
+     */
+    Selectors.isDebugEnabled = createSelector(
+        stateSelector,
+        state => state.debug
+    );
+    Selectors.getCatalogs = createSelector(
+        stateSelector,
+        state => state.catalogs
+    );
+    Selectors.getCurrentLocale = createSelector(
+        stateSelector,
+        state => state.currentLocale
+    );
+    Selectors.getCurrentCatalog = createSelector(
+        Selectors.getCatalogs,
+        Selectors.getCurrentLocale,
+        (catalogs, currentLocale) => catalogs[currentLocale]
+    );
 
     return typeToReducer(
         {
