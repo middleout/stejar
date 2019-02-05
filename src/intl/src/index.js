@@ -1,11 +1,15 @@
 import { createSelector } from "reselect";
 import typeToReducer from "type-to-reducer";
-import { getStateSelector, setMountPoint } from "@stejar/redux-settings";
 
 /**
  * Define the module name
  */
 const moduleName = "@stejar/intl";
+
+/**
+ * Define the function that returns the base state for this module
+ */
+let stateSelector = state => state[moduleName];
 
 /**
  * The action types of the module - prefixed (and keymirrored)
@@ -59,15 +63,15 @@ const changedLocale = (state, { payload }) => ({
  * Module Selectors
  */
 const isDebugEnabled = createSelector(
-    getStateSelector(moduleName),
+    stateSelector,
     state => state.debug
 );
 const getCatalogs = createSelector(
-    getStateSelector(moduleName),
+    stateSelector,
     state => state.catalogs
 );
 const getCurrentLocale = createSelector(
-    getStateSelector(moduleName),
+    stateSelector,
     state => state.currentLocale
 );
 const getCurrentCatalog = createSelector(
@@ -104,8 +108,8 @@ export const Actions = {
 /**
  * Boot the module and return the reducer
  */
-export const createReducer = (stateSelector, debug = false, userModuleName = moduleName) => {
-    setMountPoint(userModuleName, stateSelector);
+export const createReducer = (stateSelectorFn, debug = false) => {
+    stateSelector = stateSelectorFn;
 
     return typeToReducer(
         {
