@@ -64,6 +64,7 @@ function extractLocale(pathToDir, rootPath, outputPath, extensions) {
             locale.push({
                 term: item.value,
                 reference: file.replace(projectRoot, "") + ":" + item.line,
+                comment: item.comment,
             });
         });
     });
