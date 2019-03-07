@@ -1,8 +1,8 @@
 "use strict";
 
-var bablyon = require("babylon");
+const bablyon = require("babylon");
 
-var traverse = require("@babel/traverse");
+const traverse = require("@babel/traverse");
 
 function checkNode(node, components) {
     return components.indexOf(node.openingElement.name.name) !== -1;
@@ -26,7 +26,7 @@ function getNodeComment(node) {
 }
 
 function getNodeValue(node) {
-    var children = node.children.map(function(item) {
+    let children = node.children.map(function(item) {
         // If we have a weird <Translate>{"..."}</Translate> we need to use the "expression" value
         if (item.type === "JSXExpressionContainer") {
             return item.expression;
@@ -39,8 +39,7 @@ function getNodeValue(node) {
             return false;
         } // If we have more than 1 child but these children actually are spaces/new lines, filter them out
 
-        var val = item.value.replace(/(?:\r\n|\r|\n)/g, "");
-        val = val.replace(/ /g, "");
+        const val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
 
         if (!val) {
             return false;
@@ -59,11 +58,14 @@ function getNodeValue(node) {
 function getFnFirstArg(node) {
     return node.arguments[0].value;
 }
+function getFnThirdArg(node) {
+    return node.arguments.length > 2 ? node.arguments[2].value : "";
+}
 
 function extract(code) {
-    var components = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ["Translate"];
-    var functions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ["translate", "__"];
-    var ast = bablyon.parse(code, {
+    const components = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ["Translate"];
+    const functions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ["translate", "__"];
+    const ast = bablyon.parse(code, {
         sourceType: "module",
         plugins: [
             "jsx",
@@ -77,7 +79,7 @@ function extract(code) {
             "typescript",
         ],
     });
-    var result = [];
+    const result = [];
     traverse.default(ast, {
         enter: function enter(path) {
             switch (path.node.type) {
@@ -101,7 +103,7 @@ function extract(code) {
                     result.push({
                         line: path.node.loc.start.line,
                         value: getFnFirstArg(path.node),
-                        comment: getNodeComment(path.node),
+                        comment: getFnThirdArg(path.node),
                     });
                     break;
             }
