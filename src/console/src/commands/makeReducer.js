@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
-const { camelCase } = require("@stejar/utils/es/camelCase");
-const { mkDirByPathSync } = require("@stejar/utils/es/mkDirByPathSync");
+const camelCase = require("@stejar/utils/es/camelCase");
+const mkDirByPathSync = require("@stejar/utils/es/mkDirByPathSync");
 
 let reducerTpl = `import typeToReducer from "type-to-reducer";
 

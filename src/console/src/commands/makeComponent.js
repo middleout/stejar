@@ -1,8 +1,8 @@
 const path = require("path");
 const fs = require("fs");
-const { capitalizeFirstLetter } = require("@stejar/utils/es/capitalizeFirstLetter");
-const { camelCase } = require("@stejar/utils/es/camelCase");
-const { mkDirByPathSync } = require("@stejar/utils/es/mkDirByPathSync");
+const capitalizeFirstLetter = require("@stejar/utils/es/capitalizeFirstLetter");
+const camelCase = require("@stejar/utils/es/camelCase");
+const mkDirByPathSync = require("@stejar/utils/es/mkDirByPathSync");
 
 let jsxTpl = `import "./_NAME_Styles.scss";
 import { createStructuredSelector } from "reselect";
