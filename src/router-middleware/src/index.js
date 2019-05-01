@@ -1,2 +1,2 @@
-export { routerMiddleware } from "./routerMiddleware";
-export { routerMiddlewareRunnerFactory } from "./routerMiddleware";
+export { routerMiddleware, routerMiddlewareRunnerFactory } from "./routerMiddleware";
+export { makeAsyncMiddlewares } from "./makeAsyncMiddleware";

@@ -12,5 +12,13 @@
         "reselect": "^4",
         "type-to-reducer": "^1"
     },
+    "peerDependencies": {
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0"
+    },
+    "devDependencies": {
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0"
+    },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }
