@@ -1,5 +1,3 @@
-import { moduleName } from "./settings";
-
 export const ACTION_TYPES = {
     LOADING_CATALOG_ACTION: null,
     LOADED_CATALOG_ACTION: null,
@@ -10,5 +8,5 @@ export const ACTION_TYPES = {
 };
 
 Object.keys(ACTION_TYPES).forEach(key => {
-    ACTION_TYPES[key] = moduleName + "/" + key;
+    ACTION_TYPES[key] = "@stejar/intl" + "/" + key;
 });
