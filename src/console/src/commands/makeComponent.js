@@ -6,32 +6,15 @@ const mkDirByPathSync = require("@stejar/utils/es/mkDirByPathSync");
 
 let jsxTpl = `import "./_NAME_Styles.scss";
 import { createStructuredSelector } from "reselect";
-import { lifecycle, withHandlers } from "recompose";
 import { connect } from "react-redux";
 
 const mapStateToProps = createStructuredSelector({});
-const methods = {
-    componentDidMount() {
-      // TOOD: Implement componentDidMount()
-    }
-};
-const handlers = {
-    onClick: props => event => {
-      event.preventDefault();
-      
-      // TOOD: Implement onClick()
-    }
-};
 
 function _NAME_Component(props) {
     return <div className="_NAME_">TODO: Implement _NAME_ ...</div>;
 }
 
-export const _NAME_ = connect(mapStateToProps)(
-    withHandlers(handlers)(
-        lifecycle(methods)(_NAME_Component)
-    )
-);`;
+export const _NAME_ = connect(mapStateToProps)(_NAME_Component);`;
 
 let stylesTpl = `._NAME_ {
 }

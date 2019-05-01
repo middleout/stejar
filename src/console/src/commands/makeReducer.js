@@ -11,25 +11,19 @@ const defaultState = {
     exampleProp: "foo"
 };
 
-export let $stateSliceSelector = () => null;
-
-export const _NAME_Reducer = stateSelector => {
-    $stateSliceSelector = stateSelector;
-
-    return typeToReducer(
-        {
-            [EXAMPLE_ACTION]: handleExampleAction,
-        },
-        defaultState
-    );
-};
+export const _NAME_Reducer = typeToReducer(
+    {
+        [EXAMPLE_ACTION]: handleExampleAction,
+    },
+    defaultState
+);
 
 function handleExampleAction(state, action) {
     return { ...state, ...action.payload };
 }`;
 
 let selectorsTpl = `import { createSelector } from "reselect";
-import { $stateSliceSelector } from "../reducers/_NAME_Reducer";
+import { $_NAME_ } from "./coreSelectors";
 
 export const $exampleSelector = createSelector(
     $stateSliceSelector,
@@ -41,8 +35,12 @@ module.exports = {
     callback: name => {
         name = camelCase(name)
             .replace("Reducer", "")
+            .replace("reducer", "")
             .replace("Selector", "")
-            .replace("Selectors", "");
+            .replace("selector", "")
+            .replace("Selectors", "")
+            .replace("selectors", "");
+
         const basePath = path.resolve(path.join("app", "redux"));
         mkDirByPathSync(path.join(basePath, "reducers"));
         mkDirByPathSync(path.join(basePath, "selectors"));
