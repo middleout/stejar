@@ -1,7 +1,7 @@
 import { createElement, Fragment } from "react";
 import { withTranslate } from "./withTranslate";
 
-function _Translate({ __, children, ...args }) {
+function TranslateComponent({ __, children, ...args }) {
     let translated = __(children, args);
 
     let list = [];
@@ -29,4 +29,4 @@ function _Translate({ __, children, ...args }) {
     return translated;
 }
 
-export const Translate = withTranslate(_Translate);
+export const Translate = withTranslate(TranslateComponent);

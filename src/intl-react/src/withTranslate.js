@@ -1,14 +1,12 @@
 import { Component, createElement } from "react";
 import { connect } from "react-redux";
-import { Selectors } from "@stejar/intl";
+import { $getCurrentCatalog, $isDebugEnabled } from "@stejar/intl/es/selectors";
 import { translatorFactory } from "./translatorFactory";
 
 export function withTranslate(WrappedComponent) {
-    // console.warn(here);
-
     @connect(state => ({
-        "@stejar/intl/catalog": Selectors.getCurrentCatalog(state),
-        "@stejar/intl/debug": Selectors.isDebugEnabled(state),
+        "@stejar/intl/catalog": $getCurrentCatalog(state),
+        "@stejar/intl/debug": $isDebugEnabled(state),
     }))
     class ComponentWithTranslate extends Component {
         render() {
