@@ -41,11 +41,7 @@ function getNodeValue(node) {
 
         const val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
 
-        if (!val) {
-            return false;
-        }
-
-        return true;
+        return !!val;
     });
 
     if (children.length === 0) {
@@ -83,17 +79,25 @@ function extract(code) {
     traverse.default(ast, {
         enter: function enter(path) {
             switch (path.node.type) {
-                case "JSXElement":
+                case "JSXElement": {
                     if (!checkNode(path.node, components)) {
                         return;
                     }
 
+                    const parts = getNodeValue(path.node).split("\n");
+                    let nodeValue = "";
+                    parts.forEach(part => {
+                        nodeValue += part.trim() + " ";
+                    });
+                    nodeValue = nodeValue.trim();
+
                     result.push({
                         line: path.node.loc.start.line,
-                        value: getNodeValue(path.node),
+                        value: nodeValue,
                         comment: getNodeComment(path.node),
                     });
                     break;
+                }
 
                 case "CallExpression":
                     if (!checkFn(path.node, functions)) {
