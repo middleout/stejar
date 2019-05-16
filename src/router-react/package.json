@@ -8,7 +8,6 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/react-reduce-components": "^7.0.8",
         "@stejar/router": "^7.0.8",
         "create-react-context": "^0",
         "hoist-non-react-statics": "^3",

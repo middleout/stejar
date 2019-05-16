@@ -1,1 +1,0 @@
-export { reduceComponents } from "./reduceComponents";

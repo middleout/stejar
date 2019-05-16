@@ -56,6 +56,10 @@ export function reduceComponents(components, props = {}) {
         };
     }, null);
 
+    if (!data) {
+        return;
+    }
+
     if (data.components) {
         throw new Error("Top level component cannot have named components");
     }
