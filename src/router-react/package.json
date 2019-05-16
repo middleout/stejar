@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router-react",
-    "version": "7.0.9",
+    "version": "7.0.10",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,15 +8,15 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/router": "^7.0.9",
+        "@stejar/router": "^7.0.10",
         "create-react-context": "^0",
         "hoist-non-react-statics": "^3",
         "prop-types": "^15",
         "react": "^16"
     },
     "devDependencies": {
-        "@stejar/router-middleware": "^7.0.9",
-        "@stejar/router-server": "^7.0.9",
+        "@stejar/router-middleware": "^7.0.10",
+        "@stejar/router-server": "^7.0.10",
         "enzyme": "^3",
         "enzyme-adapter-react-16": "^1",
         "react-dom": "^16"
