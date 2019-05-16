@@ -234,5 +234,27 @@ describe("Router", () => {
                 done();
             });
         });
+
+        test("build path to a route with dots but not nested", done => {
+            const history = createMemoryHistory({
+                initialEntries: ["/foo/bar"],
+            });
+
+            const router = Router({
+                history,
+                routes: [
+                    {
+                        name: "foo.bar",
+                        path: "/foo/bar",
+                    },
+                ],
+            });
+
+            router.start(() => {
+                const url = router.buildPath("foo.bar");
+                expect(url).toEqual("/foo/bar");
+                done();
+            });
+        });
     });
 });

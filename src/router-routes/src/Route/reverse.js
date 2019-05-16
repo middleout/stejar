@@ -1,6 +1,7 @@
 import { enforceConstraints, parser } from "./parser";
 
 export function reverseRoute(route, name, params = {}, query = {}) {
+    const isCurrentRoute = route.name === name;
     const initialName = name;
     const childrenNames = name.split(".");
     name = childrenNames.shift();
@@ -13,7 +14,7 @@ export function reverseRoute(route, name, params = {}, query = {}) {
         return reverseChildren(route.children, [name].concat(childrenNames).join("."), params, query);
     }
 
-    if (route.name !== name) {
+    if (route.name !== (isCurrentRoute ? initialName : name)) {
         return false;
     }
 
@@ -29,7 +30,7 @@ export function reverseRoute(route, name, params = {}, query = {}) {
 
     const path = parser(routePath).stringify(params);
 
-    if (childrenNames.length === 0) {
+    if (childrenNames.length === 0 || isCurrentRoute) {
         return path;
     }
 

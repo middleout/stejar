@@ -433,4 +433,33 @@ describe("Router", () => {
             done();
         });
     });
+
+    test("can match with a single level of routes", done => {
+        const history = createMemoryHistory({
+            initialEntries: ["/foo/bar"],
+        });
+
+        const router = Router({
+            history,
+            routes: [
+                {
+                    name: "base",
+                    path: "/",
+                },
+                {
+                    name: "base.foo",
+                    path: "/foo",
+                },
+                {
+                    name: "base.foo.bar",
+                    path: "/foo/bar",
+                },
+            ],
+        });
+
+        router.start(match => {
+            expect(match.name).toEqual("base.foo.bar");
+            done();
+        });
+    });
 });
