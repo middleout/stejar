@@ -1,6 +1,6 @@
 {
     "name": "@stejar/utils",
-    "version": "8.0.2",
+    "version": "8.0.3",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -32,8 +32,8 @@
         "terser-webpack-plugin": "^1",
         "webpack": "^4",
         "webpack-build-notifier": "^1",
-        "webpack-dev-server": "^3",
-        "webpack-cli": "^3"
+        "webpack-cli": "^3",
+        "webpack-dev-server": "^3"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }

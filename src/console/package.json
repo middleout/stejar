@@ -1,6 +1,6 @@
 {
     "name": "@stejar/console",
-    "version": "8.0.2",
+    "version": "8.0.3",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -12,7 +12,7 @@
         "stejar": "./bin/stejar.js"
     },
     "dependencies": {
-        "@stejar/utils": "^8.0.2",
+        "@stejar/utils": "^8.0.3",
         "commander": "^2.20.0"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
