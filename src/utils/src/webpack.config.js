@@ -128,7 +128,7 @@ module.exports = (webpackEnv, args = {}) => {
                     },
                 },
             },
-            entry: ["@babel/polyfill", "./app/index.jsx"],
+            entry: ["@babel/polyfill", "./src/index.jsx"],
             resolve: {
                 extensions: [".wasm", ".mjs", ".js", ".json", ".jsx"],
             },
