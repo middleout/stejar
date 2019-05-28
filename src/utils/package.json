@@ -32,7 +32,8 @@
         "terser-webpack-plugin": "^1",
         "webpack": "^4",
         "webpack-build-notifier": "^1",
-        "webpack-dev-server": "^3"
+        "webpack-dev-server": "^3",
+        "webpack-cli": "^3"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }
