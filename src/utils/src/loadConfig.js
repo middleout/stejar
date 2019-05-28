@@ -2,7 +2,7 @@ const { set } = require("dot-prop");
 const { resolve, parse } = require("path");
 const walkSync = require("./walkSync");
 
-module.exports = function loadConfig({ path = "config", extraOptions = {} } = {}) {
+module.exports = function loadConfig({ path = "config" } = {}) {
     const data = {};
     walkSync(path).map(path => {
         const { name, dir } = parse(path);
@@ -39,5 +39,5 @@ module.exports = function loadConfig({ path = "config", extraOptions = {} } = {}
         });
     });
 
-    return { ...config, ...extraOptions };
+    return config;
 };
