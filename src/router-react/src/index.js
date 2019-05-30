@@ -7,3 +7,4 @@ export { IndexRoute } from "./IndexRoute";
 export { IndexRedirectRoute } from "./IndexRedirectRoute";
 export { RedirectRoute } from "./RedirectRoute";
 export { Route } from "./Route";
+export { storyRouter } from "./storyRouter";

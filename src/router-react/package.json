@@ -15,11 +15,15 @@
         "react": "^16"
     },
     "devDependencies": {
+        "history": "^4",
         "@stejar/router-middleware": "^8.0.4",
         "@stejar/router-server": "^8.0.4",
         "enzyme": "^3",
         "enzyme-adapter-react-16": "^1",
         "react-dom": "^16"
+    },
+    "peerDependencies": {
+        "history": "^4"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }
