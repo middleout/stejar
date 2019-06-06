@@ -1,4 +1,5 @@
 const { copySync } = require("fs-extra");
+const rimraf = require("rimraf");
 const nanomatch = require("nanomatch");
 const getDirectoriesSync = require("../src/utils/src/getDirectoriesSync");
 const getFilesSync = require("../src/utils/src/getFilesSync");
@@ -12,6 +13,7 @@ const dirs = getDirectoriesSync("./src")
 
 dirs.forEach(dir => {
     console.log(`Building ${dir} \n--`);
+    rimraf.sync("src/${dir}/es");
     exec(`babel src/${dir}/src -d src/${dir}/es --ignore tests`);
 
     nanomatch(getFilesSync(`src/${dir}/src`), "**/*.d.ts").forEach(path => {
