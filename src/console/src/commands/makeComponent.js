@@ -22,14 +22,17 @@ let stylesTpl = `._NAME_ {
 
 module.exports = {
     command: "make:component <name>",
-    callback: name => {
+    option: ["-m, --module <module>", "create the component in this module", "app"],
+    callback: (name, { module }) => {
         let pathParts = name.split("/");
         name = pathParts.pop();
         pathParts = pathParts.join("/");
 
-        name = capitalizeFirstLetter(camelCase(name)).replace("Component", "");
-        const basePath = path.resolve(path.join("app", "components", pathParts, name));
+        name = camelCase(name).replace("Component", "");
+        const basePath = path.resolve(path.join("src", "modules", module, "components", pathParts, name));
         mkDirByPathSync(basePath);
+
+        name = capitalizeFirstLetter(name);
 
         jsxTpl = jsxTpl.replace(/_NAME_/g, name);
         fs.writeFileSync(path.join(basePath, `${name}.jsx`), jsxTpl);
