@@ -2,10 +2,10 @@
 const program = require("commander");
 const makeComponent = require("./../es/commands/makeComponent");
 const makeMiddleware = require("./../es/commands/makeMiddleware");
-const makeReducer = require("./../es/commands/makeReducer");
+const makeRedux = require("./../es/commands/makeRedux");
 const makeModule = require("./../es/commands/makeModule");
 
-const commands = [makeComponent, makeMiddleware, makeReducer, makeModule];
+const commands = [makeComponent, makeMiddleware, makeRedux, makeModule];
 // console.warn(__dirname); // /Users/andrei/work/ubisoft/ubisoft-dashboard/node_modules/@stejar/console/bin
 
 program.version("0.1.0");
