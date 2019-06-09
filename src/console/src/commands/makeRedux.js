@@ -55,7 +55,7 @@ module.exports = {
             .replace("Actions", "")
             .replace("actions", "");
 
-        const basePath = path.resolve(path.join("src", "modules", module));
+        const basePath = path.resolve(path.join("src", "modules", module, "redux"));
         mkDirByPathSync(path.join(basePath, "reducers"));
         mkDirByPathSync(path.join(basePath, "actions"));
         mkDirByPathSync(path.join(basePath, "selectors"));

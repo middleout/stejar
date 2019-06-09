@@ -11,16 +11,16 @@ module.exports = {
         const basePath = path.resolve(path.join("src", "modules", name));
         mkDirByPathSync(basePath);
 
-        mkDirByPathSync(path.resolve(path.join(basePath, "actions")));
-        mkDirByPathSync(path.resolve(path.join(basePath, "reducers")));
+        mkDirByPathSync(path.resolve(path.join(basePath, "redux", "actions")));
+        mkDirByPathSync(path.resolve(path.join(basePath, "redux", "reducers")));
+        mkDirByPathSync(path.resolve(path.join(basePath, "redux", "selectors")));
         mkDirByPathSync(path.resolve(path.join(basePath, "middlewares")));
         mkDirByPathSync(path.resolve(path.join(basePath, "components")));
-        mkDirByPathSync(path.resolve(path.join(basePath, "selectors")));
 
-        fs.writeFileSync(path.resolve(path.join(basePath, "actions", ".gitkeep")), "");
-        fs.writeFileSync(path.resolve(path.join(basePath, "reducers", ".gitkeep")), "");
+        fs.writeFileSync(path.resolve(path.join(basePath, "redux", "actions", ".gitkeep")), "");
+        fs.writeFileSync(path.resolve(path.join(basePath, "redux", "reducers", ".gitkeep")), "");
+        fs.writeFileSync(path.resolve(path.join(basePath, "redux", "selectors", ".gitkeep")), "");
         fs.writeFileSync(path.resolve(path.join(basePath, "middlewares", ".gitkeep")), "");
         fs.writeFileSync(path.resolve(path.join(basePath, "components", ".gitkeep")), "");
-        fs.writeFileSync(path.resolve(path.join(basePath, "selectors", ".gitkeep")), "");
     },
 };
