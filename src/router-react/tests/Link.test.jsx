@@ -41,12 +41,12 @@ describe("Link", () => {
             expect(comp.html()).toEqual(`<a class="hello" href="/bar">Hello</a>`);
 
             router.once(Events.MATCHED, match => {
-                expect(counter).toBe(1);
                 expect(match.name).toEqual("bar");
+                expect(counter).toBe(1);
                 done();
             });
 
-            comp.find("a").simulate("click", {preventDefault: () => null});
+            comp.find("a").simulate("click", { preventDefault: () => null });
         });
     });
 
@@ -92,7 +92,7 @@ describe("Link", () => {
                 done();
             });
 
-            comp.find("a").simulate("click", {preventDefault: () => null});
+            comp.find("a").simulate("click", { preventDefault: () => null });
         });
     });
 });

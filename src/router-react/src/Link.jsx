@@ -33,20 +33,22 @@ export function LinkComponent({
     const onClick = (...args) => {
         let event = args.length > 1 ? args[args.length - 1] : args[0];
         event.preventDefault();
-        router.redirect(to, params, query, options);
 
         if (props.onClick) {
             props.onClick(...args);
         }
+
+        router.redirect(to, params, query, options);
     };
     const onTouchEnd = (...args) => {
         let event = args.length > 1 ? args[args.length - 1] : args[0];
         event.preventDefault();
-        router.redirect(to, params, query, options);
 
         if (props.onClick) {
             props.onClick(...args);
         }
+
+        router.redirect(to, params, query, options);
     };
 
     if (props.href) {
