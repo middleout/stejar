@@ -31,17 +31,24 @@ export function LinkComponent({
     }
 
     const onClick = (...args) => {
-        if (props.onClick) {
-            props.onClick(args);
-        }
+        let event = args.length > 1 ? args[args.length - 1] : args[0];
+        event.preventDefault();
         router.redirect(to, params, query, options);
+
+        if (props.onClick) {
+            props.onClick(...args);
+        }
     };
     const onTouchEnd = (...args) => {
-        if (props.onTouchEnd) {
-            props.onTouchEnd(args);
-        }
+        let event = args.length > 1 ? args[args.length - 1] : args[0];
+        event.preventDefault();
         router.redirect(to, params, query, options);
+
+        if (props.onClick) {
+            props.onClick(...args);
+        }
     };
+
     if (props.href) {
         throw new Error("Cannot have href on a Link element (since it is generated automatically");
     }
