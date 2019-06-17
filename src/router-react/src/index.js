@@ -1,4 +1,5 @@
 export { RouterContextConsumer, RouterProvider } from "./RouterProvider";
+export { AnchorLink } from "./AnchorLink";
 export { Link } from "./Link";
 export { provideRouter } from "./provideRouter";
 export { withRouter } from "./withRouter";

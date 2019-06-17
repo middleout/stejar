@@ -3,12 +3,12 @@ import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { Events } from "@stejar/router";
 import { ServerRouter } from "@stejar/router-server";
-import _Link from "../src/Link";
+import { LinkComponent } from "../src/Link";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("Link", () => {
-    test("Can render link", done => {
+    test("Can render Link and click it", done => {
         const router = ServerRouter({
             url: "/foo",
             routes: [
@@ -28,10 +28,16 @@ describe("Link", () => {
         let counter = 0;
         router.start().then(() => {
             const comp = shallow(
-                <_Link onClick={() => counter++} router={router} to="bar" className="hello">
+                <LinkComponent
+                    onClick={() => counter++}
+                    router={router}
+                    to="bar"
+                    className="hello"
+                    render={props => <a {...props} />}>
                     Hello
-                </_Link>
+                </LinkComponent>
             );
+            expect(counter).toBe(0);
             expect(comp.html()).toEqual(`<a class="hello" href="/bar">Hello</a>`);
 
             router.once(Events.MATCHED, match => {
@@ -40,11 +46,11 @@ describe("Link", () => {
                 done();
             });
 
-            comp.find("a").simulate("click", { preventDefault() {}, defaultPrevented: false, button: 0 });
+            comp.find("a").simulate("click");
         });
     });
 
-    test("Can reuse params and query", done => {
+    test("Can reuse params and query on Link", done => {
         const router = ServerRouter({
             url: "/foo?x=y",
             routes: [
@@ -63,9 +69,15 @@ describe("Link", () => {
 
         router.start().then(() => {
             const comp = shallow(
-                <_Link reuseParams reuseQuery router={router} to="bar" className="hello">
+                <LinkComponent
+                    reuseParams
+                    reuseQuery
+                    router={router}
+                    to="bar"
+                    className="hello"
+                    render={props => <a {...props} />}>
                     Hello
-                </_Link>
+                </LinkComponent>
             );
             expect(comp.html()).toEqual(`<a class="hello" href="/barfoo?x=y">Hello</a>`);
 
@@ -80,7 +92,7 @@ describe("Link", () => {
                 done();
             });
 
-            comp.find("a").simulate("click", { preventDefault() {}, defaultPrevented: false, button: 0 });
+            comp.find("a").simulate("click");
         });
     });
 });
