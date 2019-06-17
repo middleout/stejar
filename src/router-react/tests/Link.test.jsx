@@ -46,7 +46,7 @@ describe("Link", () => {
                 done();
             });
 
-            comp.find("a").simulate("click");
+            comp.find("a").simulate("click", {preventDefault: () => null});
         });
     });
 
@@ -92,7 +92,7 @@ describe("Link", () => {
                 done();
             });
 
-            comp.find("a").simulate("click");
+            comp.find("a").simulate("click", {preventDefault: () => null});
         });
     });
 });
