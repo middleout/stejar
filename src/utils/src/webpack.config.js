@@ -5,7 +5,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const { resolve, join } = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -21,8 +21,8 @@ module.exports = (webpackEnv, args = {}) => {
         htmlPath = "./resources/html/index.html",
         devServerPort = 8080,
     } = args;
-    const env = config().parsed;
-    const appConfig = loadConfig();
+    const env = config(args.dotenvOptions || undefined).parsed;
+    const appConfig = loadConfig(args.appConfigOptions || undefined);
     const isProduction = mode === "production";
 
     if (!appConfig.app.publicUrl) {
@@ -50,9 +50,7 @@ module.exports = (webpackEnv, args = {}) => {
     table.push(["Index.html path", htmlPath]);
     table.push(["Dev Server port", devServerPort]);
     table.push(["App Config", JSON.stringify(appConfig)]);
-    Object.keys(env).forEach(key => {
-        table.push(["ENV: " + key, env[key]]);
-    });
+    table.push(["App Envirnoment", JSON.stringify(env)]);
     console.log(table.toString());
 
     const plugins = [

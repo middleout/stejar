@@ -3,23 +3,21 @@ const { resolve, parse } = require("path");
 const walkSync = require("./walkSync");
 
 module.exports = function loadConfig({ path = "config" } = {}) {
-    const data = {};
-    walkSync(path).map(path => {
-        const { name, dir } = parse(path);
+    const config = {};
+    walkSync(path).map(filePath => {
+        const { name, dir } = parse(filePath);
+
         set(
-            data,
+            config,
             dir
+                .replace(path, "")
                 .split("/")
+                .filter(item => !!item)
                 .concat(name)
                 .join("."),
-            require(resolve(path))
+            require(resolve(filePath))
         );
     });
-
-    /**
-     * @property app
-     */
-    const config = data[path];
 
     Object.keys(config).forEach(name => {
         Object.keys(config[name]).forEach(key => {
