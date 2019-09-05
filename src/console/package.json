@@ -1,6 +1,6 @@
 {
     "name": "@stejar/console",
-    "version": "12.0.1",
+    "version": "12.0.2",
     "license": "MIT",
     "sideEffects": false,
     "files": [
@@ -11,7 +11,7 @@
         "stejar": "./bin/stejar.js"
     },
     "dependencies": {
-        "@stejar/utils": "^12.0.1",
+        "@stejar/utils": "^12.0.2",
         "commander": "^3.0.1"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"

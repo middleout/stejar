@@ -1,6 +1,6 @@
 {
     "name": "@stejar/router",
-    "version": "12.0.1",
+    "version": "12.0.2",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,7 +8,7 @@
         "es"
     ],
     "dependencies": {
-        "@stejar/router-routes": "^12.0.1",
+        "@stejar/router-routes": "^12.0.2",
         "fbemitter": "^2",
         "invariant": "^2",
         "query-string": "^6"
