@@ -50,7 +50,7 @@
         "lint-staged": "^9",
         "nanomatch": "^1",
         "prettier": "^1",
-        "rimraf": "^2"
+        "rimraf": "^3"
     },
     "jest": {
         "testURL": "http://localhost",
