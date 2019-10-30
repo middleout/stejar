@@ -31,7 +31,7 @@
         "sass-loader": "^8",
         "terser-webpack-plugin": "^2",
         "webpack": "^4",
-        "webpack-build-notifier": "^1",
+        "webpack-build-notifier": "^2",
         "webpack-cli": "^3",
         "webpack-dev-server": "^3"
     },
