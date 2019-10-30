@@ -1,28 +1,24 @@
-import { Component, createElement } from "react";
+import { createElement } from "react";
 import { connect } from "react-redux";
 import { $getCurrentCatalog, $isDebugEnabled } from "@stejar/intl/es/selectors";
 import { translatorFactory } from "./translatorFactory";
 
-export function withTranslate(WrappedComponent) {
-    @connect(state => ({
-        "@stejar/intl/catalog": $getCurrentCatalog(state),
-        "@stejar/intl/debug": $isDebugEnabled(state),
-    }))
-    class ComponentWithTranslate extends Component {
-        render() {
-            const props = { ...this.props };
+export function withTranslate(wrappedComponent) {
+    function ComponentWithTranslate(props) {
+        const overrideProps = { ...props };
 
-            const translate = translatorFactory(props["@stejar/intl/catalog"], props["@stejar/intl/debug"]);
-            delete props["@stejar/intl/catalog"];
-            delete props["@stejar/intl/debug"];
+        const translate = translatorFactory(overrideProps["@stejar/intl/catalog"], overrideProps["@stejar/intl/debug"]);
+        delete overrideProps["@stejar/intl/catalog"];
+        delete overrideProps["@stejar/intl/debug"];
 
-            return createElement(WrappedComponent, {
-                ...props,
-                translate,
-                __: translate,
-            });
-        }
+        return createElement(wrappedComponent, {
+            ...props,
+            translate,
+        });
     }
 
-    return ComponentWithTranslate;
+    return connect(state => ({
+        "@stejar/intl/catalog": $getCurrentCatalog(state),
+        "@stejar/intl/debug": $isDebugEnabled(state),
+    }))(ComponentWithTranslate);
 }

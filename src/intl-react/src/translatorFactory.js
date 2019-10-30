@@ -21,7 +21,7 @@ export function translatorFactory(catalog, debug) {
                 return;
             }
 
-            translated = translated.replace("%(" + paramName + ")", namedArgs[paramName]);
+            translated = translated.replace(":" + paramName, namedArgs[paramName]);
         });
 
         return translated;

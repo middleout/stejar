@@ -1,8 +1,8 @@
 import { createElement, Fragment } from "react";
 import { withTranslate } from "./withTranslate";
 
-function TranslateComponent({ __, children, ...args }) {
-    let translated = __(children, args);
+function Translated({ translate, children, ...args }) {
+    let translated = translate(children, args);
 
     let list = [];
     Object.keys(args).forEach(name => {
@@ -29,4 +29,4 @@ function TranslateComponent({ __, children, ...args }) {
     return translated;
 }
 
-export const Translate = withTranslate(TranslateComponent);
+export const Translate = withTranslate(Translated);

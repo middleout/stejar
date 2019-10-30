@@ -5,9 +5,9 @@ const fs = require("fs");
 const path = require("path");
 const { extract } = require("../es/extractor");
 const args = process.argv.slice(2);
-let inputPath = args[0] || "resources/assets";
-let outputPath = args[1] || "resources/lang/terms.json";
-const extensions = args[2] || ".js,.jsx,.ts,.tsx";
+let inputPath = args[0] || "./src/";
+let outputPath = args[1] || "./keys-to-translate.json";
+const extensions = args[2] || ".js,.jsx";
 
 if (!inputPath) {
     throw new Error("You must provide the first argument as an input path");
