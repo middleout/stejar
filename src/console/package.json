@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@stejar/utils": "^13.0.0",
-        "commander": "^3.0.1"
+        "commander": "^4.0.0"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }
