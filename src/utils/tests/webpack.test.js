@@ -12,6 +12,8 @@ describe("webpack", () => {
                 path: path.resolve(path.join(__dirname, "./.env")),
             },
         });
-        expect(config.entry[1]).toBe("./src/index.jsx");
+        expect(config.entry[0]).toBe("core-js/stable");
+        expect(config.entry[1]).toBe("regenerator-runtime/runtime");
+        expect(config.entry[2]).toBe("./src/index.jsx");
     });
 });
