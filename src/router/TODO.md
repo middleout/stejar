@@ -1,1 +1,0 @@
-- should not allow to start dispatching when already dispatching
