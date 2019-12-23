@@ -115,11 +115,10 @@ module.exports = (webpackEnv, args = {}) => {
                     }),
                 ],
                 splitChunks: {
-                    chunks: "all",
                     cacheGroups: {
                         vendor: {
                             test: /node_modules/,
-                            chunks: "all",
+                            chunks: "initial",
                             name: "vendor",
                             enforce: true,
                         },
@@ -180,17 +179,6 @@ module.exports = (webpackEnv, args = {}) => {
                                 },
                             },
                         ],
-                    },
-                    {
-                        test: /resources\/lang\/(.*)\.json$/,
-                        type: "javascript/auto",
-                        use: {
-                            loader: "file-loader",
-                            options: {
-                                name: "[name].[contenthash].json",
-                            },
-                        },
-                        // exclude: /node_modules/,
                     },
                     {
                         test: /(\.jpg|\.png|\.gif|\.woff(2)|\.woff|\.ttf|\.otf|\.svg|\.eot)$/,
