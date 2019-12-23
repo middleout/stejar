@@ -2,7 +2,7 @@ let prevCatalog = null;
 let prevDebug = null;
 let prevTranslator = null;
 
-export function translatorFactory(catalog, debug) {
+export function translatorFactory(catalog, replacer, debug) {
     if (catalog === prevCatalog && debug === prevDebug) {
         return prevTranslator;
     }
@@ -17,11 +17,7 @@ export function translatorFactory(catalog, debug) {
         }
 
         Object.keys(namedArgs).forEach(paramName => {
-            if (typeof namedArgs[paramName] === "object") {
-                return;
-            }
-
-            translated = translated.replace(":" + paramName, namedArgs[paramName]);
+            translated = replacer(translated, paramName, namedArgs[paramName]);
         });
 
         return translated;

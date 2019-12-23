@@ -2,31 +2,30 @@ import { createElement, Fragment } from "react";
 import { withTranslate } from "./withTranslate";
 
 function Translated({ translate, children, ...args }) {
-    let translated = translate(children, args);
-
-    let list = [];
+    const translationParams = {};
     Object.keys(args).forEach(name => {
-        // Any other non object value has already been substituted
-        if (typeof args[name] !== "object") {
-            return;
-        }
-
-        list.push(args[name]);
-        translated = translated.replace("%(" + name + ")", "__REACT__");
+        translationParams[name] = "<" + name + ">";
     });
 
+    let translated = translate(children, translationParams);
+
+    let idx = 0;
     const result = [];
-    const parts = translated.split("__REACT__");
-    parts.forEach((part, idx) => {
-        result.push(createElement(Fragment, { key: `part_${idx}` }, part));
-        result.push(createElement(Fragment, { key: `item_${idx}` }, list.shift()));
+    Object.keys(translationParams).forEach(name => {
+        idx++;
+        const parts = translated.split(translationParams[name]);
+        if (parts.length > 1) {
+            result.push(createElement(Fragment, { key: `left_key_${idx}` }, parts[0]));
+            result.push(createElement(Fragment, { key: `value_${idx}` }, args[name]));
+            result.push(createElement(Fragment, { key: `right_key_${idx}` }, parts[1]));
+        }
     });
 
     if (result.length > 0) {
         return result;
     }
 
-    return translated;
+    return createElement(Fragment, {}, translated);
 }
 
 export const Translate = withTranslate(Translated);
