@@ -1,6 +1,6 @@
 "use strict";
 
-const bablyon = require("babylon");
+const babelParser = require("@babel/parser");
 
 const traverse = require("@babel/traverse");
 
@@ -35,16 +35,17 @@ function getNodeValue(node) {
         return item;
     });
     children = children.filter(function(item) {
-        if (!item.value && (!item.extra || !item.extra.raw)) {
+        // if (!item.value && (!item.extra || !item.extra.raw)) {
+        if (!item.value) {
             return false;
         } // If we have more than 1 child but these children actually are spaces/new lines, filter them out
 
         let val;
-        if (item.extra.raw) {
-            val = item.extra.raw.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
-        } else {
-            val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
-        }
+        // if (item.extra.raw) {
+        //     val = item.extra.raw.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
+        // } else {
+        val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
+        // }
 
         return !!val;
     });
@@ -53,9 +54,9 @@ function getNodeValue(node) {
         return "";
     }
 
-    if (children[0].extra && children[0].extra.raw) {
-        return children[0].extra.raw.trim();
-    }
+    // if (children[0].extra && children[0].extra.raw) {
+    //     return children[0].extra.raw.trim();
+    // }
 
     return children[0].value.trim();
 }
@@ -70,7 +71,7 @@ function getFnThirdArg(node) {
 function extract(code) {
     const components = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ["Translate"];
     const functions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ["translate", "__"];
-    const ast = bablyon.parse(code, {
+    const ast = babelParser.parse(code, {
         sourceType: "module",
         plugins: [
             "jsx",
@@ -93,8 +94,14 @@ function extract(code) {
                         return;
                     }
 
-                    const parts = getNodeValue(path.node).split("\n");
-                    let nodeValue = "";
+                    let nodeValue = getNodeValue(path.node);
+
+                    nodeValue = nodeValue.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+                        return "&#" + i.charCodeAt(0) + ";";
+                    });
+
+                    const parts = nodeValue.split("\n");
+                    nodeValue = "";
                     parts.forEach(part => {
                         nodeValue += part.trim() + " ";
                     });

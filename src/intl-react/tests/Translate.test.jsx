@@ -1,3 +1,4 @@
+import React from "react";
 import { changeReplacer, defaultReplacer } from "../src/settings";
 import { Translate } from "../src/Translate";
 import { createElement } from "react";
@@ -161,16 +162,22 @@ describe("Translate", () => {
         const store = boot({
             "Hello &#1779;": "Hello World",
         });
-        const translate = createElement(
-            Provider,
-            { store },
-            createElement(
-                Translate,
-                {},
-                "Hello &#1779;"
-            )
-        );
+        const translate = createElement(Provider, { store }, createElement(Translate, {}, "Hello &#1779;"));
         const str = renderToStaticMarkup(translate);
         expect(str).toBe("Hello World");
+    });
+
+    // TODO: update tests to use react all of them
+    test("...", () => {
+        const store = boot({
+            "Don't do it": "Ola World",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate>{"Don't do it"}</Translate>
+            </Provider>
+        );
+        expect(str).toBe("Ola World");
     });
 });
