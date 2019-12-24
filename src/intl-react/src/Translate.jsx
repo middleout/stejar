@@ -9,7 +9,6 @@ function Translated({ translate, children, dangerous = false, dangerousEl = "spa
 
     let translated = translate(children, translationParams);
 
-    let idx = 0;
     const result = [];
     let data = [];
     let variables = [];
@@ -26,19 +25,19 @@ function Translated({ translate, children, dangerous = false, dangerousEl = "spa
 
     data.forEach((part, offset) => {
         if (dangerous) {
-            result.push(createElement(dangerousEl, { key: `part_${idx}`, dangerouslySetInnerHTML: { __html: part } }));
+            result.push(createElement(dangerousEl, { key: `part_${offset}`, dangerouslySetInnerHTML: { __html: part } }));
             if (variables[offset]) {
                 result.push(
                     createElement(dangerousEl, {
-                        key: `translation_${idx}`,
+                        key: `translation_${offset}`,
                         dangerouslySetInnerHTML: { __html: args[variables[offset]] },
                     })
                 );
             }
         } else {
-            result.push(createElement(Fragment, { key: `part_${idx}` }, part));
+            result.push(createElement(Fragment, { key: `part_${offset}` }, part));
             if (variables[offset]) {
-                result.push(createElement(Fragment, { key: `translation_${idx}` }, args[variables[offset]]));
+                result.push(createElement(Fragment, { key: `translation_${offset}` }, args[variables[offset]]));
             }
         }
     });

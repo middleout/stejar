@@ -211,4 +211,50 @@ describe("Translate", () => {
         );
         expect(str).toBe("Hello Baz and Bar and something else");
     });
+
+    test("...", () => {
+        const store = boot({
+            "Don't do it": "Ola World",
+            Bar: "Baz",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate var1={<Translate>Bar</Translate>} var2="Bar">
+                    :var1 and :var2 and something else
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("Baz and Bar and something else");
+    });
+
+    test("...", () => {
+        changeReplacer((text, key, value) => text.replace("%(" + key + ")", value));
+
+        const store = boot({
+            Open: "open",
+            scan: "Scan",
+            "%(open) Google Authenticator and %(scan) the QR Code below:":
+                "%(open) Google Authenticator and %(scan) the QR Code below:",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate
+                    open={
+                        <strong>
+                            <Translate>Open</Translate>
+                        </strong>
+                    }
+                    scan={
+                        <strong>
+                            <Translate>scan</Translate>
+                        </strong>
+                    }>
+                    %(open) Google Authenticator and %(scan) the QR Code below:
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("<strong>open</strong> Google Authenticator and <strong>Scan</strong> the QR Code below:");
+    });
 });
