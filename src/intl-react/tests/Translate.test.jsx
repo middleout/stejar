@@ -128,4 +128,49 @@ describe("Translate", () => {
         const str = renderToStaticMarkup(translate);
         expect(str).toBe("Ola Bar Baz, how are you?");
     });
+
+    test("...", () => {
+        const store = boot({
+            "Hello world": "Hello &#1779;",
+        });
+        const translate = createElement(Provider, { store }, createElement(Translate, {}, "Hello world"));
+        const str = renderToStaticMarkup(translate);
+        expect(str).toBe("Hello &amp;#1779;");
+    });
+
+    test("...", () => {
+        const store = boot({
+            "Hello world": "Hello &#1779;",
+        });
+        const translate = createElement(
+            Provider,
+            { store },
+            createElement(
+                Translate,
+                {
+                    dangerous: true,
+                },
+                "Hello world"
+            )
+        );
+        const str = renderToStaticMarkup(translate);
+        expect(str).toBe("<span>Hello &#1779;</span>");
+    });
+
+    test("...", () => {
+        const store = boot({
+            "Hello &#1779;": "Hello World",
+        });
+        const translate = createElement(
+            Provider,
+            { store },
+            createElement(
+                Translate,
+                {},
+                "Hello &#1779;"
+            )
+        );
+        const str = renderToStaticMarkup(translate);
+        expect(str).toBe("Hello World");
+    });
 });

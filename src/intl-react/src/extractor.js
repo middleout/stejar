@@ -35,17 +35,26 @@ function getNodeValue(node) {
         return item;
     });
     children = children.filter(function(item) {
-        if (!item.value) {
+        if (!item.value && (!item.extra || !item.extra.raw)) {
             return false;
         } // If we have more than 1 child but these children actually are spaces/new lines, filter them out
 
-        const val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
+        let val;
+        if (item.extra.raw) {
+            val = item.extra.raw.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
+        } else {
+            val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
+        }
 
         return !!val;
     });
 
     if (children.length === 0) {
         return "";
+    }
+
+    if (children[0].extra && children[0].extra.raw) {
+        return children[0].extra.raw.trim();
     }
 
     return children[0].value.trim();
