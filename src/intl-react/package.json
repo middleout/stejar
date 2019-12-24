@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl-react",
-    "version": "14.3.1",
+    "version": "14.3.2",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -15,7 +15,7 @@
     "dependencies": {
         "@babel/parser": "^7",
         "@babel/traverse": "^7",
-        "@stejar/intl": "^14.3.1",
+        "@stejar/intl": "^14.3.2",
         "es6-promise": "^4",
         "isomorphic-fetch": "^2",
         "mkdirp": "^0",
