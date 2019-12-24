@@ -11,36 +11,34 @@ function Translated({ translate, children, dangerous = false, dangerousEl = "spa
 
     let idx = 0;
     const result = [];
+    let data = [];
+    let variables = [];
+    let whatToSplit = translated;
     Object.keys(translationParams).forEach(name => {
-        idx++;
-        const parts = translated.split(translationParams[name]);
+        const parts = whatToSplit.split(translationParams[name]);
         if (parts.length > 1) {
-            if (dangerous) {
+            data.push(parts[0]);
+            variables.push(name);
+            whatToSplit = parts[1];
+        }
+    });
+    data.push(whatToSplit);
+
+    data.forEach((part, offset) => {
+        if (dangerous) {
+            result.push(createElement(dangerousEl, { key: `part_${idx}`, dangerouslySetInnerHTML: { __html: part } }));
+            if (variables[offset]) {
                 result.push(
-                    createElement(
-                        dangerousEl,
-                        { key: `left_key_${idx}`, dangerouslySetInnerHTML: { __html: parts[0] } },
-                        parts[0]
-                    )
+                    createElement(dangerousEl, {
+                        key: `translation_${idx}`,
+                        dangerouslySetInnerHTML: { __html: args[variables[offset]] },
+                    })
                 );
-                result.push(
-                    createElement(
-                        dangerousEl,
-                        { key: `value_${idx}`, dangerouslySetInnerHTML: { __html: args[name] } },
-                        args[name]
-                    )
-                );
-                result.push(
-                    createElement(
-                        dangerousEl,
-                        { key: `right_key_${idx}`, dangerouslySetInnerHTML: { __html: parts[1] } },
-                        parts[1]
-                    )
-                );
-            } else {
-                result.push(createElement(Fragment, { key: `left_key_${idx}` }, parts[0]));
-                result.push(createElement(Fragment, { key: `value_${idx}` }, args[name]));
-                result.push(createElement(Fragment, { key: `right_key_${idx}` }, parts[1]));
+            }
+        } else {
+            result.push(createElement(Fragment, { key: `part_${idx}` }, part));
+            if (variables[offset]) {
+                result.push(createElement(Fragment, { key: `translation_${idx}` }, args[variables[offset]]));
             }
         }
     });

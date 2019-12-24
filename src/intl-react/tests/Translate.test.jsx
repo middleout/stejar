@@ -180,4 +180,35 @@ describe("Translate", () => {
         );
         expect(str).toBe("Ola World");
     });
+
+    test("...", () => {
+        const store = boot({
+            "Don't do it": "Ola World",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate var1="Foo" var2="Bar">
+                    Hello :var1 and :var2
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("Hello Foo and Bar");
+    });
+
+    test("...", () => {
+        const store = boot({
+            "Don't do it": "Ola World",
+            Bar: "Baz",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate var1={<Translate>Bar</Translate>} var2="Bar">
+                    Hello :var1 and :var2 and something else
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("Hello Baz and Bar and something else");
+    });
 });
