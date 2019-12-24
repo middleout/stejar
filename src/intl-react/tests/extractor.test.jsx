@@ -112,12 +112,6 @@ describe("extractor", () => {
         ]);
     });
 
-    test("it can work with a unicode chars", () => {
-        const content = "<Translate>Hello &#1779; World</Translate>";
-
-        expect(extract(content)).toEqual([{ line: 1, value: "Hello &#1779; World", comment: "" }]);
-    });
-
     test("it can work with apostrophes", () => {
         const content = `<Translate>{"Don't do it"}</Translate>`;
 

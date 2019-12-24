@@ -35,17 +35,11 @@ function getNodeValue(node) {
         return item;
     });
     children = children.filter(function(item) {
-        // if (!item.value && (!item.extra || !item.extra.raw)) {
         if (!item.value) {
             return false;
         } // If we have more than 1 child but these children actually are spaces/new lines, filter them out
 
-        let val;
-        // if (item.extra.raw) {
-        //     val = item.extra.raw.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
-        // } else {
-        val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
-        // }
+        const val = item.value.replace(/(?:\r\n|\r|\n)/g, "").replace(/ /g, "");
 
         return !!val;
     });
@@ -53,10 +47,6 @@ function getNodeValue(node) {
     if (children.length === 0) {
         return "";
     }
-
-    // if (children[0].extra && children[0].extra.raw) {
-    //     return children[0].extra.raw.trim();
-    // }
 
     return children[0].value.trim();
 }
@@ -95,11 +85,6 @@ function extract(code) {
                     }
 
                     let nodeValue = getNodeValue(path.node);
-
-                    nodeValue = nodeValue.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-                        return "&#" + i.charCodeAt(0) + ";";
-                    });
-
                     const parts = nodeValue.split("\n");
                     nodeValue = "";
                     parts.forEach(part => {
