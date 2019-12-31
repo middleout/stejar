@@ -12,7 +12,7 @@
         "new": "node scripts/new.js",
         "bootstrap": "lerna bootstrap",
         "clean": "lerna clean && rimraf src/**/es && rimraf node_modules",
-        "publish": "lerna updated && yarn build && yarn test:once && lerna publish --registry $(yarn config get registry)",
+        "publish": "lerna updated && yarn build && yarn test:once && lerna publish --registry https://npm.middleout.com",
         "test": "jest --watchAll --no-watchman",
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
