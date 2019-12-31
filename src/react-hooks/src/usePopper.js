@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { createPopper } from "@popperjs/core/lib/popper.js";
 
-export const usePopper = (options = {}) => {
+export function usePopper(options = {}) {
     const ourReferenreRef = useRef();
     const referenceRef = options.referenceRef ? options.referenceRef : ourReferenreRef;
     const popperRef = useRef(null);
@@ -34,4 +34,4 @@ export const usePopper = (options = {}) => {
         arrow: arrowRef,
         popperInstanceRef: popperInstanceRef,
     };
-};
+}

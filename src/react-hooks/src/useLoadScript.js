@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 let cachedScripts = [];
-function useLoadScript(src) {
+export function useLoadScript(src) {
     // Keeping track of script loaded and error state
     const [state, setState] = useState({
         loaded: false,
