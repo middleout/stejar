@@ -1,8 +1,11 @@
 {
-  "packages": [
-    "src/*"
-  ],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "15.1.5"
+    "packages": ["src/*"],
+    "npmClient": "yarn",
+    "useWorkspaces": true,
+    "version": "15.1.5",
+    "command": {
+        "publish": {
+            "registry": "https://npm.middleout.com"
+        }
+    }
 }
