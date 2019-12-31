@@ -11,7 +11,7 @@ AnchorLink.propTypes = {
 
 export function AnchorLink({ to, params, query, children, ...props }) {
     return (
-        <RouteLink to={to} params={params} query={query} {...props}>
+        <RouteLink name={to} params={params} query={query} {...props}>
             {({ to, ...props }) => (
                 <a href={to} {...props}>
                     {children}
