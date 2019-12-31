@@ -1,5 +1,4 @@
 {
-    "_name": "@stejar",
     "private": true,
     "version": "1.0.0",
     "main": "index.js",
@@ -13,7 +12,7 @@
         "new": "node scripts/new.js",
         "bootstrap": "lerna bootstrap",
         "clean": "lerna clean && rimraf src/**/es && rimraf node_modules",
-        "publish": "lerna updated && yarn build && yarn test:once && lerna publish --registry $(yarn config get registry)",
+        "publish": "lerna updated && yarn build && yarn test:once && lerna publish",
         "test": "jest --watchAll --no-watchman",
         "test:once": "jest --no-watchman",
         "test:coverage": "jest --watchAll --no-watchman --coverage",
