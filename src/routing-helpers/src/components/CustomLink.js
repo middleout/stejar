@@ -7,6 +7,7 @@ CustomLinkWithoutRouter.propTypes = {
     preventDefault: PropTypes.bool,
 };
 
+
 function CustomLinkWithoutRouter({ children, history, onClick, preventDefault, ...props }) {
     const wrappedOnClick = event => {
         if (preventDefault === undefined || preventDefault === true) {
