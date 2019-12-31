@@ -1,6 +1,6 @@
 {
     "name": "@stejar/routing-helpers",
-    "version": "14.3.4",
+    "version": "15.0.0",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -8,12 +8,11 @@
         "es"
     ],
     "dependencies": {
-        "react": "^16",
         "prop-types": "^15",
-        "react-router-dom": "^5",
+        "qs": "^6",
+        "react": "^16",
         "react-redux": "^7",
-        "reselect": "^4",
-        "qs": "^6"
-    },
-    "peerDependencies": {}
+        "react-router-dom": "^5",
+        "reselect": "^4"
+    }
 }
