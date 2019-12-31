@@ -40,8 +40,11 @@ export function RouteLink({
         name = fallbackCurrentRoute;
     }
 
+    const finalProps = { ...props };
+    delete finalProps.to;
+
     return (
-        <CustomLink to={route(routes, name, finalParams, finalQuery)} {...props}>
+        <CustomLink to={route(routes, name, finalParams, finalQuery)} {...finalProps}>
             {children}
         </CustomLink>
     );
