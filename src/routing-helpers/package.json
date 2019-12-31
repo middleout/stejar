@@ -14,5 +14,6 @@
         "react-redux": "^7",
         "react-router-dom": "^5",
         "reselect": "^4"
-    }
+    },
+    "gitHead": "f2b0cc20a7c166f2cb045528faf34e72695a3237"
 }
