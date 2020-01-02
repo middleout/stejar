@@ -26,15 +26,18 @@ export function RouterAdapter({ children, history, routes, options = {} }) {
 
     const willMount = useRef(true);
     if (willMount.current) {
-        history.listen(({ pathname, search }) =>
-            match({
+        history.listen(({ pathname, search }) => {
+            const result = match({
                 routes,
                 pathname,
                 query: toQueryObject(search),
-                syncAction,
-                options,
-            })
-        );
+            });
+
+            syncAction(result);
+            if (options.syncAction) {
+                options.syncAction(result);
+            }
+        });
 
         if (options.syncAction) {
             options.syncAction(state);
