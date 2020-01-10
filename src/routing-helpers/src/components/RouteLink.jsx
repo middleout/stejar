@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import { route } from "../helpers/route";
 import { CustomLink } from "./CustomLink";
-import { useQuery } from "../hooks/useQuery";
 import { RouterContext } from "./RouterContextProvider";
 
 RouteLink.propTypes = {
@@ -26,11 +24,9 @@ export function RouteLink({
     children,
     ...props
 }) {
-    const currentParams = useParams();
-    const currentQuery = useQuery();
     const { routes, state } = useContext(RouterContext);
-    const finalParams = reuseParams ? { ...currentParams, ...params } : params;
-    const finalQuery = reuseQuery ? { ...currentQuery, ...query } : query;
+    const finalParams = reuseParams ? { ...state.params, ...params } : params;
+    const finalQuery = reuseQuery ? { ...state.query, ...query } : query;
 
     if (!name) {
         name = state.name;
