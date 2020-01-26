@@ -18,7 +18,7 @@
         "@stejar/intl": "^15.1.2",
         "es6-promise": "^4",
         "isomorphic-fetch": "^2",
-        "mkdirp": "^0",
+        "mkdirp": "^1",
         "react": "^16",
         "react-redux": "^7",
         "redux": "^4"
