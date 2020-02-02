@@ -2,19 +2,28 @@ import { createElement, Fragment } from "react";
 import { withTranslate } from "./withTranslate";
 
 function Translated({ translate, children, dangerous = false, dangerousEl = "span", ...args }) {
+    const params = {};
     const translationParams = {};
     Object.keys(args).forEach(name => {
-        translationParams[name] = "<" + name + ">";
+        if (typeof args[name] !== "string" && typeof args[name] !== "number") {
+            translationParams[name] = "<" + name + ">";
+            params[name] = "<" + name + ">";
+        } else {
+            params[name] = args[name];
+        }
     });
 
-    let translated = translate(children, translationParams);
+    let translated = translate(children, params);
+    const paramsInside = translated.match(/<([^>]+)>/g) || [];
 
     const result = [];
     let data = [];
     let variables = [];
     let whatToSplit = translated;
-    Object.keys(translationParams).forEach(name => {
+    paramsInside.forEach(key => {
+        const name = key.replace("<", "").replace(">", "");
         const parts = whatToSplit.split(translationParams[name]);
+
         if (parts.length > 1) {
             data.push(parts[0]);
             variables.push(name);
@@ -25,7 +34,9 @@ function Translated({ translate, children, dangerous = false, dangerousEl = "spa
 
     data.forEach((part, offset) => {
         if (dangerous) {
-            result.push(createElement(dangerousEl, { key: `part_${offset}`, dangerouslySetInnerHTML: { __html: part } }));
+            result.push(
+                createElement(dangerousEl, { key: `part_${offset}`, dangerouslySetInnerHTML: { __html: part } })
+            );
             if (variables[offset]) {
                 result.push(
                     createElement(dangerousEl, {

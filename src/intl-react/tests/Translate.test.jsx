@@ -230,4 +230,55 @@ describe("Translate", () => {
         );
         expect(str).toBe("<strong>open</strong> Google Authenticator and <strong>Scan</strong> the QR Code below:");
     });
+
+    test("it can translate when the params order is translated reversed - using only strings", () => {
+        const store = bootStore({
+            ":param1 and :param2": ":param2 -- :param1",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate
+                    param1="Param 1"
+                    param2="Param 2">
+                    :param1 and :param2
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("Param 2 -- Param 1");
+    });
+
+    test("it can translate when the params order is translated reversed - using components", () => {
+        const store = bootStore({
+            ":param1 and :param2": ":param2 -- :param1",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate
+                    param1={<span>Param 1</span>}
+                    param2={<span>Param 2</span>}>
+                    :param1 and :param2
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("<span>Param 2</span> -- <span>Param 1</span>");
+    });
+
+    test("it can translate when the params order is translated reversed - using components and strings", () => {
+        const store = bootStore({
+            ":param1 and :param2": ":param2 -- :param1",
+        });
+
+        const str = renderToStaticMarkup(
+            <Provider store={store}>
+                <Translate
+                    param1="Param 1"
+                    param2={<span>Param 2</span>}>
+                    :param1 and :param2
+                </Translate>
+            </Provider>
+        );
+        expect(str).toBe("<span>Param 2</span> -- Param 1");
+    });
 });
