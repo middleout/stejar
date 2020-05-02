@@ -1,0 +1,3 @@
+# Getting started
+
+- After clone, run "yarn build" . Only then can you run "Tests"...

@@ -16,7 +16,6 @@ const getDirectories = source => readdirSync(source).filter(name => isDirectory(
 
 const dirs = getDirectories("./src")
     .filter(item => !target || item == target)
-    .filter(item => item !== "create-stejar-app")
     .filter(item => item[0] !== "_");
 
 dirs.forEach(dir => {

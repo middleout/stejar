@@ -9,7 +9,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const Table = require("cli-table");
 const loadConfig = require("./loadConfig");
 
 module.exports = (webpackEnv, args = {}) => {
@@ -35,32 +34,11 @@ module.exports = (webpackEnv, args = {}) => {
         throw new Error("Missing favicon path");
     }
 
-    // instantiate
-    console.log("Starting webpack build with the following config parameters:");
-
-    const table = new Table({
-        head: ["Type", "Value"],
-        colWidths: [20, 100],
-    });
-    table.push(["Mode", mode]);
-    table.push(["Production", isProduction]);
-    table.push(["Storybook mode", isStorybook]);
-    table.push(["Favicon Path", faviconPath]);
-    table.push(["Output path", outputPath]);
-    table.push(["Index.html path", htmlPath]);
-    table.push(["Dev Server port", devServerPort]);
-    table.push(["App Config", JSON.stringify(appConfig)]);
-    table.push(["App Envirnoment", JSON.stringify(env)]);
-    console.log(table.toString());
-
     const plugins = [
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css",
         }),
-        // new ProvidePlugin({
-        //     React: "react",
-        // }),
         new DefinePlugin({
             "process.env": JSON.stringify(env),
             "process.config": JSON.stringify(appConfig),
