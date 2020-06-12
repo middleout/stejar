@@ -154,6 +154,7 @@ module.exports = (webpackEnv, args = {}) => {
                                 loader: "ejs-loader",
                                 options: {
                                     minimize: isProduction,
+                                    variable: "vars"
                                 },
                             },
                         ],
