@@ -1,6 +1,6 @@
 {
     "name": "@stejar/routing-helpers",
-    "version": "17.0.1",
+    "version": "17.0.2",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
