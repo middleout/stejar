@@ -26,9 +26,7 @@ export function RouterAdapter({ children, history, routes, options = {} }) {
 
     const willMount = useRef(true);
     if (willMount.current) {
-        history.listen(({ location }) => {
-            const { pathname, search } = location;
-
+        history.listen(({ pathname, search }) => {
             const result = match({
                 routes,
                 pathname,
@@ -59,7 +57,7 @@ export function RouterAdapter({ children, history, routes, options = {} }) {
 function parseRoutes(routes) {
     let namedRoutes = {};
     if (Array.isArray(routes)) {
-        routes.forEach((path) => {
+        routes.forEach(path => {
             namedRoutes[path] = path;
         });
     } else {
