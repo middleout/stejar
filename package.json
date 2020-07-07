@@ -36,7 +36,7 @@
         "babel-core": "7.0.0-bridge.0",
         "babel-eslint": "^10",
         "babel-jest": "^26.0.0-alpha.0",
-        "eslint": "^6",
+        "eslint": "^7",
         "eslint-config-prettier": "^6",
         "eslint-plugin-react": "^7",
         "fetch-mock": "^9.4.0",
