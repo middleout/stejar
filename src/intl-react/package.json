@@ -17,7 +17,7 @@
         "@babel/traverse": "^7",
         "@stejar/intl": "^17.0.0",
         "es6-promise": "^4",
-        "isomorphic-fetch": "^2",
+        "isomorphic-fetch": "^3",
         "mkdirp": "^1",
         "react": "^16",
         "react-redux": "^7",
