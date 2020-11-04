@@ -24,7 +24,7 @@
         "redux": "^4"
     },
     "peerDependencies": {
-        "react-dom": "^16"
+        "react-dom": "^17"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }
