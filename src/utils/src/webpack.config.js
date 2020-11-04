@@ -89,7 +89,9 @@ module.exports = (webpackEnv, args = {}) => {
             optimization: {
                 minimizer: [
                     new TerserPlugin({
-                        sourceMap: !isProduction,
+                        terserOptions: {
+                            sourceMap: !isProduction,
+                        },
                     }),
                 ],
                 splitChunks: {
@@ -154,7 +156,7 @@ module.exports = (webpackEnv, args = {}) => {
                                 loader: "ejs-loader",
                                 options: {
                                     minimize: isProduction,
-                                    variable: "vars"
+                                    variable: "vars",
                                 },
                             },
                         ],

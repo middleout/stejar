@@ -16,11 +16,11 @@
     },
     "peerDependencies": {
         "redux": "^4.0.1",
-        "redux-thunk": "^2.3.0"
+        "redux-thunk": "^2"
     },
     "devDependencies": {
-        "redux": "^4.0.1",
-        "redux-thunk": "^2.3.0"
+        "redux": "^4",
+        "redux-thunk": "^2"
     },
     "gitHead": "1bc91b1a34ce549de56200038ce56420a4f34e5c"
 }

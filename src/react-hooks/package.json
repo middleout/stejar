@@ -8,10 +8,10 @@
         "es"
     ],
     "dependencies": {
-        "react": "^16"
+        "react": "^17"
     },
     "peerDependencies": {
         "lodash.throttle": "^4",
-        "popper.js": "^2.0.0-next.4"
+        "popper.js": "^2"
     }
 }

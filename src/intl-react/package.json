@@ -19,7 +19,7 @@
         "es6-promise": "^4",
         "isomorphic-fetch": "^3",
         "mkdirp": "^1",
-        "react": "^16",
+        "react": "^17",
         "react-redux": "^7",
         "redux": "^4"
     },
