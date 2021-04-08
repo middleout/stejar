@@ -9,7 +9,7 @@ AnchorLink.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export function AnchorLink({ to, params, query, children, ...props }) {
+export default function AnchorLink({ to, params, query, children, ...props }) {
 
     return (
         <RouteLink name={to} params={params} query={query} {...props}>

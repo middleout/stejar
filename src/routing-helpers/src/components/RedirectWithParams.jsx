@@ -12,7 +12,7 @@ RedirectWithParams.propTypes = {
     query: PropTypes.object,
 };
 
-export function RedirectWithParams({ exact, from, name, params, query }) {
+export default function RedirectWithParams({ exact, from, name, params, query }) {
     const { routes } = useContext(RouterContext);
 
     return (

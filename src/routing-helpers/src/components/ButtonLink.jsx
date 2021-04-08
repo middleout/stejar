@@ -9,7 +9,7 @@ ButtonLink.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export function ButtonLink({ to, params, query, children, ...props }) {
+export default function ButtonLink({ to, params, query, children, ...props }) {
     return (
         <RouteLink to={to} params={params} query={query} {...props}>
             {props => {

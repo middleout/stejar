@@ -20,7 +20,8 @@
         "test:coverage": "jest --watchAll --no-watchman --coverage",
         "pre-commit": "lint-staged",
         "lint": "eslint \"src/**/src/**/*.{js,jsx}\" && prettier --write \"src/**/src/**/*.{js,jsx}\"",
-        "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
+        "delete-tags": "git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d",
+        "prepare": "husky install"
     },
     "lint-staged": {
         "*.{js,jsx}": [
@@ -40,13 +41,13 @@
         "babel-eslint": "^10",
         "babel-jest": "^26",
         "eslint": "^7",
-        "eslint-config-prettier": "^6",
+        "eslint-config-prettier": "^8",
         "eslint-plugin-react": "^7",
         "fetch-mock": "^9",
         "fs-extra": "^9",
-        "husky": "^4",
+        "husky": "^6.0.0",
         "jest": "^26",
-        "lerna": "^3",
+        "lerna": "^4",
         "lint-staged": "^10",
         "nanomatch": "^1",
         "prettier": "^2",

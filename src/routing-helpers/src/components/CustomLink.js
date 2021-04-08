@@ -27,4 +27,4 @@ function CustomLinkWithoutRouter({ children, history, onClick, preventDefault, .
     return children({ ...finalProps, onClick: wrappedOnClick });
 }
 
-export const CustomLink = withRouter(CustomLinkWithoutRouter);
+export default withRouter(CustomLinkWithoutRouter);

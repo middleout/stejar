@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { matchPath } from "react-router-dom";
 import { toQueryObject } from "../helpers/toQueryObject";
-import { RouterContextProvider } from "./RouterContextProvider";
+import { RouterContext } from "./RouterContextProvider";
 
 RouterAdapter.propTypes = {
     children: PropTypes.node,
@@ -10,8 +10,9 @@ RouterAdapter.propTypes = {
     routes: PropTypes.object.isRequired,
 };
 
-export function RouterAdapter({ children, history, routes, options = {} }) {
+export default function RouterAdapter({ children, history, routes, options = {} }) {
     routes = parseRoutes(routes);
+    const syncAction = options.syncAction || (() => null);
 
     const initialMatch = match({
         routes,
@@ -19,45 +20,38 @@ export function RouterAdapter({ children, history, routes, options = {} }) {
         query: toQueryObject(history.location.search),
     });
 
-    const [state, setState] = useState(initialMatch);
-    function syncAction(payload) {
-        setState(payload);
-    }
+    const [name, setName] = useState(initialMatch.name);
+    const [params, setParams] = useState(initialMatch.params);
+    const [query, setQuery] = useState(initialMatch.query);
 
     const willMount = useRef(true);
     if (willMount.current) {
         history.listen(({ pathname, search }) => {
             const result = match({
                 routes,
-                pathname,
+                pathname: pathname,
                 query: toQueryObject(search || ""),
             });
 
+            setName(result.name);
+            setParams(result.params);
+            setQuery(result.query);
             syncAction(result);
-            if (options.syncAction) {
-                options.syncAction(result);
-            }
         });
 
-        if (options.syncAction) {
-            options.syncAction(state);
-        }
+        syncAction({ name, params, query });
     }
     useEffect(() => {
         willMount.current = false;
     }, []);
 
-    return (
-        <RouterContextProvider state={state} routes={routes}>
-            {children}
-        </RouterContextProvider>
-    );
+    return <RouterContext.Provider value={{ state: {name, params, query }, routes }}>{children}</RouterContext.Provider>;
 }
 
 function parseRoutes(routes) {
     let namedRoutes = {};
     if (Array.isArray(routes)) {
-        routes.forEach(path => {
+        routes.forEach((path) => {
             namedRoutes[path] = path;
         });
     } else {

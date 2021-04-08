@@ -14,7 +14,7 @@ RouteLink.propTypes = {
     children: PropTypes.func.isRequired,
 };
 
-export function RouteLink({
+export default function RouteLink({
     name = null,
     params = {},
     query = {},
