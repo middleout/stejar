@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { resolve, join } = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
+// const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
@@ -48,18 +48,18 @@ module.exports = (webpackEnv, args = {}) => {
     ];
 
     if (isProduction) {
-        plugins.push(
-            new AppManifestWebpackPlugin({
-                logo: resolve(faviconPath),
-                inject: true,
-                prefix: appConfig.app.publicUrl + "/favicons/",
-                config: {
-                    appName: appConfig.app.name,
-                },
-                output: "favicons/",
-                emitStats: true,
-            })
-        );
+        // plugins.push(
+            // new AppManifestWebpackPlugin({
+            //     logo: resolve(faviconPath),
+            //     inject: true,
+            //     prefix: appConfig.app.publicUrl + "/favicons/",
+            //     config: {
+            //         appName: appConfig.app.name,
+            //     },
+            //     output: "favicons/",
+            //     emitStats: true,
+            // })
+        // );
         plugins.push(new OptimizeCssAssetsPlugin({}));
     }
 
