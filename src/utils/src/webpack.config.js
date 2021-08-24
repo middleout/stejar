@@ -178,7 +178,9 @@ module.exports = (webpackEnv, args = {}) => {
                 allowedHosts: "all",
                 hot: false,
                 static: {
-                    contentBase: join(__dirname, outputPath),
+                    staticOptions: {
+                        contentBase: join(__dirname, outputPath),
+                    },
                     publicPath: "/",
                 },
                 devMiddleware: {
