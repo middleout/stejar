@@ -1,6 +1,6 @@
 {
     "name": "@stejar/routing-helpers",
-    "version": "21.0.4",
+    "version": "21.0.5",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -15,5 +15,5 @@
         "react-router-dom": "^5",
         "reselect": "^4"
     },
-    "gitHead": "6affa40c439769f864ff97da0706d2395b49be1c"
+    "gitHead": "1e0f604740ddf33312f214f2fc26c86d6599769f"
 }
