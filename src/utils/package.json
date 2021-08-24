@@ -1,6 +1,6 @@
 {
     "name": "@stejar/utils",
-    "version": "21.0.3",
+    "version": "21.0.4",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -33,5 +33,5 @@
         "webpack-cli": "^4",
         "webpack-dev-server": "^4"
     },
-    "gitHead": "cad155277b5f26b26c06de826662479d8a82a0d1"
+    "gitHead": "6affa40c439769f864ff97da0706d2395b49be1c"
 }

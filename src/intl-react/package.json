@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl-react",
-    "version": "21.0.3",
+    "version": "21.0.4",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -15,7 +15,7 @@
     "dependencies": {
         "@babel/parser": "^7",
         "@babel/traverse": "^7",
-        "@stejar/intl": "^21.0.3",
+        "@stejar/intl": "^21.0.4",
         "es6-promise": "^4",
         "isomorphic-fetch": "^3",
         "mkdirp": "^1",
@@ -26,5 +26,5 @@
     "peerDependencies": {
         "react-dom": "^17"
     },
-    "gitHead": "cad155277b5f26b26c06de826662479d8a82a0d1"
+    "gitHead": "6affa40c439769f864ff97da0706d2395b49be1c"
 }
