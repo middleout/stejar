@@ -49,16 +49,16 @@ module.exports = (webpackEnv, args = {}) => {
 
     if (isProduction) {
         // plugins.push(
-            // new AppManifestWebpackPlugin({
-            //     logo: resolve(faviconPath),
-            //     inject: true,
-            //     prefix: appConfig.app.publicUrl + "/favicons/",
-            //     config: {
-            //         appName: appConfig.app.name,
-            //     },
-            //     output: "favicons/",
-            //     emitStats: true,
-            // })
+        // new AppManifestWebpackPlugin({
+        //     logo: resolve(faviconPath),
+        //     inject: true,
+        //     prefix: appConfig.app.publicUrl + "/favicons/",
+        //     config: {
+        //         appName: appConfig.app.name,
+        //     },
+        //     output: "favicons/",
+        //     emitStats: true,
+        // })
         // );
         plugins.push(new OptimizeCssAssetsPlugin({}));
     }
@@ -173,11 +173,14 @@ module.exports = (webpackEnv, args = {}) => {
             plugins,
 
             devServer: {
-                contentBase: join(__dirname, outputPath),
                 host: "0.0.0.0",
                 port: devServerPort,
-                allowedHosts: 'all',
+                allowedHosts: "all",
                 hot: false,
+                static: {
+                    contentBase: join(__dirname, outputPath),
+                    publicPath: "/",
+                },
                 devMiddleware: {
                     index: true,
                     publicPath: "/",
