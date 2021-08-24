@@ -171,6 +171,7 @@ module.exports = (webpackEnv, args = {}) => {
                 ],
             },
             plugins,
+            
             devServer: {
                 contentBase: join(__dirname, outputPath),
                 publicPath: "/",
