@@ -1,6 +1,6 @@
 {
     "name": "@stejar/utils",
-    "version": "21.0.7",
+    "version": "21.0.8",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
