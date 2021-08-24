@@ -179,7 +179,6 @@ module.exports = (webpackEnv, args = {}) => {
                 port: devServerPort,
                 disableHostCheck: true,
                 hot: false,
-                inline: false,
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
