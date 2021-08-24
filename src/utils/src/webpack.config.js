@@ -171,14 +171,13 @@ module.exports = (webpackEnv, args = {}) => {
                 ],
             },
             plugins,
-            
+
             devServer: {
                 contentBase: join(__dirname, outputPath),
                 publicPath: "/",
-                compress: true,
                 host: "0.0.0.0",
                 port: devServerPort,
-                disableHostCheck: true,
+                allowedHosts: 'all',
                 hot: false,
                 headers: {
                     "Access-Control-Allow-Origin": "*",
