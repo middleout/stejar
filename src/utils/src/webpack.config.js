@@ -174,11 +174,16 @@ module.exports = (webpackEnv, args = {}) => {
 
             devServer: {
                 contentBase: join(__dirname, outputPath),
-                publicPath: "/",
                 host: "0.0.0.0",
                 port: devServerPort,
                 allowedHosts: 'all',
                 hot: false,
+                devMiddleware: {
+                    index: true,
+                    publicPath: "/",
+                    serverSideRender: true,
+                    writeToDisk: true,
+                },
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
