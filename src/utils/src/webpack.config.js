@@ -26,7 +26,7 @@ module.exports = (webpackEnv, args = {}) => {
 
     if (!appConfig.app.publicUrl) {
         throw new Error("Missing app config property: app.publicUrl");
-    }
+    }./walkSync
     if (!appConfig.app.name) {
         throw new Error("Missing app config property: app.name");
     }
@@ -162,11 +162,8 @@ module.exports = (webpackEnv, args = {}) => {
                         ],
                     },
                     {
-                        test: /(\.jpg|\.png|\.gif|\.woff(2)|\.woff|\.ttf|\.otf|\.svg|\.eot)$/,
-                        use: {
-                            loader: "file-loader",
-                        },
-                        // exclude: /node_modules/,
+                        test: /(\.jpg|\.png|\.gif|\.woff2|\.woff|\.ttf|\.svg|\.eot)$/,
+                        type: "asset/resource",
                     },
                 ],
             },
