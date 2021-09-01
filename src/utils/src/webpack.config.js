@@ -26,7 +26,7 @@ module.exports = (webpackEnv, args = {}) => {
 
     if (!appConfig.app.publicUrl) {
         throw new Error("Missing app config property: app.publicUrl");
-    }./walkSync
+    }
     if (!appConfig.app.name) {
         throw new Error("Missing app config property: app.name");
     }
