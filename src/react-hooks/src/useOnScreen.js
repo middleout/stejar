@@ -25,5 +25,5 @@ export default function useOnScreen(rootMargin = "0px", currentRef = null) {
         };
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
-    return [isIntersecting, ref];
+    return [ref, isIntersecting];
 }

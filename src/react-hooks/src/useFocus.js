@@ -14,5 +14,5 @@ export default function useFocus(focusOnMount = true, currentRef = null) {
         }
     }, [htmlElRef.current]);
 
-    return [setFocus, htmlElRef];
+    return [htmlElRef, setFocus];
 }
