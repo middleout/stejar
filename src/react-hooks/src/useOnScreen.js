@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Hook
-export function useOnScreen(ref, rootMargin = "0px") {
+export default function useOnScreen(rootMargin = "0px", currentRef = null) {
+    const ref = useRef(currentRef);
+
     // State and setter for storing whether element is visible
     const [isIntersecting, setIntersecting] = useState(false);
 
@@ -23,5 +25,5 @@ export function useOnScreen(ref, rootMargin = "0px") {
         };
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
-    return isIntersecting;
+    return [isIntersecting, ref];
 }

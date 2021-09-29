@@ -33,5 +33,5 @@
         "webpack-cli": "^4",
         "webpack-dev-server": "^4"
     },
-    "gitHead": "cb3642637128e16fa5d5753be78e6e5511b5b43a"
+    "gitHead": "b5d47b1e6ab480214f95f220733aa163239c56cc"
 }

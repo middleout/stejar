@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // Hook
-export function useKeyPress(targetKeyCode) {
+export default function useKeyPress(targetKeyCode) {
     // State for keeping track of whether key is pressed
     const [keyPressed, setKeyPressed] = useState(false);
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import throttle from "lodash.throttle";
 
-export function useScrollPosition(throttleInterval = 0) {
+export default function useScrollPosition(throttleInterval = 0) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export function useScrollPosition(throttleInterval = 0) {
                 last_known_scroll_position = window.scrollY;
 
                 if (!ticking) {
-                    window.requestAnimationFrame(function() {
+                    window.requestAnimationFrame(function () {
                         setScrollPosition(last_known_scroll_position);
                         ticking = false;
                     });

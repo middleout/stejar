@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export const useComponentWillMount = func => {
+export default function useComponentWillMount(func) {
     const willMount = useRef(true);
 
     if (willMount.current) {
@@ -10,4 +10,4 @@ export const useComponentWillMount = func => {
     useEffect(() => {
         willMount.current = false;
     }, []);
-};
+}
