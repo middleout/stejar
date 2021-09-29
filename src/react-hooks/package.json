@@ -1,6 +1,6 @@
 {
     "name": "@stejar/react-hooks",
-    "version": "21.0.6",
+    "version": "22.0.0",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
