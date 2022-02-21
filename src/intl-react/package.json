@@ -1,6 +1,6 @@
 {
     "name": "@stejar/intl-react",
-    "version": "22.0.0",
+    "version": "22.1.0",
     "main": "es/index.js",
     "license": "MIT",
     "sideEffects": false,
@@ -13,11 +13,11 @@
         "extract-locale": "./bin/extract.locale.js"
     },
     "dependencies": {
-        "@babel/traverse": "^7",
-        "mkdirp": "^1",
-        "isomorphic-fetch": "^3",
         "@babel/parser": "^7",
-        "@stejar/intl": "^22.0.0"
+        "@babel/traverse": "^7",
+        "@stejar/intl": "^22.0.0",
+        "isomorphic-fetch": "^3",
+        "mkdirp": "^1"
     },
     "devDependencies": {
         "@babel/cli": "^7",
@@ -37,10 +37,10 @@
     },
     "peerDependencies": {
         "react": "^17",
+        "react-dom": "^17",
         "react-redux": "^7",
         "redux": "^4",
-        "redux-thunk": "^2",
-        "react-dom": "^17"
+        "redux-thunk": "^2"
     },
     "gitHead": "cb3642637128e16fa5d5753be78e6e5511b5b43a"
 }
