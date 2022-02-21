@@ -13,17 +13,33 @@
         "extract-locale": "./bin/extract.locale.js"
     },
     "dependencies": {
-        "@babel/parser": "^7",
         "@babel/traverse": "^7",
-        "@stejar/intl": "^22.0.0",
-        "es6-promise": "^4",
-        "isomorphic-fetch": "^3",
         "mkdirp": "^1",
-        "react": "^17",
-        "react-redux": "^7",
-        "redux": "^4"
+        "isomorphic-fetch": "^3",
+        "@babel/parser": "^7",
+        "@stejar/intl": "^22.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7",
+        "@babel/core": "^7",
+        "@babel/plugin-proposal-class-properties": "^7",
+        "@babel/plugin-proposal-decorators": "^7",
+        "@babel/plugin-transform-runtime": "^7",
+        "@babel/preset-env": "^7",
+        "@babel/preset-react": "^7",
+        "babel-jest": "^27",
+        "es6-promise": "^4",
+        "eslint-config-prettier": "^8",
+        "eslint-plugin-react": "^7",
+        "husky": "^7.0.0",
+        "jest": "^27",
+        "prettier": "^2"
     },
     "peerDependencies": {
+        "react": "^17",
+        "react-redux": "^7",
+        "redux": "^4",
+        "redux-thunk": "^2",
         "react-dom": "^17"
     },
     "gitHead": "cb3642637128e16fa5d5753be78e6e5511b5b43a"

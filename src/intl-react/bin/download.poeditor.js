@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 "use strict";
 
-require("es6-promise").polyfill();
 require("isomorphic-fetch");
 var fs = require("fs");
 var mkdirp = require("mkdirp");
@@ -105,13 +104,8 @@ function downloadFile(url) {
             });
         })
         .then(response => {
-            mkdirp(outputDir, function(err) {
-                if (err) {
-                    throw new Error(err);
-                }
-
-                fs.writeFileSync(outputDir + "/" + response.filename, JSON.stringify(response.data));
-            });
+            mkdirp.sync(outputDir);
+            fs.writeFileSync(outputDir + "/" + response.filename, JSON.stringify(response.data));
         })
         .catch(err => {
             console.error(err);
